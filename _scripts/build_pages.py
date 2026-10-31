@@ -432,6 +432,7 @@ def render_index() -> str:
   <title>x-one notes</title>
   {FONT_HEAD}
   <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/copy.js" defer></script>
 </head>
 <body>
   {sidebar}
