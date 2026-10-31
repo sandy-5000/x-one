@@ -405,6 +405,7 @@ def render_page(
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{html.escape(title)} · x-one</title>
   {FONT_HEAD}
+  <link rel="icon" href="{'../' * depth}assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="{css_href(depth)}">
   <script src="{'../' * depth}assets/copy.js" defer></script>
 </head>
@@ -431,6 +432,7 @@ def render_index() -> str:
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>x-one notes</title>
   {FONT_HEAD}
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/style.css">
   <script src="assets/copy.js" defer></script>
 </head>
@@ -504,7 +506,14 @@ def main():
             if source is None:
                 sidebar = render_sidebar(f"{group}/{slug}", 1)
                 existing = out_path.read_text(encoding="utf-8")
-                out_path.write_text(SIDEBAR_RE.sub(lambda _: sidebar, existing, count=1), encoding="utf-8")
+                page = SIDEBAR_RE.sub(lambda _: sidebar, existing, count=1)
+                if 'rel="icon"' not in page:
+                    page = page.replace(
+                        '<link rel="stylesheet"',
+                        '<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">\n  <link rel="stylesheet"',
+                        1,
+                    )
+                out_path.write_text(page, encoding="utf-8")
                 print("sidebar refreshed", out_path.relative_to(SITE))
                 continue
             text = source.read_text(encoding="utf-8")
