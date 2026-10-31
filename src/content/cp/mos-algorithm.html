@@ -1,0 +1,47 @@
+---
+title: "Mo's Algorithm (Offline Queries)"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Mo&#x27;s Algorithm (Offline Queries)</h1>
+<h2>What it is</h2>
+<p>Answer offline range queries by sorting queries in block order and moving two pointers <code>l, r</code> with <strong>O((n + q)√n)</strong> complexity when add/remove is O(1).</p>
+<h2>When to use</h2>
+<ul><li>Many range queries on static array.</li><li>Count distinct, frequency mode, xor sum in range.</li><li>Tree Mo&#x27;s (Euler tour) for subtree/path queries.</li></ul>
+<h2>Template</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">struct Query {
+    int l, r, id;
+    bool operator&lt;(const Query&amp; o) const {
+        int b1 = l / B, b2 = o.l / B;
+        if (b1 != b2) return b1 &lt; b2;
+        return (b1 &amp; 1) ? r &lt; o.r : r &gt; o.r;  // hilbert-like ordering optional
+    }
+};
+
+int cur_l = 0, cur_r = -1, ans = 0;
+
+auto add = [&amp;](int i) { /* update ans with a[i] */ };
+auto remove = [&amp;](int i) { /* undo */ };
+
+sort(q.begin(), q.end());
+for (auto [l, r, id] : q) {
+    while (cur_r &lt; r) add(++cur_r);
+    while (cur_r &gt; r) remove(cur_r--);
+    while (cur_l &lt; l) remove(cur_l++);
+    while (cur_l &gt; l) add(--cur_l);
+    result[id] = ans;
+}</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 86D — Powerful array</h3>
+<p>Classic Mo&#x27;s with frequency map.</p>
+<h3>2. CF 617E — XOR and Favorite Number</h3>
+<p>Mo&#x27;s on xor frequencies.</p>
+<h3>3. CF 940F — Cells Arrangement</h3>
+<p>Mo&#x27;s with updates (advanced: Mo&#x27;s with modifications).</p>
+<h3>4. Distinct elements in range</h3>
+<p><code>cnt[x]++</code> first time increases answer.</p>
+<h3>5. Tree Mo&#x27;s</h3>
+<p>Flatten tree, query on Euler tour range for subtree.</p>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/86/D">CF 86D — Powerful array</a></li><li><a href="https://codeforces.com/problemset/problem/617/E">CF 617E — XOR and Favorite Number</a></li></ul></div>
+    </article>

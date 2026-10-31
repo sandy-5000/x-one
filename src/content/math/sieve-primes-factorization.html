@@ -1,0 +1,43 @@
+---
+title: "Sieve, Primes & Factorization"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Sieve, Primes &amp; Factorization</h1>
+<h2>What it is</h2>
+<ul><li><strong>Sieve of Eratosthenes:</strong> all primes up to <code>n</code> in <strong>O(n log log n)</strong>.</li><li><strong>Factorization:</strong> trial division up to <code>√n</code>, or SPF sieve for many queries.</li></ul>
+<h2>When to use</h2>
+<ul><li>Count/divide by primes.</li><li>Check primality for many numbers up to 10^7.</li><li>Mobius / divisor sieve (advanced, occasional at 1950).</li></ul>
+<h2>Sieve template</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">vector&lt;int&gt; sieve(int n) {
+    vector&lt;bool&gt; is_prime(n+1, true);
+    is_prime[0] = is_prime[1] = false;
+    for (int i = 2; i * i &lt;= n; i++)
+        if (is_prime[i])
+            for (int j = i*i; j &lt;= n; j += i)
+                is_prime[j] = false;
+    vector&lt;int&gt; primes;
+    for (int i = 2; i &lt;= n; i++) if (is_prime[i]) primes.push_back(i);
+    return primes;
+}</code></pre></div>
+<h2>SPF (smallest prime factor) for fast factorization</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">vector&lt;int&gt; spf(n+1);
+for (int i = 2; i &lt;= n; i++) if (!spf[i]) {
+    for (int j = i; j &lt;= n; j += i) if (!spf[j]) spf[j] = i;
+}
+// factorize x:
+while (x &gt; 1) { int p = spf[x]; /* count p */; x /= p; }</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 26A — Almost Prime</h3>
+<p>Count numbers with exactly 2 prime factors — sieve + loops.</p>
+<h3>2. CF 1225D — Unusual Product</h3>
+<p>Prime factorization of array elements.</p>
+<h3>3. CF 1037C — Equal Elements</h3>
+<p>Factor / parity on prime powers.</p>
+<h3>4. Count divisors using factorization</h3>
+<p>If <code>n = p1^a1 * p2^a2 ...</code>, divisors = <code>(a1+1)(a2+1)...</code></p>
+<h3>5. Trial division for single n ≤ 10^12</h3>
+<p>Loop <code>i</code> to <code>√n</code>; works for one-off large n.</p>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/26/A">CF 26A — Almost Prime</a></li><li><a href="https://codeforces.com/problemset/problem/1225/D">CF 1225D — Unusual Product</a></li></ul></div>
+    </article>

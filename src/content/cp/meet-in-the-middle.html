@@ -1,0 +1,43 @@
+---
+title: "Meet in the Middle"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Meet in the Middle</h1>
+<h2>What it is</h2>
+<p>Split input in half, enumerate all possibilities for each half, combine. Turns <strong>O(2^n)</strong> into <strong>O(2^(n/2))</strong> — works for <code>n ≤ 40</code>.</p>
+<h2>When to use</h2>
+<ul><li>Subset sum closest to target.</li><li>Count pairs with given sum from two halves.</li><li>Hamiltonian path on ~40 nodes (with pruning).</li></ul>
+<h2>Template (subset sum)</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">int n = a.size();
+int m1 = n/2, m2 = n - m1;
+vector&lt;long long&gt; left, right;
+
+for (int mask = 0; mask &lt; (1&lt;&lt;m1); mask++) {
+    long long s = 0;
+    for (int i = 0; i &lt; m1; i++) if (mask&gt;&gt;i&amp;1) s += a[i];
+    left.push_back(s);
+}
+// same for right half
+sort(left.begin(), left.end());
+
+long long ans = LLONG_MAX;
+for (long long s : right) {
+    long long need = target - s;
+    auto it = lower_bound(left.begin(), left.end(), need);
+    if (it != left.end()) ans = min(ans, abs(*it + s - target));
+    if (it != left.begin()) ans = min(ans, abs(*prev(it) + s - target));
+}</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 888E — Maximum Subsequence</h3>
+<p>Meet in the middle for subset sum mod m.</p>
+<h3>2. 4-sum problem</h3>
+<p>Pair sums from two halves, two-pointer on sorted lists.</p>
+<h3>3. CF 1006F — Xor-Subsequence</h3>
+<p>Split and combine XOR sums.</p>
+<h3>4. Count subsets with sum = K (n ≤ 40)</h3>
+<p>Enumerate both halves, hash left sums.</p>
+<h3>5. Traveling salesman (n ≤ 20 uses bitmask; n ≤ 40 might use MITM on paths)</h3>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/888/E">CF 888E — Maximum Subsequence</a></li><li><a href="https://codeforces.com/problemset/problem/1006/F">CF 1006F — Xor-Subsequence</a></li></ul></div>
+    </article>

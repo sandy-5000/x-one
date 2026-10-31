@@ -1,0 +1,35 @@
+---
+title: "GCD, LCM & Extended Euclidean"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>GCD, LCM &amp; Extended Euclidean</h1>
+<h2>What it is</h2>
+<ul><li><strong>GCD(a,b):</strong> greatest common divisor — <code>__gcd(a,b)</code> in C++17.</li><li><strong>LCM(a,b) = a / gcd(a,b) * b</strong> (divide first to avoid overflow).</li><li><strong>Extended Euclidean:</strong> find <code>x, y</code> such that <code>a*x + b*y = gcd(a,b)</code>.</li></ul>
+<h2>When to use</h2>
+<ul><li>Simplify fractions.</li><li>Check if linear Diophantine <code>ax + by = c</code> has solution.</li><li>Modular inverse when mod is not prime.</li><li>Group numbers by GCD (CF 1203C).</li></ul>
+<h2>Extended GCD template</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">long long extgcd(long long a, long long b, long long &amp;x, long long &amp;y) {
+    if (!b) { x = 1; y = 0; return a; }
+    long long x1, y1;
+    long long g = extgcd(b, a % b, x1, y1);
+    x = y1;
+    y = x1 - (a / b) * y1;
+    return g;
+}</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 1203C — Common Divisors</h3>
+<p>Sort + GCD of entire array interactions.</p>
+<h3>2. CF 1512G — Shortest Path with Obstacle</h3>
+<p>GCD of step sizes on number line.</p>
+<h3>3. Linear congruence <code>ax ≡ b (mod m)</code></h3>
+<p>Solve using extgcd; solution exists iff <code>gcd(a,m) | b</code>.</p>
+<h3>4. LCM of array</h3>
+<p><code>lcm = a[0]; for (x : a) lcm = lcm / gcd(lcm,x) * x;</code></p>
+<h3>5. Coprime check</h3>
+<p><code>gcd(a,b) == 1</code>.</p>
+<h2>Euclidean algorithm complexity</h2>
+<p><code>O(log min(a,b))</code> — very fast even for 10^18.</p>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/1203/C">CF 1203C — Common Divisors</a></li><li><a href="https://codeforces.com/problemset/problem/1512/G">CF 1512G — Shortest Path with Obstacle</a></li></ul></div>
+    </article>

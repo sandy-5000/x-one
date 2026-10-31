@@ -1,0 +1,39 @@
+---
+title: "Fast Exponentiation"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Fast Exponentiation</h1>
+<h2>What it is</h2>
+<p>Compute <code>a^b mod m</code> in <strong>O(log b)</strong> using binary exponentiation.</p>
+<h2>When to use</h2>
+<ul><li>Modular inverse via Fermat.</li><li>Matrix exponentiation for linear recurrences.</li><li>Count huge powers with mod.</li></ul>
+<h2>Template</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">long long power(long long a, long long b, long long m) {
+    long long res = 1 % m;
+    a %= m;
+    while (b &gt; 0) {
+        if (b &amp; 1) res = (__int128)res * a % m;
+        a = (__int128)a * a % m;
+        b &gt;&gt;= 1;
+    }
+    return res;
+}</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 520B — Two Buttons</h3>
+<p>Inverse thinking; also <code>power(2, k)</code> appears in analysis.</p>
+<h3>2. Fibonacci mod m</h3>
+<p>Matrix <code>[[1,1],[1,0]]^n</code> — learn basic matrix exp for upper 1900.</p>
+<h3>3. CF 1110C — Triangles</h3>
+<p>Geometry + pow for area formulas (less common).</p>
+<h3>4. Count subsets: <code>2^n mod m</code></h3>
+<p><code>power(2, n, MOD)</code>.</p>
+<h3>5. Modular inverse</h3>
+<p><code>inv(a) = power(a, MOD-2, MOD)</code>.</p>
+<h2>Matrix exponentiation (brief)</h2>
+<p>For recurrence <code>f(n) = c1*f(n-1) + c2*f(n-2)</code>:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">// multiply 2x2 matrices, exponentiate transition matrix to n</code></pre></div>
+<p>Used in CF ~1800-2000 for linear recurrences on large n.</p>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/520/B">CF 520B — Two Buttons</a></li><li>Problems requiring <code>a^b % m</code> with b up to 10^18</li></ul></div>
+    </article>

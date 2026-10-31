@@ -1,0 +1,42 @@
+---
+title: "Digit DP"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Digit DP</h1>
+<h2>What it is</h2>
+<p>Count numbers in <code>[0, N]</code> satisfying digit constraints by DP on position with tight bound and leading zeros.</p>
+<h2>When to use</h2>
+<ul><li>Count numbers with digit sum = S, no adjacent equal digits, divisible by k.</li><li>&quot;How many integers ≤ N have property P?&quot;</li></ul>
+<h2>State</h2>
+<p><code>dp[pos][tight][leading_zero][...constraints]</code></p>
+<h2>Template sketch</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">string s = to_string(n);
+long long dp[20][2][2][...];
+memset(dp, -1, sizeof dp);
+
+long long solve(int pos, bool tight, bool lead, ...) {
+    if (pos == s.size()) return valid(...);
+    if (dp[pos][tight][lead][...] != -1) return dp[...];
+    long long res = 0;
+    int limit = tight ? s[pos]-&#x27;0&#x27; : 9;
+    for (int d = 0; d &lt;= limit; d++) {
+        bool nt = tight &amp;&amp; (d == limit);
+        bool nl = lead &amp;&amp; (d == 0);
+        res += solve(pos+1, nt, nl, update_constraints(...));
+    }
+    return dp[...] = res;
+}</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 1073D — Berland Fair</h3>
+<p>Digit/counting flavor.</p>
+<h3>2. Count numbers without digit 4 in [L, R]</h3>
+<p><code>solve(R) - solve(L-1)</code>.</p>
+<h3>3. CF 55D — Beautiful numbers</h3>
+<p>Digit DP on sum and product digits.</p>
+<h3>4. CF 628D — Magic Numbers</h3>
+<p>Digit constraints with mod.</p>
+<h3>5. Count integers with exactly k distinct digits.</h3>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/55/D">CF 55D — Beautiful numbers</a></li><li><a href="https://codeforces.com/problemset/problem/628/D">CF 628D — Magic Numbers</a></li></ul></div>
+    </article>

@@ -1,0 +1,38 @@
+---
+title: "Virtual Tree"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Virtual Tree</h1>
+<h2>What it is</h2>
+<p>Build smallest tree containing given <strong>key nodes</strong> and their LCAs. Size <strong>O(k)</strong> for <code>k</code> key nodes instead of full tree.</p>
+<h2>When to use</h2>
+<ul><li>Many queries on same tree with few important nodes per query.</li><li>DP on subset of tree nodes (key nodes from queries).</li><li>Combine with LCA preprocessing.</li></ul>
+<h2>Construction</h2>
+<ol><li>Sort key nodes by Euler tour <code>tin</code>.</li><li>Stack build tree of LCAs + key nodes.</li><li>Run DP on this compressed tree.</li></ol>
+<h2>Template sketch</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">vector&lt;int&gt; nodes;  // key nodes
+sort(nodes.begin(), nodes.end(), [&amp;](int a, int b) {
+    return tin[a] &lt; tin[b];
+});
+vector&lt;int&gt; st;
+for (int u : nodes) {
+    while (st.size() &gt; 1 &amp;&amp; !in_subtree(st.back(), u)) {
+        int v = st.back(); st.pop_back();
+        add_virtual_edge(st.back(), v);
+    }
+    st.push_back(u);
+}</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 1325E — Ehab and Path-etic MEX</h3>
+<p>Virtual tree on query nodes.</p>
+<h3>2. CF 1111E — Tree</h3>
+<p>Batch LCA + virtual tree DP.</p>
+<h3>3. CF 1097E — Egor and an RPG game</h3>
+<p>Key nodes DP.</p>
+<h3>4. Sum of distances between k given nodes</h3>
+<p>Virtual tree + reroot on compressed tree.</p>
+<h3>5. CF 1328D — FIND THE TREE</h3>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/1325/E">CF 1325E — Ehab and Path-etic MEX</a></li><li><a href="https://codeforces.com/problemset/problem/1111/E">CF 1111E — Tree</a></li></ul></div>
+    </article>

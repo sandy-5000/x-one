@@ -1,0 +1,41 @@
+---
+title: "Rerooting DP on Trees"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Rerooting DP on Trees</h1>
+<h2>What it is</h2>
+<p>First DFS computes DP for rooted tree; second DFS <strong>reroot</strong> to compute answer for every node as root in <strong>O(n)</strong>.</p>
+<h2>When to use</h2>
+<ul><li>&quot;Sum of distances from each node to all others.&quot;</li><li>&quot;Best value if rooted at each node.&quot;</li><li>Tree DP where answer depends on parent direction.</li></ul>
+<h2>Pattern</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">// dfs1: compute down[u] = answer for subtree rooted at u
+void dfs1(int u, int p) {
+    down[u] = base(u);
+    for (int v : adj[u]) if (v != p) {
+        dfs1(v, u);
+        down[u] = combine_down(down[u], down[v], u, v);
+    }
+}
+
+// dfs2: propagate up contribution from parent
+void dfs2(int u, int p, long long up) {
+    ans[u] = combine(down[u], up);
+    for (int v : adj[u]) if (v != p) {
+        long long up_v = combine_up(up, down[u], down[v], u, v);
+        dfs2(v, u, up_v);
+    }
+}</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 1187E — Tree Painting</h3>
+<p>Sum of distances from each node — classic reroot.</p>
+<h3>2. CF 1328D — FIND THE TREE</h3>
+<p>Construction with reroot insight.</p>
+<h3>3. CF 1092F — Tree and Queries</h3>
+<p>Sometimes reroot for subtree complement.</p>
+<h3>4. Maximum independent set on tree — usually one-root DP suffices; reroot when need all roots.</h3>
+<h3>5. CF 1131E — String Multiplication</h3>
+<p>Tree DP with reroot flavor.</p>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/1187/E">CF 1187E — Tree Painting</a></li><li><a href="https://codeforces.com/problemset/problem/1328/D">CF 1328D — FIND THE TREE</a></li></ul></div>
+    </article>

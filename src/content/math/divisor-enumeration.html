@@ -1,0 +1,39 @@
+---
+title: "Divisor Enumeration — O(√n)"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Divisor Enumeration — O(√n)</h1>
+<h2>What it is</h2>
+<p>List all divisors of <code>n</code> by iterating <code>i</code> from 1 to <code>√n</code>. If <code>i | n</code>, both <code>i</code> and <code>n/i</code> are divisors.</p>
+<h2>Template</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">vector&lt;long long&gt; get_divisors(long long n) {
+    vector&lt;long long&gt; d;
+    for (long long i = 1; i * i &lt;= n; i++) {
+        if (n % i == 0) {
+            d.push_back(i);
+            if (i != n / i) d.push_back(n / i);
+        }
+    }
+    sort(d.begin(), d.end());
+    return d;
+}</code></pre></div>
+<h2>Enumerate divisors of all numbers 1..n</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">vector&lt;vector&lt;int&gt;&gt; divs(n+1);
+for (int i = 1; i &lt;= n; i++)
+    for (int j = i; j &lt;= n; j += i)
+        divs[j].push_back(i);</code></pre></div>
+<h2>When to use</h2>
+<ul><li>Factor <code>n</code> by trial division up to <code>√n</code>.</li><li>GCD problems — iterate divisors of GCD.</li><li>Count coprime pairs using divisor structure.</li></ul>
+<h2>Examples</h2>
+<h3>1. CF 1203C — Common Divisors</h3>
+<p>GCD + divisor enumeration.</p>
+<h3>2. CF 1225D — Unusual Product</h3>
+<p>Divisors and products.</p>
+<h3>3. CF 1037C — Equal Elements</h3>
+<p>Prime factor manipulation.</p>
+<h3>4. Find all <code>d</code> where <code>d | n</code> and <code>gcd(d, n/d) = 1</code> (coprime factor pairs).</h3>
+<h3>5. Sum over divisors: <code>Σ_{d|n} f(d)</code> — loop divisors of n.</h3>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/1203/C">CF 1203C — Common Divisors</a></li><li><a href="https://codeforces.com/problemset/problem/1225/D">CF 1225D — Unusual Product</a></li></ul></div>
+    </article>

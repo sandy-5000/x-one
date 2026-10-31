@@ -1,0 +1,33 @@
+---
+title: "Floyd-Warshall"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Floyd-Warshall</h1>
+<h2>What it is</h2>
+<p>All-pairs shortest paths for <strong>n ≤ 500</strong> in <strong>O(n³)</strong>. Also detects negative cycles and transitive closure.</p>
+<h2>When to use</h2>
+<ul><li>Small dense graphs (n ≤ 400–500).</li><li>Count paths / reachability (modify min to sum with mod).</li><li>&quot;Shortest cycle through vertex&quot; tricks.</li></ul>
+<h2>Template</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">const long long INF = 1e18;
+vector&lt;vector&lt;long long&gt;&gt; dist(n, vector&lt;long long&gt;(n, INF));
+// dist[i][i] = 0, dist[u][v] = w for edges
+
+for (int k = 0; k &lt; n; k++)
+    for (int i = 0; i &lt; n; i++)
+        for (int j = 0; j &lt; n; j++)
+            if (dist[i][k] &lt; INF &amp;&amp; dist[k][j] &lt; INF)
+                dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j]);</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 295B — Greg and Graph</h3>
+<p>Reverse Floyd — add nodes one by one.</p>
+<h3>2. CF 1214F — Employment</h3>
+<p>Floyd on small graph.</p>
+<h3>3. Transitive closure (reachability)</h3>
+<p>Use <code>dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j])</code> with OR/min on booleans.</p>
+<h3>4. Shortest cycle in graph</h3>
+<p>For each edge (u,v), answer = dist[u][v] + w(u,v) before relaxing through that edge.</p>
+<h3>5. CF 854D — Retrograde</h3>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/295/B">CF 295B — Greg and Graph</a></li><li><a href="https://codeforces.com/problemset/problem/1214/F">CF 1214F — Employment</a></li></ul></div>
+    </article>

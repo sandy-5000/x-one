@@ -1,0 +1,41 @@
+---
+title: "BFS on State Space"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>BFS on State Space</h1>
+<h2>What it is</h2>
+<p>Model problem as graph where <strong>nodes are states</strong> (position + extra info), edges are moves. BFS gives minimum moves when all edges cost 1.</p>
+<h2>When to use</h2>
+<ul><li>Minimum moves on grid with keys, switches, or parity.</li><li>Transform string/number to target with operations.</li><li>State = <code>(row, col, mask)</code> when <code>mask</code> is small.</li></ul>
+<h2>Template</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">queue&lt;State&gt; q;
+set&lt;State&gt; vis;
+q.push(start);
+vis.insert(start);
+while (!q.empty()) {
+    auto cur = q.front(); q.pop();
+    if (cur == target) return cur.steps;
+    for (auto next : transitions(cur)) {
+        if (!vis.count(next)) {
+            vis.insert(next);
+            q.push(next);
+        }
+    }
+}</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 520B — Two Buttons</h3>
+<p>States are integers <code>n</code>; moves: <code>+1</code> or <code>*2</code>.</p>
+<h3>2. CF 1063B — Labyrinth</h3>
+<p>State <code>(x, y)</code> — multi-source BFS variant.</p>
+<h3>3. Grid with at most one key</h3>
+<p>State <code>(x, y, has_key)</code> — BFS in 3D state space.</p>
+<h3>4. CF 1020B — Badge</h3>
+<p>Functional graph — detect cycle length with DFS/BFS.</p>
+<h3>5. Water jug / gcd problems</h3>
+<p>States are <code>(a, b)</code> amounts; pour operations.</p>
+<h2>State design tips</h2>
+<ul><li>Keep state minimal — drop redundant info.</li><li>If state count ≤ 10⁶, BFS is usually fine.</li><li>Use <code>map</code> or hash for visited if state is not indexable.</li></ul>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/520/B">CF 520B — Two Buttons</a></li><li><a href="https://codeforces.com/problemset/problem/1063/B">CF 1063B — Labyrinth</a></li><li><a href="https://codeforces.com/problemset/problem/1020/B">CF 1020B — Badge</a></li></ul></div>
+    </article>

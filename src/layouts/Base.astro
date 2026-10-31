@@ -1,0 +1,35 @@
+---
+import Nav from "../components/Nav.astro";
+
+interface Props {
+  title: string;
+  depth: number;
+  active?: string;
+  crumb: string;
+}
+
+const { title, depth, active, crumb } = Astro.props;
+const prefix = "../".repeat(depth);
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{title}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+  <link rel="icon" href={`${prefix}assets/favicon.svg`} type="image/svg+xml">
+  <link rel="stylesheet" href={`${prefix}assets/style.css`}>
+  <script is:inline src={`${prefix}assets/copy.js`} defer></script>
+</head>
+<body>
+  <Nav active={active} depth={depth} />
+  <main class="chat">
+    <header class="page-head"><span class="crumb">{crumb}</span></header>
+    <slot />
+  </main>
+</body>
+</html>

@@ -1,0 +1,47 @@
+---
+title: "Matrix Exponentiation"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Matrix Exponentiation</h1>
+<h2>What it is</h2>
+<p>Multiply <code>n×n</code> transition matrix to power <code>k</code> in <strong>O(n³ log k)</strong> to solve linear recurrences for huge <code>k</code>.</p>
+<h2>When to use</h2>
+<ul><li>Fibonacci-like: <code>F(n) = c1*F(n-1) + c2*F(n-2)</code>.</li><li>Count paths of length exactly <code>k</code> in graph (adjacency matrix power).</li><li>Linear DP where state is small vector.</li></ul>
+<h2>Template</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">using Matrix = vector&lt;vector&lt;long long&gt;&gt;;
+
+Matrix mul(const Matrix&amp; A, const Matrix&amp; B, long long mod) {
+    int n = A.size();
+    Matrix C(n, vector&lt;long long&gt;(n, 0));
+    for (int i = 0; i &lt; n; i++)
+        for (int k = 0; k &lt; n; k++) if (A[i][k])
+            for (int j = 0; j &lt; n; j++)
+                C[i][j] = (C[i][j] + A[i][k] * B[k][j]) % mod;
+    return C;
+}
+
+Matrix power(Matrix A, long long e, long long mod) {
+    int n = A.size();
+    Matrix res(n, vector&lt;long long&gt;(n, 0));
+    for (int i = 0; i &lt; n; i++) res[i][i] = 1;
+    while (e) {
+        if (e &amp; 1) res = mul(res, A, mod);
+        A = mul(A, A, mod);
+        e &gt;&gt;= 1;
+    }
+    return res;
+}</code></pre></div>
+<h2>Examples</h2>
+<h3>1. Fibonacci mod m, n up to 10^18</h3>
+<p><code>[[1,1],[1,0]]^n</code>.</p>
+<h3>2. CF 450B — Jzzhu and Sequences</h3>
+<p>Linear recurrence with matrix exp.</p>
+<h3>3. Count paths length k in graph</h3>
+<p><code>A^k[u][v]</code> = number of paths.</p>
+<h3>4. CF 118D — Caesar&#x27;s Legions</h3>
+<p>Sometimes matrix on states.</p>
+<h3>5. Tribonacci / multi-term recurrence — expand state vector.</h3>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/450/B">CF 450B — Jzzhu and Sequences</a></li><li><a href="https://codeforces.com/problemset/problem/118/D">CF 118D — Caesar&#x27;s Legions</a></li></ul></div>
+    </article>

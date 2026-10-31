@@ -1,0 +1,32 @@
+---
+title: "Interval DP"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Interval DP</h1>
+<h2>What it is</h2>
+<p><code>dp[l][r]</code> = optimal answer for subarray/substring <code>[l, r]</code>. Merge smaller intervals into larger — <strong>O(n³)</strong> or <strong>O(n²)</strong> with optimization.</p>
+<h2>When to use</h2>
+<ul><li>Matrix chain multiplication.</li><li>Burst balloons, merge stones.</li><li>Palindrome partitioning, clear the string.</li></ul>
+<h2>Template</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">for (int len = 2; len &lt;= n; len++)
+    for (int l = 0; l + len - 1 &lt; n; l++) {
+        int r = l + len - 1;
+        dp[l][r] = INF;
+        for (int k = l; k &lt; r; k++)
+            dp[l][r] = min(dp[l][r], dp[l][k] + dp[k+1][r] + cost(l, k, r));
+    }</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 1132F — Clear the String</h3>
+<p>Remove matching pairs — interval DP.</p>
+<h3>2. CF 1312F — John Doe</h3>
+<p>Interval game DP.</p>
+<h3>3. CF 607B — Zuma</h3>
+<p>Palindrome + interval DP.</p>
+<h3>4. Matrix chain multiplication</h3>
+<p><code>dp[l][r] = min over k of dp[l][k] + dp[k+1][r] + multiply cost</code>.</p>
+<h3>5. CF 149D — Coloring Brackets</h3>
+<p>Bracket interval DP.</p>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/1132/F">CF 1132F — Clear the String</a></li><li><a href="https://codeforces.com/problemset/problem/607/B">CF 607B — Zuma</a></li><li><a href="https://codeforces.com/problemset/problem/149/D">CF 149D — Coloring Brackets</a></li></ul></div>
+    </article>

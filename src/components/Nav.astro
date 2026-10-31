@@ -1,0 +1,40 @@
+---
+import { getNav } from "../lib/notes";
+
+interface Props {
+  active?: string;
+  depth: number;
+}
+
+const { active, depth } = Astro.props;
+const prefix = "../".repeat(depth);
+const activeGroup = active?.split("/")[0];
+---
+
+<aside class="sidebar">
+  <input type="checkbox" id="nav-toggle" class="nav-toggle">
+  <div class="sidebar-brand">
+    <a href={`${prefix}index.html`}>x-one notes</a>
+    <label for="nav-toggle" class="menu-btn" aria-label="Toggle navigation"><span class="menu-open">Menu</span><span class="menu-close">Close</span></label>
+  </div>
+  <nav>
+    {getNav().map(([group, items]) => (
+      <details class="nav-group" open={group === activeGroup}>
+        <summary class="nav-group-label">{group}<span class="nav-count">{items.length}</span></summary>
+        <ul>
+          {items.map((note) => {
+            const key = `${note.group}/${note.slug}`;
+            const href = `${prefix}${key}.html`;
+            return (
+              <li>
+                {active === key
+                  ? <a href={href} class="is-active" aria-current="page">{note.title}</a>
+                  : <a href={href}>{note.title}</a>}
+              </li>
+            );
+          })}
+        </ul>
+      </details>
+    ))}
+  </nav>
+</aside>

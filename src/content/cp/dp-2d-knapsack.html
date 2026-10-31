@@ -1,0 +1,38 @@
+---
+title: "Dynamic Programming — 2D & Knapsack"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Dynamic Programming — 2D &amp; Knapsack</h1>
+<h2>What it is</h2>
+<p><code>dp[i][w]</code> = answer using first <code>i</code> items with capacity/constraint <code>w</code>. Covers 0/1 knapsack, unbounded knapsack, and 2D grid DP.</p>
+<h2>When to use</h2>
+<ul><li>Subset with weight/value limit.</li><li>Two sequences LCS-style.</li><li>Grid paths with obstacles.</li></ul>
+<h2>0/1 Knapsack</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">vector&lt;int&gt; dp(W + 1);
+for (int i = 0; i &lt; n; i++)
+    for (int w = W; w &gt;= a[i]; w--)  // reverse for 0/1
+        dp[w] = max(dp[w], dp[w - a[i]] + v[i]);</code></pre></div>
+<h2>Unbounded Knapsack</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">for (int w = a[i]; w &lt;= W; w++)  // forward for unbounded
+    dp[w] = max(dp[w], dp[w - a[i]] + v[i]);</code></pre></div>
+<h2>2D grid DP</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">dp[0][0] = 1;
+for (int i = 0; i &lt; n; i++)
+    for (int j = 0; j &lt; m; j++)
+        if (grid[i][j] != &#x27;#&#x27;)
+            dp[i][j] = dp[i-1][j] + dp[i][j-1];</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 189A — Cut Ribbon</h3>
+<p>Unbounded knapsack — max pieces.</p>
+<h3>2. CF 474B — Worms</h3>
+<p>Prefix sums + binary search (not DP but related counting).</p>
+<h3>3. LCS — Longest Common Subsequence</h3>
+<p><code>dp[i][j] = dp[i-1][j-1]+1</code> if match, else <code>max(dp[i-1][j], dp[i][j-1])</code>.</p>
+<h3>4. CF 1132F — Clear the String</h3>
+<p>Interval DP <code>dp[l][r]</code> — harder, upper 1900.</p>
+<h3>5. Subset sum</h3>
+<p><code>dp[w]</code> boolean — can we make sum <code>w</code>?</p>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/189/A">CF 189A — Cut Ribbon</a></li><li><a href="https://codeforces.com/problemset/problem/1132/F">CF 1132F — Clear the String</a></li><li><a href="https://codeforces.com/problemset/problem/118/D">CF 118D — Caesar&#x27;s Legions</a></li></ul></div>
+    </article>

@@ -1,0 +1,41 @@
+---
+title: "Bitmask DP"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Bitmask DP</h1>
+<h2>What it is</h2>
+<p>State includes a bitmask <code>mask</code> where bit <code>i</code> indicates whether element <code>i</code> is used/visited. Common for <code>n ≤ 20</code> (sometimes up to 23 with pruning).</p>
+<h2>When to use</h2>
+<ul><li>Traveling salesman (small <code>n</code>).</li><li>Assign people to tasks with cost matrix.</li><li>Count Hamiltonian paths in small graph.</li><li>DP over subsets: SOS DP.</li></ul>
+<h2>Template (assignment / TSP style)</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">int n;
+vector&lt;vector&lt;int&gt;&gt; cost(n, vector&lt;int&gt;(n));
+const int INF = 1e9;
+vector&lt;vector&lt;int&gt;&gt; dp(1 &lt;&lt; n, vector&lt;int&gt;(n, INF));
+dp[1][0] = 0;  // start at city 0
+
+for (int mask = 1; mask &lt; (1 &lt;&lt; n); mask++)
+    for (int u = 0; u &lt; n; u++)
+        if (dp[mask][u] &lt; INF)
+            for (int v = 0; v &lt; n; v++)
+                if (!(mask &gt;&gt; v &amp; 1))
+                    dp[mask | (1&lt;&lt;v)][v] = min(dp[mask|1&lt;&lt;v][v], dp[mask][u] + cost[u][v]);</code></pre></div>
+<h2>Examples</h2>
+<h3>1. TSP (n ≤ 20)</h3>
+<p>Held-Karp: <code>O(n² · 2^n)</code>.</p>
+<h3>2. CF 580D — Kefa and Dishes</h3>
+<p>DP on subset of eaten dishes + last dish.</p>
+<h3>3. CF 1208F — Bits</h3>
+<p>Bitmask + graph connectivity.</p>
+<h3>4. SOS DP (Sum over Subsets)</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">for (int i = 0; i &lt; n; i++)
+    for (int mask = 0; mask &lt; (1&lt;&lt;n); mask++)
+        if (mask &amp; (1&lt;&lt;i))
+            dp[mask] += dp[mask ^ (1&lt;&lt;i)];</code></pre></div>
+<p>Count frequencies over all submasks.</p>
+<h3>5. Assign n jobs to n workers</h3>
+<p><code>dp[mask]</code> = min cost to assign jobs in <code>mask</code>.</p>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/580/D">CF 580D — Kefa and Dishes</a></li><li><a href="https://codeforces.com/problemset/problem/1208/F">CF 1208F — Bits</a></li><li><a href="https://codeforces.com/problemset/problem/165/E">CF 165E — Compatible Numbers</a> (SOS DP)</li></ul></div>
+    </article>

@@ -1,0 +1,31 @@
+---
+title: "Linear Recurrences"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Linear Recurrences</h1>
+<h2>What it is</h2>
+<p>Sequence defined by:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>f(n) = c1*f(n-1) + c2*f(n-2) + ... + ck*f(n-k)</code></pre></div>
+<p><strong>Fibonacci:</strong> <code>F(n) = F(n-1) + F(n-2)</code>.</p>
+<p>Solve for huge <code>n</code> using <strong>matrix exponentiation</strong> or <strong>characteristic equation</strong> (when only value needed).</p>
+<h2>Matrix method (general)</h2>
+<p>State vector <code>[f(n), f(n-1), ..., f(n-k+1)]</code> × transition matrix^k.</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">// Fibonacci: [[1,1],[1,0]]^n</code></pre></div>
+<h2>Binet&#x27;s formula (Fibonacci, theoretical)</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>F(n) = (φ^n - ψ^n) / √5   where φ = (1+√5)/2</code></pre></div>
+<p>Rarely used in contests (precision issues) — prefer matrix exp.</p>
+<h2>When to use</h2>
+<ul><li>CF problems with <code>n</code> up to 10^18 in recurrence.</li><li>Count ways that follow Fibonacci-like growth.</li><li>DP with linear transition.</li></ul>
+<h2>Examples</h2>
+<h3>1. CF 450B — Jzzhu and Sequences</h3>
+<p>Linear recurrence mod.</p>
+<h3>2. CF 118D — Caesar&#x27;s Legions</h3>
+<p>Sometimes recurrence in combinatorics.</p>
+<h3>3. Tiling 2×n board with 1×2 dominoes → Fibonacci.</h3>
+<h3>4. CF 1110C — Triangles</h3>
+<p>Recurrence in geometry count.</p>
+<h3>5. Tribonacci, Padovan — same matrix technique, larger matrix.</h3>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/450/B">CF 450B — Jzzhu and Sequences</a></li><li>See also <code>cp/matrix-exponentiation.md</code></li></ul></div>
+    </article>

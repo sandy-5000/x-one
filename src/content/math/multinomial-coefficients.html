@@ -1,0 +1,31 @@
+---
+title: "Multinomial Coefficients"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Multinomial Coefficients</h1>
+<h2>What it is</h2>
+<p>Number of ways to arrange <code>n</code> items where there are <code>c1</code> of type 1, <code>c2</code> of type 2, ...:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>n! / (c1! * c2! * ... * ck!)   where c1+c2+...+ck = n</code></pre></div>
+<p>Also: ways to put <code>n</code> <strong>distinct</strong> balls into <strong>labeled</strong> boxes of fixed sizes.</p>
+<h2>When to use</h2>
+<ul><li>Anagram counting with repeated letters.</li><li>Permutations with duplicates.</li><li>Multinomial theorem expansions.</li></ul>
+<h2>Template</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">long long multinomial(int n, vector&lt;int&gt;&amp; c) {
+    long long res = fac[n];
+    for (int x : c) res = res * invfac[x] % MOD;
+    return res;
+}</code></pre></div>
+<h2>Relation to stars and bars</h2>
+<ul><li><strong>Multiset permutations:</strong> multinomial.</li><li><strong>Identical items into bins:</strong> stars and bars (combinations).</li></ul>
+<h2>Examples</h2>
+<h3>1. CF 1200E — Compress Words</h3>
+<p>String with repeated structure — counting variants.</p>
+<h3>2. Rearrange &quot;MISSISSIPPI&quot; — 11!/(4!4!2!1!).</h3>
+<h3>3. CF 1103E — Konrad and Company Evaluation</h3>
+<p>Heavy combinatorics.</p>
+<h3>4. Ways to split distinct people into fixed-size labeled groups.</h3>
+<h3>5. Polynomial coefficient: <code>(x+y+z)^n</code> — multinomial on exponents.</h3>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/1200/E">CF 1200E — Compress Words</a></li><li><a href="https://codeforces.com/problemset/problem/1103/E">CF 1103E — Konrad and Company Evaluation</a></li></ul></div>
+    </article>

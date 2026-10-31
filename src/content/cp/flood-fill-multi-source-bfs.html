@@ -1,0 +1,39 @@
+---
+title: "Flood Fill & Multi-Source BFS"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Flood Fill &amp; Multi-Source BFS</h1>
+<h2>What it is</h2>
+<p><strong>Flood fill:</strong> DFS/BFS on grid to mark connected cells of same color. <strong>Multi-source BFS:</strong> Start BFS from all sources simultaneously — gives nearest source distance for each cell.</p>
+<h2>When to use</h2>
+<ul><li>Count islands / connected components on grid.</li><li>Spread from multiple fire sources / nearest gate.</li><li>0-1 grid movement.</li></ul>
+<h2>Multi-source BFS template</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">queue&lt;pair&lt;int,int&gt;&gt; q;
+vector&lt;vector&lt;int&gt;&gt; dist(n, vector&lt;int&gt;(m, -1));
+for (auto [i,j] : sources) { dist[i][j] = 0; q.push({i,j}); }
+int dx[] = {0,0,1,-1}, dy[] = {1,-1,0,0};
+while (!q.empty()) {
+    auto [x,y] = q.front(); q.pop();
+    for (int k = 0; k &lt; 4; k++) {
+        int nx = x+dx[k], ny = y+dy[k];
+        if (in_bounds &amp;&amp; dist[nx][ny] == -1) {
+            dist[nx][ny] = dist[x][y] + 1;
+            q.push({nx, ny});
+        }
+    }
+}</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 659E — Bear and Painting Square</h3>
+<p>Connected components on grid.</p>
+<h3>2. CF 1063B — Labyrinth</h3>
+<p>Multi-source BFS from all empty cells to nearest &#x27;K&#x27;.</p>
+<h3>3. Number of islands</h3>
+<p>Flood fill each unvisited &#x27;1&#x27;.</p>
+<h3>4. CF 1490D — Permutation Transformation</h3>
+<p>BFS layer by layer on permutation tree (conceptually multi-source from max).</p>
+<h3>5. Rotting oranges (classic)</h3>
+<p>Multi-source BFS with time = max distance.</p>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/1063/B">CF 1063B — Labyrinth</a></li><li><a href="https://codeforces.com/problemset/problem/659/E">CF 659E — Bear and Painting Square</a></li><li><a href="https://codeforces.com/problemset/problem/1490/D">CF 1490D — Permutation Transformation</a></li></ul></div>
+    </article>

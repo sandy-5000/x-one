@@ -1,0 +1,40 @@
+---
+title: "Graph BFS & DFS"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Graph BFS &amp; DFS</h1>
+<h2>What it is</h2>
+<p>Traverse graph in <strong>O(V + E)</strong>. BFS gives shortest path in unweighted graphs; DFS explores deeply (components, cycles, trees).</p>
+<h2>When to use</h2>
+<ul><li>Connected components.</li><li>Shortest path (unweighted).</li><li>Detect cycle (directed: 3-color DFS; undirected: parent check).</li><li>Tree is special case of DFS.</li></ul>
+<h2>Templates</h2>
+<h3>BFS shortest path</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">vector&lt;int&gt; dist(n, -1);
+queue&lt;int&gt; q;
+dist[s] = 0; q.push(s);
+while (!q.empty()) {
+    int u = q.front(); q.pop();
+    for (int v : adj[u])
+        if (dist[v] == -1) { dist[v] = dist[u] + 1; q.push(v); }
+}</code></pre></div>
+<h3>DFS component</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">vector&lt;bool&gt; vis(n);
+function&lt;void(int)&gt; dfs = [&amp;](int u) {
+    vis[u] = true;
+    for (int v : adj[u]) if (!vis[v]) dfs(v);
+};</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 1167C — News Distribution</h3>
+<p>BFS/DFS for component sizes.</p>
+<h3>2. CF 520B — Two Buttons</h3>
+<p>BFS on implicit graph (n → n+1 or 2n).</p>
+<h3>3. CF 1020B — Badge</h3>
+<p>Functional graph — find cycle with DFS.</p>
+<h3>4. Bipartite check</h3>
+<p>BFS 2-coloring; odd cycle → not bipartite.</p>
+<h3>5. CF 659E — Bear and Painting Square</h3>
+<p>DFS on grid as graph.</p>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/520/B">CF 520B — Two Buttons</a></li><li><a href="https://codeforces.com/problemset/problem/1020/B">CF 1020B — Badge</a></li><li><a href="https://codeforces.com/problemset/problem/659/E">CF 659E — Bear and Painting Square</a></li></ul></div>
+    </article>

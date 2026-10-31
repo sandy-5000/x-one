@@ -1,0 +1,29 @@
+---
+title: "Modular Inverse (Composite Modulus)"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Modular Inverse (Composite Modulus)</h1>
+<h2>What it is</h2>
+<p><code>a^(-1) mod m</code> exists <strong>iff</strong> <code>gcd(a, m) = 1</code>. Use <strong>extended Euclidean</strong> (not Fermat) when <code>m</code> is not prime.</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">long long inv(long long a, long long m) {
+    long long x, y;
+    long long g = extgcd(a, m, x, y);
+    if (g != 1) return -1;  // no inverse
+    return (x % m + m) % m;
+}</code></pre></div>
+<h2>When to use</h2>
+<ul><li>Modulus is composite (e.g. 10^9+6 is not prime... actually 10^9+6 is not prime; 10^9+7 is prime).</li><li>CRT splits problem into prime powers.</li><li>Division in modular arithmetic.</li></ul>
+<h2>CRT + inverse pattern</h2>
+<p>Solve mod <code>m = p1^a1 * p2^a2 ...</code> by solving mod each prime power, then CRT combine.</p>
+<h2>Examples</h2>
+<h3>1. Division mod 10^9+6</h3>
+<p>Use inverse via extgcd or Fermat if you verify modulus is prime.</p>
+<h3>2. CF 1225D — Unusual Product</h3>
+<p>Modular division in counting.</p>
+<h3>3. Probability <code>P/Q mod M</code> — <code>P * inv(Q) mod M</code>.</h3>
+<h3>4. Linear congruence <code>ax ≡ b (mod m)</code> — solve with extgcd.</h3>
+<h3>5. CRT reconstruction after computing inverses mod each factor.</h3>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/1225/D">CF 1225D — Unusual Product</a></li><li>Any problem with mod not guaranteed prime — use extgcd</li></ul></div>
+    </article>

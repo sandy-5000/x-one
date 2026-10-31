@@ -1,0 +1,46 @@
+---
+title: "Chinese Remainder Theorem (CRT)"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Chinese Remainder Theorem (CRT)</h1>
+<h2>What it is</h2>
+<p>Given remainders <code>r_i</code> modulo pairwise coprime moduli <code>m_i</code>, there is a unique solution mod <code>M = Π m_i</code>.</p>
+<h2>When to use</h2>
+<ul><li>Reconstruct number from residues mod several coprime primes.</li><li>Combine congruences after factorizing modulus.</li><li>Occasional math Div2 D at ~1800-1900.</li></ul>
+<h2>Two-modulus template</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">// solve x ≡ a1 (mod m1), x ≡ a2 (mod m2), gcd(m1,m2)=1
+long long m1, m2, a1, a2;
+long long y1, y2;
+extgcd(m1, m2, y1, y2);
+long long M = m1 * m2;
+long long x = (a1 * m2 * y2 + a2 * m1 * y1) % M;
+if (x &lt; 0) x += M;</code></pre></div>
+<h2>General CRT (coprime moduli)</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">long long crt(const vector&lt;long long&gt;&amp; r, const vector&lt;long long&gt;&amp; m) {
+    long long x = 0, M = 1;
+    for (int i = 0; i &lt; r.size(); i++) {
+        long long a = r[i], mod = m[i];
+        long long p = M, inv, y;
+        extgcd(p, mod, inv, y);
+        long long t = ((a - x) % mod + mod) % mod * inv % mod;
+        x += t * p;
+        M *= mod;
+        x %= M;
+    }
+    return (x + M) % M;
+}</code></pre></div>
+<h2>Examples</h2>
+<h3>1. Reconstruct timestamp from mod 24, mod 7, etc.</h3>
+<p>Classic CRT setup.</p>
+<h3>2. CF math problems with &quot;find smallest positive x such that...&quot;</h3>
+<p>Multiple congruence conditions.</p>
+<h3>3. Garner&#x27;s algorithm variant</h3>
+<p>Build digit by digit — stable for implementation.</p>
+<h3>4. When moduli not coprime</h3>
+<p>Check consistency: <code>a1 ≡ a2 (mod gcd(m1,m2))</code> required.</p>
+<h3>5. Combine with factorization</h3>
+<p>Factor M, solve mod prime powers, CRT merge.</p>
+<h2>Practice</h2>
+<ul><li>Search CF &quot;CRT&quot; or &quot;Chinese remainder&quot; 1700-2000</li><li>Less frequent than GCD/combinatorics but appears in math-heavy contests</li></ul></div>
+    </article>

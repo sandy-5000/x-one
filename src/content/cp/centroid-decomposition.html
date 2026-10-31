@@ -1,0 +1,48 @@
+---
+title: "Centroid Decomposition"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Centroid Decomposition</h1>
+<h2>What it is</h2>
+<p>Recursively find tree <strong>centroid</strong>, process paths through it, remove it, repeat on remaining subtrees. Path queries in <strong>O(n log n)</strong> total.</p>
+<h2>When to use</h2>
+<ul><li>Count paths with sum/condition in tree.</li><li>&quot;How many pairs at distance ≤ k?&quot;</li><li>Static tree path problems where HLD is awkward.</li></ul>
+<h2>Template sketch</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">bool dead[MAXN];
+int sz[MAXN];
+
+int get_size(int u, int p) {
+    sz[u] = 1;
+    for (int v : adj[u])
+        if (v != p &amp;&amp; !dead[v]) sz[u] += get_size(v, u);
+    return sz[u];
+}
+
+int get_centroid(int u, int p, int n) {
+    for (int v : adj[u])
+        if (v != p &amp;&amp; !dead[v] &amp;&amp; sz[v] &gt; n/2)
+            return get_centroid(v, u, n);
+    return u;
+}
+
+void decompose(int u) {
+    int n = get_size(u, -1);
+    int c = get_centroid(u, -1, n);
+    dead[c] = true;
+    // process all paths through centroid c
+    for (int v : adj[c]) if (!dead[v]) decompose(v);
+}</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 161D — Distance in Tree</h3>
+<p>Count pairs at distance k — classic centroid.</p>
+<h3>2. CF 342E — Xenia and Tree</h3>
+<p>Dynamic connectivity variant (harder).</p>
+<h3>3. CF 716E — Digit Tree</h3>
+<p>Path digit DP + centroid.</p>
+<h3>4. CF 321C — Ciel the Commander</h3>
+<p>Find centroids for labeling.</p>
+<h3>5. Count paths with xor sum = K</h3>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/161/D">CF 161D — Distance in Tree</a></li><li><a href="https://codeforces.com/problemset/problem/321/C">CF 321C — Ciel the Commander</a></li></ul></div>
+    </article>

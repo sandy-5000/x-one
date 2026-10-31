@@ -1,0 +1,44 @@
+---
+title: "Inclusion-Exclusion Principle"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Inclusion-Exclusion Principle</h1>
+<h2>What it is</h2>
+<p>Count union of sets by alternating sums over intersections:</p>
+<p><code>|A ∪ B ∪ C| = |A| + |B| + |C| - |A∩B| - |A∩C| - |B∩C| + |A∩B∩C|</code></p>
+<h2>When to use</h2>
+<ul><li>Count numbers in [1,N] divisible by at least one of given primes.</li><li>Count permutations with no fixed points (derangements).</li><li>2–3 constraints — enumerate bitmask of which constraints violated.</li></ul>
+<h2>Two-set template</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">// count x in [1, n] divisible by a or b
+long long cntA = n / a, cntB = n / b;
+long long cntAB = n / lcm(a, b);
+long long ans = cntA + cntB - cntAB;</code></pre></div>
+<h2>k constraints bitmask</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">long long ans = 0;
+for (int mask = 1; mask &lt; (1&lt;&lt;k); mask++) {
+    long long lcm_val = 1;
+    int bits = 0;
+    for (int i = 0; i &lt; k; i++) if (mask&gt;&gt;i &amp; 1) {
+        bits++;
+        lcm_val = lcm(lcm_val, a[i]);
+        if (lcm_val &gt; n) break;
+    }
+    if (lcm_val &gt; n) continue;
+    long long add = n / lcm_val;
+    if (bits % 2) ans += add;
+    else ans -= add;
+}</code></pre></div>
+<h2>Examples</h2>
+<h3>1. Count coprime to all small primes in range</h3>
+<p>Inclusion-exclusion on divisibility.</p>
+<h3>2. CF 1037C — Equal Elements</h3>
+<p>Sometimes IE on prime factor conditions.</p>
+<h3>3. Derangements</h3>
+<p><code>!n = n! * Σ (-1)^k / k!</code> for k=0..n.</p>
+<h3>4. GCD = 1 counting</h3>
+<p><code>count(gcd=1) = Σ μ(d) * floor(n/d)</code> — Mobius form of IE.</p>
+<h3>5. At most 3 dimensions — brute IE works</h3>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/1037/C">CF 1037C — Equal Elements</a></li><li>Search &quot;inclusion exclusion&quot; on CF 1600-1900 — many math Div2 D problems</li></ul></div>
+    </article>

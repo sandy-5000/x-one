@@ -1,0 +1,33 @@
+---
+title: "Derangements"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Derangements</h1>
+<h2>What it is</h2>
+<p>A <strong>derangement</strong> is a permutation with <strong>no fixed point</strong> (no <code>i</code> where <code>p[i] = i</code>).</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>!n = n! * Σ (-1)^k / k!   for k = 0..n
+     = (n-1) * (!(n-1) + !(n-2))   recurrence</code></pre></div>
+<p>First values: <code>!0=1, !1=0, !2=1, !3=2, !4=9, !5=44</code>.</p>
+<h2>When to use</h2>
+<ul><li>Permutations with &quot;nobody stays in own seat&quot; constraints.</li><li>Inclusion-exclusion on fixed points.</li><li>Probability that random permutation has no fixed point ≈ <code>1/e</code>.</li></ul>
+<h2>Precompute mod M</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">vector&lt;long long&gt; der(n+1);
+der[0] = 1; der[1] = 0;
+for (int i = 2; i &lt;= n; i++)
+    der[i] = (i - 1) * (der[i-1] + der[i-2]) % MOD;</code></pre></div>
+<h2>Inclusion-exclusion formula</h2>
+<p>Count permutations with <strong>exactly</strong> <code>k</code> fixed points:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>C(n,k) * !(n-k)</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 888D — Almost Identity Permutations</h3>
+<p>Count perms with exactly <code>n-k</code> fixed points.</p>
+<h3>2. Hat-check problem</h3>
+<p>Probability all wrong = <code>!n / n!</code>.</p>
+<h3>3. CF 1228C — Trees</h3>
+<p>Sometimes derangement-style counting.</p>
+<h3>4. Secret Santa / derangement count mod prime.</h3>
+<h3>5. At most k fixed points — sum over i=0..k of C(n,i)*!(n-i).</h3>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/888/D">CF 888D — Almost Identity Permutations</a></li><li>Search &quot;derangement&quot; or &quot;fixed points&quot; on CF 1600–1900</li></ul></div>
+    </article>

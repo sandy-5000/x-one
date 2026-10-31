@@ -1,0 +1,27 @@
+---
+title: "Parity, XOR & Modular Patterns"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Parity, XOR &amp; Modular Patterns</h1>
+<h2>What it is</h2>
+<p>Exploit <strong>parity</strong> (even/odd), <strong>XOR</strong> properties, and cyclic modular patterns to simplify problems.</p>
+<h2>Key facts</h2>
+<div class="table-wrap"><table><thead><tr><th>Property</th><th>Rule</th></tr></thead><tbody><tr><td>XOR inverse</td><td><code>a ^ a = 0</code>, <code>a ^ 0 = a</code></td></tr><tr><td>XOR commutative</td><td>order doesn&#x27;t matter</td></tr><tr><td>Parity of sum</td><td><code>(a+b) % 2 = (a%2 + b%2) % 2</code></td></tr><tr><td>(-1)^k pattern</td><td>alternating sums</td></tr><tr><td>mod 2 arithmetic</td><td>XOR equals addition mod 2 per bit</td></tr></tbody></table></div>
+<h2>Prefix XOR trick</h2>
+<p>Subarray xor <code>[l,r]</code> = <code>pref[r+1] ^ pref[l]</code>.</p>
+<h2>When to use</h2>
+<ul><li>&quot;Can we make all elements zero with xor operations?&quot;</li><li>Graph bipartite ↔ no odd cycle (parity BFS).</li><li>Nim XOR = 0 losing position.</li></ul>
+<h2>Examples</h2>
+<h3>1. CF 1005C — Summarize to the Power of Two</h3>
+<p>Powers of 2 + hash map.</p>
+<h3>2. CF 165E — Compatible Numbers</h3>
+<p>XOR trie / SOS.</p>
+<h3>3. CF 1847C — Vampiric Powers</h3>
+<p>Prefix xor.</p>
+<h3>4. CF 617E — XOR and Favorite Number</h3>
+<p>Mo&#x27;s on xor.</p>
+<h3>5. Bipartite check — parity coloring mod 2.</h3>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/1847/C">CF 1847C — Vampiric Powers, anyone?</a></li><li><a href="https://codeforces.com/problemset/problem/1005/C">CF 1005C — Summarize to the Power of Two</a></li></ul></div>
+    </article>

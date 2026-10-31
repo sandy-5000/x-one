@@ -1,0 +1,37 @@
+---
+title: "Longest Increasing Subsequence (LIS)"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Longest Increasing Subsequence (LIS)</h1>
+<h2>What it is</h2>
+<p>Longest strictly increasing subsequence in <strong>O(n log n)</strong> using patience sorting / binary search on tails array.</p>
+<h2>When to use</h2>
+<ul><li>LIS length or count (with modifications).</li><li>Longest non-decreasing subsequence.</li><li>Patience sorting pattern: <code>tails[len]</code> = smallest ending value of IS of length <code>len+1</code>.</li></ul>
+<h2>O(n log n) template</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">vector&lt;int&gt; tails;
+for (int x : a) {
+    auto it = lower_bound(tails.begin(), tails.end(), x);
+    if (it == tails.end()) tails.push_back(x);
+    else *it = x;
+}
+int lis_len = tails.size();</code></pre></div>
+<p>For <strong>non-decreasing</strong>, use <code>upper_bound</code> instead of <code>lower_bound</code>.</p>
+<h2>Examples</h2>
+<h3>1. CF 977F — Consecutive Subsequence</h3>
+<p>LIS variant with consecutive values — hash map DP.</p>
+<h3>2. CF 1365B — Trouble Sort</h3>
+<p>Greedy + LIS insight on differences.</p>
+<h3>3. Russian doll envelopes</h3>
+<p>Sort by width asc, height desc; LIS on heights.</p>
+<h3>4. Maximum number of non-overlapping intervals</h3>
+<p>Sort + greedy (related but not LIS).</p>
+<h3>5. LIS reconstruction</h3>
+<p>Store parent pointers when updating <code>tails</code> (more code, rarely needed in CF).</p>
+<h2>O(n²) DP (only if n ≤ 5000)</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">dp[i] = 1;
+for (int j = 0; j &lt; i; j++)
+    if (a[j] &lt; a[i]) dp[i] = max(dp[i], dp[j] + 1);</code></pre></div>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/977/F">CF 977F — Consecutive Subsequence</a></li><li><a href="https://codeforces.com/problemset/problem/1365/B">CF 1365B — Trouble Sort</a></li><li><a href="https://codeforces.com/problemset/problem/1005/C">CF 1005C — Summarize to the Power of Two</a> (hash map, LIS-like)</li></ul></div>
+    </article>

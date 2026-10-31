@@ -1,0 +1,34 @@
+---
+title: "Monotonic Stack"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Monotonic Stack</h1>
+<h2>What it is</h2>
+<p>Stack maintaining monotonic (increasing or decreasing) sequence of indices/values. Each element pushed/popped once → <strong>O(n)</strong>.</p>
+<h2>When to use</h2>
+<ul><li>Next greater / smaller element (NGE, NSE).</li><li>Largest rectangle in histogram.</li><li>Stock span problems.</li><li>Trapping rain water.</li></ul>
+<h2>Next Greater Element template</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">vector&lt;int&gt; nge(n, -1);
+stack&lt;int&gt; st;  // stores indices, decreasing values
+for (int i = 0; i &lt; n; i++) {
+    while (!st.empty() &amp;&amp; a[st.top()] &lt; a[i]) {
+        nge[st.top()] = a[i];
+        st.pop();
+    }
+    st.push(i);
+}</code></pre></div>
+<h2>Examples</h2>
+<h3>1. Largest rectangle in histogram</h3>
+<p>For each bar, width = distance to next smaller on left and right.</p>
+<h3>2. CF 1313C2 — Skyscrapers</h3>
+<p>Monotonic stack for visibility / construction.</p>
+<h3>3. CF 5C — Longest Regular Bracket Sequence</h3>
+<p>Stack for bracket matching (related structure).</p>
+<h3>4. Sum of subarray minimums</h3>
+<p>Each element is minimum for certain ranges — use NSE/NGE.</p>
+<h3>5. CF 1693C — Keshi in Search of AmShZ</h3>
+<p>Stack + greedy on array.</p>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/1313/C2">CF 1313C2 — Skyscrapers</a></li><li><a href="https://codeforces.com/problemset/problem/1693/C">CF 1693C — Keshi in Search of AmShZ</a></li><li><a href="https://codeforces.com/problemset/problem/5/C">CF 5C — Longest Regular Bracket Sequence</a></li></ul></div>
+    </article>

@@ -1,0 +1,37 @@
+---
+title: "Convex Hull Trick & Li Chao Tree"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Convex Hull Trick &amp; Li Chao Tree</h1>
+<h2>What it is</h2>
+<p>Maintain set of linear functions <code>y = mx + b</code>, query minimum/maximum at point <code>x</code>.</p>
+<ul><li><strong>Convex Hull Trick (CHT):</strong> deque, lines added in order of slope — <strong>O(n)</strong> or <strong>O(n log n)</strong>.</li><li><strong>Li Chao Tree:</strong> segment tree over x-domain — <strong>O(log X)</strong> per insert/query, works offline/online.</li></ul>
+<h2>When to use</h2>
+<ul><li>DP of form <code>dp[i] = min(dp[j] + cost(j, i))</code> where cost is linear in <code>i</code> or <code>j</code>.</li><li>&quot;Minimum over lines at query point x.&quot;</li></ul>
+<h2>Li Chao template (min)</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">struct Line { long long m, b; long long eval(long long x) { return m*x + b; } };
+struct LiChao {
+    struct Node { Line line; Node *l, *r; };
+    Node* root = nullptr;
+    long long X_L, X_R;
+    void add_line(Line nw, Node*&amp; node, long long l, long long r) { /* ... */ }
+    long long query(long long x, Node* node, long long l, long long r) { /* ... */ }
+};</code></pre></div>
+<h2>CHT (when slopes monotonic)</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">deque&lt;Line&gt; hull;
+// add line maintaining convex hull
+// query: while second line better than first at x, pop front</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 319C — Kalila and Dimna</h3>
+<p>DP + CHT on lines.</p>
+<h3>2. CF 1083E — The Fair Nut and Rectangles</h3>
+<p>CHT / Li Chao for rectangle cost.</p>
+<h3>3. CF 660F — Bear and Flood Fill</h3>
+<p>Slope trick variant.</p>
+<h3>4. CF 932F — Escape Through Leaf</h3>
+<p>Tree DP + CHT.</p>
+<h3>5. Projectile / physics DP with linear transitions.</h3>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/319/C">CF 319C — Kalila and Dimna in the Logging Industry</a></li><li><a href="https://codeforces.com/problemset/problem/1083/E">CF 1083E — The Fair Nut and Rectangles</a></li><li><a href="https://codeforces.com/problemset/problem/932/F">CF 932F — Escape Through Leaf</a></li></ul></div>
+    </article>

@@ -1,0 +1,35 @@
+---
+title: "Coordinate Compression"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Coordinate Compression</h1>
+<h2>What it is</h2>
+<p>Map large or sparse values to <code>[0, k)</code> by sorting unique values and replacing each with its rank. Enables array/BIT/segment tree on value domain.</p>
+<h2>When to use</h2>
+<ul><li>Values up to 10⁹ but only <code>n</code> distinct values.</li><li>Need frequency array indexed by value.</li><li>2D compression for sparse grid points.</li></ul>
+<h2>Template</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">vector&lt;long long&gt; vals = a;
+sort(vals.begin(), vals.end());
+vals.erase(unique(vals.begin(), vals.end()), vals.end());
+
+auto get = [&amp;](long long x) {
+    return lower_bound(vals.begin(), vals.end(), x) - vals.begin();
+};
+
+for (auto&amp; x : a) x = get(x);
+// now values in [0, vals.size())</code></pre></div>
+<h2>Examples</h2>
+<h3>1. Inversions with large values</h3>
+<p>Compress → BIT on ranks.</p>
+<h3>2. CF 459D — LCM Challenge</h3>
+<p>Compress pairs or values for counting.</p>
+<h3>3. CF 1354D — Multiset</h3>
+<p>Compress for order statistics.</p>
+<h3>4. 2D offline queries</h3>
+<p>Compress x and y separately for grid problems.</p>
+<h3>5. CF 295B — Greg and Graph</h3>
+<p>Node labels compression in graph context.</p>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/459/D">CF 459D — LCM Challenge</a></li><li><a href="https://codeforces.com/problemset/problem/1354/D">CF 1354D — Multiset</a></li><li><a href="https://codeforces.com/problemset/problem/295/B">CF 295B — Greg and Graph</a></li></ul></div>
+    </article>

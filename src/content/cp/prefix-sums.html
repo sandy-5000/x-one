@@ -1,0 +1,36 @@
+---
+title: "Prefix Sums"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Prefix Sums</h1>
+<h2>What it is</h2>
+<p><code>pref[i] = a[0] + a[1] + ... + a[i-1]</code> (or product, XOR, etc.). Range query in <strong>O(1)</strong> after <strong>O(n)</strong> preprocess.</p>
+<h2>When to use</h2>
+<ul><li>Many range sum queries on static array.</li><li>Subarray sum equals <code>K</code> (combine with hash map).</li><li>2D grid sum queries → 2D prefix sums.</li></ul>
+<h2>Templates</h2>
+<h3>1D</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">vector&lt;long long&gt; pref(n + 1);
+for (int i = 0; i &lt; n; i++) pref[i + 1] = pref[i] + a[i];
+// sum [l, r] inclusive (0-indexed)
+long long s = pref[r + 1] - pref[l];</code></pre></div>
+<h3>2D</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">pref[i+1][j+1] = a[i][j] + pref[i][j+1] + pref[i+1][j] - pref[i][j];
+// rectangle (x1,y1) to (x2,y2) inclusive
+long long s = pref[x2+1][y2+1] - pref[x1][y2+1] - pref[x2+1][y1] + pref[x1][y1];</code></pre></div>
+<h3>Prefix XOR</h3>
+<p>Same formula works for XOR (inverse is XOR itself).</p>
+<h2>Examples</h2>
+<h3>1. Subarray sum equals K</h3>
+<p>Count pairs where <code>pref[r] - pref[l] = K</code> → store <code>pref</code> frequencies in hash map.</p>
+<h3>2. CF 433B — Kuriyama Mirai&#x27;s Stones</h3>
+<p>Prefix sums for range queries on two arrays.</p>
+<h3>3. CF 295A — Greg and Array</h3>
+<p>Difference array + prefix idea for range updates.</p>
+<h3>4. Grid path sum queries</h3>
+<p>2D prefix on cost matrix.</p>
+<h3>5. Equilibrium index</h3>
+<p>Find <code>i</code> where sum left = sum right using prefix.</p>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/433/B">CF 433B — Kuriyama Mirai&#x27;s Stones</a></li><li><a href="https://codeforces.com/problemset/problem/602/B">CF 602B — Approximating a Constant Range</a> (prefix + structure)</li><li><a href="https://codeforces.com/problemset/problem/295/A">CF 295A — Greg and Array</a></li></ul></div>
+    </article>

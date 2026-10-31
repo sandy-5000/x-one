@@ -1,0 +1,41 @@
+---
+title: "Binary Search (on Sorted Data)"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Binary Search (on Sorted Data)</h1>
+<h2>What it is</h2>
+<p>Find a value or boundary in <strong>O(log n)</strong> on a sorted array (or any structure where a monotonic predicate holds).</p>
+<h2>When to use</h2>
+<ul><li>Array is sorted (or you can sort it).</li><li>You need: first <code>≥ x</code>, last <code>≤ x</code>, count of elements <code>≤ x</code>, or check if value exists.</li><li>Predicate <code>P(mid)</code> is monotonic: false…false, true…true (or reverse).</li></ul>
+<h2>Template (C++)</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">// first index i where a[i] &gt;= x (or n if none)
+int lo = 0, hi = n;
+while (lo &lt; hi) {
+    int mid = lo + (hi - lo) / 2;
+    if (a[mid] &gt;= x) hi = mid;
+    else lo = mid + 1;
+}
+// lo is the answer
+
+// last index i where a[i] &lt;= x
+int lo = 0, hi = n - 1, ans = -1;
+while (lo &lt;= hi) {
+    int mid = lo + (hi - lo) / 2;
+    if (a[mid] &lt;= x) { ans = mid; lo = mid + 1; }
+    else hi = mid - 1;
+}</code></pre></div>
+<h2>Classic examples</h2>
+<h3>1. Lower bound / upper bound</h3>
+<p><strong>Problem idea:</strong> Given sorted array, find position to insert <code>x</code>. Use <code>std::lower_bound</code> / <code>std::upper_bound</code> in contests when you don&#x27;t need custom logic.</p>
+<h3>2. Binary search on answer (see separate file)</h3>
+<p>When the answer is a number and checking feasibility is easier than finding it directly.</p>
+<h3>3. Minimize maximum (binary search on value)</h3>
+<p><strong>CF 1201C — Maximum Median</strong> Binary search the median value; check if you can make at least <code>k</code> elements <code>≥ mid</code>.</p>
+<h3>4. Count pairs with sum ≤ S (after sorting)</h3>
+<p>Sort one array, for each element binary search how many others fit.</p>
+<h2>Common pitfalls</h2>
+<ul><li>Off-by-one on <code>lo &lt; hi</code> vs <code>lo &lt;= hi</code>.</li><li>Integer overflow in <code>mid = (lo + hi) / 2</code> — use <code>lo + (hi - lo) / 2</code>.</li><li>Forgetting that binary search needs <strong>monotonicity</strong>.</li></ul>
+<h2>Practice (1550–1950 range)</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/706/B">CF 706B — Interesting drink</a></li><li><a href="https://codeforces.com/problemset/problem/1201/C">CF 1201C — Maximum Median</a></li><li><a href="https://codeforces.com/problemset/problem/1579/E2">CF 1579E2 — Permutation Minimization by Deque</a> (binary search + greedy)</li></ul></div>
+    </article>

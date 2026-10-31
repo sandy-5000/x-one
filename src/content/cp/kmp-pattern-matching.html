@@ -1,0 +1,43 @@
+---
+title: "KMP Pattern Matching"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>KMP Pattern Matching</h1>
+<h2>What it is</h2>
+<p>Find all occurrences of pattern <code>P</code> in text <code>T</code> in <strong>O(|T| + |P|)</strong> using failure function (prefix function).</p>
+<h2>When to use</h2>
+<ul><li>Substring search, period detection.</li><li>String matching with borders.</li><li>Some DP on strings with pattern structure.</li></ul>
+<h2>Prefix function template</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">vector&lt;int&gt; pi(string s) {
+    int n = s.size();
+    vector&lt;int&gt; p(n);
+    for (int i = 1; i &lt; n; i++) {
+        int j = p[i-1];
+        while (j &gt; 0 &amp;&amp; s[i] != s[j]) j = p[j-1];
+        if (s[i] == s[j]) j++;
+        p[i] = j;
+    }
+    return p;
+}
+
+// match pattern in text
+int j = 0;
+for (int i = 0; i &lt; text.size(); i++) {
+    while (j &gt; 0 &amp;&amp; text[i] != pat[j]) j = pi[j-1];
+    if (text[i] == pat[j]) j++;
+    if (j == pat.size()) { /* match at i - j + 1 */ j = pi[j-1]; }
+}</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 1200E — Compress Words</h3>
+<p>Prefix matching — hash or KMP.</p>
+<h3>2. CF 535D — Tavas and Malekas</h3>
+<p>Period + KMP.</p>
+<h3>3. CF 271D — Good Substrings</h3>
+<p>Advanced string; KMP for structure.</p>
+<h3>4. Find shortest period of string</h3>
+<p><code>n - pi[n-1]</code> when <code>n % (n - pi[n-1]) == 0</code>.</p>
+<h3>5. Count occurrences of pattern.</h3>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/535/D">CF 535D — Tavas and Malekas</a></li><li><a href="https://codeforces.com/problemset/problem/1200/E">CF 1200E — Compress Words</a></li></ul></div>
+    </article>

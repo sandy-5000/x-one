@@ -1,0 +1,272 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>API design · x-one</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../assets/style.css"><script src="../assets/copy.js" defer></script></head><body><aside class="sidebar"><input type="checkbox" id="nav-toggle" class="nav-toggle"><div class="sidebar-brand"><a href="../index.html">x-one notes</a><label for="nav-toggle" class="menu-btn" aria-label="Toggle navigation"><span class="menu-open">Menu</span><span class="menu-close">Close</span></label></div><nav><details class="nav-group"><summary class="nav-group-label">cp<span class="nav-count">56</span></summary><ul><li><a href="../cp/0-1-bfs.html">0-1 BFS</a></li><li><a href="../cp/two-sat.html">2-SAT</a></li><li><a href="../cp/bfs-state-space.html">BFS on State Space</a></li><li><a href="../cp/binary-search.html">Binary Search (on Sorted Data)</a></li><li><a href="../cp/binary-search-on-answer.html">Binary Search on Answer</a></li><li><a href="../cp/bitmask-dp.html">Bitmask DP</a></li><li><a href="../cp/bridges-articulation-points.html">Bridges &amp; Articulation Points</a></li><li><a href="../cp/cdq-divide-conquer.html">CDQ Divide &amp; Conquer (Offline)</a></li><li><a href="../cp/centroid-decomposition.html">Centroid Decomposition</a></li><li><a href="../cp/convex-hull-trick-lichao.html">Convex Hull Trick &amp; Li Chao Tree</a></li><li><a href="../cp/coordinate-compression.html">Coordinate Compression</a></li><li><a href="../cp/difference-array.html">Difference Array</a></li><li><a href="../cp/digit-dp.html">Digit DP</a></li><li><a href="../cp/dijkstra.html">Dijkstra&#39;s Algorithm</a></li><li><a href="../cp/dsu-on-tree.html">DSU on Tree (Small-to-Large)</a></li><li><a href="../cp/dp-1d.html">Dynamic Programming — 1D</a></li><li><a href="../cp/dp-2d-knapsack.html">Dynamic Programming — 2D &amp; Knapsack</a></li><li><a href="../cp/euler-tour-flattening.html">Euler Tour (Tree Flattening)</a></li><li><a href="../cp/fenwick-tree.html">Fenwick Tree (Binary Indexed Tree)</a></li><li><a href="../cp/flood-fill-multi-source-bfs.html">Flood Fill &amp; Multi-Source BFS</a></li><li><a href="../cp/floyd-warshall.html">Floyd-Warshall</a></li><li><a href="../cp/functional-graphs.html">Functional Graphs</a></li><li><a href="../cp/graph-bfs-dfs.html">Graph BFS &amp; DFS</a></li><li><a href="../cp/greedy.html">Greedy</a></li><li><a href="../cp/heavy-light-decomposition.html">Heavy-Light Decomposition (HLD)</a></li><li><a href="../cp/interval-dp.html">Interval DP</a></li><li><a href="../cp/kmp-pattern-matching.html">KMP Pattern Matching</a></li><li><a href="../cp/lca-binary-lifting.html">LCA (Binary Lifting)</a></li><li><a href="../cp/line-sweep.html">Line Sweep</a></li><li><a href="../cp/lis.html">Longest Increasing Subsequence (LIS)</a></li><li><a href="../cp/matrix-exponentiation.html">Matrix Exponentiation</a></li><li><a href="../cp/meet-in-the-middle.html">Meet in the Middle</a></li><li><a href="../cp/mos-algorithm.html">Mo&#39;s Algorithm (Offline Queries)</a></li><li><a href="../cp/monotonic-queue.html">Monotonic Deque (Queue)</a></li><li><a href="../cp/monotonic-stack.html">Monotonic Stack</a></li><li><a href="../cp/mst-kruskal-prim.html">MST (Kruskal &amp; Prim)</a></li><li><a href="../cp/policy-based-data-structure.html">Policy-Based Data Structure</a></li><li><a href="../cp/prefix-sums.html">Prefix Sums</a></li><li><a href="../cp/priority-queue-tricks.html">Priority Queue Tricks</a></li><li><a href="../cp/rerooting-dp.html">Rerooting DP on Trees</a></li><li><a href="../cp/segment-tree.html">Segment Tree</a></li><li><a href="../cp/sliding-window.html">Sliding Window</a></li><li><a href="../cp/sorting-tricks.html">Sorting Tricks</a></li><li><a href="../cp/sparse-table-rmq.html">Sparse Table (RMQ)</a></li><li><a href="../cp/sprague-grundy.html">Sprague-Grundy (Game Theory)</a></li><li><a href="../cp/sqrt-decomposition.html">Square Root Decomposition</a></li><li><a href="../cp/string-hashing.html">String Hashing</a></li><li><a href="../cp/strongly-connected-components.html">Strongly Connected Components (SCC)</a></li><li><a href="../cp/topological-sort.html">Topological Sort</a></li><li><a href="../cp/tree-dfs.html">Tree DFS</a></li><li><a href="../cp/tree-difference-array.html">Tree Difference Array</a></li><li><a href="../cp/trie-and-xor-trie.html">Trie &amp; XOR Trie</a></li><li><a href="../cp/two-pointers.html">Two Pointers</a></li><li><a href="../cp/union-find-dsu.html">Union-Find (DSU)</a></li><li><a href="../cp/virtual-tree.html">Virtual Tree</a></li><li><a href="../cp/z-algorithm.html">Z-Algorithm</a></li></ul></details><details class="nav-group" open><summary class="nav-group-label">design<span class="nav-count">11</span></summary><ul><li><a href="../design/solid-principles.html">SOLID principles</a></li><li><a href="../design/design-patterns.html">Design patterns</a></li><li><a href="../design/system-design-basics.html">System design basics</a></li><li><a href="../design/caching.html">Caching</a></li><li><a href="../design/databases.html">Databases at scale</a></li><li><a href="../design/cap-and-consistency.html">CAP &amp; consistency</a></li><li><a href="../design/message-queues.html">Message queues</a></li><li><a href="../design/rate-limiting.html">Rate limiting</a></li><li><a href="../design/api-design.html" class="is-active" aria-current="page">API design</a></li><li><a href="../design/microservices.html">Microservices</a></li><li><a href="../design/url-shortener.html">Case study: URL shortener</a></li></ul></details><details class="nav-group"><summary class="nav-group-label">docker<span class="nav-count">3</span></summary><ul><li><a href="../docker/start.html">Start</a></li><li><a href="../docker/compose.html">Compose</a></li><li><a href="../docker/swarm.html">Swarm</a></li></ul></details><details class="nav-group"><summary class="nav-group-label">java<span class="nav-count">5</span></summary><ul><li><a href="../java/part-1.html">Part 1</a></li><li><a href="../java/part-2.html">Part 2</a></li><li><a href="../java/part-3.html">Part 3</a></li><li><a href="../java/part-4.html">Part 4</a></li><li><a href="../java/part-5.html">Part 5</a></li></ul></details><details class="nav-group"><summary class="nav-group-label">math<span class="nav-count">34</span></summary><ul><li><a href="../math/bijection-counting.html">Bijection &amp; Counting Proofs</a></li><li><a href="../math/burnside-lemma.html">Burnside&#39;s Lemma (Symmetry Counting)</a></li><li><a href="../math/catalan-numbers.html">Catalan Numbers</a></li><li><a href="../math/chinese-remainder-theorem.html">Chinese Remainder Theorem (CRT)</a></li><li><a href="../math/combinatorial-identities.html">Combinatorial Identities</a></li><li><a href="../math/combinatorics-ncr.html">Combinatorics — nCr &amp; Pascal</a></li><li><a href="../math/computational-geometry-basics.html">Computational Geometry Basics</a></li><li><a href="../math/derangements.html">Derangements</a></li><li><a href="../math/divisor-enumeration.html">Divisor Enumeration — O(√n)</a></li><li><a href="../math/divisor-functions.html">Divisor Functions (τ and σ)</a></li><li><a href="../math/euler-totient.html">Euler&#39;s Totient φ(n)</a></li><li><a href="../math/expected-value-linearity.html">Expected Value — Linearity</a></li><li><a href="../math/fast-exponentiation.html">Fast Exponentiation</a></li><li><a href="../math/fermat-euler-theorem.html">Fermat&#39;s &amp; Euler&#39;s Theorems</a></li><li><a href="../math/floor-sum-trick.html">Floor Sum Trick — Σ⌊n/i⌋</a></li><li><a href="../math/gcd-lcm-extended-euclid.html">GCD, LCM &amp; Extended Euclidean</a></li><li><a href="../math/harmonic-bounds.html">Harmonic Bounds &amp; Estimates</a></li><li><a href="../math/inclusion-exclusion.html">Inclusion-Exclusion Principle</a></li><li><a href="../math/legendre-formula.html">Legendre&#39;s Formula</a></li><li><a href="../math/linear-recurrences.html">Linear Recurrences</a></li><li><a href="../math/lucas-theorem.html">Lucas Theorem &amp; nCr mod prime</a></li><li><a href="../math/mobius-inversion.html">Möbius Inversion</a></li><li><a href="../math/modular-arithmetic.html">Modular Arithmetic</a></li><li><a href="../math/modular-inverse-composite.html">Modular Inverse (Composite Modulus)</a></li><li><a href="../math/modular-inverse-fermat.html">Modular Inverse (Fermat)</a></li><li><a href="../math/multinomial-coefficients.html">Multinomial Coefficients</a></li><li><a href="../math/parity-xor-patterns.html">Parity, XOR &amp; Modular Patterns</a></li><li><a href="../math/pigeonhole-counting.html">Pigeonhole &amp; Counting Arguments</a></li><li><a href="../math/probability-basics.html">Probability Basics</a></li><li><a href="../math/sieve-primes-factorization.html">Sieve, Primes &amp; Factorization</a></li><li><a href="../math/stars-and-bars.html">Stars and Bars</a></li><li><a href="../math/stirling-numbers.html">Stirling Numbers (2nd Kind)</a></li><li><a href="../math/sum-formulas-series.html">Sum Formulas &amp; Series</a></li><li><a href="../math/wilson-primality.html">Wilson&#39;s Theorem &amp; Primality</a></li></ul></details><details class="nav-group"><summary class="nav-group-label">os<span class="nav-count">2</span></summary><ul><li><a href="../os/cpu.html">CPU</a></li><li><a href="../os/user-threads.html">User threads</a></li></ul></details></nav></aside><main class="chat"><header class="page-head"><span class="crumb">design / api-design</span></header><article class="message assistant"><div class="message-body prose"><h1 id="api-design">API Design</h1>
+<h2 id="rest-basics">REST basics</h2>
+<p>Model the API around <strong>resources</strong> (nouns) and use HTTP methods as verbs.</p>
+<div class="table-wrap">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Method</th><th>Path</th><th>Meaning</th><th>Idempotent</th></tr></thead><tbody><tr><td>GET</td><td><code>/users</code></td><td>List users</td><td>Yes</td></tr><tr><td>GET</td><td><code>/users/42</code></td><td>Get one user</td><td>Yes</td></tr><tr><td>POST</td><td><code>/users</code></td><td>Create a user</td><td>No</td></tr><tr><td>PUT</td><td><code>/users/42</code></td><td>Replace user 42 entirely</td><td>Yes</td></tr><tr><td>PATCH</td><td><code>/users/42</code></td><td>Update some fields</td><td>Not necessarily</td></tr><tr><td>DELETE</td><td><code>/users/42</code></td><td>Delete user 42</td><td>Yes</td></tr><tr><td>GET</td><td><code>/users/42/orders</code></td><td>Orders of user 42 (sub-resource)</td><td>Yes</td></tr></tbody></table></div>
+<p>Guidelines:</p>
+<ul>
+<li>Plural nouns, lowercase, hyphens: <code>/order-items</code>, not <code>/getOrderItems</code>.</li>
+<li>Nest only one level deep; beyond that use query filters: <code>/orders?userId=42&#x26;status=paid</code>.</li>
+<li>Use JSON with consistent casing (<code>camelCase</code> or <code>snake_case</code>, pick one).</li>
+<li>Return the created resource and a <code>Location</code> header from <code>POST</code>.</li>
+</ul>
+<h2 id="status-codes">Status codes</h2>
+<div class="table-wrap">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Code</th><th>When</th></tr></thead><tbody><tr><td>200 OK</td><td>Successful read or update</td></tr><tr><td>201 Created</td><td>Resource created</td></tr><tr><td>204 No Content</td><td>Success with empty body (DELETE)</td></tr><tr><td>400 Bad Request</td><td>Malformed input</td></tr><tr><td>401 Unauthorized</td><td>Not authenticated</td></tr><tr><td>403 Forbidden</td><td>Authenticated but not allowed</td></tr><tr><td>404 Not Found</td><td>Resource doesn’t exist</td></tr><tr><td>409 Conflict</td><td>Version conflict, duplicate</td></tr><tr><td>422 Unprocessable Entity</td><td>Valid JSON, failed validation</td></tr><tr><td>429 Too Many Requests</td><td>Rate limited</td></tr><tr><td>500 Internal Server Error</td><td>Bug on the server</td></tr><tr><td>503 Service Unavailable</td><td>Overloaded or down for maintenance</td></tr></tbody></table></div>
+<h3 id="consistent-error-body">Consistent error body</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-json">{
+  "error": {
+    "code": "VALIDATION_FAILED",
+    "message": "email is not valid",
+    "field": "email",
+    "requestId": "c0a8012e-7f3b"
+  }
+}</code></pre></div>
+<hr>
+<h2 id="pagination">Pagination</h2>
+<h3 id="offset-pagination">Offset pagination</h3>
+<pre class="diagram"><code>GET /posts?limit=20&#x26;offset=40</code></pre>
+<p>Simple and supports “jump to page 5”, but slow for large offsets (the DB still scans skipped rows) and items shift if new rows are inserted.</p>
+<h3 id="cursor-keyset-pagination">Cursor (keyset) pagination</h3>
+<pre class="diagram"><code>GET /posts?limit=20
+→ { "data": [...], "nextCursor": "eyJpZCI6MTIzNH0" }
+
+GET /posts?limit=20&#x26;cursor=eyJpZCI6MTIzNH0</code></pre>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-sql">SELECT * FROM posts
+WHERE id &#x3C; :lastSeenId
+ORDER BY id DESC
+LIMIT 20;</code></pre></div>
+<p>Fast at any depth and stable under inserts. Used by most feeds (Twitter, Slack, Stripe).</p>
+<hr>
+<h2 id="idempotency-keys">Idempotency keys</h2>
+<p>Networks retry. If a client retries <code>POST /payments</code> after a timeout, the customer must not be charged twice.</p>
+<pre class="diagram"><code>POST /payments
+Idempotency-Key: 7b1e2c9a-5d4f-4e1a-9f0c-2d6a8b3e1f00
+{ "amount": 4999, "currency": "INR" }</code></pre>
+<p>Server side:</p>
+<ol>
+<li>Look up the key in a store.</li>
+<li>If found, return the saved response — don’t execute again.</li>
+<li>If not, process the request, then save <code>key → response</code> with a TTL (e.g. 24 h).</li>
+</ol>
+<p>GET, PUT, and DELETE are idempotent by definition; POST and PATCH need keys when duplicates matter.</p>
+<hr>
+<h2 id="versioning">Versioning</h2>
+<div class="table-wrap">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Style</th><th>Example</th><th>Notes</th></tr></thead><tbody><tr><td>URL path</td><td><code>/v1/users</code></td><td>Most common, visible, easy to route</td></tr><tr><td>Header</td><td><code>Accept: application/vnd.app.v2+json</code></td><td>Clean URLs, harder to test in a browser</td></tr><tr><td>Query param</td><td><code>/users?version=2</code></td><td>Easy, but easy to forget</td></tr></tbody></table></div>
+<p>Avoid breaking changes in the first place: add fields instead of renaming, never change a field’s type, and keep old versions alive with a published deprecation date.</p>
+<hr>
+<h2 id="authentication">Authentication</h2>
+<ul>
+<li><strong>API keys</strong> — simple, for server-to-server; send in a header, never in the URL.</li>
+<li><strong>Session cookies</strong> — classic web apps; server stores the session.</li>
+<li><strong>JWT (JSON Web Token)</strong> — signed token the client sends as <code>Authorization: Bearer &#x3C;token></code>; servers verify the signature without a DB lookup. Keep them short-lived and use refresh tokens.</li>
+<li><strong>OAuth 2.0 / OpenID Connect</strong> — delegated login (“Sign in with Google”) and third-party access.</li>
+</ul>
+<p>Always use HTTPS.</p>
+<hr>
+<h2 id="rest-vs-graphql-vs-grpc">REST vs GraphQL vs gRPC</h2>
+<div class="table-wrap">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>REST</th><th>GraphQL</th><th>gRPC</th></tr></thead><tbody><tr><td>Transport</td><td>HTTP/1.1+, JSON</td><td>HTTP, JSON</td><td>HTTP/2, Protocol Buffers (binary)</td></tr><tr><td>Shape of response</td><td>Fixed per endpoint</td><td>Client asks for exact fields</td><td>Fixed by <code>.proto</code> contract</td></tr><tr><td>Over/under-fetching</td><td>Common</td><td>Solved</td><td>N/A</td></tr><tr><td>Caching</td><td>Easy (HTTP caching)</td><td>Harder (single POST endpoint)</td><td>Custom</td></tr><tr><td>Streaming</td><td>Limited (SSE, WebSockets)</td><td>Subscriptions</td><td>Native bi-directional</td></tr><tr><td>Best for</td><td>Public APIs, CRUD</td><td>Rich front ends, many clients</td><td>Internal service-to-service, low latency</td></tr></tbody></table></div>
+<h3 id="grpc-example">gRPC example</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-protobuf">syntax = "proto3";
+
+service UserService {
+  rpc GetUser (GetUserRequest) returns (User);
+  rpc StreamUpdates (GetUserRequest) returns (stream User);
+}
+
+message GetUserRequest { int64 id = 1; }
+
+message User {
+  int64 id = 1;
+  string name = 2;
+  string email = 3;
+}</code></pre></div>
+<hr>
+<h2 id="real-time-options">Real-time options</h2>
+<ul>
+<li><strong>Short polling</strong> — client asks every N seconds. Simple, wasteful.</li>
+<li><strong>Long polling</strong> — server holds the request open until there is data.</li>
+<li><strong>Server-Sent Events (SSE)</strong> — one-way server → client stream over HTTP. Great for notifications and live feeds.</li>
+<li><strong>WebSockets</strong> — full-duplex connection. Chat, multiplayer, collaborative editing.</li>
+<li><strong>Webhooks</strong> — server calls <em>your</em> URL when something happens (payment succeeded). Verify signatures and make handlers idempotent.</li>
+</ul></div></article></main></body></html>

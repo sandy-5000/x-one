@@ -1,0 +1,44 @@
+---
+title: "Functional Graphs"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Functional Graphs</h1>
+<h2>What it is</h2>
+<p>Each node has exactly <strong>one outgoing edge</strong> (<code>next[i]</code>). Structure: cycles with trees feeding into them (rho-shaped).</p>
+<h2>When to use</h2>
+<ul><li><code>f(x)</code> iterated — find cycle, period, steps to cycle.</li><li>CF &quot;badge&quot; / permutation successor problems.</li><li>Binary lifting on functional graph for k-th jump.</li></ul>
+<h2>Template (cycle detection)</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">vector&lt;int&gt; state(n);  // 0 unvisited, 1 in path, 2 done
+vector&lt;int&gt; cycle_nodes;
+
+void dfs(int u) {
+    state[u] = 1;
+  int v = nxt[u];
+    if (state[v] == 0) dfs(v);
+    else if (state[v] == 1) {
+        // extract cycle from v to u
+        for (int x = v; ; x = nxt[x]) {
+            cycle_nodes.push_back(x);
+            if (x == u) break;
+        }
+    }
+    state[u] = 2;
+}</code></pre></div>
+<h2>Binary lifting on functional graph</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">// jump[u][k] = 2^k-th successor of u
+for (int k = 1; k &lt; LOG; k++)
+    jump[u][k] = jump[jump[u][k-1]][k-1];</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 1020B — Badge</h3>
+<p>Find cycle length in functional graph.</p>
+<h3>2. CF 1131E — String Multiplication</h3>
+<p>Functional / tree hybrid.</p>
+<h3>3. CF 919D — Substring</h3>
+<p>Graph on states.</p>
+<h3>4. Permutation cycles</h3>
+<p>Disjoint cycles — each node one successor.</p>
+<h3>5. CF 1144F — Graph Without Long Directed Paths</h3>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/1020/B">CF 1020B — Badge</a></li><li><a href="https://codeforces.com/problemset/problem/1144/F">CF 1144F — Graph Without Long Directed Paths</a></li></ul></div>
+    </article>

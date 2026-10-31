@@ -1,0 +1,39 @@
+---
+title: "Binary Search on Answer"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Binary Search on Answer</h1>
+<h2>What it is</h2>
+<p>The answer is a number (time, distance, minimum max, maximum min). You binary search that value and write a <strong>check(mid)</strong> function that returns true/false with monotonic behavior.</p>
+<h2>When to use</h2>
+<ul><li>&quot;Minimum possible maximum …&quot; or &quot;Maximum possible minimum …&quot;</li><li>&quot;Can we finish within <code>T</code> time?&quot;</li><li>Answer is integer in a large range <code>[lo, hi]</code>.</li></ul>
+<h2>Pattern</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">bool ok(long long mid) {
+    // simulate / greedy / count — can we achieve mid?
+}
+
+long long lo = MIN_ANS, hi = MAX_ANS, ans = MAX_ANS;
+while (lo &lt;= hi) {
+    long long mid = lo + (hi - lo) / 2;
+    if (ok(mid)) { ans = mid; hi = mid - 1; }  // minimize
+    else lo = mid + 1;
+}
+// For maximize: if (ok(mid)) { ans = mid; lo = mid + 1; } else hi = mid - 1;</code></pre></div>
+<h2>Examples</h2>
+<h3>1. Minimum maximum segment sum</h3>
+<p><strong>Problem:</strong> Split array into <code>k</code> parts, minimize the largest part sum. Binary search the largest part sum <code>X</code>, greedily form segments each with sum <code>≤ X</code>.</p>
+<h3>2. Aggressive cows (classic)</h3>
+<p><strong>Problem:</strong> Place <code>k</code> cows in stalls, maximize minimum distance. Binary search distance <code>d</code>, greedily place cows.</p>
+<p><strong>CF analogue:</strong> <a href="https://codeforces.com/problemset/problem/883/I">CF 883I — Groups of Students</a> (similar spirit)</p>
+<h3>3. CF 1701C — Schedule</h3>
+<p>Binary search minimum time to complete all jobs with <code>k</code> workers.</p>
+<h3>4. CF 1843D — Ranking Permutation</h3>
+<p>Binary search answer on permutation construction.</p>
+<h3>5. Minimum days to make <code>m</code> bouquets</h3>
+<p>Binary search days; check if enough flowers bloomed.</p>
+<h2>Check function tips</h2>
+<ul><li>Usually <strong>greedy</strong> or <strong>simulation</strong>.</li><li>Use <code>long long</code> — mid values overflow <code>int</code>.</li><li>If <code>ok(mid)</code> is true for all larger mids, you&#x27;re minimizing; reverse for maximizing.</li></ul>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/1701/C">CF 1701C — Schedule</a></li><li><a href="https://codeforces.com/problemset/problem/1208/F">CF 1208F — Bits</a> (binary search + bitmask)</li><li><a href="https://codeforces.com/problemset/problem/1118/D2">CF 1118D2 — Coffee and Coursework (Hard)</a></li></ul></div>
+    </article>

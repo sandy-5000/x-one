@@ -1,0 +1,40 @@
+---
+title: "Tree Difference Array"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Tree Difference Array</h1>
+<h2>What it is</h2>
+<p>Apply range updates on tree paths or subtrees using <strong>difference technique</strong> on nodes or edges, then prefix-sum once on tree.</p>
+<h2>When to use</h2>
+<ul><li>Add <code>v</code> to all nodes on path <code>u–v</code>.</li><li>Add <code>v</code> to entire subtree.</li><li>Many path updates, then query final values.</li></ul>
+<h2>Subtree add template</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">// add val to subtree of u
+diff[tin[u]] += val;
+diff[tout[u] + 1] -= val;
+
+// after all updates, DFS prefix on Euler order
+void propagate(int u, int p, long long cur) {
+    cur += diff[tin[u]];
+    final[u] = base[u] + cur;
+    for (int v : adj[u]) if (v != p) propagate(v, u, cur);
+}</code></pre></div>
+<h2>Path add (with LCA)</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">void path_add(int u, int v, long long val) {
+    diff[tin[u]] += val;
+    diff[tin[v]] += val;
+    diff[tin[lca(u,v)]] -= val;
+    diff[tin[parent[lca(u,v)]]] -= val;  // if parent exists
+}</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 1328D — FIND THE TREE</h3>
+<p>Path/subtree update patterns.</p>
+<h3>2. CF 383C — Propagating Tree</h3>
+<p>Path propagation (HLD alternative for some cases).</p>
+<h3>3. CF 1076E — Vasya and Tree</h3>
+<p>Tree difference on paths.</p>
+<h3>4. Many nodes path +1 queries offline.</h3>
+<h3>5. Combine with binary lifting for LCA in path updates.</h3>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/1076/E">CF 1076E — Vasya and Tree</a></li><li><a href="https://codeforces.com/problemset/problem/383/C">CF 383C — Propagating Tree</a></li></ul></div>
+    </article>

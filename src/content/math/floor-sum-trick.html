@@ -1,0 +1,37 @@
+---
+title: "Floor Sum Trick — Σ⌊n/i⌋"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Floor Sum Trick — Σ⌊n/i⌋</h1>
+<h2>What it is</h2>
+<p>Compute <code>Σ_{i=1}^{n} ⌊n/i⌋</code> in <strong>O(√n)</strong> by grouping equal quotients.</p>
+<p>For fixed <code>q = ⌊n/i⌋</code>, all <code>i</code> in <code>(⌊n/(q+1)⌋, ⌊n/q⌋]</code> give the same floor value.</p>
+<h2>When to use</h2>
+<ul><li>Sum of divisors-style loops too slow for <code>n</code> up to 10^12.</li><li>Count lattice points under hyperbola <code>xy ≤ n</code>.</li><li>Number theory counting problems.</li></ul>
+<h2>Template</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">long long floor_sum(long long n) {
+    long long ans = 0;
+    for (long long l = 1, q; l &lt;= n; l = q + 1) {
+        q = n / l;
+        long long r = n / q;
+        ans += q * (r - l + 1);
+    }
+    return ans;
+}</code></pre></div>
+<h2>General form</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Σ_{i=1}^{n} ⌊(a*i + b) / m⌋</code></pre></div>
+<p>Use extended floor sum algorithm (AtCoder Library) for contests — <strong>O(log m)</strong>.</p>
+<h2>Examples</h2>
+<h3>1. Count pairs (i,j) with <code>i*j ≤ n</code></h3>
+<p>Double loop optimized with floor sum.</p>
+<h3>2. CF 939D — Love-Hate</h3>
+<p>Divisor / counting structure.</p>
+<h3>3. CF 1208C — Magic Grid</h3>
+<p>Sum formulas with division.</p>
+<h3>4. Harmonic-like sums truncated at n.</h3>
+<h3>5. CF 1225D — Unusual Product</h3>
+<p>Number theory counting.</p>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/1225/D">CF 1225D — Unusual Product</a></li><li><a href="https://codeforces.com/problemset/problem/939/D">CF 939D — Love-Hate</a></li></ul></div>
+    </article>

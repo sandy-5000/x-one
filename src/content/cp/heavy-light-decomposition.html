@@ -1,0 +1,58 @@
+---
+title: "Heavy-Light Decomposition (HLD)"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Heavy-Light Decomposition (HLD)</h1>
+<h2>What it is</h2>
+<p>Decompose tree into heavy paths (chains). Path queries become <strong>O(log² n)</strong> segment tree queries on chains.</p>
+<h2>When to use</h2>
+<ul><li>Path sum/min/max/update on tree.</li><li>Path edge queries with segment tree on depth order.</li><li>Common in Div1 A/B and hard Div2 D.</li></ul>
+<h2>Key ideas</h2>
+<ol><li><strong>Heavy child:</strong> child with largest subtree size.</li><li><strong>Head of chain:</strong> top of heavy path.</li><li>Query path: jump from chain head to LCA level by level.</li></ol>
+<h2>Template sketch</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">int parent[MAXN], depth[MAXN], heavy[MAXN], head[MAXN], pos[MAXN];
+int cur_pos = 0;
+
+int dfs(int u, int p) {
+    int size = 1, max_sz = 0;
+    for (int v : adj[u]) if (v != p) {
+        parent[v] = u; depth[v] = depth[u] + 1;
+        int s = dfs(v, u);
+        size += s;
+        if (s &gt; max_sz) { max_sz = s; heavy[u] = v; }
+    }
+    return size;
+}
+
+void decompose(int u, int h) {
+    head[u] = h;
+    pos[u] = cur_pos++;
+    if (heavy[u]) decompose(heavy[u], h);
+    for (int v : adj[u]) if (v != parent[u] &amp;&amp; v != heavy[u])
+        decompose(v, v);
+}
+
+long long query_path(int u, int v) {
+    long long res = 0;
+    for (; head[u] != head[v]; v = parent[head[v]]) {
+        if (depth[head[u]] &lt; depth[head[v]]) swap(u, v);
+        res += seg.query(pos[head[u]], pos[u]);
+    }
+    if (depth[u] &gt; depth[v]) swap(u, v);
+    res += seg.query(pos[u], pos[v]);
+    return res;
+}</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 1328D — FIND THE TREE</h3>
+<p>Tree path techniques.</p>
+<h3>2. CF 343D — Fibonacci Tree</h3>
+<p>Path updates with HLD.</p>
+<h3>3. CF 383C — Propagating Tree</h3>
+<p>Path add + subtree query via HLD + Euler.</p>
+<h3>4. CF 620E — New Year Tree</h3>
+<p>Colored path queries.</p>
+<h3>5. Max edge on path (edge HLD variant)</h3>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/383/C">CF 383C — Propagating Tree</a></li><li><a href="https://codeforces.com/problemset/problem/620/E">CF 620E — New Year Tree</a></li><li><a href="https://codeforces.com/problemset/problem/343/D">CF 343D — Fibonacci Tree</a></li></ul></div>
+    </article>

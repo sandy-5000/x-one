@@ -1,0 +1,28 @@
+---
+title: "CDQ Divide & Conquer (Offline)"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>CDQ Divide &amp; Conquer (Offline)</h1>
+<h2>What it is</h2>
+<p>Offline algorithm processing queries in divide-and-conquer order. Solves 2D partial order / inversion / 3D dominance problems in <strong>O(n log² n)</strong>.</p>
+<h2>When to use</h2>
+<ul><li>Dynamic inversion count offline.</li><li>3D dominance: count points with <code>x &lt; X, y &lt; Y, z &lt; Z</code>.</li><li>DP optimization when transitions are &quot;points dominated in 2D.&quot;</li></ul>
+<h2>Pattern</h2>
+<ol><li>Divide time/queries into left and right halves.</li><li>Process contributions from left half affecting right half (sweep).</li><li>Recurse on both halves.</li></ol>
+<h2>Simpler offline: &quot;sort + BIT&quot;</h2>
+<p>Many &quot;CDQ&quot; problems at 1900 are solved by:</p>
+<ul><li>Sort queries by one dimension.</li><li>Sweep with Fenwick tree on second dimension.</li></ul>
+<h2>Examples</h2>
+<h3>1. CF 713D — Animals</h3>
+<p>CDQ on 3D points.</p>
+<h3>2. CF 1200F — Spire</h3>
+<p>Offline queries divide conquer.</p>
+<h3>3. Inversion count with updates offline</h3>
+<p>CDQ on time dimension.</p>
+<h3>4. CF 650C — Table Decorations</h3>
+<p>Partial order counting.</p>
+<h3>5. Longest chain in 2D (sort + DP + BIT)</h3>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/650/C">CF 650C — Table Decorations</a></li><li>Search &quot;CDQ divide and conquer&quot; 1800–2100 on CF</li></ul></div>
+    </article>

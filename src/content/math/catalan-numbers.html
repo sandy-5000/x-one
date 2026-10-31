@@ -1,0 +1,31 @@
+---
+title: "Catalan Numbers"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Catalan Numbers</h1>
+<h2>What it is</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>C_n = (1/(n+1)) * C(2n, n) = C(2n,n) - C(2n, n+1)</code></pre></div>
+<p>Sequence: 1, 1, 2, 5, 14, 42, 132, ...</p>
+<h2>When to use</h2>
+<ul><li>Valid parentheses of length <code>2n</code>.</li><li>Binary trees with <code>n+1</code> nodes.</li><li>Non-crossing chords on circle.</li><li>Paths that never go below diagonal (Dyck paths).</li><li>Appears in stack-sortable permutations.</li></ul>
+<h2>Compute mod prime</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">long long catalan(int n) {
+    return C(2*n, n) * modinv(n + 1, MOD) % MOD;
+}</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 5C — Longest Regular Bracket Sequence</h3>
+<p>Bracket matching — Catalan-related counting.</p>
+<h3>2. Count BSTs from sorted array</h3>
+<p><code>C_n</code> distinct BSTs with n nodes.</p>
+<h3>3. Triangulation of convex (n+2)-gon</h3>
+<p><code>C_n</code> ways.</p>
+<h3>4. CF 131C — The World is a Theatre</h3>
+<p>Sometimes Catalan in seating arrangements.</p>
+<h3>5. Stack permutations</h3>
+<p>Permutation is stack-sortable iff corresponds to Catalan structure.</p>
+<h2>Recognition tip</h2>
+<p>If problem asks &quot;balanced parentheses&quot;, &quot;never go below diagonal&quot;, or &quot;binary tree shape&quot; — think Catalan.</p>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/5/C">CF 5C — Longest Regular Bracket Sequence</a></li><li><a href="https://codeforces.com/problemset/problem/131/C">CF 131C — The World is a Theatre</a></li></ul></div>
+    </article>

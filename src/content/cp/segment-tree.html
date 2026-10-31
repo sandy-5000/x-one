@@ -1,0 +1,53 @@
+---
+title: "Segment Tree"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Segment Tree</h1>
+<h2>What it is</h2>
+<p>Binary tree over array intervals. Supports range query and point/range update in <strong>O(log n)</strong> per operation.</p>
+<h2>When to use</h2>
+<ul><li>Range sum / min / max / gcd.</li><li>Range assign or lazy propagation.</li><li>When BIT is not enough (non-invertible operations).</li></ul>
+<h2>Lazy propagation template (range add, range sum)</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">struct SegTree {
+    int n;
+    vector&lt;long long&gt; st, lazy;
+    SegTree(int n) : n(n), st(4*n), lazy(4*n) {}
+    void push(int p, int l, int r) {
+        if (!lazy[p]) return;
+        st[p] += lazy[p] * (r - l + 1);
+        if (l != r) { lazy[2*p] += lazy[p]; lazy[2*p+1] += lazy[p]; }
+        lazy[p] = 0;
+    }
+    void upd(int p, int l, int r, int ql, int qr, long long v) {
+        push(p, l, r);
+        if (qr &lt; l || r &lt; ql) return;
+        if (ql &lt;= l &amp;&amp; r &lt;= qr) { lazy[p] += v; push(p, l, r); return; }
+        int m = (l + r) / 2;
+        upd(2*p, l, m, ql, qr, v);
+        upd(2*p+1, m+1, r, ql, qr, v);
+        push(2*p, l, m); push(2*p+1, m+1, r);
+        st[p] = st[2*p] + st[2*p+1];
+    }
+    long long query(int p, int l, int r, int ql, int qr) {
+        push(p, l, r);
+        if (qr &lt; l || r &lt; ql) return 0;
+        if (ql &lt;= l &amp;&amp; r &lt;= qr) return st[p];
+        int m = (l + r) / 2;
+        return query(2*p, l, m, ql, qr) + query(2*p+1, m+1, r, ql, qr);
+    }
+};</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 295A — Greg and Array</h3>
+<p>Difference array + segment tree or simpler approaches.</p>
+<h3>2. CF 920F — SUM and REPLACE</h3>
+<p>Segment tree with divisor logic on even numbers.</p>
+<h3>3. Range minimum queries</h3>
+<p>Store min in nodes, no lazy if static.</p>
+<h3>4. CF 242E — XOR on Segment</h3>
+<p>Lazy segment tree with XOR.</p>
+<h3>5. Merge sort tree (upper 1900)</h3>
+<p>Segment tree where each node stores sorted list — k-th in range.</p>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/920/F">CF 920F — SUM and REPLACE</a></li><li><a href="https://codeforces.com/problemset/problem/242/E">CF 242E — XOR on Segment</a></li><li><a href="https://codeforces.com/problemset/problem/295/A">CF 295A — Greg and Array</a></li></ul></div>
+    </article>

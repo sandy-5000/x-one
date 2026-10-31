@@ -1,0 +1,41 @@
+---
+title: "Square Root Decomposition"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Square Root Decomposition</h1>
+<h2>What it is</h2>
+<p>Split array into blocks of size <code>√n</code>. Per-block aggregates give <strong>O(√n)</strong> per query/update — simple, no lazy propagation needed.</p>
+<h2>When to use</h2>
+<ul><li>Range sum with point updates when segment tree feels heavy.</li><li>Mo&#x27;s algorithm block size.</li><li>Frequency queries on value ranges.</li></ul>
+<h2>Template</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">int B = sqrt(n) + 1;
+vector&lt;long long&gt; block(B), a(n);
+
+void update(int i, long long v) {
+  int b = i / B;
+  block[b] -= a[i]; a[i] = v; block[b] += a[i];
+}
+
+long long query(int l, int r) {
+  long long res = 0;
+  if (l / B == r / B) {
+    for (int i = l; i &lt;= r; i++) res += a[i];
+  } else {
+    for (int i = l, end = (l/B+1)*B - 1; i &lt;= end; i++) res += a[i];
+    for (int b = l/B + 1; b &lt; r/B; b++) res += block[b];
+    for (int i = r/B * B; i &lt;= r; i++) res += a[i];
+  }
+  return res;
+}</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 220B — Little Elephant and Array</h3>
+<p>Sqrt decomposition on queries.</p>
+<h3>2. CF 455A — Boredom variant with range freq</h3>
+<p>Block-based frequency.</p>
+<h3>3. Divisors in range — sqrt on value domain.</h3>
+<h3>4. Pre-step for Mo&#x27;s algorithm.</h3>
+<h3>5. CF 86D — Powerful array (Mo&#x27;s, related)</h3>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/220/B">CF 220B — Little Elephant and Array</a></li><li><a href="https://codeforces.com/problemset/problem/86/D">CF 86D — Powerful array</a> (Mo&#x27;s)</li></ul></div>
+    </article>

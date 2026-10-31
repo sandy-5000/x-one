@@ -1,0 +1,33 @@
+---
+title: "Monotonic Deque (Queue)"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Monotonic Deque (Queue)</h1>
+<h2>What it is</h2>
+<p>Deque maintaining monotonic order for <strong>sliding window minimum/maximum</strong> in <strong>O(n)</strong>.</p>
+<h2>When to use</h2>
+<ul><li>Fixed window size <code>k</code>: min/max in each window.</li><li>CF problems with &quot;best in last k elements.&quot;</li></ul>
+<h2>Sliding window maximum template</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">deque&lt;int&gt; dq;  // indices, values decreasing
+vector&lt;int&gt; ans;
+for (int i = 0; i &lt; n; i++) {
+    while (!dq.empty() &amp;&amp; dq.front() &lt;= i - k) dq.pop_front();
+    while (!dq.empty() &amp;&amp; a[dq.back()] &lt;= a[i]) dq.pop_back();
+    dq.push_back(i);
+    if (i &gt;= k - 1) ans.push_back(a[dq.front()]);
+}</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 1690C — Restoring the Duration of Tasks</h3>
+<p>Deque for time windows.</p>
+<h3>2. Sliding window min</h3>
+<p>Same template with reversed comparisons.</p>
+<h3>3. CF 295B — Greg and Graph</h3>
+<p>Less common deque use — know sliding max variant.</p>
+<h3>4. Jump game with range</h3>
+<p>Monotonic queue on DP values (upper 1900).</p>
+<h3>5. Queue with max in O(1) amortized</h3>
+<p>Two stacks or monotonic deque pattern.</p>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/1690/C">CF 1690C — Restoring the Duration of Tasks</a></li><li><a href="https://codeforces.com/problemset/problem/1690/D">CF 1690D — Black and White Stripe</a> (sliding window related)</li></ul></div>
+    </article>

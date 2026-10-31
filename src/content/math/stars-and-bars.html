@@ -1,0 +1,29 @@
+---
+title: "Stars and Bars"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Stars and Bars</h1>
+<h2>What it is</h2>
+<p>Count ways to distribute <code>n</code> <strong>identical</strong> items into <code>k</code> <strong>distinct</strong> bins (bins may be empty):</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>C(n + k - 1, k - 1) = C(n + k - 1, n)</code></pre></div>
+<p><strong>Non-negative</strong> integer solutions to <code>x1 + x2 + ... + xk = n</code>.</p>
+<h2>Variants</h2>
+<div class="table-wrap"><table><thead><tr><th>Constraint</th><th>Formula</th></tr></thead><tbody><tr><td>Each <code>xi ≥ 0</code></td><td>C(n+k-1, k-1)</td></tr><tr><td>Each <code>xi ≥ 1</code> (non-empty bins)</td><td>C(n-1, k-1)</td></tr><tr><td>Each <code>xi ≥ ai</code></td><td>substitute <code>yi = xi - ai</code></td></tr><tr><td>Upper bounds</td><td>inclusion-exclusion</td></tr></tbody></table></div>
+<h2>When to use</h2>
+<ul><li>Distribute candies, votes, identical balls into boxes.</li><li>Count solutions to linear Diophantine with non-negativity.</li><li>DP alternative when formula applies directly.</li></ul>
+<h2>Examples</h2>
+<h3>1. CF 118D — Caesar&#x27;s Legions</h3>
+<p>Soldiers into groups — combinatorics distribution.</p>
+<h3>2. Ways to split sum <code>n</code> into <code>k</code> parts</h3>
+<p>Stars and bars with order (compositions): C(n-1, k-1) for positive parts.</p>
+<h3>3. CF 455A — Boredom variant</h3>
+<p>Count arrays with fixed sum.</p>
+<h3>4. Number of monotonic paths with extra constraints.</h3>
+<h3>5. <code>x1 + x2 + ... + xk ≤ n</code> → C(n+k, k) (add slack variable).</h3>
+<h2>Template</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">// n identical into k distinct bins, bins may be empty
+long long ways = C(n + k - 1, k - 1, MOD);</code></pre></div>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/118/D">CF 118D — Caesar&#x27;s Legions</a></li><li><a href="https://codeforces.com/problemset/problem/628/D">CF 628D — Magic Numbers</a> (digit + counting)</li></ul></div>
+    </article>

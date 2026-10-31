@@ -1,0 +1,34 @@
+---
+title: "Modular Arithmetic"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Modular Arithmetic</h1>
+<h2>What it is</h2>
+<p>Compute <code>(a + b) % m</code>, <code>(a * b) % m</code>, <code>(a - b) % m</code> without overflow. Foundation for almost all counting problems on CF.</p>
+<h2>When to use</h2>
+<ul><li>Answer required mod <code>10^9 + 7</code> or <code>998244353</code>.</li><li>Prevent integer overflow in products.</li><li>Cyclic patterns (days, rotations).</li></ul>
+<h2>Rules</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>(a + b) % m = ((a % m) + (b % m)) % m
+(a * b) % m = ((a % m) * (b % m)) % m
+(a - b) % m = ((a % m) - (b % m) + m) % m   // add m before final %</code></pre></div>
+<h2>Safe multiply (avoid overflow)</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">long long mul(long long a, long long b, long long m) {
+    return (long long)((__int128)a * b % m);
+}</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 451B — Sort the Array</h3>
+<p>Less mod — but many Div2 C need <code>mod</code> on answer.</p>
+<h3>2. Count paths mod M</h3>
+<p>DP with <code>dp[i] = (dp[i-1] + dp[i-2]) % MOD</code>.</p>
+<h3>3. CF 118D — Caesar&#x27;s Legions</h3>
+<p>DP + combinatorics mod prime.</p>
+<h3>4. Negative numbers mod</h3>
+<p><code>((a % m) + m) % m</code> always gives <code>[0, m)</code>.</p>
+<h3>5. Modular division</h3>
+<p>Need modular inverse — see <code>modular-inverse-fermat.md</code>.</p>
+<h2>Common moduli on CF</h2>
+<div class="table-wrap"><table><thead><tr><th>Mod</th><th>Notes</th></tr></thead><tbody><tr><td>10^9 + 7</td><td>Most common</td></tr><tr><td>998244353</td><td>NTT-friendly prime</td></tr><tr><td>10^9 + 9</td><td>Alternative</td></tr></tbody></table></div>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/118/D">CF 118D — Caesar&#x27;s Legions</a></li><li><a href="https://codeforces.com/problemset/problem/455/A">CF 455A — Boredom</a> (if counting variants)</li></ul></div>
+    </article>

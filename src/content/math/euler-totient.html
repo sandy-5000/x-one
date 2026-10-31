@@ -1,0 +1,48 @@
+---
+title: "Euler's Totient φ(n)"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Euler&#x27;s Totient φ(n)</h1>
+<h2>What it is</h2>
+<p><code>φ(n)</code> = count of integers in [1, n] coprime to n.</p>
+<p>If <code>n = p1^a1 * p2^a2 * ...</code>:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>φ(n) = n * Π (1 - 1/pi)   over distinct primes pi dividing n</code></pre></div>
+<h2>When to use</h2>
+<ul><li>Count coprime pairs.</li><li>Euler&#x27;s theorem: <code>a^φ(n) ≡ 1 (mod n)</code> when gcd(a,n)=1.</li><li>Cycle length in modular exponentiation.</li></ul>
+<h2>Compute φ(n) for single n</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">long long phi(long long n) {
+    long long result = n;
+    for (long long p = 2; p * p &lt;= n; p++) {
+        if (n % p == 0) {
+            while (n % p == 0) n /= p;
+            result -= result / p;
+        }
+    }
+    if (n &gt; 1) result -= result / n;
+    return result;
+}</code></pre></div>
+<h2>Sieve totient for all 1..n</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">vector&lt;int&gt; phi(n+1);
+iota(phi.begin(), phi.end(), 0);
+phi[1] = 1;
+for (int i = 2; i &lt;= n; i++) if (!phi[i]) {
+    for (int j = i; j &lt;= n; j += i) {
+        if (!phi[j]) phi[j] = j;
+        phi[j] -= phi[j] / i;
+    }
+}</code></pre></div>
+<h2>Examples</h2>
+<h3>1. Count a^b mod m cycles</h3>
+<p>Period divides φ(m) when gcd(a,m)=1.</p>
+<h3>2. CF 1225D — Unusual Product</h3>
+<p>Coprime / factorization related.</p>
+<h3>3. Inclusion-exclusion count coprime</h3>
+<p><code>Σ μ(d) * (n/d)</code> — alternative to φ on intervals.</p>
+<h3>4. RSA-style problems (rare in CF)</h3>
+<p>φ(pq) = (p-1)(q-1).</p>
+<h3>5. Order of element mod p</h3>
+<p>Smallest k with a^k ≡ 1 divides φ(p)=p-1.</p>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/1225/D">CF 1225D — Unusual Product</a></li><li>Problems involving coprime counting mod n</li></ul></div>
+    </article>

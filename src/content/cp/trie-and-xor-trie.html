@@ -1,0 +1,53 @@
+---
+title: "Trie & XOR Trie"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Trie &amp; XOR Trie</h1>
+<h2>What it is</h2>
+<p><strong>Trie:</strong> tree on bits/characters for prefix queries. <strong>XOR Trie:</strong> store numbers bit-by-bit; query max xor with given value in <strong>O(log MAX)</strong>.</p>
+<h2>When to use</h2>
+<ul><li>Maximum xor pair / max xor subarray.</li><li>Prefix xor problems.</li><li>Insert/query strings by prefix.</li></ul>
+<h2>XOR Trie template</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">struct XorTrie {
+    struct Node { int ch[2] = {-1,-1}; int cnt = 0; };
+    vector&lt;Node&gt; t;
+    int bits = 30;
+    XorTrie() { t.push_back({}); }
+
+    void insert(int x) {
+        int u = 0; t[u].cnt++;
+        for (int b = bits; b &gt;= 0; b--) {
+            int c = (x &gt;&gt; b) &amp; 1;
+            if (t[u].ch[c] == -1) {
+                t[u].ch[c] = t.size();
+                t.push_back({});
+            }
+            u = t[u].ch[c]; t[u].cnt++;
+        }
+    }
+
+    int max_xor(int x) {
+        int u = 0, res = 0;
+        for (int b = bits; b &gt;= 0; b--) {
+            int c = (x &gt;&gt; b) &amp; 1;
+            int want = 1 - c;
+            if (t[u].ch[want] != -1) { res |= (1&lt;&lt;b); u = t[u].ch[want]; }
+            else u = t[u].ch[c];
+        }
+        return res;
+    }
+};</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 888G — XOR Gate</h3>
+<p>Max xor pair — insert and query.</p>
+<h3>2. CF 1847C — Vampiric Powers</h3>
+<p>Prefix xor + trie.</p>
+<h3>3. CF 165E — Compatible Numbers</h3>
+<p>SOS DP or trie on bits.</p>
+<h3>4. Maximum xor subarray</h3>
+<p>Prefix xor array + trie.</p>
+<h3>5. String trie for autocomplete / prefix count.</h3>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/888/G">CF 888G — XOR Gate</a></li><li><a href="https://codeforces.com/problemset/problem/1847/C">CF 1847C — Vampiric Powers, anyone?</a></li><li><a href="https://codeforces.com/problemset/problem/165/E">CF 165E — Compatible Numbers</a></li></ul></div>
+    </article>

@@ -1,0 +1,34 @@
+---
+title: "Z-Algorithm"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Z-Algorithm</h1>
+<h2>What it is</h2>
+<p>For string <code>s</code>, <code>z[i]</code> = length of longest substring starting at <code>i</code> that matches prefix of <code>s</code>. Computed in <strong>O(n)</strong>.</p>
+<h2>When to use</h2>
+<ul><li>Find all occurrences of pattern (concatenate <code>pat + # + text</code>).</li><li>Period, prefix matching, string compression.</li><li>Alternative to KMP in many problems.</li></ul>
+<h2>Template</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">vector&lt;int&gt; z_function(string s) {
+    int n = s.size();
+    vector&lt;int&gt; z(n);
+    int l = 0, r = 0;
+    for (int i = 1; i &lt; n; i++) {
+        if (i &lt; r) z[i] = min(r - i, z[i - l]);
+        while (i + z[i] &lt; n &amp;&amp; s[z[i]] == s[i + z[i]]) z[i]++;
+        if (i + z[i] &gt; r) { l = i; r = i + z[i]; }
+    }
+    return z;
+}</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 535D — Tavas and Malekas</h3>
+<p>Period detection with Z.</p>
+<h3>2. Count prefix occurrences in suffix</h3>
+<p><code>z[i]</code> tells match length with prefix.</p>
+<h3>3. CF 1200E — Compress Words</h3>
+<p>Compare longest common prefix/suffix via Z.</p>
+<h3>4. Pattern matching: <code>z[pat.size()+1 + i] == pat.size()</code> → match.</h3>
+<h3>5. String period: smallest <code>p</code> where <code>z[p] + p == n</code>.</h3>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/535/D">CF 535D — Tavas and Malekas</a></li><li><a href="https://codeforces.com/problemset/problem/1200/E">CF 1200E — Compress Words</a></li></ul></div>
+    </article>

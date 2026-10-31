@@ -1,0 +1,42 @@
+---
+title: "Two Pointers"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Two Pointers</h1>
+<h2>What it is</h2>
+<p>Maintain two indices <code>l</code> and <code>r</code> on a sequence, moving them based on a condition — typically <strong>O(n)</strong> after sorting.</p>
+<h2>When to use</h2>
+<ul><li>Sorted array: find pairs with given sum/property.</li><li>Remove duplicates in-place.</li><li>Merge two sorted arrays/lists.</li><li>Partition array (Dutch national flag).</li></ul>
+<h2>Templates</h2>
+<h3>Opposite ends (sorted array, pair sum)</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">int l = 0, r = n - 1;
+while (l &lt; r) {
+    int s = a[l] + a[r];
+    if (s == target) { /* found */ break; }
+    else if (s &lt; target) l++;
+    else r--;
+}</code></pre></div>
+<h3>Same direction (chase)</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">int j = 0;
+for (int i = 0; i &lt; n; i++) {
+    while (j &lt; n &amp;&amp; condition(i, j)) j++;
+    // window [i, j) or similar
+}</code></pre></div>
+<h2>Examples</h2>
+<h3>1. Two sum in sorted array</h3>
+<p>Find if any pair sums to <code>S</code>. Opposite pointers — <strong>O(n)</strong>.</p>
+<h3>2. CF 279B — Books</h3>
+<p>Max consecutive books with total height <code>≤ t</code>. Sliding two pointers on array.</p>
+<h3>3. CF 1536C — Diluc and Kaeya</h3>
+<p>Two pointers on two strings for LCP-style matching.</p>
+<h3>4. Three sum (reduce to two sum)</h3>
+<p>Fix one element, two-pointer on the rest.</p>
+<h3>5. Remove duplicates from sorted array</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">int w = 0;
+for (int r = 0; r &lt; n; r++)
+    if (r == 0 || a[r] != a[r-1])
+        a[w++] = a[r];</code></pre></div>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/279/B">CF 279B — Books</a></li><li><a href="https://codeforces.com/problemset/problem/1536/C">CF 1536C — Diluc and Kaeya</a></li><li><a href="https://codeforces.com/problemset/problem/702/C">CF 702C — Cellular Network</a> (sort + two pointers)</li></ul></div>
+    </article>

@@ -1,0 +1,32 @@
+---
+title: "Expected Value — Linearity"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Expected Value — Linearity</h1>
+<h2>What it is</h2>
+<p><strong>Linearity of expectation</strong> (always true, even if variables are dependent):</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>E[X + Y] = E[X] + E[Y]
+E[cX] = c * E[X]</code></pre></div>
+<p>Most CF probability problems reduce to summing probabilities of indicator variables.</p>
+<h2>Indicator variable trick</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">// E[number of pairs with property] = Σ P(pair (i,j) has property)
+for each pair (i,j)
+    ans += probability_or_0_1_indicator;</code></pre></div>
+<h2>When to use</h2>
+<ul><li>&quot;Expected number of ...&quot; in random process.</li><li>Average value over all permutations / random choices.</li><li>Avoid complex joint distributions — use linearity.</li></ul>
+<h2>Examples</h2>
+<h3>1. Expected fixed points in random permutation</h3>
+<p><code>E[count] = Σ P(i is fixed) = n * (1/n) = 1</code>.</p>
+<h3>2. CF 1191C — Tokitsukaze and Discarding Stones</h3>
+<p>Game + expected moves.</p>
+<h3>3. Expected inversions in random array</h3>
+<p><code>E = n(n-1)/4</code> — each pair 50% inverted.</p>
+<h3>4. CF 1107F — Vasya and Endless Credits</h3>
+<p>Expected value DP.</p>
+<h3>5. Random walk expected steps — markov + linearity on states.</h3>
+<h2>Modulo form</h2>
+<p>When answer is <code>P/Q mod M</code>: compute <code>P * inv(Q) mod M</code>.</p>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/1191/C">CF 1191C — Tokitsukaze and Discarding Stones</a></li><li><a href="https://codeforces.com/problemset/problem/1107/F">CF 1107F — Vasya and Endless Credits</a></li></ul></div>
+    </article>

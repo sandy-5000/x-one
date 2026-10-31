@@ -1,0 +1,40 @@
+---
+title: "Möbius Inversion"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Möbius Inversion</h1>
+<h2>What it is</h2>
+<p>Number-theoretic inclusion-exclusion on divisors:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>g(n) = Σ f(d)  over d|n   ⟺   f(n) = Σ μ(d) * g(n/d)  over d|n</code></pre></div>
+<p><code>μ(n)</code> = Möbius function: 0 if squared prime factor, <code>(-1)^k</code> if <code>k</code> distinct primes.</p>
+<h2>When to use</h2>
+<ul><li>Count coprime pairs in range.</li><li>GCD = 1 counting.</li><li>Divisor-sum inversion problems.</li></ul>
+<h2>Precompute μ with sieve</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">vector&lt;int&gt; mu(n+1), primes;
+vector&lt;bool&gt; is_comp(n+1);
+mu[1] = 1;
+for (int i = 2; i &lt;= n; i++) {
+    if (!is_comp[i]) { primes.push_back(i); mu[i] = -1; }
+    for (int p : primes) {
+        if (i * p &gt; n) break;
+        is_comp[i*p] = true;
+        if (i % p == 0) { mu[i*p] = 0; break; }
+        mu[i*p] = -mu[i];
+    }
+}</code></pre></div>
+<h2>Count coprime pairs (classic)</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>ans = Σ μ(d) * C(count of multiples of d, 2)</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 1225D — Unusual Product</h3>
+<p>GCD / coprime counting.</p>
+<h3>2. CF 1037C — Equal Elements</h3>
+<p>Divisor structure.</p>
+<h3>3. Count pairs with gcd = 1 in array</h3>
+<p>Mobius on frequency of multiples.</p>
+<h3>4. CF 939D — Love-Hate</h3>
+<p>Number theory + mobius.</p>
+<h3>5. Sum of φ(1..n) — related to mobius inversion.</h3>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/1225/D">CF 1225D — Unusual Product</a></li><li><a href="https://codeforces.com/problemset/problem/939/D">CF 939D — Love-Hate</a></li></ul></div>
+    </article>

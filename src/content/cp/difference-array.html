@@ -1,0 +1,41 @@
+---
+title: "Difference Array"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Difference Array</h1>
+<h2>What it is</h2>
+<p>Technique for <strong>range add</strong> updates on an array in <strong>O(1)</strong> per update, then one <strong>O(n)</strong> pass to rebuild final array.</p>
+<h2>When to use</h2>
+<ul><li>Many operations: add <code>v</code> to all elements in <code>[l, r]</code>.</li><li>Offline range updates before final query.</li><li>Often paired with prefix sums (difference → apply updates → prefix → final array).</li></ul>
+<h2>Template</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">vector&lt;long long&gt; diff(n + 1);
+auto range_add = [&amp;](int l, int r, long long v) {
+    diff[l] += v;
+    if (r + 1 &lt; n) diff[r + 1] -= v;
+};
+// after all updates:
+vector&lt;long long&gt; a(n);
+long long cur = 0;
+for (int i = 0; i &lt; n; i++) {
+    cur += diff[i];
+    a[i] = cur;  // or a[i] += cur if building on existing
+}</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 295A — Greg and Array</h3>
+<p>Multiple range additions, then point queries — classic difference array.</p>
+<h3>2. Flight bookings / meeting rooms</h3>
+<p>Add +1 to <code>[start, end]</code> for each booking, prefix to get counts.</p>
+<h3>3. 2D difference array</h3>
+<p>Range add on submatrix — four corner updates (used less at 1950 but good to know).</p>
+<h3>4. String hashing with range add on frequency</h3>
+<p>Difference on character count array.</p>
+<h3>5. Combine with binary search on answer</h3>
+<p>Apply range updates in check function, rebuild with prefix.</p>
+<h2>Relation to prefix sums</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>difference(prefix(a)) = a
+prefix(difference(a)) = a</code></pre></div>
+<p>Difference array is the &quot;inverse&quot; of prefix sum for range adds.</p>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/295/A">CF 295A — Greg and Array</a></li><li><a href="https://codeforces.com/problemset/problem/797/C">CF 797C — Minimal String</a> (greedy + difference idea)</li></ul></div>
+    </article>

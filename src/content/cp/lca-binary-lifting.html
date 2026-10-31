@@ -1,0 +1,55 @@
+---
+title: "LCA (Binary Lifting)"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>LCA (Binary Lifting)</h1>
+<h2>What it is</h2>
+<p><strong>Lowest Common Ancestor</strong> of two nodes in tree. Binary lifting preprocesses ancestors at powers of 2 for <strong>O(log n)</strong> per query.</p>
+<h2>When to use</h2>
+<ul><li>Distance between two nodes: <code>dist(u,v) = depth[u] + depth[v] - 2*depth[lca]</code>.</li><li>Path queries (sometimes with segment tree on Euler tour).</li><li>K-th ancestor queries.</li></ul>
+<h2>Preprocess template</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">const int LOG = 20;
+vector&lt;vector&lt;int&gt;&gt; up(n, vector&lt;int&gt;(LOG));
+vector&lt;int&gt; depth;
+
+void dfs(int u, int p) {
+    up[u][0] = p;
+    for (int k = 1; k &lt; LOG; k++)
+        up[u][k] = up[up[u][k-1]][k-1];
+    for (int v : adj[u]) if (v != p) {
+        depth[v] = depth[u] + 1;
+        dfs(v, u);
+    }
+}
+
+int lca(int u, int v) {
+    if (depth[u] &lt; depth[v]) swap(u, v);
+    int diff = depth[u] - depth[v];
+    for (int k = 0; k &lt; LOG; k++)
+        if (diff &gt;&gt; k &amp; 1) u = up[u][k];
+    if (u == v) return u;
+    for (int k = LOG-1; k &gt;= 0; k--)
+        if (up[u][k] != up[v][k]) { u = up[u][k]; v = up[v][k]; }
+    return up[u][0];
+}
+
+int kth_ancestor(int u, int k) {
+    for (int i = 0; i &lt; LOG; i++)
+        if (k &gt;&gt; i &amp; 1) u = up[u][i];
+    return u;
+}</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 519E — Rounds and Rectangles</h3>
+<p>Tree paths + counting.</p>
+<h3>2. CF 1304D — Shortest and Longest LIS</h3>
+<p>Not LCA but tree path problems often use it.</p>
+<h3>3. CF 1325C — Ehab and Path-etic MEX</h3>
+<p>Path MEX on tree — LCA + preprocessing.</p>
+<h3>4. Query path sum with prefix on root path</h3>
+<p>Store <code>sum_to_root[u]</code>; path sum = <code>sum[u] + sum[v] - 2*sum[lca] + val[lca]</code>.</p>
+<h3>5. CF 1702E — Split into Two Paths</h3>
+<p>Tree decomposition with LCA checks.</p>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/1325/C">CF 1325C — Ehab and Path-etic MEX</a></li><li><a href="https://codeforces.com/problemset/problem/519/E">CF 519E — Rounds and Rectangles</a></li><li><a href="https://codeforces.com/problemset/problem/1702/E">CF 1702E — Split into Two Paths</a></li></ul></div>
+    </article>

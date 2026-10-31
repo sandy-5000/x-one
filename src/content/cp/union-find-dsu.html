@@ -1,0 +1,40 @@
+---
+title: "Union-Find (DSU)"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Union-Find (DSU)</h1>
+<h2>What it is</h2>
+<p>Disjoint Set Union maintains connected components with <strong>near O(1)</strong> <code>union</code> and <code>find</code> (path compression + union by rank).</p>
+<h2>When to use</h2>
+<ul><li>Dynamic connectivity.</li><li>Kruskal&#x27;s MST.</li><li>Detect cycle in undirected graph.</li><li>Group equivalent elements (transitive closure offline).</li></ul>
+<h2>Template</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">struct DSU {
+    vector&lt;int&gt; p, r;
+    DSU(int n) : p(n), r(n, 0) { iota(p.begin(), p.end(), 0); }
+    int find(int x) { return p[x] == x ? x : p[x] = find(p[x]); }
+    bool unite(int a, int b) {
+        a = find(a); b = find(b);
+        if (a == b) return false;
+        if (r[a] &lt; r[b]) swap(a, b);
+        p[b] = a;
+        if (r[a] == r[b]) r[a]++;
+        return true;
+    }
+};</code></pre></div>
+<h2>Examples</h2>
+<h3>1. Kruskal MST</h3>
+<p>Sort edges by weight, unite if different components.</p>
+<h3>2. CF 1851D — Stronger Friends</h3>
+<p>DSU on friendship constraints.</p>
+<h3>3. CF 1167C — News Distribution</h3>
+<p>Count component sizes after unions.</p>
+<h3>4. Cycle detection</h3>
+<p>Adding edge <code>(u,v)</code> — if <code>find(u) == find(v)</code>, cycle formed.</p>
+<h3>5. CF 1609D — Social Network</h3>
+<p>Online DSU with component size queries.</p>
+<h2>Extensions (know the idea)</h2>
+<ul><li><strong>DSU with rollback</strong> — upper 1900, contest trees.</li><li><strong>DSU on tree</strong> — different technique (tree DP).</li></ul>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/1167/C">CF 1167C — News Distribution</a></li><li><a href="https://codeforces.com/problemset/problem/1609/D">CF 1609D — Social Network</a></li><li><a href="https://codeforces.com/problemset/problem/1851/D">CF 1851D — Stronger Friends</a></li></ul></div>
+    </article>

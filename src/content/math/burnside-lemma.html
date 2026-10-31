@@ -1,0 +1,37 @@
+---
+title: "Burnside's Lemma (Symmetry Counting)"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Burnside&#x27;s Lemma (Symmetry Counting)</h1>
+<h2>What it is</h2>
+<p>Count distinct objects under symmetry group <code>G</code>:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>|Orbits| = (1/|G|) * Σ fix(g)   over g ∈ G</code></pre></div>
+<p><code>fix(g)</code> = number of configurations unchanged by symmetry <code>g</code>.</p>
+<h2>When to use</h2>
+<ul><li>Count necklaces / bracelets (cyclic rotation).</li><li>Colorings up to rotation/reflection.</li><li>Polya enumeration lite at ~1900.</li></ul>
+<h2>Necklace example (n beads, k colors)</h2>
+<p>Rotation by <code>shift</code> fixes a coloring iff all beads in cycles have same color.</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">long long fix(int shift, int n, int k) {
+    int g = gcd(shift, n);
+    return power(k, g, MOD);  // g cycles, each independent
+}
+
+long long necklaces(int n, int k, long long mod) {
+    long long sum = 0;
+    for (int shift = 0; shift &lt; n; shift++)
+        sum = (sum + fix(shift, n, k)) % mod;
+    return sum * modinv(n, mod) % mod;
+}</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 1017C — The Phone Number</h3>
+<p>Symmetry / counting.</p>
+<h3>2. CF 1105E — Helping Hiasat</h3>
+<p>Combinatorics with symmetry.</p>
+<h3>3. Count distinct strings under rotation</h3>
+<p>Burnside on cyclic group.</p>
+<h3>4. Grid colorings modulo reflection (dihedral group).</h3>
+<h3>5. CF 1208F — Bits (different technique but counting)</h3>
+<h2>Practice</h2>
+<ul><li>Search &quot;Burnside&quot; or &quot;necklace&quot; on CF 1700–2000</li><li>Classic: count binary necklaces of length n</li></ul></div>
+    </article>

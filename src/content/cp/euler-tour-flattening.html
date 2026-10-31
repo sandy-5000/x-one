@@ -1,0 +1,38 @@
+---
+title: "Euler Tour (Tree Flattening)"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Euler Tour (Tree Flattening)</h1>
+<h2>What it is</h2>
+<p>DFS traversal of a tree recording entry/exit times. Turns subtree queries into <strong>array range queries</strong> on a flattened sequence.</p>
+<h2>When to use</h2>
+<ul><li>Subtree sum/update on tree → segment tree on Euler tour.</li><li>Query path with LCA + prefix on tour.</li><li>Count nodes in subtree = <code>out[u] - in[u] + 1</code>.</li></ul>
+<h2>Template</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">vector&lt;int&gt; tin, tout, euler;
+int timer = 0;
+
+void dfs(int u, int p) {
+    tin[u] = timer;
+    euler[timer++] = u;
+    for (int v : adj[u]) if (v != p) dfs(v, u);
+    tout[u] = timer - 1;
+}
+
+bool in_subtree(int u, int v) {  // is v in subtree of u?
+    return tin[u] &lt;= tin[v] &amp;&amp; tout[v] &lt;= tout[u];
+}</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 1328D — Tree Construction</h3>
+<p>Euler tour + construction.</p>
+<h3>2. Subtree add, point query</h3>
+<p>Add <code>x</code> to all nodes in subtree of <code>u</code> → range add on <code>[tin[u], tout[u]]</code>.</p>
+<h3>3. CF 1325C — Path MEX</h3>
+<p>Combine Euler tour with path decomposition.</p>
+<h3>4. Count distinct colors in subtree</h3>
+<p>Mo&#x27;s on tree or DSU on tree.</p>
+<h3>5. Flatten for binary lifting preprocessing</h3>
+<p>Often computed in same DFS as LCA.</p>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/1328/D">CF 1328D — FIND THE TREE</a></li><li><a href="https://codeforces.com/problemset/problem/1325/C">CF 1325C — Ehab and Path-etic MEX</a></li></ul></div>
+    </article>

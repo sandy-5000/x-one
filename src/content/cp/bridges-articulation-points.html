@@ -1,0 +1,42 @@
+---
+title: "Bridges & Articulation Points"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Bridges &amp; Articulation Points</h1>
+<h2>What it is</h2>
+<ul><li><strong>Bridge:</strong> edge whose removal disconnects graph.</li><li><strong>Articulation point:</strong> vertex whose removal increases connected components.</li></ul>
+<p>Found by DFS with <strong>low-link</strong> values in <strong>O(V + E)</strong>.</p>
+<h2>When to use</h2>
+<ul><li>Network reliability, 2-edge-connected components.</li><li>Tree + one extra edge problems.</li><li>Block-cut tree construction (advanced).</li></ul>
+<h2>Template (bridges)</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">vector&lt;int&gt; tin, low;
+int timer = 0;
+vector&lt;pair&lt;int,int&gt;&gt; bridges;
+
+void dfs(int u, int p, vector&lt;vector&lt;int&gt;&gt;&amp; adj) {
+    tin[u] = low[u] = timer++;
+    for (int v : adj[u]) {
+        if (v == p) continue;
+        if (tin[v] == -1) {
+            dfs(v, u, adj);
+            low[u] = min(low[u], low[v]);
+            if (low[v] &gt; tin[u]) bridges.push_back({u, v});
+        } else {
+            low[u] = min(low[u], tin[v]);
+        }
+    }
+}</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 652D — Bridges in graph</h3>
+<p>Online bridge queries (offline DFS).</p>
+<h3>2. CF 118E — Bertown roads</h3>
+<p>Make graph 2-edge-connected by adding min edges.</p>
+<h3>3. CF 25D — Roads not only in Berland</h3>
+<p>MST + bridge detection.</p>
+<h3>4. CF 1325E — Ehab and Path-etic MEX</h3>
+<p>Tree structure; bridges in general graphs differ.</p>
+<h3>5. Count bridges before adding edges.</h3>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/118/E">CF 118E — Bertown roads</a></li><li><a href="https://codeforces.com/problemset/problem/25/D">CF 25D — Roads not only in Berland</a></li></ul></div>
+    </article>

@@ -1,0 +1,240 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>SOLID principles · x-one</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../assets/style.css"><script src="../assets/copy.js" defer></script></head><body><aside class="sidebar"><input type="checkbox" id="nav-toggle" class="nav-toggle"><div class="sidebar-brand"><a href="../index.html">x-one notes</a><label for="nav-toggle" class="menu-btn" aria-label="Toggle navigation"><span class="menu-open">Menu</span><span class="menu-close">Close</span></label></div><nav><details class="nav-group"><summary class="nav-group-label">cp<span class="nav-count">56</span></summary><ul><li><a href="../cp/0-1-bfs.html">0-1 BFS</a></li><li><a href="../cp/two-sat.html">2-SAT</a></li><li><a href="../cp/bfs-state-space.html">BFS on State Space</a></li><li><a href="../cp/binary-search.html">Binary Search (on Sorted Data)</a></li><li><a href="../cp/binary-search-on-answer.html">Binary Search on Answer</a></li><li><a href="../cp/bitmask-dp.html">Bitmask DP</a></li><li><a href="../cp/bridges-articulation-points.html">Bridges &amp; Articulation Points</a></li><li><a href="../cp/cdq-divide-conquer.html">CDQ Divide &amp; Conquer (Offline)</a></li><li><a href="../cp/centroid-decomposition.html">Centroid Decomposition</a></li><li><a href="../cp/convex-hull-trick-lichao.html">Convex Hull Trick &amp; Li Chao Tree</a></li><li><a href="../cp/coordinate-compression.html">Coordinate Compression</a></li><li><a href="../cp/difference-array.html">Difference Array</a></li><li><a href="../cp/digit-dp.html">Digit DP</a></li><li><a href="../cp/dijkstra.html">Dijkstra&#39;s Algorithm</a></li><li><a href="../cp/dsu-on-tree.html">DSU on Tree (Small-to-Large)</a></li><li><a href="../cp/dp-1d.html">Dynamic Programming — 1D</a></li><li><a href="../cp/dp-2d-knapsack.html">Dynamic Programming — 2D &amp; Knapsack</a></li><li><a href="../cp/euler-tour-flattening.html">Euler Tour (Tree Flattening)</a></li><li><a href="../cp/fenwick-tree.html">Fenwick Tree (Binary Indexed Tree)</a></li><li><a href="../cp/flood-fill-multi-source-bfs.html">Flood Fill &amp; Multi-Source BFS</a></li><li><a href="../cp/floyd-warshall.html">Floyd-Warshall</a></li><li><a href="../cp/functional-graphs.html">Functional Graphs</a></li><li><a href="../cp/graph-bfs-dfs.html">Graph BFS &amp; DFS</a></li><li><a href="../cp/greedy.html">Greedy</a></li><li><a href="../cp/heavy-light-decomposition.html">Heavy-Light Decomposition (HLD)</a></li><li><a href="../cp/interval-dp.html">Interval DP</a></li><li><a href="../cp/kmp-pattern-matching.html">KMP Pattern Matching</a></li><li><a href="../cp/lca-binary-lifting.html">LCA (Binary Lifting)</a></li><li><a href="../cp/line-sweep.html">Line Sweep</a></li><li><a href="../cp/lis.html">Longest Increasing Subsequence (LIS)</a></li><li><a href="../cp/matrix-exponentiation.html">Matrix Exponentiation</a></li><li><a href="../cp/meet-in-the-middle.html">Meet in the Middle</a></li><li><a href="../cp/mos-algorithm.html">Mo&#39;s Algorithm (Offline Queries)</a></li><li><a href="../cp/monotonic-queue.html">Monotonic Deque (Queue)</a></li><li><a href="../cp/monotonic-stack.html">Monotonic Stack</a></li><li><a href="../cp/mst-kruskal-prim.html">MST (Kruskal &amp; Prim)</a></li><li><a href="../cp/policy-based-data-structure.html">Policy-Based Data Structure</a></li><li><a href="../cp/prefix-sums.html">Prefix Sums</a></li><li><a href="../cp/priority-queue-tricks.html">Priority Queue Tricks</a></li><li><a href="../cp/rerooting-dp.html">Rerooting DP on Trees</a></li><li><a href="../cp/segment-tree.html">Segment Tree</a></li><li><a href="../cp/sliding-window.html">Sliding Window</a></li><li><a href="../cp/sorting-tricks.html">Sorting Tricks</a></li><li><a href="../cp/sparse-table-rmq.html">Sparse Table (RMQ)</a></li><li><a href="../cp/sprague-grundy.html">Sprague-Grundy (Game Theory)</a></li><li><a href="../cp/sqrt-decomposition.html">Square Root Decomposition</a></li><li><a href="../cp/string-hashing.html">String Hashing</a></li><li><a href="../cp/strongly-connected-components.html">Strongly Connected Components (SCC)</a></li><li><a href="../cp/topological-sort.html">Topological Sort</a></li><li><a href="../cp/tree-dfs.html">Tree DFS</a></li><li><a href="../cp/tree-difference-array.html">Tree Difference Array</a></li><li><a href="../cp/trie-and-xor-trie.html">Trie &amp; XOR Trie</a></li><li><a href="../cp/two-pointers.html">Two Pointers</a></li><li><a href="../cp/union-find-dsu.html">Union-Find (DSU)</a></li><li><a href="../cp/virtual-tree.html">Virtual Tree</a></li><li><a href="../cp/z-algorithm.html">Z-Algorithm</a></li></ul></details><details class="nav-group" open><summary class="nav-group-label">design<span class="nav-count">11</span></summary><ul><li><a href="../design/solid-principles.html" class="is-active" aria-current="page">SOLID principles</a></li><li><a href="../design/design-patterns.html">Design patterns</a></li><li><a href="../design/system-design-basics.html">System design basics</a></li><li><a href="../design/caching.html">Caching</a></li><li><a href="../design/databases.html">Databases at scale</a></li><li><a href="../design/cap-and-consistency.html">CAP &amp; consistency</a></li><li><a href="../design/message-queues.html">Message queues</a></li><li><a href="../design/rate-limiting.html">Rate limiting</a></li><li><a href="../design/api-design.html">API design</a></li><li><a href="../design/microservices.html">Microservices</a></li><li><a href="../design/url-shortener.html">Case study: URL shortener</a></li></ul></details><details class="nav-group"><summary class="nav-group-label">docker<span class="nav-count">3</span></summary><ul><li><a href="../docker/start.html">Start</a></li><li><a href="../docker/compose.html">Compose</a></li><li><a href="../docker/swarm.html">Swarm</a></li></ul></details><details class="nav-group"><summary class="nav-group-label">java<span class="nav-count">5</span></summary><ul><li><a href="../java/part-1.html">Part 1</a></li><li><a href="../java/part-2.html">Part 2</a></li><li><a href="../java/part-3.html">Part 3</a></li><li><a href="../java/part-4.html">Part 4</a></li><li><a href="../java/part-5.html">Part 5</a></li></ul></details><details class="nav-group"><summary class="nav-group-label">math<span class="nav-count">34</span></summary><ul><li><a href="../math/bijection-counting.html">Bijection &amp; Counting Proofs</a></li><li><a href="../math/burnside-lemma.html">Burnside&#39;s Lemma (Symmetry Counting)</a></li><li><a href="../math/catalan-numbers.html">Catalan Numbers</a></li><li><a href="../math/chinese-remainder-theorem.html">Chinese Remainder Theorem (CRT)</a></li><li><a href="../math/combinatorial-identities.html">Combinatorial Identities</a></li><li><a href="../math/combinatorics-ncr.html">Combinatorics — nCr &amp; Pascal</a></li><li><a href="../math/computational-geometry-basics.html">Computational Geometry Basics</a></li><li><a href="../math/derangements.html">Derangements</a></li><li><a href="../math/divisor-enumeration.html">Divisor Enumeration — O(√n)</a></li><li><a href="../math/divisor-functions.html">Divisor Functions (τ and σ)</a></li><li><a href="../math/euler-totient.html">Euler&#39;s Totient φ(n)</a></li><li><a href="../math/expected-value-linearity.html">Expected Value — Linearity</a></li><li><a href="../math/fast-exponentiation.html">Fast Exponentiation</a></li><li><a href="../math/fermat-euler-theorem.html">Fermat&#39;s &amp; Euler&#39;s Theorems</a></li><li><a href="../math/floor-sum-trick.html">Floor Sum Trick — Σ⌊n/i⌋</a></li><li><a href="../math/gcd-lcm-extended-euclid.html">GCD, LCM &amp; Extended Euclidean</a></li><li><a href="../math/harmonic-bounds.html">Harmonic Bounds &amp; Estimates</a></li><li><a href="../math/inclusion-exclusion.html">Inclusion-Exclusion Principle</a></li><li><a href="../math/legendre-formula.html">Legendre&#39;s Formula</a></li><li><a href="../math/linear-recurrences.html">Linear Recurrences</a></li><li><a href="../math/lucas-theorem.html">Lucas Theorem &amp; nCr mod prime</a></li><li><a href="../math/mobius-inversion.html">Möbius Inversion</a></li><li><a href="../math/modular-arithmetic.html">Modular Arithmetic</a></li><li><a href="../math/modular-inverse-composite.html">Modular Inverse (Composite Modulus)</a></li><li><a href="../math/modular-inverse-fermat.html">Modular Inverse (Fermat)</a></li><li><a href="../math/multinomial-coefficients.html">Multinomial Coefficients</a></li><li><a href="../math/parity-xor-patterns.html">Parity, XOR &amp; Modular Patterns</a></li><li><a href="../math/pigeonhole-counting.html">Pigeonhole &amp; Counting Arguments</a></li><li><a href="../math/probability-basics.html">Probability Basics</a></li><li><a href="../math/sieve-primes-factorization.html">Sieve, Primes &amp; Factorization</a></li><li><a href="../math/stars-and-bars.html">Stars and Bars</a></li><li><a href="../math/stirling-numbers.html">Stirling Numbers (2nd Kind)</a></li><li><a href="../math/sum-formulas-series.html">Sum Formulas &amp; Series</a></li><li><a href="../math/wilson-primality.html">Wilson&#39;s Theorem &amp; Primality</a></li></ul></details><details class="nav-group"><summary class="nav-group-label">os<span class="nav-count">2</span></summary><ul><li><a href="../os/cpu.html">CPU</a></li><li><a href="../os/user-threads.html">User threads</a></li></ul></details></nav></aside><main class="chat"><header class="page-head"><span class="crumb">design / solid-principles</span></header><article class="message assistant"><div class="message-body prose"><h1 id="solid-principles">SOLID Principles</h1>
+<p>SOLID is five object-oriented design rules collected by Robert C. Martin. They all aim at the same thing: <strong>code that is easy to change without breaking unrelated parts</strong>.</p>
+<div class="table-wrap">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Letter</th><th>Principle</th><th>One-line idea</th></tr></thead><tbody><tr><td>S</td><td>Single Responsibility</td><td>A class has one reason to change</td></tr><tr><td>O</td><td>Open/Closed</td><td>Extend behaviour without editing existing code</td></tr><tr><td>L</td><td>Liskov Substitution</td><td>Subtypes must be usable wherever the base type is</td></tr><tr><td>I</td><td>Interface Segregation</td><td>Many small interfaces beat one fat interface</td></tr><tr><td>D</td><td>Dependency Inversion</td><td>Depend on abstractions, not concrete classes</td></tr></tbody></table></div>
+<hr>
+<h2 id="s--single-responsibility-principle">S — Single Responsibility Principle</h2>
+<blockquote>
+<p>A class should have one, and only one, reason to change.</p>
+</blockquote>
+<p>“Reason to change” means one <em>actor</em> or concern: business rules, persistence, formatting, and so on. When one class mixes them, a change for one concern risks breaking the others.</p>
+<h3 id="violation">Violation</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-java">class Invoice {
+    double amount;
+
+    double calculateTotal() { return amount * 1.18; }   // business rule
+
+    void saveToDatabase() { /* JDBC code */ }           // persistence
+
+    String toPdf() { /* PDF rendering */ return ""; }   // presentation
+}</code></pre></div>
+<p>A tax change, a database migration, and a new PDF layout all edit the same class.</p>
+<h3 id="fix">Fix</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-java">class Invoice {
+    double amount;
+    double calculateTotal() { return amount * 1.18; }
+}
+
+class InvoiceRepository {
+    void save(Invoice invoice) { /* JDBC code */ }
+}
+
+class InvoicePdfPrinter {
+    String print(Invoice invoice) { /* PDF rendering */ return ""; }
+}</code></pre></div>
+<p>Each class now changes for exactly one reason, and each can be tested on its own.</p>
+<hr>
+<h2 id="o--openclosed-principle">O — Open/Closed Principle</h2>
+<blockquote>
+<p>Software entities should be open for extension, but closed for modification.</p>
+</blockquote>
+<p>Adding a new feature should mean <strong>adding new code</strong>, not editing working, tested code.</p>
+<h3 id="violation-1">Violation</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-java">class DiscountService {
+    double discount(String customerType, double price) {
+        if (customerType.equals("REGULAR")) return price * 0.05;
+        if (customerType.equals("PREMIUM")) return price * 0.10;
+        if (customerType.equals("VIP"))     return price * 0.20;   // edit every time
+        return 0;
+    }
+}</code></pre></div>
+<h3 id="fix--polymorphism">Fix — polymorphism</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-java">interface DiscountPolicy {
+    double discount(double price);
+}
+
+class RegularDiscount implements DiscountPolicy {
+    public double discount(double price) { return price * 0.05; }
+}
+
+class PremiumDiscount implements DiscountPolicy {
+    public double discount(double price) { return price * 0.10; }
+}
+
+// New type = new class. DiscountService never changes.
+class VipDiscount implements DiscountPolicy {
+    public double discount(double price) { return price * 0.20; }
+}
+
+class DiscountService {
+    double discount(DiscountPolicy policy, double price) {
+        return policy.discount(price);
+    }
+}</code></pre></div>
+<p>The <code>if</code>/<code>switch</code> on a type code is the classic smell. Strategy, Decorator, and plugin systems are common ways to follow OCP.</p>
+<hr>
+<h2 id="l--liskov-substitution-principle">L — Liskov Substitution Principle</h2>
+<blockquote>
+<p>If <code>S</code> is a subtype of <code>T</code>, objects of type <code>T</code> may be replaced with objects of type <code>S</code> without breaking the program.</p>
+</blockquote>
+<p>A subclass must honour the <strong>contract</strong> of its parent: same preconditions (or weaker), same postconditions (or stronger), no surprising exceptions.</p>
+<h3 id="violation--the-rectanglesquare-problem">Violation — the Rectangle/Square problem</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-java">class Rectangle {
+    protected int width, height;
+    void setWidth(int w)  { width = w; }
+    void setHeight(int h) { height = h; }
+    int area() { return width * height; }
+}
+
+class Square extends Rectangle {
+    @Override void setWidth(int w)  { width = w; height = w; }
+    @Override void setHeight(int h) { width = h; height = h; }
+}
+
+void resize(Rectangle r) {
+    r.setWidth(5);
+    r.setHeight(4);
+    assert r.area() == 20;   // fails for Square: area is 16
+}</code></pre></div>
+<p>Mathematically a square <em>is a</em> rectangle, but behaviourally it is not: it breaks the expectation that width and height change independently.</p>
+<h3 id="fix-1">Fix</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-java">interface Shape {
+    int area();
+}
+
+record Rectangle(int width, int height) implements Shape {
+    public int area() { return width * height; }
+}
+
+record Square(int side) implements Shape {
+    public int area() { return side * side; }
+}</code></pre></div>
+<p>Other common LSP smells:</p>
+<ul>
+<li>A subclass method that throws <code>UnsupportedOperationException</code>.</li>
+<li>A subclass that ignores a call the parent would have honoured.</li>
+<li>Code that checks <code>instanceof</code> before calling a method.</li>
+</ul>
+<hr>
+<h2 id="i--interface-segregation-principle">I — Interface Segregation Principle</h2>
+<blockquote>
+<p>Clients should not be forced to depend on methods they do not use.</p>
+</blockquote>
+<h3 id="violation-2">Violation</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-java">interface Worker {
+    void work();
+    void eat();
+    void attendMeeting();
+}
+
+class Robot implements Worker {
+    public void work() { /* ok */ }
+    public void eat() { throw new UnsupportedOperationException(); }   // forced
+    public void attendMeeting() { throw new UnsupportedOperationException(); }
+}</code></pre></div>
+<h3 id="fix-2">Fix</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-java">interface Workable  { void work(); }
+interface Eatable   { void eat(); }
+interface Meetable  { void attendMeeting(); }
+
+class Human implements Workable, Eatable, Meetable {
+    public void work() {}
+    public void eat() {}
+    public void attendMeeting() {}
+}
+
+class Robot implements Workable {
+    public void work() {}
+}</code></pre></div>
+<p>Small, role-based interfaces also keep recompilation and mocking cheap: a test for <code>Robot</code> never has to stub <code>eat()</code>.</p>
+<hr>
+<h2 id="d--dependency-inversion-principle">D — Dependency Inversion Principle</h2>
+<blockquote>
+<p>High-level modules should not depend on low-level modules. Both should depend on abstractions.</p>
+</blockquote>
+<h3 id="violation-3">Violation</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-java">class MySqlDatabase {
+    void insert(String data) { /* ... */ }
+}
+
+class UserService {
+    private final MySqlDatabase db = new MySqlDatabase();   // hard-wired
+
+    void register(String name) { db.insert(name); }
+}</code></pre></div>
+<p><code>UserService</code> (business logic) cannot be tested without MySQL and cannot switch to another store.</p>
+<h3 id="fix--depend-on-an-interface-inject-the-implementation">Fix — depend on an interface, inject the implementation</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-java">interface UserStore {
+    void save(String name);
+}
+
+class MySqlUserStore implements UserStore {
+    public void save(String name) { /* JDBC */ }
+}
+
+class InMemoryUserStore implements UserStore {
+    final List&#x3C;String> users = new ArrayList&#x3C;>();
+    public void save(String name) { users.add(name); }
+}
+
+class UserService {
+    private final UserStore store;
+
+    UserService(UserStore store) { this.store = store; }   // constructor injection
+
+    void register(String name) { store.save(name); }
+}
+
+// production
+new UserService(new MySqlUserStore());
+// test
+new UserService(new InMemoryUserStore());</code></pre></div>
+<pre class="diagram"><code>Before:  UserService ──────────► MySqlDatabase
+
+After:   UserService ──► UserStore ◄── MySqlUserStore
+                         (interface)◄── InMemoryUserStore</code></pre>
+<p>The arrow from the low-level module now points <em>up</em> to the abstraction — that is the “inversion”. Frameworks like Spring automate the wiring (dependency injection), but the principle is just constructor parameters typed as interfaces.</p>
+<hr>
+<h2 id="how-they-fit-together">How they fit together</h2>
+<ul>
+<li><strong>SRP</strong> keeps classes small and focused.</li>
+<li><strong>OCP</strong> lets you add behaviour by adding classes.</li>
+<li><strong>LSP</strong> makes sure those new classes can be plugged in safely.</li>
+<li><strong>ISP</strong> keeps the plug-in points (interfaces) narrow.</li>
+<li><strong>DIP</strong> lets high-level code receive those plug-ins from outside.</li>
+</ul>
+<p>Do not apply them dogmatically: an interface with a single implementation that will never change is just extra indirection. Reach for them when a part of the code <strong>actually changes often</strong> or needs to be tested in isolation.</p></div></article></main></body></html>

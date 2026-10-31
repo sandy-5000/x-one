@@ -1,0 +1,49 @@
+---
+title: "Topological Sort"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Topological Sort</h1>
+<h2>What it is</h2>
+<p>Linear ordering of DAG vertices such that for every edge <code>u → v</code>, <code>u</code> comes before <code>v</code>. Detects cycle if impossible.</p>
+<h2>When to use</h2>
+<ul><li>Task dependencies.</li><li>DP on DAG (process in topo order).</li><li>Course prerequisites.</li></ul>
+<h2>Kahn&#x27;s algorithm (BFS)</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">vector&lt;int&gt; indeg(n);
+for (auto&amp; e : edges) indeg[e.to]++;
+queue&lt;int&gt; q;
+for (int i = 0; i &lt; n; i++) if (!indeg[i]) q.push(i);
+vector&lt;int&gt; order;
+while (!q.empty()) {
+    int u = q.front(); q.pop();
+    order.push_back(u);
+    for (int v : adj[u]) if (--indeg[v] == 0) q.push(v);
+}
+bool is_dag = order.size() == n;</code></pre></div>
+<h2>DFS version</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">vector&lt;int&gt; order, state(n); // 0 unvisited, 1 in stack, 2 done
+bool cycle = false;
+function&lt;void(int)&gt; dfs = [&amp;](int u) {
+    state[u] = 1;
+    for (int v : adj[u]) {
+        if (state[v] == 1) cycle = true;
+        if (!state[v]) dfs(v);
+    }
+    state[u] = 2;
+    order.push_back(u);
+};
+// reverse order for topo (or use order as postorder reversed)</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 1579E1 — Permutation Minimization by Deque</h3>
+<p>Topo on constraint graph.</p>
+<h3>2. CF 1037C — Equal Elements</h3>
+<p>Topo + greedy on pairs.</p>
+<h3>3. Longest path in DAG</h3>
+<p>Topo order + relax: <code>dp[v] = max(dp[v], dp[u] + w)</code>.</p>
+<h3>4. CF 919D — Substring</h3>
+<p>DP with topo on letter constraints.</p>
+<h3>5. Lexicographically smallest topo order</h3>
+<p>Use min-heap instead of queue in Kahn&#x27;s.</p>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/1579/E1">CF 1579E1 — Permutation Minimization by Deque</a></li><li><a href="https://codeforces.com/problemset/problem/1037/C">CF 1037C — Equal Elements</a></li><li><a href="https://codeforces.com/problemset/problem/919/D">CF 919D — Substring</a></li></ul></div>
+    </article>

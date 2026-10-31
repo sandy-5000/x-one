@@ -1,0 +1,45 @@
+---
+title: "String Hashing"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>String Hashing</h1>
+<h2>What it is</h2>
+<p>Polynomial rolling hash maps substring to integer for <strong>O(1)</strong> average equality check after <strong>O(n)</strong> preprocess.</p>
+<h2>When to use</h2>
+<ul><li>Compare substrings quickly.</li><li>Find duplicate substrings.</li><li>Binary search on answer with substring check.</li></ul>
+<h2>Template (double hash recommended)</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">using ull = unsigned long long;
+const ull B1 = 31, M1 = (1ULL&lt;&lt;61) - 1;  // or use mod 1e9+7
+
+struct Hasher {
+    vector&lt;ull&gt; p, h;
+    Hasher(const string&amp; s) {
+        int n = s.size();
+        p.resize(n+1); h.resize(n+1);
+        p[0] = 1;
+        for (int i = 0; i &lt; n; i++) {
+            p[i+1] = p[i] * B1 % M1;
+            h[i+1] = (h[i] * B1 + s[i]) % M1;
+        }
+    }
+    ull get(int l, int r) {  // [l, r)
+        return (h[r] - h[l] * p[r-l] % M1 + M1) % M1;
+    }
+};</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 1200E — Compress Words</h3>
+<p>Hash + binary search on prefix length.</p>
+<h3>2. CF 271D — Good Substrings</h3>
+<p>Hash substrings for counting.</p>
+<h3>3. Longest common substring (binary search + hash)</h3>
+<p>Check all length-<code>L</code> hashes with set.</p>
+<h3>4. Palindrome check with hash</h3>
+<p>Compare hash of <code>s[l..r]</code> with hash of reversed.</p>
+<h3>5. CF 1537E — Pair of Toys</h3>
+<p>Less hashing — but string problems often combine hash + binary search.</p>
+<h2>Collision handling</h2>
+<ul><li>Use two moduli or <code>uint64_t</code> with random base.</li><li>For contest problems, single mod <code>10^9+7</code> usually passes.</li></ul>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/1200/E">CF 1200E — Compress Words</a></li><li><a href="https://codeforces.com/problemset/problem/271/D">CF 271D — Good Substrings</a></li><li><a href="https://codeforces.com/problemset/problem/1200/E">CF 1200E — Compress Words</a></li></ul></div>
+    </article>

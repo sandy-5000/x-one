@@ -1,0 +1,50 @@
+---
+title: "Dijkstra's Algorithm"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Dijkstra&#x27;s Algorithm</h1>
+<h2>What it is</h2>
+<p>Shortest path from source in <strong>non-negative</strong> weighted graph in <strong>O((V+E) log V)</strong> with priority queue.</p>
+<h2>When to use</h2>
+<ul><li>Weighted shortest path (edges ≥ 0).</li><li>Multi-source: add super-source with 0-weight edges.</li><li>0-1 BFS when weights are only 0 and 1 (faster alternative).</li></ul>
+<h2>Template</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">vector&lt;long long&gt; dist(n, LLONG_MAX);
+priority_queue&lt;pair&lt;long long,int&gt;, vector&lt;...&gt;, greater&lt;...&gt;&gt; pq;
+dist[s] = 0; pq.push({0, s});
+while (!pq.empty()) {
+    auto [d, u] = pq.top(); pq.pop();
+    if (d != dist[u]) continue;
+    for (auto [v, w] : adj[u])
+        if (dist[u] + w &lt; dist[v]) {
+            dist[v] = dist[u] + w;
+            pq.push({dist[v], v});
+        }
+}</code></pre></div>
+<h2>0-1 BFS</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">deque&lt;int&gt; dq;
+dist[s] = 0; dq.push_front(s);
+while (!dq.empty()) {
+    int u = dq.front(); dq.pop_front();
+    for (auto [v, w] : adj[u])
+        if (dist[u] + w &lt; dist[v]) {
+            dist[v] = dist[u] + w;
+            w ? dq.push_back(v) : dq.push_front(v);
+        }
+}</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 20C — Dijkstra?</h3>
+<p>Standard shortest path reconstruction with parent array.</p>
+<h3>2. CF 1073D — Berland Fair</h3>
+<p>Dijkstra on implicit graph (items + coins).</p>
+<h3>3. CF 1735E — House Planning</h3>
+<p>Multi-source or modified Dijkstra.</p>
+<h3>4. Shortest path with limited edges</h3>
+<p>Add dimension <code>dist[v][k]</code> — DP on graph.</p>
+<h3>5. CF 1915G — Gellyfish and Flaming Peony</h3>
+<p>State graph + Dijkstra.</p>
+<h2>Pitfalls</h2>
+<ul><li><strong>Negative edges</strong> → Bellman-Ford (rare at 1950).</li><li>Stale entries in PQ — always check <code>d == dist[u]</code>.</li></ul>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/20/C">CF 20C — Dijkstra?</a></li><li><a href="https://codeforces.com/problemset/problem/1073/D">CF 1073D — Berland Fair</a></li><li><a href="https://codeforces.com/problemset/problem/1915/G">CF 1915G — Gellyfish and Flaming Peony</a></li></ul></div>
+    </article>

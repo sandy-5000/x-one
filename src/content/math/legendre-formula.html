@@ -1,0 +1,38 @@
+---
+title: "Legendre's Formula"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Legendre&#x27;s Formula</h1>
+<h2>What it is</h2>
+<p>Exponent of prime <code>p</code> in <code>n!</code>:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>e_p(n!) = ⌊n/p⌋ + ⌊n/p²⌋ + ⌊n/p³⌋ + ...</code></pre></div>
+<h2>When to use</h2>
+<ul><li>Trailing zeros in <code>n!</code> (base 10): min over <code>2,5</code> but usually <code>⌊n/5⌋ + ⌊n/25⌋ + ...</code>.</li><li>Largest <code>k</code> where <code>p^k | n!</code>.</li><li>Count factors of prime in binomial coefficients.</li></ul>
+<h2>Trailing zeros template</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">int trailing_zeros(int n) {
+    int cnt = 0;
+    for (long long p = 5; p &lt;= n; p *= 5)
+        cnt += n / p;
+    return cnt;
+}</code></pre></div>
+<h2>Prime exponent in n!</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">int legendre(int n, int p) {
+    int e = 0;
+    for (long long pk = p; pk &lt;= n; pk *= p)
+        e += n / pk;
+    return e;
+}</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 472A — Design Tutorial</h3>
+<p>Factorial divisibility.</p>
+<h3>2. CF 1228C — Trees</h3>
+<p>Factorial / combinatorics.</p>
+<h3>3. n! divisible by <code>2^a * 5^b</code>?</h3>
+<p>Compare Legendre exponents.</p>
+<h3>4. CF 1103E — Konrad and Company Evaluation</h3>
+<p>Binomial coefficient prime factorization.</p>
+<h3>5. Count trailing zeros in product of range [L,R] — use prefix Legendre.</h3>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/472/A">CF 472A — Design Tutorial</a></li><li>Problems tagged &quot;factorial&quot; 1500–1800</li></ul></div>
+    </article>

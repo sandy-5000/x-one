@@ -1,0 +1,44 @@
+---
+title: "Combinatorics — nCr & Pascal"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Combinatorics — nCr &amp; Pascal</h1>
+<h2>What it is</h2>
+<ul><li><strong>nCr</strong> = C(n,r) = n! / (r! (n-r)!)</li><li>Count ways to choose <code>r</code> from <code>n</code> unordered items.</li></ul>
+<h2>When to use</h2>
+<ul><li>Counting paths, subsets, arrangements.</li><li>DP with combinatorial coefficients.</li><li>Stars and bars (distribute identical items).</li></ul>
+<h2>Precompute factorials mod M</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">const int MOD = 1e9+7, MAXN = 2e5+5;
+long long fac[MAXN], invfac[MAXN];
+
+long long power(long long a, long long e) { /* fast pow */ }
+
+void init() {
+    fac[0] = 1;
+    for (int i = 1; i &lt; MAXN; i++) fac[i] = fac[i-1] * i % MOD;
+    invfac[MAXN-1] = power(fac[MAXN-1], MOD-2);
+    for (int i = MAXN-2; i &gt;= 0; i--)
+        invfac[i] = invfac[i+1] * (i+1) % MOD;
+}
+
+long long C(int n, int r) {
+    if (r &lt; 0 || r &gt; n) return 0;
+    return fac[n] * invfac[r] % MOD * invfac[n-r] % MOD;
+}</code></pre></div>
+<h2>Key identities</h2>
+<div class="table-wrap"><table><thead><tr><th>Identity</th><th>Formula</th></tr></thead><tbody><tr><td>Pascal</td><td>C(n,r) = C(n-1,r-1) + C(n-1,r)</td></tr><tr><td>Stars &amp; bars</td><td>C(n+k-1, k-1) ways to put n identical into k bins</td></tr><tr><td>Paths on grid</td><td>C(n+m, n) from (0,0) to (n,m) moving right/up</td></tr></tbody></table></div>
+<h2>Examples</h2>
+<h3>1. CF 118D — Caesar&#x27;s Legions</h3>
+<p>DP with combinatorics for arranging soldiers.</p>
+<h3>2. CF 455A — Boredom variant counting</h3>
+<p>Choose positions with combinatorial constraints.</p>
+<h3>3. Grid paths with obstacles</h3>
+<p>Inclusion-exclusion or DP; unconstrained = C(n+m,n).</p>
+<h3>4. Multiset permutations</h3>
+<p><code>n! / (c1! * c2! * ...)</code> for duplicate letters.</p>
+<h3>5. Catalan (see separate file)</h3>
+<p>C(n) = C(2n,n) / (n+1).</p>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/118/D">CF 118D — Caesar&#x27;s Legions</a></li><li><a href="https://codeforces.com/problemset/problem/455/A">CF 455A — Boredom</a></li></ul></div>
+    </article>

@@ -1,0 +1,30 @@
+---
+title: "Sum Formulas & Series"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Sum Formulas &amp; Series</h1>
+<h2>What it is</h2>
+<p>Closed-form sums used constantly to avoid O(n) loops when n is huge.</p>
+<h2>Essential formulas</h2>
+<div class="table-wrap"><table><thead><tr><th>Sum</th><th>Formula</th></tr></thead><tbody><tr><td>1 + 2 + ... + n</td><td>n(n+1)/2</td></tr><tr><td>1² + 2² + ... + n²</td><td>n(n+1)(2n+1)/6</td></tr><tr><td>1³ + ... + n³</td><td>(n(n+1)/2)²</td></tr><tr><td>Geometric</td><td>a + ar + ... + ar^(n-1) = a(1-r^n)/(1-r)</td></tr><tr><td>Arithmetic series</td><td>first + last) * count / 2</td></tr></tbody></table></div>
+<h2>When to use</h2>
+<ul><li>Count operations in nested loops (turn O(1) formula).</li><li>CF problems asking sum of f(i) over range.</li><li>Pair counting: total pairs = n(n-1)/2.</li></ul>
+<h2>Examples</h2>
+<h3>1. CF 1208C — Magic Grid</h3>
+<p>Grid sums with arithmetic series.</p>
+<h3>2. Count pairs (i, j) with i &lt; j</h3>
+<p><code>n*(n-1)/2</code> — use <code>__int128</code> if n up to 10^9.</p>
+<h3>3. Sum of floor(n/i) for all i</h3>
+<p><code>O(√n)</code> trick — group equal quotients (occasional Div2 D).</p>
+<h3>4. CF 1338A — Powered Addition</h3>
+<p>Min operations related to gaps — sum of differences.</p>
+<h3>5. Harmonic-like sums</h3>
+<p>Σ n/i for i=1..n appears in some greedy analyses.</p>
+<h2>Safe computation</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">long long pairs(long long n) {
+    return (__int128)n * (n - 1) / 2;
+}</code></pre></div>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/1208/C">CF 1208C — Magic Grid</a></li><li><a href="https://codeforces.com/problemset/problem/1338/A">CF 1338A — Powered Addition</a></li></ul></div>
+    </article>

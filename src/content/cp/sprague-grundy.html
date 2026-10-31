@@ -1,0 +1,39 @@
+---
+title: "Sprague-Grundy (Game Theory)"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Sprague-Grundy (Game Theory)</h1>
+<h2>What it is</h2>
+<p>Impartial games: each position has <strong>Grundy number</strong> (nimber) = mex of Grundy numbers of reachable positions. Position is losing iff Grundy = 0.</p>
+<h2>When to use</h2>
+<ul><li>Nim, take-away games on piles.</li><li>XOR of pile Grundy numbers = 0 → losing for first player.</li><li>Combine independent subgames.</li></ul>
+<h2>Template</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">vector&lt;int&gt; grundy(MAXN, -1);
+
+int mex(const unordered_set&lt;int&gt;&amp; s) {
+    int m = 0;
+    while (s.count(m)) m++;
+    return m;
+}
+
+int calc(int state) {
+    if (grundy[state] != -1) return grundy[state];
+    unordered_set&lt;int&gt; reachable;
+    for (int next : moves(state)) reachable.insert(calc(next));
+    return grundy[state] = mex(reachable);
+}</code></pre></div>
+<h2>Nim rule</h2>
+<p><code>n</code> piles with sizes <code>a[i]</code> → Grundy = <code>a[1] ^ a[2] ^ ... ^ a[n]</code>. First player wins iff XOR ≠ 0.</p>
+<h2>Examples</h2>
+<h3>1. CF 1191C — Tokitsukaze and Discarding Stones</h3>
+<p>Game on piles — nim variant.</p>
+<h3>2. CF 1375C — Element Extermination</h3>
+<p>Game theory greedy.</p>
+<h3>3. CF 1107F — Vasya and Endless Credits</h3>
+<p>Sprague-Grundy on states.</p>
+<h3>4. Take 1, 2, or k stones from pile.</h3>
+<h3>5. Graph game: move token, last move wins — compute Grundy per node.</h3>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/1191/C">CF 1191C — Tokitsukaze and Discarding Stones</a></li><li><a href="https://codeforces.com/problemset/problem/1375/C">CF 1375C — Element Extermination</a></li></ul></div>
+    </article>

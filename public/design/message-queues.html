@@ -1,0 +1,152 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Message queues · x-one</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../assets/style.css"><script src="../assets/copy.js" defer></script></head><body><aside class="sidebar"><input type="checkbox" id="nav-toggle" class="nav-toggle"><div class="sidebar-brand"><a href="../index.html">x-one notes</a><label for="nav-toggle" class="menu-btn" aria-label="Toggle navigation"><span class="menu-open">Menu</span><span class="menu-close">Close</span></label></div><nav><details class="nav-group"><summary class="nav-group-label">cp<span class="nav-count">56</span></summary><ul><li><a href="../cp/0-1-bfs.html">0-1 BFS</a></li><li><a href="../cp/two-sat.html">2-SAT</a></li><li><a href="../cp/bfs-state-space.html">BFS on State Space</a></li><li><a href="../cp/binary-search.html">Binary Search (on Sorted Data)</a></li><li><a href="../cp/binary-search-on-answer.html">Binary Search on Answer</a></li><li><a href="../cp/bitmask-dp.html">Bitmask DP</a></li><li><a href="../cp/bridges-articulation-points.html">Bridges &amp; Articulation Points</a></li><li><a href="../cp/cdq-divide-conquer.html">CDQ Divide &amp; Conquer (Offline)</a></li><li><a href="../cp/centroid-decomposition.html">Centroid Decomposition</a></li><li><a href="../cp/convex-hull-trick-lichao.html">Convex Hull Trick &amp; Li Chao Tree</a></li><li><a href="../cp/coordinate-compression.html">Coordinate Compression</a></li><li><a href="../cp/difference-array.html">Difference Array</a></li><li><a href="../cp/digit-dp.html">Digit DP</a></li><li><a href="../cp/dijkstra.html">Dijkstra&#39;s Algorithm</a></li><li><a href="../cp/dsu-on-tree.html">DSU on Tree (Small-to-Large)</a></li><li><a href="../cp/dp-1d.html">Dynamic Programming — 1D</a></li><li><a href="../cp/dp-2d-knapsack.html">Dynamic Programming — 2D &amp; Knapsack</a></li><li><a href="../cp/euler-tour-flattening.html">Euler Tour (Tree Flattening)</a></li><li><a href="../cp/fenwick-tree.html">Fenwick Tree (Binary Indexed Tree)</a></li><li><a href="../cp/flood-fill-multi-source-bfs.html">Flood Fill &amp; Multi-Source BFS</a></li><li><a href="../cp/floyd-warshall.html">Floyd-Warshall</a></li><li><a href="../cp/functional-graphs.html">Functional Graphs</a></li><li><a href="../cp/graph-bfs-dfs.html">Graph BFS &amp; DFS</a></li><li><a href="../cp/greedy.html">Greedy</a></li><li><a href="../cp/heavy-light-decomposition.html">Heavy-Light Decomposition (HLD)</a></li><li><a href="../cp/interval-dp.html">Interval DP</a></li><li><a href="../cp/kmp-pattern-matching.html">KMP Pattern Matching</a></li><li><a href="../cp/lca-binary-lifting.html">LCA (Binary Lifting)</a></li><li><a href="../cp/line-sweep.html">Line Sweep</a></li><li><a href="../cp/lis.html">Longest Increasing Subsequence (LIS)</a></li><li><a href="../cp/matrix-exponentiation.html">Matrix Exponentiation</a></li><li><a href="../cp/meet-in-the-middle.html">Meet in the Middle</a></li><li><a href="../cp/mos-algorithm.html">Mo&#39;s Algorithm (Offline Queries)</a></li><li><a href="../cp/monotonic-queue.html">Monotonic Deque (Queue)</a></li><li><a href="../cp/monotonic-stack.html">Monotonic Stack</a></li><li><a href="../cp/mst-kruskal-prim.html">MST (Kruskal &amp; Prim)</a></li><li><a href="../cp/policy-based-data-structure.html">Policy-Based Data Structure</a></li><li><a href="../cp/prefix-sums.html">Prefix Sums</a></li><li><a href="../cp/priority-queue-tricks.html">Priority Queue Tricks</a></li><li><a href="../cp/rerooting-dp.html">Rerooting DP on Trees</a></li><li><a href="../cp/segment-tree.html">Segment Tree</a></li><li><a href="../cp/sliding-window.html">Sliding Window</a></li><li><a href="../cp/sorting-tricks.html">Sorting Tricks</a></li><li><a href="../cp/sparse-table-rmq.html">Sparse Table (RMQ)</a></li><li><a href="../cp/sprague-grundy.html">Sprague-Grundy (Game Theory)</a></li><li><a href="../cp/sqrt-decomposition.html">Square Root Decomposition</a></li><li><a href="../cp/string-hashing.html">String Hashing</a></li><li><a href="../cp/strongly-connected-components.html">Strongly Connected Components (SCC)</a></li><li><a href="../cp/topological-sort.html">Topological Sort</a></li><li><a href="../cp/tree-dfs.html">Tree DFS</a></li><li><a href="../cp/tree-difference-array.html">Tree Difference Array</a></li><li><a href="../cp/trie-and-xor-trie.html">Trie &amp; XOR Trie</a></li><li><a href="../cp/two-pointers.html">Two Pointers</a></li><li><a href="../cp/union-find-dsu.html">Union-Find (DSU)</a></li><li><a href="../cp/virtual-tree.html">Virtual Tree</a></li><li><a href="../cp/z-algorithm.html">Z-Algorithm</a></li></ul></details><details class="nav-group" open><summary class="nav-group-label">design<span class="nav-count">11</span></summary><ul><li><a href="../design/solid-principles.html">SOLID principles</a></li><li><a href="../design/design-patterns.html">Design patterns</a></li><li><a href="../design/system-design-basics.html">System design basics</a></li><li><a href="../design/caching.html">Caching</a></li><li><a href="../design/databases.html">Databases at scale</a></li><li><a href="../design/cap-and-consistency.html">CAP &amp; consistency</a></li><li><a href="../design/message-queues.html" class="is-active" aria-current="page">Message queues</a></li><li><a href="../design/rate-limiting.html">Rate limiting</a></li><li><a href="../design/api-design.html">API design</a></li><li><a href="../design/microservices.html">Microservices</a></li><li><a href="../design/url-shortener.html">Case study: URL shortener</a></li></ul></details><details class="nav-group"><summary class="nav-group-label">docker<span class="nav-count">3</span></summary><ul><li><a href="../docker/start.html">Start</a></li><li><a href="../docker/compose.html">Compose</a></li><li><a href="../docker/swarm.html">Swarm</a></li></ul></details><details class="nav-group"><summary class="nav-group-label">java<span class="nav-count">5</span></summary><ul><li><a href="../java/part-1.html">Part 1</a></li><li><a href="../java/part-2.html">Part 2</a></li><li><a href="../java/part-3.html">Part 3</a></li><li><a href="../java/part-4.html">Part 4</a></li><li><a href="../java/part-5.html">Part 5</a></li></ul></details><details class="nav-group"><summary class="nav-group-label">math<span class="nav-count">34</span></summary><ul><li><a href="../math/bijection-counting.html">Bijection &amp; Counting Proofs</a></li><li><a href="../math/burnside-lemma.html">Burnside&#39;s Lemma (Symmetry Counting)</a></li><li><a href="../math/catalan-numbers.html">Catalan Numbers</a></li><li><a href="../math/chinese-remainder-theorem.html">Chinese Remainder Theorem (CRT)</a></li><li><a href="../math/combinatorial-identities.html">Combinatorial Identities</a></li><li><a href="../math/combinatorics-ncr.html">Combinatorics — nCr &amp; Pascal</a></li><li><a href="../math/computational-geometry-basics.html">Computational Geometry Basics</a></li><li><a href="../math/derangements.html">Derangements</a></li><li><a href="../math/divisor-enumeration.html">Divisor Enumeration — O(√n)</a></li><li><a href="../math/divisor-functions.html">Divisor Functions (τ and σ)</a></li><li><a href="../math/euler-totient.html">Euler&#39;s Totient φ(n)</a></li><li><a href="../math/expected-value-linearity.html">Expected Value — Linearity</a></li><li><a href="../math/fast-exponentiation.html">Fast Exponentiation</a></li><li><a href="../math/fermat-euler-theorem.html">Fermat&#39;s &amp; Euler&#39;s Theorems</a></li><li><a href="../math/floor-sum-trick.html">Floor Sum Trick — Σ⌊n/i⌋</a></li><li><a href="../math/gcd-lcm-extended-euclid.html">GCD, LCM &amp; Extended Euclidean</a></li><li><a href="../math/harmonic-bounds.html">Harmonic Bounds &amp; Estimates</a></li><li><a href="../math/inclusion-exclusion.html">Inclusion-Exclusion Principle</a></li><li><a href="../math/legendre-formula.html">Legendre&#39;s Formula</a></li><li><a href="../math/linear-recurrences.html">Linear Recurrences</a></li><li><a href="../math/lucas-theorem.html">Lucas Theorem &amp; nCr mod prime</a></li><li><a href="../math/mobius-inversion.html">Möbius Inversion</a></li><li><a href="../math/modular-arithmetic.html">Modular Arithmetic</a></li><li><a href="../math/modular-inverse-composite.html">Modular Inverse (Composite Modulus)</a></li><li><a href="../math/modular-inverse-fermat.html">Modular Inverse (Fermat)</a></li><li><a href="../math/multinomial-coefficients.html">Multinomial Coefficients</a></li><li><a href="../math/parity-xor-patterns.html">Parity, XOR &amp; Modular Patterns</a></li><li><a href="../math/pigeonhole-counting.html">Pigeonhole &amp; Counting Arguments</a></li><li><a href="../math/probability-basics.html">Probability Basics</a></li><li><a href="../math/sieve-primes-factorization.html">Sieve, Primes &amp; Factorization</a></li><li><a href="../math/stars-and-bars.html">Stars and Bars</a></li><li><a href="../math/stirling-numbers.html">Stirling Numbers (2nd Kind)</a></li><li><a href="../math/sum-formulas-series.html">Sum Formulas &amp; Series</a></li><li><a href="../math/wilson-primality.html">Wilson&#39;s Theorem &amp; Primality</a></li></ul></details><details class="nav-group"><summary class="nav-group-label">os<span class="nav-count">2</span></summary><ul><li><a href="../os/cpu.html">CPU</a></li><li><a href="../os/user-threads.html">User threads</a></li></ul></details></nav></aside><main class="chat"><header class="page-head"><span class="crumb">design / message-queues</span></header><article class="message assistant"><div class="message-body prose"><h1 id="message-queues-and-async-processing">Message Queues and Async Processing</h1>
+<p>A message queue lets one service hand work to another <strong>without waiting for it</strong>. The producer writes a message; a consumer processes it later.</p>
+<pre class="diagram"><code>┌──────────┐     ┌───────────────┐     ┌──────────┐
+│ Producer │ ──► │ Queue / Topic │ ──► │ Consumer │
+└──────────┘     └───────────────┘     └──────────┘</code></pre>
+<h2 id="why-use-one">Why use one</h2>
+<ul>
+<li><strong>Decoupling</strong> — producer and consumer don’t need to know about each other or be up at the same time.</li>
+<li><strong>Load levelling</strong> — a burst of 10,000 orders queues up; workers drain it at their own pace.</li>
+<li><strong>Faster responses</strong> — return “accepted” now, send the email / resize the image in the background.</li>
+<li><strong>Reliability</strong> — messages persist until processed; failed ones can be retried.</li>
+<li><strong>Fan-out</strong> — one event, many independent consumers.</li>
+</ul>
+<hr>
+<h2 id="point-to-point-vs-publishsubscribe">Point-to-point vs publish/subscribe</h2>
+<p><strong>Queue (point-to-point):</strong> each message goes to <strong>one</strong> consumer. Add consumers to process faster.</p>
+<pre class="diagram"><code>           ┌──► worker 1   (msg 1, 3)
+queue ─────┼──► worker 2   (msg 2, 5)
+           └──► worker 3   (msg 4)</code></pre>
+<p><strong>Topic (pub/sub):</strong> each message goes to <strong>every</strong> subscriber group.</p>
+<pre class="diagram"><code>                 ┌──► email service
+"OrderPlaced" ───┼──► inventory service
+                 └──► analytics service</code></pre>
+<hr>
+<h2 id="popular-systems">Popular systems</h2>
+<div class="table-wrap">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>RabbitMQ</th><th>Apache Kafka</th><th>AWS SQS</th></tr></thead><tbody><tr><td>Model</td><td>Broker with queues and exchanges</td><td>Distributed append-only log</td><td>Managed queue</td></tr><tr><td>After consumption</td><td>Message deleted</td><td>Message kept (retention period)</td><td>Message deleted</td></tr><tr><td>Replay old messages</td><td>No</td><td>Yes (reset offset)</td><td>No</td></tr><tr><td>Ordering</td><td>Per queue</td><td>Per partition</td><td>FIFO queues only</td></tr><tr><td>Throughput</td><td>Tens of thousands/s</td><td>Millions/s</td><td>Effectively unlimited (managed)</td></tr><tr><td>Best for</td><td>Task queues, complex routing</td><td>Event streaming, logs, analytics</td><td>Simple cloud task queues</td></tr></tbody></table></div>
+<h3 id="kafka-in-brief">Kafka in brief</h3>
+<ul>
+<li>A <strong>topic</strong> is split into <strong>partitions</strong>; each partition is an ordered log.</li>
+<li>Messages with the same <strong>key</strong> go to the same partition, so they stay in order (e.g. all events for <code>order-42</code>).</li>
+<li><strong>Consumer groups:</strong> each partition is read by exactly one consumer in a group — partitions are the unit of parallelism.</li>
+<li>Consumers track their <strong>offset</strong>; replay means moving the offset back.</li>
+</ul>
+<pre class="diagram"><code>Topic "orders"
+ P0: [0][1][2][3][4]        ◄── consumer A (offset 3)
+ P1: [0][1][2]              ◄── consumer B (offset 2)
+ P2: [0][1][2][3]           ◄── consumer C (offset 4)</code></pre>
+<hr>
+<h2 id="delivery-guarantees">Delivery guarantees</h2>
+<div class="table-wrap">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Guarantee</th><th>Meaning</th><th>How</th></tr></thead><tbody><tr><td>At-most-once</td><td>May lose messages, never duplicates</td><td>Ack before processing</td></tr><tr><td>At-least-once</td><td>Never loses, may duplicate</td><td>Ack after processing (the usual default)</td></tr><tr><td>Exactly-once</td><td>Each message has effect once</td><td>At-least-once + idempotent consumer, or transactional systems</td></tr></tbody></table></div>
+<p>Because at-least-once is the norm, <strong>consumers must be idempotent</strong>.</p>
+<h3 id="idempotent-consumer">Idempotent consumer</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-java">void handle(PaymentMessage msg) {
+    // processed_messages has a unique constraint on message_id
+    try {
+        jdbc.update("INSERT INTO processed_messages(message_id) VALUES (?)", msg.id());
+    } catch (DuplicateKeyException e) {
+        return;   // already handled, skip safely
+    }
+    chargeCustomer(msg);   // ideally in the same DB transaction as the insert
+}</code></pre></div>
+<p>Other ways: natural idempotency (<code>SET status = 'PAID'</code> rather than <code>balance = balance - 100</code>), or version checks.</p>
+<hr>
+<h2 id="handling-failures">Handling failures</h2>
+<ul>
+<li><strong>Retries with exponential backoff</strong> — wait 1 s, 2 s, 4 s, 8 s… plus random jitter.</li>
+<li><strong>Dead-letter queue (DLQ)</strong> — after N failed attempts, move the message aside for inspection instead of blocking the queue.</li>
+<li><strong>Visibility timeout</strong> (SQS) — a received message is hidden for a while; if not deleted in time it reappears for another consumer.</li>
+<li><strong>Poison messages</strong> — malformed messages that always fail; the DLQ keeps them from looping forever.</li>
+</ul>
+<hr>
+<h2 id="the-outbox-pattern">The outbox pattern</h2>
+<p>Problem: saving an order to the DB and publishing <code>OrderPlaced</code> are two separate systems. If the app crashes between them, they disagree.</p>
+<p>Solution: write the event into an <strong>outbox table in the same DB transaction</strong>, and let a separate relay publish it.</p>
+<pre class="diagram"><code>BEGIN
+  INSERT INTO orders ...
+  INSERT INTO outbox (event_type, payload) VALUES ('OrderPlaced', ...)
+COMMIT
+
+relay / CDC (e.g. Debezium) ──reads outbox──► Kafka ──► consumers</code></pre>
+<p>The DB transaction guarantees both happen or neither does; the relay gives at-least-once publishing.</p>
+<hr>
+<h2 id="backpressure">Backpressure</h2>
+<p>When consumers can’t keep up, the queue grows without bound. Options:</p>
+<ul>
+<li>Scale consumers (autoscale on queue depth).</li>
+<li>Rate-limit producers or reject new work (HTTP 429 / 503).</li>
+<li>Drop or sample low-priority messages.</li>
+<li>Set max queue length and alert on lag.</li>
+</ul></div></article></main></body></html>

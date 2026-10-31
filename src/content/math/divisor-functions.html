@@ -1,0 +1,35 @@
+---
+title: "Divisor Functions (τ and σ)"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Divisor Functions (τ and σ)</h1>
+<h2>What it is</h2>
+<ul><li><strong>τ(n)</strong> = number of divisors of <code>n</code>.</li><li><strong>σ(n)</strong> = sum of divisors of <code>n</code>.</li></ul>
+<p>Computed for all <code>1..n</code> via sieve in <strong>O(n log n)</strong>.</p>
+<h2>Sieve template</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">vector&lt;int&gt; tau(n+1), sigma(n+1);
+for (int i = 1; i &lt;= n; i++) {
+    for (int j = i; j &lt;= n; j += i) {
+        tau[j]++;
+        sigma[j] += i;
+    }
+}</code></pre></div>
+<h2>Single n factorization</h2>
+<p>If <code>n = p1^a1 * p2^a2 * ...</code>:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>τ(n) = (a1+1)(a2+1)...
+σ(n) = (p1^(a1+1)-1)/(p1-1) * ...</code></pre></div>
+<h2>When to use</h2>
+<ul><li>&quot;How many divisors does n have?&quot;</li><li>Sum of divisors queries.</li><li>Multiplicative functions on factorization.</li></ul>
+<h2>Examples</h2>
+<h3>1. CF 1225D — Unusual Product</h3>
+<p>Divisors and GCD structure.</p>
+<h3>2. CF 1037C — Equal Elements</h3>
+<p>Prime power / divisor logic.</p>
+<h3>3. CF 26A — Almost Prime</h3>
+<p>Exactly 2 divisors → product of 2 primes.</p>
+<h3>4. Highly composite / divisor counting in range.</h3>
+<h3>5. σ(n) = n → perfect numbers (rare in contests).</h3>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/26/A">CF 26A — Almost Prime</a></li><li><a href="https://codeforces.com/problemset/problem/1225/D">CF 1225D — Unusual Product</a></li></ul></div>
+    </article>

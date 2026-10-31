@@ -1,0 +1,28 @@
+---
+title: "Probability Basics"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Probability Basics</h1>
+<h2>What it is</h2>
+<ul><li><strong>P(A) = favorable / total</strong> (when outcomes equally likely).</li><li><strong>Expected value:</strong> E[X] = Σ x * P(X=x).</li><li><strong>Linearity:</strong> E[aX + bY] = aE[X] + bE[Y] always (even if dependent).</li></ul>
+<h2>When to use</h2>
+<ul><li>Expected number of operations.</li><li>Probability of winning with random choices.</li><li>Convert &quot;expected value&quot; problems to sum of indicator variables.</li></ul>
+<h2>Indicator variable trick</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">// E[count of property] = sum over elements of P(element has property)</code></pre></div>
+<h2>Examples</h2>
+<h3>1. Expected inversions / comparisons</h3>
+<p>Sum P(pair is inverted) over all pairs.</p>
+<h3>2. CF 1191C — Tokitsukaze and Discarding Stones</h3>
+<p>Game + probability (upper range).</p>
+<h3>3. Dice / coin problems</h3>
+<p>Enumerate or use linearity.</p>
+<h3>4. Random permutation expected fixed points</h3>
+<p>E[fixed points] = n * (1/n) = 1.</p>
+<h3>5. Geometric distribution</h3>
+<p>E[trials until success] = 1/p.</p>
+<h2>Modulo probability</h2>
+<p>When answer is <code>P/Q mod M</code>, compute <code>P * Q^(-1) mod M</code>.</p>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/1191/C">CF 1191C — Tokitsukaze and Discarding Stones</a></li><li>Search &quot;expected value&quot; 1600-1900 on CF</li></ul></div>
+    </article>

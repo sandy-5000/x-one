@@ -1,0 +1,38 @@
+---
+title: "Priority Queue Tricks"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Priority Queue Tricks</h1>
+<h2>What it is</h2>
+<p><code>priority_queue</code> (heap) for always taking min/max element. Common in greedy scheduling and Dijkstra.</p>
+<h2>When to use</h2>
+<ul><li>Process events by time/priority.</li><li>Merge k sorted lists.</li><li>Greedy: always take smallest/largest available.</li><li>Top-k elements (with size-limited heap).</li></ul>
+<h2>Templates</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">// min-heap
+priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; pq;
+
+// max-heap (default)
+priority_queue&lt;int&gt; pq;
+
+// pair by first then second
+priority_queue&lt;pair&lt;long long,int&gt;, vector&lt;...&gt;, greater&lt;...&gt;&gt; pq;</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 1690C — Restoring the Duration of Tasks</h3>
+<p>Sort starts, PQ for active tasks by end time.</p>
+<h3>2. CF 1203C — Common Divisors</h3>
+<p>Not PQ but multiset — <code>multiset</code> for dynamic min/max.</p>
+<h3>3. Huffman merge pattern</h3>
+<p>Always pop two smallest, push sum — minimize total cost.</p>
+<h3>4. CF 1705C — Mark and His Unfinished Essay</h3>
+<p>Multiset / PQ for character frequency greedy.</p>
+<h3>5. Dijkstra</h3>
+<p>PQ on <code>(distance, node)</code>.</p>
+<h2>Multiset alternative</h2>
+<p>When you need delete arbitrary element:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">multiset&lt;int&gt; ms;
+ms.insert(x);
+ms.erase(ms.find(x));  // one occurrence</code></pre></div>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/1690/C">CF 1690C — Restoring the Duration of Tasks</a></li><li><a href="https://codeforces.com/problemset/problem/1705/C">CF 1705C — Mark and His Unfinished Essay</a></li><li><a href="https://codeforces.com/problemset/problem/1203/C">CF 1203C — Common Divisors</a></li></ul></div>
+    </article>

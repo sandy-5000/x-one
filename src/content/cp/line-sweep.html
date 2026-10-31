@@ -1,0 +1,35 @@
+---
+title: "Line Sweep"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Line Sweep</h1>
+<h2>What it is</h2>
+<p>Sort events (points, interval endpoints) on axis and sweep a line, maintaining active set. Turns 2D geometry into 1D processing.</p>
+<h2>When to use</h2>
+<ul><li>Count overlapping intervals.</li><li>Closest pair (sweep + balanced BST).</li><li>Rectangle union area.</li><li>Process add/remove segment events.</li></ul>
+<h2>Template (interval overlap count)</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">vector&lt;pair&lt;int,int&gt;&gt; events;  // (time, +1 start / -1 end)
+for (auto [l,r] : intervals) {
+    events.push_back({l, +1});
+    events.push_back({r+1, -1});
+}
+sort(events.begin(), events.end());
+int active = 0, ans = 0;
+for (auto [t, d] : events) {
+    active += d;
+    ans = max(ans, active);
+}</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 610D — Vika and Segments</h3>
+<p>Sweep on coordinate axis.</p>
+<h3>2. CF 1000C — Covered Points Count</h3>
+<p>Coordinate compression + sweep.</p>
+<h3>3. CF 1354E — Graph Coloring</h3>
+<p>Event sweep variant.</p>
+<h3>4. CF 844D — Weird Chess</h3>
+<p>Geometry sweep.</p>
+<h3>5. Maximum meetings in one room (activity selection = sweep).</h3>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/1000/C">CF 1000C — Covered Points Count</a></li><li><a href="https://codeforces.com/problemset/problem/610/D">CF 610D — Vika and Segments</a></li></ul></div>
+    </article>

@@ -1,0 +1,36 @@
+---
+title: "2-SAT"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>2-SAT</h1>
+<h2>What it is</h2>
+<p>Boolean satisfiability where each clause is <code>(a OR b)</code>. Solved by building implication graph and checking SCC — <strong>O(V + E)</strong>.</p>
+<h2>When to use</h2>
+<ul><li>Assign true/false with pairwise constraints.</li><li>&quot;At least one of two must hold&quot; constraints.</li><li>Common in Div1 B / hard Div2 D (~1900–2100).</li></ul>
+<h2>Construction</h2>
+<p>For variable <code>x</code>: nodes <code>x</code> and <code>¬x</code>. Clause <code>(a OR b)</code> → edges <code>¬a ⇒ b</code> and <code>¬b ⇒ a</code>.</p>
+<p><strong>Satisfiable iff</strong> no variable and its negation in same SCC.</p>
+<h2>Template sketch</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">// 2*n nodes: i = var i true, i^n = var i false
+auto imply = [&amp;](int u, int v) { adj[u].push_back(v); };
+
+void either(int a, int b) {  // a OR b
+    imply(a^1, b);
+    imply(b^1, a);
+}
+
+// after SCC: assignment[v] = comp[v] &gt; comp[v^1] (one valid orientation)</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 228E — The Road to Berland</h3>
+<p>2-SAT on ordering constraints.</p>
+<h3>2. CF 1214F — Employment</h3>
+<p>Implication graph.</p>
+<h3>3. CF 1774E — Two Chess Pieces</h3>
+<p>Constraint satisfaction.</p>
+<h3>4. CF 776D — Sherlock and His Girlfriend</h3>
+<p>Switch + implication.</p>
+<h3>5. Assign direction to edges so graph is acyclic (constraint modeling).</h3>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/228/E">CF 228E — The Road to Berland is Paid</a></li><li><a href="https://codeforces.com/problemset/problem/776/D">CF 776D — Sherlock and His Girlfriend</a></li></ul></div>
+    </article>

@@ -1,0 +1,29 @@
+---
+title: "Greedy"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Greedy</h1>
+<h2>What it is</h2>
+<p>Make the locally optimal choice at each step without backtracking. Proof is often exchange argument or &quot;never worse to do X first.&quot;</p>
+<h2>When to use</h2>
+<ul><li>Scheduling / ordering problems.</li><li>&quot;Minimum number of …&quot; with clear priority.</li><li>Interval covering, activity selection.</li><li>When sorting by a custom key makes the choice obvious.</li></ul>
+<h2>Common patterns</h2>
+<div class="table-wrap"><table><thead><tr><th>Pattern</th><th>Sort by</th><th>Example</th></tr></thead><tbody><tr><td>Activity selection</td><td>end time</td><td>max non-overlapping intervals</td></tr><tr><td>Minimize lateness</td><td>deadline</td><td>scheduling</td></tr><tr><td>Huffman-like</td><td>frequency</td><td>merge smallest two</td></tr><tr><td>Exchange argument</td><td>custom</td><td>assign tasks to machines</td></tr></tbody></table></div>
+<h2>Examples</h2>
+<h3>1. Activity selection</h3>
+<p>Sort intervals by end time, take next compatible interval — max count.</p>
+<h3>2. CF 977C — Less or Equal</h3>
+<p>Greedy construction with binary search on answer.</p>
+<h3>3. CF 1805C — Find and Replace</h3>
+<p>Greedy string mapping with consistency checks.</p>
+<h3>4. CF 1705C — Mark and His Unfinished Essay</h3>
+<p>Greedy + multiset for character assignment.</p>
+<h3>5. Minimum coins (canonical coin systems)</h3>
+<p>Greedy works for standard coins; not always — know when DP is needed.</p>
+<h2>Proving greedy (quick checklist)</h2>
+<ol><li><strong>Greedy choice property:</strong> A global optimum exists that starts with your greedy choice.</li><li><strong>Optimal substructure:</strong> After greedy step, remainder is smaller instance of same problem.</li></ol>
+<p>If you can&#x27;t prove it in 2 minutes during contest → try DP or binary search.</p>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/977/C">CF 977C — Less or Equal</a></li><li><a href="https://codeforces.com/problemset/problem/1805/C">CF 1805C — Find and Replace</a></li><li><a href="https://codeforces.com/problemset/problem/1705/C">CF 1705C — Mark and His Unfinished Essay</a></li></ul></div>
+    </article>

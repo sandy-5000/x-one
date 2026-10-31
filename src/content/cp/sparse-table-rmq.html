@@ -1,0 +1,41 @@
+---
+title: "Sparse Table (RMQ)"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Sparse Table (RMQ)</h1>
+<h2>What it is</h2>
+<p>Static range minimum/maximum/GCD queries in <strong>O(1)</strong> after <strong>O(n log n)</strong> preprocess. No updates.</p>
+<h2>When to use</h2>
+<ul><li>Many RMQ on static array.</li><li>GCD on ranges (gcd is idempotent — works with sparse table).</li><li>LCP arrays, static RMQ in other algorithms.</li></ul>
+<h2>Template</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">const int LOG = 20;
+int st[MAXN][LOG], lg[MAXN];
+
+void build(const vector&lt;int&gt;&amp; a) {
+    int n = a.size();
+    lg[1] = 0;
+    for (int i = 2; i &lt;= n; i++) lg[i] = lg[i/2] + 1;
+    for (int i = 0; i &lt; n; i++) st[i][0] = a[i];
+    for (int j = 1; (1&lt;&lt;j) &lt;= n; j++)
+        for (int i = 0; i + (1&lt;&lt;j) &lt;= n; i++)
+            st[i][j] = min(st[i][j-1], st[i+(1&lt;&lt;(j-1))][j-1]);
+}
+
+int query(int l, int r) {  // [l, r]
+    int j = lg[r - l + 1];
+    return min(st[l][j], st[r - (1&lt;&lt;j) + 1][j]);
+}</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 1108D — Diverse Substrings</h3>
+<p>RMQ variant on arrays.</p>
+<h3>2. Static range GCD</h3>
+<p>Same structure with <code>gcd()</code> instead of <code>min</code>.</p>
+<h3>3. LCA with RMQ on Euler tour depths</h3>
+<p><code>O(1)</code> LCA after sparse table on depth array.</p>
+<h3>4. CF 1304D — Shortest and Longest LIS</h3>
+<p>RMQ on DP values.</p>
+<h3>5. Range max when no updates — faster than segment tree.</h3>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/1304/D">CF 1304D — Shortest and Longest LIS</a></li><li>LCA + RMQ classic problems</li></ul></div>
+    </article>

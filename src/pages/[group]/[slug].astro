@@ -1,0 +1,31 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getNote, getNotes } from "../../lib/notes";
+
+export function getStaticPaths() {
+  return getNotes().map(({ group, slug }) => ({ params: { group, slug } }));
+}
+
+const { group, slug } = Astro.params;
+const note = getNote(group!, slug!)!;
+const { Content } = note;
+---
+
+<Base title={`${note.title} · x-one`} depth={1} active={`${group}/${slug}`} crumb={`${group} / ${slug}`}>
+  {note.html !== undefined ? (
+    <Fragment set:html={note.html} />
+  ) : (
+    <>
+      {note.question && (
+        <article class="message user">
+          <div class="message-label">You</div>
+          <div class="message-body">{note.question}</div>
+        </article>
+      )}
+      <article class="message assistant">
+        {note.question && <div class="message-label">Assistant</div>}
+        <div class="message-body prose">{Content && <Content />}</div>
+      </article>
+    </>
+  )}
+</Base>

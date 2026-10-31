@@ -1,0 +1,27 @@
+---
+title: "Bijection & Counting Proofs"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Bijection &amp; Counting Proofs</h1>
+<h2>What it is</h2>
+<p>Prove two sets have the same size by giving a <strong>one-to-one correspondence</strong> (bijection). Common in combinatorics problems instead of brute formula.</p>
+<h2>When to use</h2>
+<ul><li>&quot;Show count equals Fibonacci / Catalan / C(n,k).&quot;</li><li>Map paths to binary strings, trees to sequences.</li><li>Prove recurrence by constructing bijection.</li></ul>
+<h2>Classic bijections</h2>
+<div class="table-wrap"><table><thead><tr><th>Problem</th><th>Bijection to</th></tr></thead><tbody><tr><td>Dyck paths (never below diagonal)</td><td>Catalan</td></tr><tr><td>Valid parentheses of length 2n</td><td>Catalan</td></tr><tr><td>Binary trees with n nodes</td><td>Catalan</td></tr><tr><td>Monotone grid paths n×m</td><td>C(n+m, n)</td></tr><tr><td>Permutation ↔ inversion table (limited)</td><td>counting</td></tr></tbody></table></div>
+<h2>Technique in contests</h2>
+<ol><li>Small cases — spot OEIS / known sequence.</li><li>Try to map each object to a unique structure you can count.</li><li>Often reveals DP recurrence.</li></ol>
+<h2>Examples</h2>
+<h3>1. CF 131C — The World is a Theatre</h3>
+<p>Combinatorial bijection.</p>
+<h3>2. CF 5C — Longest Regular Bracket Sequence</h3>
+<p>Brackets ↔ Catalan structure.</p>
+<h3>3. CF 149D — Coloring Brackets</h3>
+<p>Bracket matching bijection.</p>
+<h3>4. Paths with steps R,U ↔ binary strings with n zeros and m ones.</h3>
+<h3>5. CF 118D — Caesar&#x27;s Legions</h3>
+<p>Soldier arrangements ↔ combinatorial objects.</p>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/131/C">CF 131C — The World is a Theatre</a></li><li><a href="https://codeforces.com/problemset/problem/149/D">CF 149D — Coloring Brackets</a></li></ul></div>
+    </article>

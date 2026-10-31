@@ -1,0 +1,45 @@
+---
+title: "Policy-Based Data Structure"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Policy-Based Data Structure</h1>
+<h2>What it is</h2>
+<p>GCC extension <code>__gnu_pbds</code> provides order statistics tree — <code>find_by_order(k)</code> and <code>order_of_key(x)</code> in <strong>O(log n)</strong>.</p>
+<h2>When to use</h2>
+<ul><li>K-th smallest in dynamic set.</li><li>Count elements <code>&lt; x</code> in multiset.</li><li>Alternative to BIT with coordinate compression when values are dynamic.</li></ul>
+<h2>Template</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">#include &lt;ext/pbds/assoc_container.hpp&gt;
+using namespace __gnu_pbds;
+
+template&lt;typename T&gt;
+using ordered_set = tree&lt;
+    T, null_type, less&lt;T&gt;, rb_tree_tag,
+    tree_order_statistics_node_update
+&gt;;
+
+ordered_set&lt;int&gt; os;
+os.insert(5);
+os.insert(2);
+os.insert(7);
+int kth = *os.find_by_order(1);      // 2nd smallest = 5
+int rank = os.order_of_key(6);       // count &lt; 6 = 2</code></pre></div>
+<h2>Multiset variant</h2>
+<p>Use <code>pair&lt;int,int&gt;</code> with unique second component to allow duplicates:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">ordered_set&lt;pair&lt;int,int&gt;&gt; os;
+os.insert({5, id++});</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 1354D — Multiset</h3>
+<p>K-th element queries — PBDS or BIT.</p>
+<h3>2. CF 459D — LCM Challenge</h3>
+<p>Order statistics on frequencies.</p>
+<h3>3. Inversion count dynamic</h3>
+<p>Insert elements, query smaller count.</p>
+<h3>4. CF 1131C — Birthday</h3>
+<p>Coordinate compression + order stats.</p>
+<h3>5. CF 703D — Mishka and Interesting sum</h3>
+<h2>Note</h2>
+<p>Not available on all judges (works on Codeforces). Have BIT/segtree backup.</p>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/1354/D">CF 1354D — Multiset</a></li><li><a href="https://codeforces.com/problemset/problem/1131/C">CF 1131C — Birthday</a></li></ul></div>
+    </article>

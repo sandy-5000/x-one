@@ -1,0 +1,39 @@
+---
+title: "Strongly Connected Components (SCC)"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Strongly Connected Components (SCC)</h1>
+<h2>What it is</h2>
+<p>Partition directed graph into SCCs where every vertex reaches every other in the same component. <strong>Kosaraju</strong> or <strong>Tarjan</strong> in <strong>O(V + E)</strong>.</p>
+<h2>When to use</h2>
+<ul><li>Condensation DAG of SCCs.</li><li>2-SAT implication graph (see <code>two-sat.md</code>).</li><li>Reachability on directed graphs.</li></ul>
+<h2>Kosaraju template</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">vector&lt;int&gt; order, comp(n, -1);
+vector&lt;bool&gt; vis(n);
+
+void dfs1(int u) {
+    vis[u] = true;
+    for (int v : adj[u]) if (!vis[v]) dfs1(v);
+    order.push_back(u);
+}
+
+void dfs2(int u, int c, vector&lt;vector&lt;int&gt;&gt;&amp; radj) {
+    comp[u] = c;
+    for (int v : radj[u]) if (comp[v] == -1) dfs2(v, c, radj);
+}
+
+// run dfs1 on all, reverse order, dfs2 on reversed graph</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 427C — Checkposts</h3>
+<p>Min cost to police all SCCs on condensation tree.</p>
+<h3>2. CF 999E — Reachability</h3>
+<p>SCC + tree on condensation.</p>
+<h3>3. CF 1214F — Employment</h3>
+<p>SCC on functional graph variant.</p>
+<h3>4. 2-SAT satisfiability</h3>
+<p>SCC of implication graph — variable and negation in same SCC → false.</p>
+<h3>5. CF 741B — Colors</h3>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/427/C">CF 427C — Checkposts</a></li><li><a href="https://codeforces.com/problemset/problem/999/E">CF 999E — Reachability Component</a></li></ul></div>
+    </article>

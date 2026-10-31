@@ -1,0 +1,36 @@
+---
+title: "Sliding Window"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Sliding Window</h1>
+<h2>What it is</h2>
+<p>A fixed or variable-size window <code>[l, r]</code> slides over an array, maintaining aggregate info (sum, count, max) in <strong>amortized O(n)</strong>.</p>
+<h2>When to use</h2>
+<ul><li>Longest/shortest subarray with sum <code>≤ K</code> or <code>≥ K</code>.</li><li>At most <code>K</code> distinct characters in substring.</li><li>Fixed window size <code>k</code> — max/min in each window (use deque; see monotonic-queue).</li></ul>
+<h2>Variable window template</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">int l = 0, ans = 0, cur = 0;
+for (int r = 0; r &lt; n; r++) {
+    cur += a[r];  // add a[r] to window
+    while (cur &gt; K) {          // shrink while invalid
+        cur -= a[l];
+        l++;
+    }
+    ans = max(ans, r - l + 1);
+}</code></pre></div>
+<h2>Examples</h2>
+<h3>1. Max length subarray with sum ≤ K (non-negative)</h3>
+<p>Expand <code>r</code>, shrink <code>l</code> while sum &gt; K.</p>
+<h3>2. CF 279B — Books</h3>
+<p>Classic sliding window on heights.</p>
+<h3>3. Substring with at most K distinct</h3>
+<p>Use frequency map; while distinct &gt; K, move <code>l</code>.</p>
+<h3>4. Minimum window substring (harder, upper 1900)</h3>
+<p>Two pointers + frequency counts.</p>
+<h3>5. Fixed window max — use monotonic deque</h3>
+<p>See <code>monotonic-queue.md</code>.</p>
+<h2>Fixed vs variable</h2>
+<div class="table-wrap"><table><thead><tr><th>Type</th><th>Move rule</th></tr></thead><tbody><tr><td>Fixed size <code>k</code></td><td><code>r</code> increases, window always size <code>k</code></td></tr><tr><td>Variable</td><td>Expand <code>r</code>, shrink <code>l</code> while constraint violated</td></tr></tbody></table></div>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/279/B">CF 279B — Books</a></li><li><a href="https://codeforces.com/problemset/problem/1690/D">CF 1690D — Black and White Stripe</a></li><li><a href="https://codeforces.com/problemset/problem/1208/C">CF 1208C — Magic Grid</a> (window + math)</li></ul></div>
+    </article>

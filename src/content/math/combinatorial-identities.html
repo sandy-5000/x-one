@@ -1,0 +1,28 @@
+---
+title: "Combinatorial Identities"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Combinatorial Identities</h1>
+<h2>What it is</h2>
+<p>Key identities that turn counting problems into one-liners — memorize the common ones.</p>
+<h2>Essential identities</h2>
+<div class="table-wrap"><table><thead><tr><th>Identity</th><th>Formula</th></tr></thead><tbody><tr><td>Pascal</td><td>C(n,k) = C(n-1,k-1) + C(n-1,k)</td></tr><tr><td>Vandermonde</td><td>C(m+n,r) = Σ C(m,k)C(n,r-k)</td></tr><tr><td>Hockey stick</td><td>Σ C(i,r) = C(n+1,r+1) for i=r..n</td></tr><tr><td>Sum of row</td><td>Σ C(n,k) = 2^n</td></tr><tr><td>Alternating row</td><td>Σ (-1)^k C(n,k) = 0</td></tr><tr><td>C(n,k) = C(n,n-k)</td><td>symmetry</td></tr><tr><td>Multinomial</td><td>n!/(a!b!c!) for a+b+c=n</td></tr></tbody></table></div>
+<h2>Vandermonde use case</h2>
+<p>Choose <code>r</code> items from <code>m+n</code> total = choose <code>k</code> from first <code>m</code> and <code>r-k</code> from next <code>n</code>.</p>
+<h2>Hockey stick</h2>
+<p>Sum of diagonals in Pascal triangle — common in combinatorics proofs.</p>
+<h2>When to use</h2>
+<ul><li>Simplify double sums over binomial coefficients.</li><li>Prove DP transition matches closed form.</li><li>CF math problems with &quot;choose from two groups.&quot;</li></ul>
+<h2>Examples</h2>
+<h3>1. CF 118D — Caesar&#x27;s Legions</h3>
+<p>Split soldiers into groups — Vandermonde-style.</p>
+<h3>2. CF 455A — Boredom</h3>
+<p>Counting with binomial coefficients.</p>
+<h3>3. Paths with restrictions — hockey stick.</h3>
+<h3>4. CF 1103E — Konrad and Company Evaluation</h3>
+<p>Heavy combinatorics identities.</p>
+<h3>5. Prove <code>Σ k*C(n,k) = n*2^(n-1)</code> — differentiate (1+x)^n.</h3>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/118/D">CF 118D — Caesar&#x27;s Legions</a></li><li><a href="https://codeforces.com/problemset/problem/1103/E">CF 1103E — Konrad and Company Evaluation</a></li></ul></div>
+    </article>

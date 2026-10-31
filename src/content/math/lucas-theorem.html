@@ -1,0 +1,35 @@
+---
+title: "Lucas Theorem & nCr mod prime"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>Lucas Theorem &amp; nCr mod prime</h1>
+<h2>What it is</h2>
+<p>Compute <code>C(n, r) mod p</code> when <code>n, r</code> are huge (up to 10^18) but <strong>p is small prime</strong>, using Lucas theorem digit-by-digit in base <code>p</code>.</p>
+<h2>When to use</h2>
+<ul><li>nCr mod prime where <code>n &gt; MOD</code> and MOD is prime (~10^3 to 10^6).</li><li>Digit DP + combinatorics.</li><li>When factorial precompute limit is exceeded.</li></ul>
+<h2>Lucas theorem</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>C(n, r) mod p = Π C(n_i, r_i) mod p</code></pre></div>
+<p>where <code>n_i, r_i</code> are digits of <code>n, r</code> in base <code>p</code>.</p>
+<h2>Template</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">long long C_small(long long n, long long r, long long p) {
+    if (r &lt; 0 || r &gt; n) return 0;
+    if (r == 0 || r == n) return 1;
+    return fac[n] * invfac[r] % p * invfac[n-r] % p;
+}
+
+long long lucas(long long n, long long r, long long p) {
+    if (r == 0) return 1;
+    return C_small(n % p, r % p, p) * lucas(n / p, r / p, p) % p;
+}</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 118D — Caesar&#x27;s Legions</h3>
+<p>nCr with large parameters mod prime.</p>
+<h3>2. CF 455A — Boredom variants with huge counts.</h3>
+<h3>3. CF 1103E — Konrad and Company Evaluation</h3>
+<p>Combinatorics mod prime.</p>
+<h3>4. Wilson + Lucas combo (rare).</h3>
+<h3>5. Multinomial coefficients mod prime.</h3>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/118/D">CF 118D — Caesar&#x27;s Legions</a></li><li>Problems with nCr mod 1000003 or similar small prime</li></ul></div>
+    </article>

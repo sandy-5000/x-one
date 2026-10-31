@@ -1,0 +1,51 @@
+---
+title: "DSU on Tree (Small-to-Large)"
+---
+<article class="message assistant">
+      
+      <div class="message-body prose"><h1>DSU on Tree (Small-to-Large)</h1>
+<h2>What it is</h2>
+<p>Process tree nodes in DFS order; when leaving a node, keep only <strong>heavy child&#x27;s</strong> frequency map and merge light children. Subtree queries in <strong>O(n log n)</strong>.</p>
+<h2>When to use</h2>
+<ul><li>Count distinct colors in subtree.</li><li>Mode / majority in subtree.</li><li>Offline subtree frequency queries.</li></ul>
+<h2>Template sketch</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-cpp">int heavy[MAXN], sz[MAXN];
+map&lt;int,int&gt; cnt;
+int cur_ans;
+
+void add(int u) { /* add node u to cnt, update cur_ans */ }
+void remove(int u) { /* undo */ }
+void clear_all() { cnt.clear(); cur_ans = 0; }
+
+int dfs_sz(int u, int p) {
+    sz[u] = 1; heavy[u] = -1;
+    for (int v : adj[u]) if (v != p) {
+        int s = dfs_sz(v, u);
+        sz[u] += s;
+        if (heavy[u] == -1 || s &gt; sz[heavy[u]]) heavy[u] = v;
+    }
+    return sz[u];
+}
+
+void dfs(int u, int p, bool keep) {
+    for (int v : adj[u]) if (v != p &amp;&amp; v != heavy[u]) dfs(v, u, false);
+    if (heavy[u] != -1) dfs(heavy[u], u, true);
+    for (int v : adj[u]) if (v != p &amp;&amp; v != heavy[u])
+        for (int x : nodes_in_subtree(v)) add(x);
+    add(u);
+    answer[u] = cur_ans;
+    if (!keep) clear_all();
+}</code></pre></div>
+<h2>Examples</h2>
+<h3>1. CF 600E — Lomsat gelral</h3>
+<p>Distinct colors in subtree — classic DSU on tree.</p>
+<h3>2. CF 161D — Distance in Tree</h3>
+<p>Alternative to centroid for some path counts.</p>
+<h3>3. Subtree mode element</h3>
+<p>Frequency map + max tracking.</p>
+<h3>4. CF 570D — Tree Requests</h3>
+<p>Euler tour + DSU on tree variant.</p>
+<h3>5. Offline queries on static tree colors.</h3>
+<h2>Practice</h2>
+<ul><li><a href="https://codeforces.com/problemset/problem/600/E">CF 600E — Lomsat gelral</a></li><li><a href="https://codeforces.com/problemset/problem/570/D">CF 570D — Tree Requests</a></li></ul></div>
+    </article>
