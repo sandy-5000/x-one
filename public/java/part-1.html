@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Part 1 · x-one</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+  <script src="../assets/copy.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar"><input type="checkbox" id="nav-toggle" class="nav-toggle"><div class="sidebar-brand"><a href="../index.html">x-one notes</a><label for="nav-toggle" class="menu-btn" aria-label="Toggle navigation"><span class="menu-open">Menu</span><span class="menu-close">Close</span></label></div><nav><details class="nav-group"><summary class="nav-group-label">cp<span class="nav-count">56</span></summary><ul><li><a href="../cp/0-1-bfs.html">0-1 BFS</a></li><li><a href="../cp/two-sat.html">2-SAT</a></li><li><a href="../cp/bfs-state-space.html">BFS on State Space</a></li><li><a href="../cp/binary-search.html">Binary Search (on Sorted Data)</a></li><li><a href="../cp/binary-search-on-answer.html">Binary Search on Answer</a></li><li><a href="../cp/bitmask-dp.html">Bitmask DP</a></li><li><a href="../cp/bridges-articulation-points.html">Bridges &amp; Articulation Points</a></li><li><a href="../cp/cdq-divide-conquer.html">CDQ Divide &amp; Conquer (Offline)</a></li><li><a href="../cp/centroid-decomposition.html">Centroid Decomposition</a></li><li><a href="../cp/convex-hull-trick-lichao.html">Convex Hull Trick &amp; Li Chao Tree</a></li><li><a href="../cp/coordinate-compression.html">Coordinate Compression</a></li><li><a href="../cp/difference-array.html">Difference Array</a></li><li><a href="../cp/digit-dp.html">Digit DP</a></li><li><a href="../cp/dijkstra.html">Dijkstra&#x27;s Algorithm</a></li><li><a href="../cp/dsu-on-tree.html">DSU on Tree (Small-to-Large)</a></li><li><a href="../cp/dp-1d.html">Dynamic Programming — 1D</a></li><li><a href="../cp/dp-2d-knapsack.html">Dynamic Programming — 2D &amp; Knapsack</a></li><li><a href="../cp/euler-tour-flattening.html">Euler Tour (Tree Flattening)</a></li><li><a href="../cp/fenwick-tree.html">Fenwick Tree (Binary Indexed Tree)</a></li><li><a href="../cp/flood-fill-multi-source-bfs.html">Flood Fill &amp; Multi-Source BFS</a></li><li><a href="../cp/floyd-warshall.html">Floyd-Warshall</a></li><li><a href="../cp/functional-graphs.html">Functional Graphs</a></li><li><a href="../cp/graph-bfs-dfs.html">Graph BFS &amp; DFS</a></li><li><a href="../cp/greedy.html">Greedy</a></li><li><a href="../cp/heavy-light-decomposition.html">Heavy-Light Decomposition (HLD)</a></li><li><a href="../cp/interval-dp.html">Interval DP</a></li><li><a href="../cp/kmp-pattern-matching.html">KMP Pattern Matching</a></li><li><a href="../cp/lca-binary-lifting.html">LCA (Binary Lifting)</a></li><li><a href="../cp/line-sweep.html">Line Sweep</a></li><li><a href="../cp/lis.html">Longest Increasing Subsequence (LIS)</a></li><li><a href="../cp/matrix-exponentiation.html">Matrix Exponentiation</a></li><li><a href="../cp/meet-in-the-middle.html">Meet in the Middle</a></li><li><a href="../cp/mos-algorithm.html">Mo&#x27;s Algorithm (Offline Queries)</a></li><li><a href="../cp/monotonic-queue.html">Monotonic Deque (Queue)</a></li><li><a href="../cp/monotonic-stack.html">Monotonic Stack</a></li><li><a href="../cp/mst-kruskal-prim.html">MST (Kruskal &amp; Prim)</a></li><li><a href="../cp/policy-based-data-structure.html">Policy-Based Data Structure</a></li><li><a href="../cp/prefix-sums.html">Prefix Sums</a></li><li><a href="../cp/priority-queue-tricks.html">Priority Queue Tricks</a></li><li><a href="../cp/rerooting-dp.html">Rerooting DP on Trees</a></li><li><a href="../cp/segment-tree.html">Segment Tree</a></li><li><a href="../cp/sliding-window.html">Sliding Window</a></li><li><a href="../cp/sorting-tricks.html">Sorting Tricks</a></li><li><a href="../cp/sparse-table-rmq.html">Sparse Table (RMQ)</a></li><li><a href="../cp/sprague-grundy.html">Sprague-Grundy (Game Theory)</a></li><li><a href="../cp/sqrt-decomposition.html">Square Root Decomposition</a></li><li><a href="../cp/string-hashing.html">String Hashing</a></li><li><a href="../cp/strongly-connected-components.html">Strongly Connected Components (SCC)</a></li><li><a href="../cp/topological-sort.html">Topological Sort</a></li><li><a href="../cp/tree-dfs.html">Tree DFS</a></li><li><a href="../cp/tree-difference-array.html">Tree Difference Array</a></li><li><a href="../cp/trie-and-xor-trie.html">Trie &amp; XOR Trie</a></li><li><a href="../cp/two-pointers.html">Two Pointers</a></li><li><a href="../cp/union-find-dsu.html">Union-Find (DSU)</a></li><li><a href="../cp/virtual-tree.html">Virtual Tree</a></li><li><a href="../cp/z-algorithm.html">Z-Algorithm</a></li></ul></details><details class="nav-group"><summary class="nav-group-label">docker<span class="nav-count">3</span></summary><ul><li><a href="../docker/start.html">Start</a></li><li><a href="../docker/compose.html">Compose</a></li><li><a href="../docker/swarm.html">Swarm</a></li></ul></details><details class="nav-group" open><summary class="nav-group-label">java<span class="nav-count">5</span></summary><ul><li><a href="../java/part-1.html" class="is-active" aria-current="page">Part 1</a></li><li><a href="../java/part-2.html">Part 2</a></li><li><a href="../java/part-3.html">Part 3</a></li><li><a href="../java/part-4.html">Part 4</a></li><li><a href="../java/part-5.html">Part 5</a></li></ul></details><details class="nav-group"><summary class="nav-group-label">math<span class="nav-count">34</span></summary><ul><li><a href="../math/bijection-counting.html">Bijection &amp; Counting Proofs</a></li><li><a href="../math/burnside-lemma.html">Burnside&#x27;s Lemma (Symmetry Counting)</a></li><li><a href="../math/catalan-numbers.html">Catalan Numbers</a></li><li><a href="../math/chinese-remainder-theorem.html">Chinese Remainder Theorem (CRT)</a></li><li><a href="../math/combinatorial-identities.html">Combinatorial Identities</a></li><li><a href="../math/combinatorics-ncr.html">Combinatorics — nCr &amp; Pascal</a></li><li><a href="../math/computational-geometry-basics.html">Computational Geometry Basics</a></li><li><a href="../math/derangements.html">Derangements</a></li><li><a href="../math/divisor-enumeration.html">Divisor Enumeration — O(√n)</a></li><li><a href="../math/divisor-functions.html">Divisor Functions (τ and σ)</a></li><li><a href="../math/euler-totient.html">Euler&#x27;s Totient φ(n)</a></li><li><a href="../math/expected-value-linearity.html">Expected Value — Linearity</a></li><li><a href="../math/fast-exponentiation.html">Fast Exponentiation</a></li><li><a href="../math/fermat-euler-theorem.html">Fermat&#x27;s &amp; Euler&#x27;s Theorems</a></li><li><a href="../math/floor-sum-trick.html">Floor Sum Trick — Σ⌊n/i⌋</a></li><li><a href="../math/gcd-lcm-extended-euclid.html">GCD, LCM &amp; Extended Euclidean</a></li><li><a href="../math/harmonic-bounds.html">Harmonic Bounds &amp; Estimates</a></li><li><a href="../math/inclusion-exclusion.html">Inclusion-Exclusion Principle</a></li><li><a href="../math/legendre-formula.html">Legendre&#x27;s Formula</a></li><li><a href="../math/linear-recurrences.html">Linear Recurrences</a></li><li><a href="../math/lucas-theorem.html">Lucas Theorem &amp; nCr mod prime</a></li><li><a href="../math/modular-arithmetic.html">Modular Arithmetic</a></li><li><a href="../math/modular-inverse-composite.html">Modular Inverse (Composite Modulus)</a></li><li><a href="../math/modular-inverse-fermat.html">Modular Inverse (Fermat)</a></li><li><a href="../math/multinomial-coefficients.html">Multinomial Coefficients</a></li><li><a href="../math/mobius-inversion.html">Möbius Inversion</a></li><li><a href="../math/parity-xor-patterns.html">Parity, XOR &amp; Modular Patterns</a></li><li><a href="../math/pigeonhole-counting.html">Pigeonhole &amp; Counting Arguments</a></li><li><a href="../math/probability-basics.html">Probability Basics</a></li><li><a href="../math/sieve-primes-factorization.html">Sieve, Primes &amp; Factorization</a></li><li><a href="../math/stars-and-bars.html">Stars and Bars</a></li><li><a href="../math/stirling-numbers.html">Stirling Numbers (2nd Kind)</a></li><li><a href="../math/sum-formulas-series.html">Sum Formulas &amp; Series</a></li><li><a href="../math/wilson-primality.html">Wilson&#x27;s Theorem &amp; Primality</a></li></ul></details><details class="nav-group"><summary class="nav-group-label">os<span class="nav-count">2</span></summary><ul><li><a href="../os/cpu.html">CPU</a></li><li><a href="../os/user-threads.html">User threads</a></li></ul></details></nav></aside>
+  <main class="chat">
+    <header class="page-head"><span class="crumb">java / part-1</span></header>
+    <article class="message user">
+      <div class="message-label">You</div>
+      <div class="message-body">week 1 - Java language + Object model - Java lab
+
+give full concepts and things I should learn for this week</div>
+    </article>
+    <article class="message assistant">
+      <div class="message-label">Assistant</div>
+      <div class="message-body prose"><p>For <strong>Week 1 — Java Language + Object Model</strong>, the goal should be to become extremely comfortable with the Java language itself before moving into Spring Boot, microservices, concurrency, or distributed systems.</p>
+<p>Given your target of <strong>Java/Spring Boot backend roles at Apple</strong>, I’d structure this as a <strong>Java fundamentals + object-model deep dive + hands-on lab week</strong>, with emphasis on interview-level understanding rather than just syntax.</p>
+<h1>Week 1 — Java Language + Object Model</h1>
+<h2>Week outcome</h2>
+<p>By the end of the week, you should be able to:</p>
+<ul><li>Write clean, idiomatic modern Java without relying on an IDE to explain the language.</li><li>Explain exactly how Java classes, objects, references, constructors, and inheritance work.</li><li>Understand <strong>stack vs heap</strong>, object lifetime, and garbage collection at a conceptual level.</li><li>Explain <code>==</code> vs <code>equals()</code>, <code>hashCode()</code>, and object identity.</li><li>Use interfaces, abstract classes, inheritance, composition, and polymorphism correctly.</li><li>Understand Java access modifiers and packages.</li><li>Explain <code>static</code>, <code>final</code>, <code>this</code>, <code>super</code>, and initialization order.</li><li>Understand Java&#x27;s parameter-passing model.</li><li>Use exceptions properly.</li><li>Work comfortably with generics, enums, records, and nested classes.</li><li>Read unfamiliar Java code and reason about what it does.</li><li>Write unit tests for your Java code.</li><li>Complete a small <strong>Java-only lab project</strong> without Spring.</li></ul>
+<hr>
+<h1>1. Java Platform Fundamentals</h1>
+<p>Start with the mental model of Java itself.</p>
+<h3>Learn</h3>
+<ul><li>JDK</li><li>JRE</li><li>JVM</li><li>Java compiler (<code>javac</code>)</li><li>Java launcher (<code>java</code>)</li><li>Bytecode</li><li><code>.java</code> → <code>.class</code></li><li>Class loading</li><li>JVM execution</li><li>JIT compilation</li><li>Platform independence</li><li>Java versions / LTS releases</li></ul>
+<p>Understand this pipeline:</p>
+<pre class="diagram"><code>+-----------------------+
+|      MyClass.java     |
++-----------------------+
+            |
+            v
++-----------------------+
+|         javac         |
++-----------------------+
+            |
+            v
++-----------------------+
+|     MyClass.class     |
++-----------------------+
+            |
+            v
++-----------------------+
+|          JVM          |
++-----------------------+
+            |
+            v
++-----------------------+
+|      Class Loader     |
++-----------------------+
+            |
+            v
++-----------------------+
+| Bytecode verification |
++-----------------------+
+            |
+            v
++-----------------------+
+|   JIT / Interpreter   |
++-----------------------+
+            |
+            v
++-----------------------+
+|      Machine code     |
++-----------------------+</code></pre>
+<h3>You should be able to answer</h3>
+<blockquote><p>What happens when I run a Java program?</p></blockquote>
+<blockquote><p>Why is Java platform independent?</p></blockquote>
+<blockquote><p>What is bytecode?</p></blockquote>
+<blockquote><p>What is the difference between JDK, JRE and JVM?</p></blockquote>
+<blockquote><p>What does the JIT compiler do?</p></blockquote>
+<hr>
+<h1>2. Java Program Structure</h1>
+<p>Master the basic language structure.</p>
+<h3>Learn</h3>
+<ul><li>Classes</li><li>Methods</li><li>Fields</li><li>Variables</li><li>Statements</li><li>Expressions</li><li>Blocks</li><li>Packages</li><li>Imports</li><li><code>public</code></li><li><code>private</code></li><li><code>protected</code></li><li>package-private</li></ul>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>package com.example;
+
+import java.util.List;
+
+public class UserService {
+
+    private final UserRepository repository;
+
+    public UserService(UserRepository repository) {
+        this.repository = repository;
+    }
+
+    public User findUser(long id) {
+        return repository.findById(id);
+    }
+}</code></pre></div>
+<p>Understand every component of this code.</p>
+<hr>
+<h1>3. Variables and Data Types</h1>
+<p>This is deceptively important.</p>
+<h2>Primitive types</h2>
+<p>Know:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>byte
+short
+int
+long
+float
+double
+char
+boolean</code></pre></div>
+<p>Understand:</p>
+<ul><li>size</li><li>range</li><li>default values</li><li>arithmetic</li><li>overflow</li><li>widening conversion</li><li>narrowing conversion</li><li>casting</li></ul>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>int x = 10;
+long y = x;
+
+long a = 10;
+int b = (int) a;</code></pre></div>
+<h3>Important interview concepts</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>int x = 1_000_000;
+long y = 1_000_000L;</code></pre></div>
+<p>Why does <code>long</code> sometimes require <code>L</code>?</p>
+<p>What happens here?</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>int x = Integer.MAX_VALUE;
+x++;</code></pre></div>
+<hr>
+<h1>4. Reference Types</h1>
+<p>This is one of the most important sections of the week.</p>
+<p>Understand the difference between:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>int x = 10;</code></pre></div>
+<p>and</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>User user = new User();</code></pre></div>
+<p>Learn:</p>
+<ul><li>primitive values</li><li>object references</li><li><code>null</code></li><li>reference assignment</li><li>aliases</li><li>object identity</li></ul>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>User a = new User();
+User b = a;
+
+b.setName(&quot;John&quot;);</code></pre></div>
+<p>What does <code>a.getName()</code> return?</p>
+<p>You should be able to reason about this without running the code.</p>
+<hr>
+<h1>5. Stack vs Heap</h1>
+<p>You don&#x27;t need JVM-internals expertise yet, but you need a strong conceptual model.</p>
+<p>Understand:</p>
+<pre class="diagram"><code>+------------------------------+
+|            Thread            |
++------------------------------+
+                |
+                v
++------------------------------+
+|         Stack frames         |
++------------------------------+
+                |
+                v
++------------------------------+
+| local variables / references |
++------------------------------+
+                |
+                v
++------------------------------+
+|             Heap             |
++------------------------------+
+                |
+                v
++------------------------------+
+|       objects / arrays       |
++------------------------------+</code></pre>
+<p>For:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>User user = new User(&quot;John&quot;);</code></pre></div>
+<p>understand conceptually:</p>
+<pre class="diagram"><code>+------------------+     +------------------+
+|      Stack       |     |       Heap       |
++------------------+     +------------------+
++------+     +--------+
+| name | --&gt; | &quot;John&quot; |
++------+     +--------+</code></pre>
+<p>Learn:</p>
+<ul><li>local variables</li><li>references</li><li>objects</li><li>method stack frames</li><li>object lifetime</li><li>garbage collection</li><li><code>null</code></li></ul>
+<h3>Important nuance</h3>
+<p>Don&#x27;t memorize the oversimplification:</p>
+<blockquote><p>&quot;Primitives always live on the stack.&quot;</p></blockquote>
+<p>That isn&#x27;t a sufficiently accurate model of JVM execution.</p>
+<p>Instead understand that <strong>variables can hold primitive values or references, while objects are allocated in JVM-managed memory</strong>, with JVM implementation details affecting the exact physical representation.</p>
+<hr>
+<h1>6. Classes and Objects</h1>
+<p>Deep dive.</p>
+<p>Learn:</p>
+<ul><li>class definition</li><li>fields</li><li>methods</li><li>constructors</li><li>object creation</li><li>object state</li><li>object behavior</li><li>instance members</li><li>class members</li></ul>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>public class Account {
+
+    private String owner;
+    private double balance;
+
+    public Account(String owner, double balance) {
+        this.owner = owner;
+        this.balance = balance;
+    }
+
+    public void deposit(double amount) {
+        balance += amount;
+    }
+}</code></pre></div>
+<p>Understand:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Account a = new Account(&quot;Alice&quot;, 100);</code></pre></div>
+<p>What happens during:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>new Account(...)</code></pre></div>
+<hr>
+<h1>7. Constructors</h1>
+<p>Learn thoroughly.</p>
+<h3>Topics</h3>
+<ul><li>default constructor</li><li>no-argument constructor</li><li>parameterized constructor</li><li>constructor overloading</li><li>constructor chaining</li><li><code>this()</code></li><li><code>super()</code></li><li>initialization order</li></ul>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>class Employee {
+
+    private String name;
+
+    Employee() {
+        this(&quot;Unknown&quot;);
+    }
+
+    Employee(String name) {
+        this.name = name;
+    }
+}</code></pre></div>
+<p>Understand why:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>this(...)</code></pre></div>
+<p>must be the first statement.</p>
+<hr>
+<h1>8. <code>this</code> and <code>super</code></h1>
+<p>You should be completely comfortable with both.</p>
+<h3><code>this</code></h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>this.name = name;</code></pre></div>
+<p>Understand:</p>
+<ul><li>current object reference</li><li>constructor chaining</li><li>method invocation</li><li>field disambiguation</li></ul>
+<h3><code>super</code></h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>super();
+super.someMethod();
+super.someField;</code></pre></div>
+<p>Understand:</p>
+<ul><li>parent constructor</li><li>parent implementation</li><li>inheritance behavior</li></ul>
+<hr>
+<h1>9. Methods</h1>
+<p>Master method mechanics.</p>
+<p>Learn:</p>
+<ul><li>parameters</li><li>return values</li><li>method signatures</li><li>overloading</li><li>varargs</li><li>static methods</li><li>instance methods</li><li>recursion</li><li>method invocation</li></ul>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>void process(int x)
+
+void process(String x)
+
+void process(int x, int y)</code></pre></div>
+<p>Understand why these are overloads.</p>
+<hr>
+<h1>10. Java Parameter Passing</h1>
+<p><strong>Very important for interviews.</strong></p>
+<p>Java is <strong>pass-by-value</strong>.</p>
+<p>Even when passing objects.</p>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>void change(User user) {
+    user.setName(&quot;Bob&quot;);
+}</code></pre></div>
+<p>The reference itself is passed by value.</p>
+<p>Understand this example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>void change(User user) {
+    user = new User(&quot;Bob&quot;);
+}
+
+User user = new User(&quot;Alice&quot;);
+change(user);
+
+System.out.println(user.getName());</code></pre></div>
+<p>Why does it still print:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Alice</code></pre></div>
+<p>But:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>void change(User user) {
+    user.setName(&quot;Bob&quot;);
+}</code></pre></div>
+<p>changes the object.</p>
+<p>This distinction is extremely important.</p>
+<hr>
+<h1>11. Access Modifiers</h1>
+<p>Master:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>private
+default/package-private
+protected
+public</code></pre></div>
+<p>Understand visibility:</p>
+<pre class="diagram"><code>+-----------------+------------+--------------+----------+------------+
+| Modifier        | Same class | Same package | Subclass | Everywhere |
++-----------------+------------+--------------+----------+------------+
+| private         | ✓          | —            | —        | —          |
+| package-private | ✓          | ✓            | —        | —          |
+| protected       | ✓          | ✓            | ✓        | —          |
+| public          | ✓          | ✓            | ✓        | ✓          |
++-----------------+------------+--------------+----------+------------+</code></pre>
+<p>Also understand the subtleties of <code>protected</code> across packages.</p>
+<hr>
+<h1>12. Encapsulation</h1>
+<p>This is an important OOP principle.</p>
+<p>Bad:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>public class Account {
+    public double balance;
+}</code></pre></div>
+<p>Better:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>public class Account {
+
+    private double balance;
+
+    public void deposit(double amount) {
+        if (amount &lt;= 0) {
+            throw new IllegalArgumentException();
+        }
+
+        balance += amount;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+}</code></pre></div>
+<p>Understand:</p>
+<ul><li>hiding implementation details</li><li>protecting invariants</li><li>controlling state changes</li><li>API design</li></ul>
+<hr>
+<h1>13. <code>static</code></h1>
+<p>Deep dive.</p>
+<p>Learn:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>static field
+static method
+static initializer
+static nested class</code></pre></div>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>class Counter {
+
+    private static int count;
+
+    Counter() {
+        count++;
+    }
+
+    static int getCount() {
+        return count;
+    }
+}</code></pre></div>
+<p>Understand:</p>
+<ul><li>class-level state</li><li>instance vs class members</li><li>why static methods cannot directly access instance fields</li><li>static initialization</li></ul>
+<hr>
+<h1>14. <code>final</code></h1>
+<p>Understand all major uses.</p>
+<h3>Final variable</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>final int x = 10;</code></pre></div>
+<h3>Final reference</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>final User user = new User();</code></pre></div>
+<p>The reference cannot change, but the object potentially can.</p>
+<h3>Final method</h3>
+<p>Cannot be overridden.</p>
+<h3>Final class</h3>
+<p>Cannot be extended.</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>final class SecurityManager {
+}</code></pre></div>
+<hr>
+<h1>15. Initialization Order</h1>
+<p>This is an excellent interview topic.</p>
+<p>Learn the ordering involving:</p>
+<ul><li>static fields</li><li>static blocks</li><li>instance fields</li><li>instance initializer blocks</li><li>constructors</li><li>superclass initialization</li><li>subclass initialization</li></ul>
+<p>Practice code like:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>class Parent {
+
+    static {
+        System.out.println(&quot;Parent static&quot;);
+    }
+
+    {
+        System.out.println(&quot;Parent instance&quot;);
+    }
+
+    Parent() {
+        System.out.println(&quot;Parent constructor&quot;);
+    }
+}
+
+class Child extends Parent {
+
+    static {
+        System.out.println(&quot;Child static&quot;);
+    }
+
+    {
+        System.out.println(&quot;Child instance&quot;);
+    }
+
+    Child() {
+        System.out.println(&quot;Child constructor&quot;);
+    }
+}</code></pre></div>
+<p>Predict the output before running it.</p>
+<hr>
+<h1>16. Inheritance</h1>
+<p>Learn:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>class Animal {
+}
+
+class Dog extends Animal {
+}</code></pre></div>
+<p>Understand:</p>
+<ul><li><code>extends</code></li><li>superclass</li><li>subclass</li><li>inherited members</li><li>constructor behavior</li><li>method overriding</li><li>field hiding</li><li><code>super</code></li></ul>
+<p>Also understand <strong>what inheritance does not provide</strong>.</p>
+<p>Java doesn&#x27;t support multiple class inheritance:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>class C extends A, B // invalid</code></pre></div>
+<hr>
+<h1>17. Polymorphism</h1>
+<p>Extremely important.</p>
+<p>Understand:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Animal animal = new Dog();</code></pre></div>
+<p>Compile-time type:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Animal</code></pre></div>
+<p>Runtime object:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Dog</code></pre></div>
+<p>Then:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>animal.makeSound();</code></pre></div>
+<p>can invoke the overridden <code>Dog</code> implementation.</p>
+<p>Learn:</p>
+<ul><li>static/compile-time type</li><li>runtime type</li><li>dynamic dispatch</li><li>method overriding</li><li>upcasting</li><li>downcasting</li></ul>
+<hr>
+<h1>18. Method Overloading vs Overriding</h1>
+<p>Know this cold.</p>
+<h3>Overloading</h3>
+<p>Same class, same method name, different parameter list.</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>void print(int x)
+void print(String x)</code></pre></div>
+<p>Resolved at compile time.</p>
+<h3>Overriding</h3>
+<p>Subclass provides implementation of inherited method.</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>@Override
+public void execute() {
+}</code></pre></div>
+<p>Resolved dynamically at runtime.</p>
+<hr>
+<h1>19. Abstract Classes</h1>
+<p>Learn:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>abstract class Payment {
+    abstract void pay();
+
+    void log() {
+        System.out.println(&quot;Payment&quot;);
+    }
+}</code></pre></div>
+<p>Understand:</p>
+<ul><li>abstract methods</li><li>concrete methods</li><li>constructors</li><li>fields</li><li>inheritance</li><li>when abstract classes are useful</li></ul>
+<hr>
+<h1>20. Interfaces</h1>
+<p>This is <strong>very important for Spring development</strong>.</p>
+<p>Learn:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>interface PaymentProcessor {
+    void process();
+}</code></pre></div>
+<p>Implementation:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>class StripePaymentProcessor
+        implements PaymentProcessor {
+
+    @Override
+    public void process() {
+    }
+}</code></pre></div>
+<p>Understand:</p>
+<ul><li>interface contracts</li><li>multiple interfaces</li><li>default methods</li><li>static interface methods</li><li>private interface methods</li><li>functional interfaces</li></ul>
+<hr>
+<h1>21. Interface vs Abstract Class</h1>
+<p>Don&#x27;t memorize simplistic rules.</p>
+<p>Understand the design differences.</p>
+<h3>Abstract class</h3>
+<p>Can have:</p>
+<ul><li>state</li><li>constructors</li><li>concrete methods</li><li>abstract methods</li><li>protected members</li></ul>
+<h3>Interface</h3>
+<p>Primarily describes a contract/capability and supports:</p>
+<ul><li>abstract methods</li><li>default methods</li><li>static methods</li><li>constants</li><li>private helper methods</li></ul>
+<p>Practice deciding:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Should this be an interface?
+Should this be an abstract class?
+Should this just be a normal class?</code></pre></div>
+<hr>
+<h1>22. Composition vs Inheritance</h1>
+<p>Extremely important for production Java.</p>
+<p>Inheritance:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>class Car extends Vehicle</code></pre></div>
+<p>Composition:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>class Car {
+
+    private Engine engine;
+}</code></pre></div>
+<p>Understand:</p>
+<blockquote><p>&quot;has-a&quot; vs &quot;is-a&quot;</p></blockquote>
+<p>and why composition is frequently preferable when you don&#x27;t need subtype polymorphism.</p>
+<hr>
+<h1>23. <code>Object</code> Class</h1>
+<p>Every Java class ultimately derives from <code>Object</code> unless otherwise rooted in the hierarchy.</p>
+<p>Know:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>toString()
+equals()
+hashCode()
+getClass()</code></pre></div>
+<p>And understand:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Object obj = new User();</code></pre></div>
+<hr>
+<h1>24. <code>equals()</code> and <code>hashCode()</code></h1>
+<p><strong>Must-master topic.</strong></p>
+<p>Understand:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>a == b</code></pre></div>
+<p>versus:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>a.equals(b)</code></pre></div>
+<h3><code>==</code></h3>
+<p>For objects: compares references/object identity.</p>
+<h3><code>equals()</code></h3>
+<p>Can compare logical equality if properly overridden.</p>
+<p>Then understand the contract:</p>
+<pre class="diagram"><code>+------------------------------+
+|     a.equals(b) == true      |
++------------------------------+
+                |
+                v
++------------------------------+
+| a.hashCode() == b.hashCode() |
++------------------------------+</code></pre>
+<p>But:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>same hashCode
+≠
+objects must be equal</code></pre></div>
+<p>Practice implementing:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>class Employee {
+
+    private final long id;
+    private final String name;
+
+    @Override
+    public boolean equals(Object o) {
+        ...
+    }
+
+    @Override
+    public int hashCode() {
+        ...
+    }
+}</code></pre></div>
+<p>This will become critical when you learn <code>HashMap</code> and <code>HashSet</code>.</p>
+<hr>
+<h1>25. Immutability</h1>
+<p>Learn how to design immutable objects.</p>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>public final class Money {
+
+    private final BigDecimal amount;
+    private final String currency;
+
+    public Money(BigDecimal amount, String currency) {
+        this.amount = amount;
+        this.currency = currency;
+    }
+
+    public BigDecimal getAmount() {
+        return amount;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+}</code></pre></div>
+<p>Understand:</p>
+<ul><li><code>final</code> fields</li><li>no setters</li><li>defensive copies</li><li>mutable vs immutable fields</li><li>thread-safety benefits</li><li>value objects</li></ul>
+<hr>
+<h1>26. Strings</h1>
+<p>Deep dive into:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>String
+StringBuilder
+StringBuffer</code></pre></div>
+<p>Understand:</p>
+<ul><li>immutability of <code>String</code></li><li>string pool</li><li>literals</li><li><code>new String()</code></li><li>concatenation</li><li><code>==</code> vs <code>equals()</code></li></ul>
+<p>Predict:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>String a = &quot;hello&quot;;
+String b = &quot;hello&quot;;
+
+System.out.println(a == b);</code></pre></div>
+<p>Then:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>String a = new String(&quot;hello&quot;);
+String b = new String(&quot;hello&quot;);
+
+System.out.println(a == b);
+System.out.println(a.equals(b));</code></pre></div>
+<hr>
+<h1>27. Wrapper Classes</h1>
+<p>Learn:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Integer
+Long
+Double
+Boolean
+Character
+...</code></pre></div>
+<p>Understand:</p>
+<ul><li>boxing</li><li>unboxing</li><li>autoboxing</li><li><code>null</code></li><li>primitive vs wrapper</li></ul>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Integer x = 10;
+int y = x;</code></pre></div>
+<p>Also understand surprising cases involving wrapper caching.</p>
+<hr>
+<h1>28. Enums</h1>
+<p>Don&#x27;t treat enums as merely integer constants.</p>
+<p>Learn:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>enum Status {
+    PENDING,
+    PROCESSING,
+    COMPLETED,
+    FAILED
+}</code></pre></div>
+<p>Then advanced enums:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>enum Status {
+
+    PENDING(&quot;P&quot;),
+    COMPLETED(&quot;C&quot;);
+
+    private final String code;
+
+    Status(String code) {
+        this.code = code;
+    }
+}</code></pre></div>
+<p>Understand:</p>
+<ul><li>enum constructors</li><li>fields</li><li>methods</li><li><code>values()</code></li><li><code>valueOf()</code></li><li>enum identity</li></ul>
+<hr>
+<h1>29. Records</h1>
+<p>If you&#x27;re preparing for modern Java roles, learn records.</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>public record User(
+    long id,
+    String name,
+    String email
+) {}</code></pre></div>
+<p>Understand:</p>
+<ul><li>canonical constructor</li><li>accessors</li><li>generated <code>equals</code></li><li>generated <code>hashCode</code></li><li>generated <code>toString</code></li><li>immutability semantics</li><li>limitations</li></ul>
+<p>Important:</p>
+<blockquote><p>A record is not automatically deeply immutable.</p></blockquote>
+<hr>
+<h1>30. Nested Classes</h1>
+<p>Learn:</p>
+<h3>Static nested class</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>class Outer {
+
+    static class Nested {
+    }
+}</code></pre></div>
+<h3>Inner class</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>class Outer {
+
+    class Inner {
+    }
+}</code></pre></div>
+<h3>Local class</h3>
+<p>Defined inside a method.</p>
+<h3>Anonymous class</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Runnable r = new Runnable() {
+    @Override
+    public void run() {
+    }
+};</code></pre></div>
+<p>Know when these are useful.</p>
+<hr>
+<h1>31. Packages</h1>
+<p>Learn:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>package com.company.service;</code></pre></div>
+<p>Understand:</p>
+<ul><li>namespace</li><li>directory structure</li><li>imports</li><li>package-private visibility</li><li>classpath concept</li></ul>
+<p>Also learn why package structure matters in larger applications.</p>
+<hr>
+<h1>32. Exceptions</h1>
+<p>Very important.</p>
+<p>Understand:</p>
+<pre class="diagram"><code>+--------------------+
+|     Throwable      |
++--------------------+
+           |
+           v
++--------------------+
+|      ├ Error       |
++--------------------+
+           |
+           v
++--------------------+
+|     Exception      |
++--------------------+
+           |
+           v
++--------------------+
+| ├ RuntimeException |
++--------------------+
+           |
+           v
++--------------------+
+| checked exceptions |
++--------------------+</code></pre>
+<p>Learn:</p>
+<ul><li>checked exceptions</li><li>unchecked exceptions</li><li><code>try</code></li><li><code>catch</code></li><li><code>finally</code></li><li><code>throw</code></li><li><code>throws</code></li><li>custom exceptions</li><li>exception propagation</li></ul>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>public User findUser(long id)
+        throws UserNotFoundException {
+    ...
+}</code></pre></div>
+<hr>
+<h1>33. Checked vs Unchecked Exceptions</h1>
+<p>Know the design implications.</p>
+<h3>Checked</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>IOException
+SQLException</code></pre></div>
+<h3>Unchecked</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>NullPointerException
+IllegalArgumentException
+IllegalStateException</code></pre></div>
+<p>Understand when custom exceptions make sense.</p>
+<p>Also learn why you generally shouldn&#x27;t catch:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Exception</code></pre></div>
+<p>blindly.</p>
+<hr>
+<h1>34. Try-with-resources</h1>
+<p>Learn:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>try (FileInputStream input = new FileInputStream(file)) {
+    ...
+}</code></pre></div>
+<p>Understand:</p>
+<ul><li><code>AutoCloseable</code></li><li>resource cleanup</li><li>suppressed exceptions</li></ul>
+<p>This becomes useful when dealing with files, databases, HTTP clients, etc.</p>
+<hr>
+<h1>35. Generics</h1>
+<p>This should be a significant part of Week 1.</p>
+<p>Learn:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>List&lt;String&gt;
+List&lt;Integer&gt;
+Map&lt;String, User&gt;</code></pre></div>
+<p>Understand:</p>
+<ul><li>generic classes</li><li>generic methods</li><li>type parameters</li><li>bounded types</li><li>wildcards</li></ul>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>class Box&lt;T&gt; {
+
+    private T value;
+
+    public T get() {
+        return value;
+    }
+
+    public void set(T value) {
+        this.value = value;
+    }
+}</code></pre></div>
+<hr>
+<h1>36. Generic Bounds</h1>
+<p>Learn:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>&lt;T extends Number&gt;</code></pre></div>
+<p>and:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>&lt;? extends Number&gt;
+&lt;? super Integer&gt;</code></pre></div>
+<p>You should understand the famous rule:</p>
+<blockquote><p><strong>Producer Extends, Consumer Super — PECS</strong></p></blockquote>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>List&lt;? extends Number&gt;</code></pre></div>
+<p>versus:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>List&lt;? super Integer&gt;</code></pre></div>
+<p>This is important for Java interviews.</p>
+<hr>
+<h1>37. Type Erasure</h1>
+<p>Understand conceptually.</p>
+<p>Java generics are largely implemented using <strong>type erasure</strong>.</p>
+<p>Understand why this:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>List&lt;String&gt;</code></pre></div>
+<p>and:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>List&lt;Integer&gt;</code></pre></div>
+<p>do not represent distinct runtime generic types in the same way they do at compile time.</p>
+<p>You don&#x27;t need JVM bytecode expertise yet, but know the implications.</p>
+<hr>
+<h1>38. Arrays</h1>
+<p>Learn:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>int[] numbers;
+String[] names;
+User[] users;</code></pre></div>
+<p>Understand:</p>
+<ul><li>array creation</li><li>indexing</li><li>length</li><li>multidimensional arrays</li><li>array covariance</li></ul>
+<p>Important example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Object[] objects = new String[2];
+
+objects[0] = &quot;hello&quot;;
+objects[1] = 123;</code></pre></div>
+<p>Why does the second line fail at runtime?</p>
+<p>This is an excellent interview concept.</p>
+<hr>
+<h1>39. Varargs</h1>
+<p>Understand:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>void log(String... messages)</code></pre></div>
+<p>and how it relates to arrays.</p>
+<p>Know the limitations and potential ambiguity with overloaded methods.</p>
+<hr>
+<h1>40. Annotations</h1>
+<p>You don&#x27;t need custom annotation mastery yet, but understand:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>@Override
+@Deprecated
+@SuppressWarnings</code></pre></div>
+<p>Learn:</p>
+<ul><li>annotation purpose</li><li>metadata</li><li>retention concept</li><li>targets</li><li>runtime vs compile-time annotations</li></ul>
+<p>This will become essential when you move into Spring.</p>
+<hr>
+<h1>41. Lambda Basics</h1>
+<p>Although functional programming is a later topic, introduce it now.</p>
+<p>Understand:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>x -&gt; x * 2</code></pre></div>
+<p>and:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>(String x) -&gt; x.length()</code></pre></div>
+<p>Learn:</p>
+<ul><li>lambda expressions</li><li>functional interfaces</li><li><code>@FunctionalInterface</code></li><li>method references</li></ul>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Runnable r = () -&gt; System.out.println(&quot;Hello&quot;);</code></pre></div>
+<p>Don&#x27;t spend the whole week on Streams yet. That&#x27;s better as a separate topic.</p>
+<hr>
+<h1>42. Functional Interfaces</h1>
+<p>Know the standard ones:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Predicate&lt;T&gt;
+Function&lt;T, R&gt;
+Consumer&lt;T&gt;
+Supplier&lt;T&gt;
+UnaryOperator&lt;T&gt;
+BinaryOperator&lt;T&gt;</code></pre></div>
+<p>At least understand what each represents.</p>
+<hr>
+<h1>43. Java Memory Model — Intro</h1>
+<p>Don&#x27;t go deep into concurrency yet, but establish the foundation.</p>
+<p>Understand:</p>
+<ul><li>shared memory</li><li>thread visibility</li><li>happens-before at a high level</li><li><code>final</code> field semantics conceptually</li><li>why immutable objects are easier to reason about</li></ul>
+<p>Concurrency deserves its own later week.</p>
+<hr>
+<h1>44. Null Handling</h1>
+<p>Understand:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>null</code></pre></div>
+<p>and:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>NullPointerException</code></pre></div>
+<p>Learn defensive design.</p>
+<p>Compare:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>if (user != null) {
+    ...
+}</code></pre></div>
+<p>with better domain/API design where appropriate.</p>
+<p>Introduce:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Optional&lt;T&gt;</code></pre></div>
+<p>but don&#x27;t spend too much time on it this week.</p>
+<hr>
+<h1>45. <code>Optional</code></h1>
+<p>Know:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Optional&lt;User&gt;</code></pre></div>
+<p>and methods such as:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>of()
+ofNullable()
+empty()
+isPresent()
+ifPresent()
+map()
+flatMap()
+orElse()
+orElseGet()
+orElseThrow()</code></pre></div>
+<p>Understand why <code>Optional</code> is primarily useful for expressing <strong>possibly absent return values</strong>, rather than blindly wrapping every field.</p>
+<hr>
+<h1>46. Modern Java Features</h1>
+<p>For your target roles, know the evolution of modern Java.</p>
+<p>At minimum understand:</p>
+<pre class="diagram"><code>  Java 8
+    Lambdas
+    Functional interfaces
+    Streams
+    Optional
+  Java 9+
+    Modules
+  Java 14+
+    Records (standardized later)
+  Modern Java
+    Pattern matching
+    Sealed classes
+    Switch expressions</code></pre>
+<p>You don&#x27;t need mastery of every feature in Week 1.</p>
+<hr>
+<h1>47. Sealed Classes</h1>
+<p>Understand the concept:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>public sealed interface Payment
+    permits CardPayment, CashPayment {
+}</code></pre></div>
+<p>This allows controlled inheritance.</p>
+<p>Know why this can be useful for modeling a closed domain.</p>
+<hr>
+<h1>48. Pattern Matching</h1>
+<p>Become familiar with modern syntax such as:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>if (obj instanceof String s) {
+    System.out.println(s.length());
+}</code></pre></div>
+<p>Understand the motivation rather than memorizing syntax.</p>
+<hr>
+<h1>49. Object Modeling</h1>
+<p>This is where the week becomes more important than syntax.</p>
+<p>Take a domain such as:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Order
+Customer
+Product
+Payment
+Address</code></pre></div>
+<p>Design relationships:</p>
+<pre class="diagram"><code>+--------------+
+|   Customer   |
++--------------+
+        |
+        v
++--------------+
+|   Address    |
++--------------+
+        |
+        v
++--------------+
+|    Order     |
++--------------+
+        |
+        v
++--------------+
+|  ├ Customer  |
++--------------+
+        |
+        v
++--------------+
+| ├ OrderItems |
++--------------+
+        |
+        v
++--------------+
+|  ├ Product   |
++--------------+
+        |
+        v
++--------------+
+|   quantity   |
++--------------+
+        |
+        v
++--------------+
+|   Payment    |
++--------------+</code></pre>
+<p>Decide:</p>
+<ul><li>which classes exist</li><li>which fields are immutable</li><li>which relationships are composition</li><li>which behaviors belong to which class</li><li>where interfaces make sense</li><li>where inheritance makes sense</li><li>what invariants must be protected</li></ul>
+<p>This is the <strong>object-model</strong> part of the week.</p>
+<hr>
+<h1>50. SOLID Principles</h1>
+<p>Learn these at a practical level.</p>
+<h3>S — Single Responsibility</h3>
+<p>A class should have a focused responsibility.</p>
+<h3>O — Open/Closed</h3>
+<p>Open for extension, closed for modification.</p>
+<h3>L — Liskov Substitution</h3>
+<p>Subtypes should behave appropriately when substituted for their base types.</p>
+<h3>I — Interface Segregation</h3>
+<p>Prefer focused interfaces.</p>
+<h3>D — Dependency Inversion</h3>
+<p>Depend on abstractions rather than concrete implementations.</p>
+<p>The last one will become especially important when you start Spring dependency injection.</p>
+<hr>
+<h1>51. Object-Oriented Design Exercises</h1>
+<p>You should implement these without Spring.</p>
+<h3>Exercise 1 — Library</h3>
+<p>Model:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Library
+Book
+Author
+Member
+Loan</code></pre></div>
+<p>Requirements:</p>
+<ul><li>borrow book</li><li>return book</li><li>track availability</li><li>prevent invalid borrowing</li><li>calculate overdue status</li></ul>
+<hr>
+<h3>Exercise 2 — Banking</h3>
+<p>Model:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Account
+SavingsAccount
+CurrentAccount
+Customer
+Transaction</code></pre></div>
+<p>Implement:</p>
+<ul><li>deposit</li><li>withdrawal</li><li>balance</li><li>transaction history</li><li>validation</li><li>domain exceptions</li></ul>
+<p>Practice:</p>
+<ul><li>inheritance</li><li>polymorphism</li><li>encapsulation</li><li>immutable objects</li><li>enums</li></ul>
+<hr>
+<h3>Exercise 3 — Order System</h3>
+<p>Model:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Customer
+Order
+OrderItem
+Product
+Payment</code></pre></div>
+<p>Implement:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>create order
+add item
+remove item
+calculate total
+apply discount
+process payment
+cancel order</code></pre></div>
+<p>This is the <strong>main Week 1 lab</strong> I&#x27;d recommend.</p>
+<hr>
+<h1>52. Java Lab — Main Project</h1>
+<p>Build a <strong>console-based Order Management System</strong>.</p>
+<p>No:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Spring
+Spring Boot
+JPA
+Hibernate
+REST
+AWS
+Database</code></pre></div>
+<p>yet.</p>
+<p>Use pure Java.</p>
+<h2>Suggested architecture</h2>
+<pre class="diagram"><code>+----------------------------+
+|     com.example.order      |
++----------------------------+
+               |
+               v
++----------------------------+
+|          ├ model           |
++----------------------------+
+               |
+               v
++----------------------------+
+|         ├ Customer         |
++----------------------------+
+               |
+               v
++----------------------------+
+|         ├ Product          |
++----------------------------+
+               |
+               v
++----------------------------+
+|          ├ Order           |
++----------------------------+
+               |
+               v
++----------------------------+
+|        ├ OrderItem         |
++----------------------------+
+               |
+               v
++----------------------------+
+|         ├ Address          |
++----------------------------+
+               |
+               v
++----------------------------+
+|          Payment           |
++----------------------------+
+               |
+               v
++----------------------------+
+|        ├ repository        |
++----------------------------+
+               |
+               v
++----------------------------+
+|    ├ ProductRepository     |
++----------------------------+
+               |
+               v
++----------------------------+
+|      OrderRepository       |
++----------------------------+
+               |
+               v
++----------------------------+
+|         ├ service          |
++----------------------------+
+               |
+               v
++----------------------------+
+|       ├ OrderService       |
++----------------------------+
+               |
+               v
++----------------------------+
+|       PaymentService       |
++----------------------------+
+               |
+               v
++----------------------------+
+|        ├ exception         |
++----------------------------+
+               |
+               v
++----------------------------+
+|  ├ OrderNotFoundException  |
++----------------------------+
+               |
+               v
++----------------------------+
+| ├ ProductNotFoundException |
++----------------------------+
+               |
+               v
++----------------------------+
+|   InvalidOrderException    |
++----------------------------+
+               |
+               v
++----------------------------+
+|            Main            |
++----------------------------+</code></pre>
+<hr>
+<h1>53. Requirements for the Lab</h1>
+<p>Implement:</p>
+<h3>Product</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>id
+name
+price
+stock</code></pre></div>
+<h3>Customer</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>id
+name
+email
+address</code></pre></div>
+<h3>Order</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>id
+customer
+items
+status
+createdAt</code></pre></div>
+<h3>OrderItem</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>product
+quantity
+unitPrice</code></pre></div>
+<h3>OrderStatus</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>CREATED
+CONFIRMED
+PAID
+SHIPPED
+CANCELLED</code></pre></div>
+<hr>
+<h1>54. Business Rules</h1>
+<p>For example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>quantity &gt; 0
+price &gt;= 0
+stock &gt;= 0
+email cannot be null</code></pre></div>
+<p>An order:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>cannot be paid if cancelled
+cannot be shipped if unpaid
+cannot be cancelled after shipping</code></pre></div>
+<p>This forces you to practice <strong>object invariants</strong> rather than writing classes that are just data containers.</p>
+<hr>
+<h1>55. Repository Layer</h1>
+<p>Start with an in-memory implementation.</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>public interface ProductRepository {
+
+    Optional&lt;Product&gt; findById(long id);
+
+    List&lt;Product&gt; findAll();
+
+    void save(Product product);
+}</code></pre></div>
+<p>Then:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>public class InMemoryProductRepository
+        implements ProductRepository {
+
+    private final Map&lt;Long, Product&gt; products =
+        new HashMap&lt;&gt;();
+}</code></pre></div>
+<p>This gives you an early taste of the abstraction style you&#x27;ll later use with Spring.</p>
+<hr>
+<h1>56. Service Layer</h1>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>public class OrderService {
+
+    private final OrderRepository orderRepository;
+    private final ProductRepository productRepository;
+
+    public OrderService(
+            OrderRepository orderRepository,
+            ProductRepository productRepository) {
+
+        this.orderRepository = orderRepository;
+        this.productRepository = productRepository;
+    }
+
+    public Order createOrder(...) {
+        ...
+    }
+}</code></pre></div>
+<p>Notice what you&#x27;re practicing:</p>
+<pre class="diagram"><code>+-----------------------+
+|       interface       |
++-----------------------+
+            |
+            v
++-----------------------+
+|       dependency      |
++-----------------------+
+            |
+            v
++-----------------------+
+| constructor injection |
++-----------------------+
+            |
+            v
++-----------------------+
+|        service        |
++-----------------------+</code></pre>
+<p>That&#x27;s foundational Spring thinking without actually using Spring.</p>
+<hr>
+<h1>57. Testing</h1>
+<p>Use JUnit.</p>
+<p>At minimum test:</p>
+<h3>Product</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>create product
+invalid price
+invalid stock</code></pre></div>
+<h3>Order</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>add item
+remove item
+calculate total
+empty order
+invalid quantity</code></pre></div>
+<h3>State transitions</h3>
+<pre class="diagram"><code>+---------+-----------+
+| CREATED | CONFIRMED |
++---------+-----------+
++-----------+------+
+| CONFIRMED | PAID |
++-----------+------+
++------+---------+
+| PAID | SHIPPED |
++------+---------+</code></pre>
+<p>and invalid transitions:</p>
+<pre class="diagram"><code>+-----------+------+
+| CANCELLED | PAID |
++-----------+------+
++---------+-----------+
+| SHIPPED | CANCELLED |
++---------+-----------+</code></pre>
+<hr>
+<h1>58. Debugging Lab</h1>
+<p>For several exercises, deliberately create bugs.</p>
+<p>Practice debugging:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>== vs equals()</code></pre></div>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>NullPointerException</code></pre></div>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>ConcurrentModificationException</code></pre></div>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>ClassCastException</code></pre></div>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>ArrayStoreException</code></pre></div>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>IllegalArgumentException</code></pre></div>
+<p>Learn to read stack traces.</p>
+<p>A backend engineer should be able to look at:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Exception
+    at A.method(A.java:42)
+    at B.method(B.java:81)
+    at Main.main(Main.java:15)</code></pre></div>
+<p>and immediately understand the execution path.</p>
+<hr>
+<h1>59. Git Lab</h1>
+<p>Your Week 1 project should also introduce good engineering habits.</p>
+<p>Repository:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>java-object-model-lab</code></pre></div>
+<p>Commits such as:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>initial project structure
+add domain model
+add order state transitions
+add repositories
+add order service
+add validation
+add unit tests
+refactor domain model</code></pre></div>
+<p>Avoid one giant:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>final project</code></pre></div>
+<p>commit.</p>
+<hr>
+<h1>60. What You Should NOT Spend Much Time On This Week</h1>
+<p>Don&#x27;t let these consume Week 1:</p>
+<ul><li>advanced Streams</li><li>CompletableFuture</li><li>multithreading</li><li>synchronization</li><li>JVM GC tuning</li><li>classloader internals</li><li>bytecode engineering</li><li>reflection</li><li>Java modules in depth</li><li>JNI</li><li>serialization internals</li><li>advanced performance tuning</li></ul>
+<p>We&#x27;ll build those later.</p>
+<hr>
+<h1>Week 1 Schedule</h1>
+<p>I&#x27;d divide the week like this:</p>
+<pre class="diagram"><code>+-----------+------------------------------------------------------------------------+
+| Day       | Focus                                                                  |
++-----------+------------------------------------------------------------------------+
+| **Day 1** | Java platform, syntax, types, variables, references                    |
+| **Day 2** | Classes, objects, constructors, `this`, `super`, memory model          |
+| **Day 3** | Encapsulation, inheritance, polymorphism, interfaces, abstract classes |
+| **Day 4** | `Object`, `equals`, `hashCode`, strings, immutability, enums, records  |
+| **Day 5** | Exceptions, generics, arrays, annotations, lambdas, Optional           |
+| **Day 6** | Object modeling + SOLID + design exercises                             |
+| **Day 7** | **Java Lab implementation + JUnit + interview questions**              |
++-----------+------------------------------------------------------------------------+</code></pre>
+<hr>
+<h1>The &quot;Must Know Cold&quot; List</h1>
+<p>If time gets tight, prioritize these.</p>
+<h3>Tier 1 — Absolutely master</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Classes &amp; Objects
+References
+Constructors
+this / super
+Access modifiers
+Encapsulation
+Inheritance
+Polymorphism
+Interfaces
+Abstract classes
+Composition
+static
+final
+equals()
+hashCode()
+String
+Immutability
+Exceptions
+Generics</code></pre></div>
+<h3>Tier 2 — Strong understanding</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Stack vs heap
+Initialization order
+Enums
+Records
+Optional
+Arrays
+Wrapper classes
+Autoboxing
+Annotations
+Nested classes
+Lambda basics
+PECS
+Type erasure</code></pre></div>
+<h3>Tier 3 — Awareness</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>JIT
+Class loading
+JMM basics
+Sealed classes
+Pattern matching
+Modules</code></pre></div>
+<hr>
+<h1>Interview Questions You Should Be Able to Answer</h1>
+<p>By the end of Week 1, you should be able to answer these <strong>without Googling</strong>:</p>
+<ol><li>Is Java pass-by-reference or pass-by-value?</li><li>What&#x27;s the difference between an object and a reference?</li><li>What happens when you use <code>new</code>?</li><li><code>==</code> vs <code>equals()</code>?</li><li>Why must <code>equals()</code> and <code>hashCode()</code> agree?</li><li>What happens if you override <code>equals()</code> but not <code>hashCode()</code>?</li><li>What is method overloading?</li><li>What is method overriding?</li><li>How does dynamic method dispatch work?</li><li>What is polymorphism?</li><li>Interface vs abstract class?</li><li>Composition vs inheritance?</li><li>What does <code>final</code> mean for a reference?</li><li>What does <code>static</code> mean?</li><li>Can a static method be overridden?</li><li>Why can&#x27;t an instance method be called directly from a static context?</li><li>What is constructor chaining?</li><li>What is the initialization order of parent and child classes?</li><li>What are checked and unchecked exceptions?</li><li><code>throw</code> vs <code>throws</code>?</li><li>What is try-with-resources?</li><li>What is type erasure?</li><li>What is <code>&lt;? extends T&gt;</code>?</li><li>What is <code>&lt;? super T&gt;</code>?</li><li>Why is <code>String</code> immutable?</li><li>What is the String pool?</li><li><code>StringBuilder</code> vs <code>StringBuffer</code>?</li><li>Primitive vs wrapper?</li><li>What is autoboxing?</li><li>What is an immutable class?</li><li>What makes a class effectively immutable?</li><li>What is a record?</li><li>What is an enum?</li><li>What is an interface default method?</li><li>What is a functional interface?</li><li>What does <code>Optional</code> represent?</li><li>What is object identity?</li><li>What is encapsulation?</li><li>Explain SOLID with Java examples.</li><li>Design a small domain using composition and interfaces.</li></ol>
+<hr>
+<h1>Your Week 1 Definition of Done</h1>
+<p>Don&#x27;t consider Week 1 complete just because you&#x27;ve watched/read all these topics.</p>
+<p>You should finish with this:</p>
+<pre class="diagram"><code>+-------------------------------------------+
+|                    JAVA                   |
++-------------------------------------------+
+                      |
+                      v
++-------------------------------------------+
+|  LANGUAGE                    OBJECT MODEL |
++-------------------------------------------+
+                      |
+                      v
++-------------------------------------------+
+|    primitives                  classes    |
++-------------------------------------------+
+                      |
+                      v
++-------------------------------------------+
+|    references                  objects    |
++-------------------------------------------+
+                      |
+                      v
++-------------------------------------------+
+|  operators                   constructors |
++-------------------------------------------+
+                      |
+                      v
++-------------------------------------------+
+| control flow                encapsulation |
++-------------------------------------------+
+                      |
+                      v
++-------------------------------------------+
+|  methods                     inheritance  |
++-------------------------------------------+
+                      |
+                      v
++-------------------------------------------+
+|  exceptions                  polymorphism |
++-------------------------------------------+
+                      |
+                      v
++-------------------------------------------+
+|   generics                    interfaces  |
++-------------------------------------------+
+                      |
+                      v
++-------------------------------------------+
+|  lambdas                     composition  |
++-------------------------------------------+
+                      |
+                      v
++-------------------------------------------+
+|                  JAVA LAB                 |
++-------------------------------------------+
+                      |
+                      v
++-------------------------------------------+
+|              Order Management             |
++-------------------------------------------+
+                      |
+                      v
++-------------------------------------------+
+|                   System                  |
++-------------------------------------------+
+                      |
+                      v
++-------------------------------------------+
+|      Repository               Service     |
++-------------------------------------------+
+                      |
+                      v
++-------------------------------------------+
+|    in-memory               domain logic   |
++-------------------------------------------+
+                      |
+                      v
++-------------------------------------------+
+|                   JUnit                   |
++-------------------------------------------+</code></pre>
+<p>The most important principle for this week is:</p>
+<blockquote><p><strong>Don&#x27;t learn Java as a collection of syntax rules. Learn how Java objects behave.</strong></p></blockquote>
+<p>For the Apple-oriented preparation you&#x27;re doing, that object-model foundation will pay off later when we get into <strong>Spring dependency injection → collections → concurrency → JVM → microservices → distributed systems</strong>. Week 1 should therefore be deliberately <strong>pure Java</strong>, with the lab forcing you to use the concepts rather than merely recognize them.</p></div>
+    </article>
+  </main>
+</body>
+</html>

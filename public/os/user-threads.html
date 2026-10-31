@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>User threads · x-one</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+  <script src="../assets/copy.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar"><input type="checkbox" id="nav-toggle" class="nav-toggle"><div class="sidebar-brand"><a href="../index.html">x-one notes</a><label for="nav-toggle" class="menu-btn" aria-label="Toggle navigation"><span class="menu-open">Menu</span><span class="menu-close">Close</span></label></div><nav><details class="nav-group"><summary class="nav-group-label">cp<span class="nav-count">56</span></summary><ul><li><a href="../cp/0-1-bfs.html">0-1 BFS</a></li><li><a href="../cp/two-sat.html">2-SAT</a></li><li><a href="../cp/bfs-state-space.html">BFS on State Space</a></li><li><a href="../cp/binary-search.html">Binary Search (on Sorted Data)</a></li><li><a href="../cp/binary-search-on-answer.html">Binary Search on Answer</a></li><li><a href="../cp/bitmask-dp.html">Bitmask DP</a></li><li><a href="../cp/bridges-articulation-points.html">Bridges &amp; Articulation Points</a></li><li><a href="../cp/cdq-divide-conquer.html">CDQ Divide &amp; Conquer (Offline)</a></li><li><a href="../cp/centroid-decomposition.html">Centroid Decomposition</a></li><li><a href="../cp/convex-hull-trick-lichao.html">Convex Hull Trick &amp; Li Chao Tree</a></li><li><a href="../cp/coordinate-compression.html">Coordinate Compression</a></li><li><a href="../cp/difference-array.html">Difference Array</a></li><li><a href="../cp/digit-dp.html">Digit DP</a></li><li><a href="../cp/dijkstra.html">Dijkstra&#x27;s Algorithm</a></li><li><a href="../cp/dsu-on-tree.html">DSU on Tree (Small-to-Large)</a></li><li><a href="../cp/dp-1d.html">Dynamic Programming — 1D</a></li><li><a href="../cp/dp-2d-knapsack.html">Dynamic Programming — 2D &amp; Knapsack</a></li><li><a href="../cp/euler-tour-flattening.html">Euler Tour (Tree Flattening)</a></li><li><a href="../cp/fenwick-tree.html">Fenwick Tree (Binary Indexed Tree)</a></li><li><a href="../cp/flood-fill-multi-source-bfs.html">Flood Fill &amp; Multi-Source BFS</a></li><li><a href="../cp/floyd-warshall.html">Floyd-Warshall</a></li><li><a href="../cp/functional-graphs.html">Functional Graphs</a></li><li><a href="../cp/graph-bfs-dfs.html">Graph BFS &amp; DFS</a></li><li><a href="../cp/greedy.html">Greedy</a></li><li><a href="../cp/heavy-light-decomposition.html">Heavy-Light Decomposition (HLD)</a></li><li><a href="../cp/interval-dp.html">Interval DP</a></li><li><a href="../cp/kmp-pattern-matching.html">KMP Pattern Matching</a></li><li><a href="../cp/lca-binary-lifting.html">LCA (Binary Lifting)</a></li><li><a href="../cp/line-sweep.html">Line Sweep</a></li><li><a href="../cp/lis.html">Longest Increasing Subsequence (LIS)</a></li><li><a href="../cp/matrix-exponentiation.html">Matrix Exponentiation</a></li><li><a href="../cp/meet-in-the-middle.html">Meet in the Middle</a></li><li><a href="../cp/mos-algorithm.html">Mo&#x27;s Algorithm (Offline Queries)</a></li><li><a href="../cp/monotonic-queue.html">Monotonic Deque (Queue)</a></li><li><a href="../cp/monotonic-stack.html">Monotonic Stack</a></li><li><a href="../cp/mst-kruskal-prim.html">MST (Kruskal &amp; Prim)</a></li><li><a href="../cp/policy-based-data-structure.html">Policy-Based Data Structure</a></li><li><a href="../cp/prefix-sums.html">Prefix Sums</a></li><li><a href="../cp/priority-queue-tricks.html">Priority Queue Tricks</a></li><li><a href="../cp/rerooting-dp.html">Rerooting DP on Trees</a></li><li><a href="../cp/segment-tree.html">Segment Tree</a></li><li><a href="../cp/sliding-window.html">Sliding Window</a></li><li><a href="../cp/sorting-tricks.html">Sorting Tricks</a></li><li><a href="../cp/sparse-table-rmq.html">Sparse Table (RMQ)</a></li><li><a href="../cp/sprague-grundy.html">Sprague-Grundy (Game Theory)</a></li><li><a href="../cp/sqrt-decomposition.html">Square Root Decomposition</a></li><li><a href="../cp/string-hashing.html">String Hashing</a></li><li><a href="../cp/strongly-connected-components.html">Strongly Connected Components (SCC)</a></li><li><a href="../cp/topological-sort.html">Topological Sort</a></li><li><a href="../cp/tree-dfs.html">Tree DFS</a></li><li><a href="../cp/tree-difference-array.html">Tree Difference Array</a></li><li><a href="../cp/trie-and-xor-trie.html">Trie &amp; XOR Trie</a></li><li><a href="../cp/two-pointers.html">Two Pointers</a></li><li><a href="../cp/union-find-dsu.html">Union-Find (DSU)</a></li><li><a href="../cp/virtual-tree.html">Virtual Tree</a></li><li><a href="../cp/z-algorithm.html">Z-Algorithm</a></li></ul></details><details class="nav-group"><summary class="nav-group-label">docker<span class="nav-count">3</span></summary><ul><li><a href="../docker/start.html">Start</a></li><li><a href="../docker/compose.html">Compose</a></li><li><a href="../docker/swarm.html">Swarm</a></li></ul></details><details class="nav-group"><summary class="nav-group-label">java<span class="nav-count">5</span></summary><ul><li><a href="../java/part-1.html">Part 1</a></li><li><a href="../java/part-2.html">Part 2</a></li><li><a href="../java/part-3.html">Part 3</a></li><li><a href="../java/part-4.html">Part 4</a></li><li><a href="../java/part-5.html">Part 5</a></li></ul></details><details class="nav-group"><summary class="nav-group-label">math<span class="nav-count">34</span></summary><ul><li><a href="../math/bijection-counting.html">Bijection &amp; Counting Proofs</a></li><li><a href="../math/burnside-lemma.html">Burnside&#x27;s Lemma (Symmetry Counting)</a></li><li><a href="../math/catalan-numbers.html">Catalan Numbers</a></li><li><a href="../math/chinese-remainder-theorem.html">Chinese Remainder Theorem (CRT)</a></li><li><a href="../math/combinatorial-identities.html">Combinatorial Identities</a></li><li><a href="../math/combinatorics-ncr.html">Combinatorics — nCr &amp; Pascal</a></li><li><a href="../math/computational-geometry-basics.html">Computational Geometry Basics</a></li><li><a href="../math/derangements.html">Derangements</a></li><li><a href="../math/divisor-enumeration.html">Divisor Enumeration — O(√n)</a></li><li><a href="../math/divisor-functions.html">Divisor Functions (τ and σ)</a></li><li><a href="../math/euler-totient.html">Euler&#x27;s Totient φ(n)</a></li><li><a href="../math/expected-value-linearity.html">Expected Value — Linearity</a></li><li><a href="../math/fast-exponentiation.html">Fast Exponentiation</a></li><li><a href="../math/fermat-euler-theorem.html">Fermat&#x27;s &amp; Euler&#x27;s Theorems</a></li><li><a href="../math/floor-sum-trick.html">Floor Sum Trick — Σ⌊n/i⌋</a></li><li><a href="../math/gcd-lcm-extended-euclid.html">GCD, LCM &amp; Extended Euclidean</a></li><li><a href="../math/harmonic-bounds.html">Harmonic Bounds &amp; Estimates</a></li><li><a href="../math/inclusion-exclusion.html">Inclusion-Exclusion Principle</a></li><li><a href="../math/legendre-formula.html">Legendre&#x27;s Formula</a></li><li><a href="../math/linear-recurrences.html">Linear Recurrences</a></li><li><a href="../math/lucas-theorem.html">Lucas Theorem &amp; nCr mod prime</a></li><li><a href="../math/modular-arithmetic.html">Modular Arithmetic</a></li><li><a href="../math/modular-inverse-composite.html">Modular Inverse (Composite Modulus)</a></li><li><a href="../math/modular-inverse-fermat.html">Modular Inverse (Fermat)</a></li><li><a href="../math/multinomial-coefficients.html">Multinomial Coefficients</a></li><li><a href="../math/mobius-inversion.html">Möbius Inversion</a></li><li><a href="../math/parity-xor-patterns.html">Parity, XOR &amp; Modular Patterns</a></li><li><a href="../math/pigeonhole-counting.html">Pigeonhole &amp; Counting Arguments</a></li><li><a href="../math/probability-basics.html">Probability Basics</a></li><li><a href="../math/sieve-primes-factorization.html">Sieve, Primes &amp; Factorization</a></li><li><a href="../math/stars-and-bars.html">Stars and Bars</a></li><li><a href="../math/stirling-numbers.html">Stirling Numbers (2nd Kind)</a></li><li><a href="../math/sum-formulas-series.html">Sum Formulas &amp; Series</a></li><li><a href="../math/wilson-primality.html">Wilson&#x27;s Theorem &amp; Primality</a></li></ul></details><details class="nav-group" open><summary class="nav-group-label">os<span class="nav-count">2</span></summary><ul><li><a href="../os/cpu.html">CPU</a></li><li><a href="../os/user-threads.html" class="is-active" aria-current="page">User threads</a></li></ul></details></nav></aside>
+  <main class="chat">
+    <header class="page-head"><span class="crumb">os / user-threads</span></header>
+    <article class="message user">
+      <div class="message-label">You</div>
+      <div class="message-body">in C we only have OS level threads right no language level threads</div>
+    </article>
+    <article class="message assistant">
+      <div class="message-label">Assistant</div>
+      <div class="message-body prose"><p>Yes, <strong>C does not have native language-level threads.</strong> It relies on operating-system threading APIs or external libraries to create and manage threads.</p>
+<p>However, there is an important distinction.</p>
+<h3>1. Threading options in C</h3>
+<pre class="diagram"><code>+----------------------------------+-----------------------------------+----------------------------+
+| Threading mechanism              | Provided by                       | Type                       |
++----------------------------------+-----------------------------------+----------------------------+
+| POSIX Threads (`pthread`)        | OS/POSIX API                      | OS-level threads           |
+| Windows Threads (`CreateThread`) | Windows API                       | OS-level threads           |
+| C11 Threads (`thrd_create`)      | C standard library implementation | Typically OS-level threads |
+| OpenMP (`#pragma omp parallel`)  | Compiler + OpenMP runtime         | Typically OS-level threads |
+| GNU Pth                          | External library                  | User-level threads         |
++----------------------------------+-----------------------------------+----------------------------+</code></pre>
+<h3>2. What about C11 threads?</h3>
+<p>C11 introduced a standard threading API in `<code>threads.h</code>`.</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>#include &lt;threads.h&gt;
+#include &lt;stdio.h&gt;
+
+int worker(void *arg)
+{
+    printf(&quot;Worker thread\n&quot;);
+    return 0;
+}
+
+int main(void)
+{
+    thrd_t thread;
+
+    thrd_create(&amp;thread, worker, NULL);
+    thrd_join(thread, NULL);
+
+    return 0;
+}</code></pre></div>
+<p>Here:</p>
+<ul><li><code>thrd_create()</code> creates a thread.</li><li><code>thrd_join()</code> waits for it to finish.</li><li>The C standard defines the interface, but <strong>does not require a particular implementation strategy for threads</strong>.</li><li>On mainstream systems, the implementation typically uses OS-level threads.</li></ul>
+<p>Note that C11 threading support is not available in every C standard library.</p>
+<h3>3. Can C have user-level threads?</h3>
+<p>Yes. C can implement user-level threading through libraries or custom runtime code.</p>
+<p>User-level threads are managed by a runtime in user space rather than being individually scheduled by the OS.</p>
+<p>For example:</p>
+<ul><li><strong>OS-level threads:</strong> The OS schedules each thread independently.</li><li><strong>User-level threads:</strong> A runtime schedules multiple logical threads, potentially across one or more OS threads.</li><li><strong>Fibers:</strong> Cooperative execution units that explicitly yield control.</li><li><strong>Coroutines:</strong> Functions that can suspend and resume execution; these can be implemented in C using libraries or custom code.</li></ul>
+<p>C itself does not provide built-in coroutine syntax or a native user-level thread scheduler.</p>
+<h3>4. Comparison with other languages</h3>
+<pre class="diagram"><code>+----------+------------------------+--------------------------------------------+
+| Language | Standard threading API | User-level concurrency                     |
++----------+------------------------+--------------------------------------------+
+| C        | C11 ``threads.h``      | Libraries/custom runtime                   |
+| C++      | `std::thread`          | Coroutines and libraries                   |
+| Java     | `Thread`               | Virtual threads                            |
+| Go       | `go` keyword           | Goroutines managed by the Go runtime       |
+| Rust     | `std::thread`          | Async tasks through runtimes such as Tokio |
++----------+------------------------+--------------------------------------------+</code></pre>
+<p><strong>Key distinction:</strong> C11 threads and C++ <code>std::thread</code> provide language-standard interfaces, but that doesn&#x27;t mean the threads are implemented by the language runtime itself.</p>
+<p>If you&#x27;re implementing a database in C, you can use <code>pthread</code> for OS threads or build a user-level task scheduler if you need lightweight concurrency.</p>
+<p>To create a <strong>user-level threading library in C</strong>, you need to implement a runtime that creates, schedules, pauses, and resumes multiple logical threads without creating a separate OS thread for each one.</p>
+<p>You can build this entirely in C using operating-system primitives and CPU context-switching mechanisms.</p>
+<h2>1. Understand the architecture</h2>
+<p>Suppose you want to create this API:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>#include &quot;uthread.h&quot;
+
+void task1(void *arg)
+{
+    /* Do some work */
+}
+
+void task2(void *arg)
+{
+    /* Do some work */
+}
+
+int main(void)
+{
+    uthread_init();
+
+    uthread_create(task1, NULL);
+    uthread_create(task2, NULL);
+
+    uthread_run();
+
+    uthread_destroy();
+    return 0;
+}</code></pre></div>
+<p>Your library would expose a simple API, while its implementation handles scheduling and execution.</p>
+<p>The architecture looks like this:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Application
+    |
+    v
+ User Thread Library
+    |
+    +-- Thread Creation
+    |
+    +-- Thread Context Management
+    |
+    +-- Scheduler
+    |
+    +-- Ready Queue
+    |
+    +-- Context Switching
+    |
+    v
+ Operating System
+    |
+    v
+ One or more OS threads</code></pre></div>
+<p>In the simplest implementation, all user-level threads run on <strong>one OS thread</strong>.</p>
+<p>The OS knows about the underlying OS thread, but your library manages the logical threads running on it.</p>
+<hr>
+<h2>2. Decide how to implement context switching</h2>
+<p>The most important part is switching execution from one user-level thread to another.</p>
+<p>Each thread needs its own:</p>
+<ul><li>Stack</li><li>CPU execution context</li><li>State (ready, running, blocked, or terminated)</li><li>Entry function and arguments</li></ul>
+<p>For example, imagine two threads:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>OS Thread
+    |
+    +-- User Thread A
+    |      Stack A
+    |      Execution Context A
+    |
+    +-- User Thread B
+           Stack B
+           Execution Context B</code></pre></div>
+<p>Only one user-level thread executes at a time on this OS thread. When A yields, the library saves A&#x27;s execution context and restores B&#x27;s context.</p>
+<p>There are three main approaches.</p>
+<pre class="diagram"><code>+----------------------------+-----------------------------------------------------------------------------------------------------------+------------+
+| Approach                   | How it works                                                                                              | Complexity |
++----------------------------+-----------------------------------------------------------------------------------------------------------+------------+
+| `ucontext`                 | Uses system context APIs to save and restore execution contexts                                           | Low        |
+| `setjmp` / `longjmp`       | Saves and restores execution state, with significant limitations for building independent stacks portably | Medium     |
+| Assembly context switching | Saves and restores registers and stack pointers directly                                                  | High       |
++----------------------------+-----------------------------------------------------------------------------------------------------------+------------+</code></pre>
+<p><strong>Recommendation:</strong> Start with <code>ucontext</code> on Linux to understand the design, then implement your own assembly context-switching mechanism if you want to build a more portable, low-level library.</p>
+<p><code>ucontext</code> is a historical POSIX interface that is not part of modern POSIX standards, so it is useful for experimentation but not ideal as a universal production dependency.</p>
+<hr>
+<h2>3. Implement the thread data structure</h2>
+<p>Each user-level thread needs a control block.</p>
+<p>Create <code>uthread.h</code>:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>#ifndef UTHREAD_H
+#define UTHREAD_H
+
+typedef void (*uthread_fn)(void *);
+
+typedef unsigned long uthread_id;
+
+int uthread_init(void);
+
+uthread_id uthread_create(uthread_fn fn, void *arg);
+
+void uthread_yield(void);
+
+void uthread_run(void);
+
+void uthread_destroy(void);
+
+#endif</code></pre></div>
+<p>Internally, you could represent each thread as follows:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>typedef enum
+{
+    UTHREAD_READY,
+    UTHREAD_RUNNING,
+    UTHREAD_BLOCKED,
+    UTHREAD_TERMINATED
+} uthread_state;
+
+typedef struct
+{
+    uthread_id id;
+    uthread_state state;
+
+    void *stack;
+    size_t stack_size;
+
+    uthread_fn function;
+    void *argument;
+
+    /* Execution context goes here. */
+} uthread;</code></pre></div>
+<p>The execution context will depend on your chosen context-switching mechanism.</p>
+<p>The scheduler maintains these structures and selects which thread should run next.</p>
+<hr>
+<h2>4. Implement thread creation</h2>
+<p>When the application calls:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>uthread_create(task1, NULL);</code></pre></div>
+<p>Your library should:</p>
+<ol><li>Allocate a thread control block.</li><li>Allocate a stack for the new thread.</li><li>Initialize its execution context.</li><li>Configure the context to start at a library-controlled entry function.</li><li>Add the thread to the ready queue.</li><li>Return its ID.</li></ol>
+<p>A typical stack allocation might be:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>#define UTHREAD_STACK_SIZE (64 * 1024)
+
+void *stack = malloc(UTHREAD_STACK_SIZE);
+
+if (stack == NULL)
+{
+    return 0;
+}</code></pre></div>
+<p>This is only the stack allocation step, not a complete thread implementation. Production-quality code should also consider stack alignment, guard pages, cleanup, and platform-specific context requirements.</p>
+<h3>Why does every thread need a separate stack?</h3>
+<p>Consider these functions:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>void task1(void *arg)
+{
+    int value = 10;
+
+    uthread_yield();
+
+    value += 5;
+}</code></pre></div>
+<p>When <code>task1()</code> yields, its local variable <code>value</code> must remain available when the thread resumes.</p>
+<p>Its stack preserves the function&#x27;s local variables, return addresses, and other stack-related execution state.</p>
+<p>Without a separate stack for each independently suspended thread, ordinary function calls could overwrite one another&#x27;s execution state.</p>
+<hr>
+<h2>5. Implement context switching</h2>
+<p>Suppose thread A is running and calls:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>uthread_yield();</code></pre></div>
+<p>Your library must:</p>
+<ol><li>Save A&#x27;s current execution context.</li><li>Mark A as ready.</li><li>Select another ready thread, B.</li><li>Mark B as running.</li><li>Restore B&#x27;s execution context.</li><li>Resume B from where it previously yielded, or start it for the first time.</li></ol>
+<p>With <code>ucontext</code>, the underlying operations involve functions such as:</p>
+<ul><li><code>getcontext()</code> — capture a context.</li><li><code>makecontext()</code> — configure a context to begin execution at a function.</li><li><code>swapcontext()</code> — save the current context and activate another.</li><li><code>setcontext()</code> — activate a saved context without saving the current one.</li></ul>
+<p>A simplified conceptual implementation is:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>void uthread_yield(void)
+{
+    uthread *current = scheduler_current_thread();
+
+    current-&gt;state = UTHREAD_READY;
+
+    scheduler_enqueue(current);
+
+    uthread *next = scheduler_next_thread();
+
+    next-&gt;state = UTHREAD_RUNNING;
+
+    scheduler_switch_context(current, next);
+}</code></pre></div>
+<p>The functions beginning with <code>scheduler_</code> are internal helpers you would implement.</p>
+<p><strong>Important:</strong> This is pseudocode, not a complete implementation. A real scheduler must handle empty queues, terminated threads, repeated yields, and the transition between the scheduler context and thread contexts.</p>
+<hr>
+<h2>6. Build the scheduler</h2>
+<p>Start with a cooperative round-robin scheduler.</p>
+<p>Suppose you create three user-level threads:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>uthread_create(task1, NULL);
+uthread_create(task2, NULL);
+uthread_create(task3, NULL);</code></pre></div>
+<p>Your scheduler might execute them as follows:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Ready Queue: [A, B, C]
+
+Run A
+A calls uthread_yield()
+Ready Queue: [B, C, A]
+
+Run B
+B calls uthread_yield()
+Ready Queue: [C, A, B]
+
+Run C
+C calls uthread_yield()
+Ready Queue: [A, B, C]</code></pre></div>
+<p>Each thread explicitly gives up control by calling <code>uthread_yield()</code>.</p>
+<p>This is called <strong>cooperative scheduling</strong>.</p>
+<p>One major limitation: if thread A enters an infinite loop without yielding, threads B and C cannot run on that OS thread.</p>
+<p>For example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>void task1(void *arg)
+{
+    while (1)
+    {
+        /* Never yields. */
+    }
+}</code></pre></div>
+<p>A cooperative scheduler cannot preempt this thread automatically.</p>
+<p>You can investigate preemptive scheduling later, but it requires additional mechanisms and careful handling of asynchronous interruption.</p>
+<hr>
+<h2>7. Handle thread termination</h2>
+<p>A thread should not return directly into arbitrary memory or fall through into another thread&#x27;s execution context.</p>
+<p>Instead, have every new thread begin through a wrapper:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>static void uthread_entry(void)
+{
+    uthread *current = scheduler_current_thread();
+
+    current-&gt;function(current-&gt;argument);
+
+    current-&gt;state = UTHREAD_TERMINATED;
+
+    scheduler_switch_to_scheduler();
+}</code></pre></div>
+<p>This is conceptual pseudocode; the actual entry function must be compatible with the context API you choose.</p>
+<p>When a thread terminates, the scheduler can:</p>
+<ul><li>Remove it from the runnable set.</li><li>Record its exit state.</li><li>Reclaim its resources when safe.</li></ul>
+<p><strong>Do not free a thread&#x27;s stack while that stack is still executing.</strong> Switch to the scheduler&#x27;s stack before reclaiming it.</p>
+<hr>
+<h2>8. What about blocking operations?</h2>
+<p>This is one of the most important design decisions.</p>
+<p>Imagine a user-level thread executes:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>read(socket_fd, buffer, sizeof(buffer));</code></pre></div>
+<p>If the socket is blocking and no data is available, the OS may block the entire underlying OS thread.</p>
+<p>Consequently, all user-level threads scheduled on that OS thread stop making progress.</p>
+<p>To avoid this, a more advanced library can use:</p>
+<ul><li>Nonblocking sockets.</li><li><code>epoll</code> on Linux.</li><li><code>kqueue</code> on BSD-derived systems and macOS.</li><li>A runtime-managed event loop.</li><li>A blocked-thread queue.</li></ul>
+<p>For example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>User Thread A
+      |
+      v
+Nonblocking socket read
+      |
+      +-- Data available --&gt; Continue A
+      |
+      +-- EAGAIN ---------&gt; Suspend A
+                                 |
+                                 v
+                           Event Loop
+                                 |
+                                 v
+                         Socket becomes ready
+                                 |
+                                 v
+                         Resume A</code></pre></div>
+<p>This is how you can eventually evolve a basic user-level threading library into a runtime suitable for network servers.</p>
+<hr>
+<h2>9. A practical project structure</h2>
+<p>For a Linux-first implementation, I would start with this layout:</p>
+<pre class="diagram"><code>+----------------------+
+|       uthread/       |
++----------------------+
+            |
+            v
++----------------------+
+|      ├ include/      |
++----------------------+
+            |
+            v
++----------------------+
+|      uthread.h       |
++----------------------+
+            |
+            v
++----------------------+
+|        ├ src/        |
++----------------------+
+            |
+            v
++----------------------+
+|     ├ uthread.c      |
++----------------------+
+            |
+            v
++----------------------+
+|    ├ scheduler.c     |
++----------------------+
+            |
+            v
++----------------------+
+|     ├ context.c      |
++----------------------+
+            |
+            v
++----------------------+
+|      ├ queue.c       |
++----------------------+
+            |
+            v
++----------------------+
+|       thread.c       |
++----------------------+
+            |
+            v
++----------------------+
+|       ├ tests/       |
++----------------------+
+            |
+            v
++----------------------+
+|   ├ test_create.c    |
++----------------------+
+            |
+            v
++----------------------+
+|    ├ test_yield.c    |
++----------------------+
+            |
+            v
++----------------------+
+| ├ test_termination.c |
++----------------------+
+            |
+            v
++----------------------+
+|   test_scheduler.c   |
++----------------------+
+            |
+            v
++----------------------+
+|      ├ Makefile      |
++----------------------+
+            |
+            v
++----------------------+
+|      README.md       |
++----------------------+</code></pre>
+<p>Build it as a static library:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>gcc -std=c11 -O2 -Wall -Wextra \
+    -Iinclude \
+    -c src/uthread.c src/scheduler.c src/context.c src/queue.c src/thread.c</code></pre></div>
+<p>Archive the object files:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>ar rcs libuthread.a uthread.o scheduler.o context.o queue.o thread.o</code></pre></div>
+<p>Then applications can link against it:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>gcc main.c -Iinclude -L. -luthread -o app</code></pre></div>
+<p>The application uses your API without needing to know how the scheduler or context switching works internally.</p>
+<hr>
+<h2>10. Recommended implementation milestones</h2>
+<p>Build the library incrementally:</p>
+<pre class="diagram"><code>+-----------+-----------------------------+----------------------------------------------------------+
+| Milestone | Feature                     | What it proves                                           |
++-----------+-----------------------------+----------------------------------------------------------+
+| 1         | Thread control blocks       | Thread metadata is managed correctly                     |
+| 2         | Independent stacks          | Threads can maintain separate execution state            |
+| 3         | Context switching           | Execution can move between threads                       |
+| 4         | Cooperative scheduler       | Threads can yield and resume                             |
+| 5         | Thread termination          | Completed threads can be cleaned up safely               |
+| 6         | Synchronization primitives  | Threads can coordinate access to shared data             |
+| 7         | Nonblocking I/O integration | Threads can suspend while waiting for external events    |
+| 8         | Multiple OS threads         | User-level threads can execute across multiple CPU cores |
++-----------+-----------------------------+----------------------------------------------------------+</code></pre>
+<p>Start with milestones 1–5 before implementing synchronization, I/O integration, or multicore execution.</p>
+<h3>One final distinction</h3>
+<p>Your first implementation would be a <strong>many-to-one threading model</strong>:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>User Threads: A, B, C, D
+          \   |   |   /
+           One OS Thread
+                 |
+                 v
+                 OS</code></pre></div>
+<p>If you later create a pool of OS threads and schedule user-level threads across them, you move toward a <strong>many-to-many threading model</strong>.</p>
+<p>That requires additional synchronization because multiple user-level threads may execute simultaneously on different CPU cores.</p>
+<p>For a first implementation, a cooperative scheduler using one OS thread and separate stacks is the simplest design to understand and validate.</p>
+<p>For learning purposes, the simplest way to implement context switching in C on Linux is to use <strong><code>ucontext</code> first</strong>, then replace it with your own assembly code to understand what actually happens at the CPU level.</p>
+<p>A context switch essentially saves the current execution state and restores another execution state, including its stack pointer and instruction location.</p>
+<p>I&#x27;ll show you how to implement it yourself using x86-64 assembly.</p>
+<h2>1. Understand what needs to be switched</h2>
+<p>Consider two functions:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>void task_a(void)
+{
+    while (1)
+    {
+        printf(&quot;A\n&quot;);
+        yield();
+    }
+}
+
+void task_b(void)
+{
+    while (1)
+    {
+        printf(&quot;B\n&quot;);
+        yield();
+    }
+}</code></pre></div>
+<p>You want the output to alternate:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>A
+B
+A
+B
+A
+B</code></pre></div>
+<p>When <code>task_a()</code> calls <code>yield()</code>, it must suspend at that exact point. When resumed, it should continue executing after the call to <code>yield()</code>.</p>
+<p>To accomplish this, you need to preserve:</p>
+<ul><li><strong>Stack pointer (<code>RSP</code>)</strong>: Where the current stack is located.</li><li><strong>Instruction pointer (<code>RIP</code>)</strong>: Where execution should continue.</li><li><strong>Callee-saved registers</strong>: Registers that must retain their values across function calls according to the calling convention.</li></ul>
+<p>You don&#x27;t necessarily need to save every CPU register manually. A function-call-based context switch can rely on the ABI to preserve the registers required by the calling convention.</p>
+<hr>
+<h2>2. Create the project</h2>
+<p>Use two files:</p>
+<pre class="diagram"><code>+-----------+
+|  uthread/ |
++-----------+
+      |
+      v
++-----------+
+|  ├ main.c |
++-----------+
+      |
+      v
++-----------+
+| context.S |
++-----------+</code></pre>
+<p>This example targets <strong>Linux x86-64 using the System V AMD64 ABI</strong>, which is commonly used by Linux distributions on Intel and AMD processors.</p>
+<p>It is not portable to ARM64 or Windows without changes.</p>
+<h2>3. Implement the context-switching function in assembly</h2>
+<p>Create <code>context.S</code>:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>.text
+
+.globl context_switch
+
+# void context_switch(void **old_rsp, void *new_rsp)
+#
+# RDI = address where the old RSP will be stored
+# RSI = new RSP to load
+
+context_switch:
+    # Save callee-saved registers on the current stack.
+    pushq %rbp
+    pushq %rbx
+    pushq %r12
+    pushq %r13
+    pushq %r14
+    pushq %r15
+
+    # Save the current stack pointer.
+    movq %rsp, (%rdi)
+
+    # Switch to the new stack.
+    movq %rsi, %rsp
+
+    # Restore the destination context&#x27;s registers.
+    popq %r15
+    popq %r14
+    popq %r13
+    popq %r12
+    popq %rbx
+    popq %rbp
+
+    # Return to the destination context.
+    ret</code></pre></div>
+<h3>How does this work?</h3>
+<p>Suppose context A switches to context B.</p>
+<p><strong>Step 1: Save A&#x27;s registers</strong></p>
+<p>The <code>pushq</code> instructions save the callee-saved registers on A&#x27;s stack.</p>
+<p><strong>Step 2: Save A&#x27;s stack pointer</strong></p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>movq %rsp, (%rdi)</code></pre></div>
+<p>This stores A&#x27;s current stack pointer in the memory location pointed to by <code>old_rsp</code>.</p>
+<p><strong>Step 3: Load B&#x27;s stack pointer</strong></p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>movq %rsi, %rsp</code></pre></div>
+<p>The CPU now uses B&#x27;s stack.</p>
+<p><strong>Step 4: Restore B&#x27;s registers</strong></p>
+<p>The <code>popq</code> instructions restore the registers previously saved on B&#x27;s stack.</p>
+<p><strong>Step 5: Resume B</strong></p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>ret</code></pre></div>
+<p>The <code>ret</code> instruction pops a return address from B&#x27;s stack and continues execution there.</p>
+<p>That last step is the key: <strong>the saved stack must contain a valid return address at the correct location.</strong></p>
+<p>For an existing context, that return address was placed there by the earlier call to <code>context_switch()</code>.</p>
+<p>For a new context, you must initialize its stack so that the first <code>ret</code> transfers execution to a function you choose.</p>
+<hr>
+<h2>4. Initialize a new thread&#x27;s stack</h2>
+<p>For an existing thread, you already have a saved stack pointer.</p>
+<p>For a new thread, you must construct an initial stack frame that matches the layout expected by <code>context_switch()</code>.</p>
+<p>After switching stacks, the assembly function executes six <code>popq</code> instructions followed by <code>ret</code>.</p>
+<p>Therefore, the initial stack must look like this:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Higher memory addresses
+        |
+        v
++------------------------+
+| Initial function addr  | &lt;-- consumed by ret
++------------------------+
+| Initial RBP            |
++------------------------+
+| Initial RBX            |
++------------------------+
+| Initial R12            |
++------------------------+
+| Initial R13            |
++------------------------+
+| Initial R14            |
++------------------------+
+| Initial R15            | &lt;-- new RSP
++------------------------+
+        |
+        v
+Lower memory addresses</code></pre></div>
+<p>The initial <code>%rsp</code> must point at the saved <code>R15</code> slot.</p>
+<p>Your C code can prepare this stack layout manually.</p>
+<h2>5. Implement the C side</h2>
+<p>Create <code>main.c</code>:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>#include &lt;stdint.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+#define STACK_SIZE (64 * 1024)
+
+typedef void (*task_fn)(void);
+
+extern void context_switch(void **old_rsp, void *new_rsp);
+
+typedef struct
+{
+    void *rsp;
+    void *stack;
+    task_fn function;
+} task;
+
+static task task_a;
+static task task_b;
+
+static void task_entry(void)
+{
+    /*
+     * This entry function is reached by the initial context&#x27;s ret.
+     * The scheduler must arrange for the task function to be invoked.
+     */
+    task *current = NULL;
+
+    /* We&#x27;ll replace this placeholder in the next section. */
+    (void)current;
+}</code></pre></div>
+<p>Rather than introducing a scheduler immediately, let&#x27;s make the example smaller and demonstrate the context switch itself.</p>
+<p>The complete example below uses two contexts: the original <code>main()</code> context and one newly initialized context.</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>#include &lt;stdint.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+#define STACK_SIZE (64 * 1024)
+
+extern void context_switch(void **old_rsp, void *new_rsp);
+
+static void *main_rsp;
+static void *worker_rsp;
+static void *worker_stack;
+
+static void worker(void)
+{
+    printf(&quot;Worker: first execution\n&quot;);
+
+    context_switch(&amp;worker_rsp, main_rsp);
+
+    printf(&quot;Worker: resumed execution\n&quot;);
+
+    context_switch(&amp;worker_rsp, main_rsp);
+
+    printf(&quot;Worker: finished\n&quot;);
+
+    /* Never return into an invalid caller. */
+    abort();
+}
+
+static void initialize_worker(void)
+{
+    worker_stack = malloc(STACK_SIZE);
+
+    if (worker_stack == NULL)
+    {
+        perror(&quot;malloc&quot;);
+        exit(EXIT_FAILURE);
+    }
+
+    /*
+     * Construct the initial stack frame expected by context_switch().
+     * x86-64 System V ABI: keep the stack 16-byte aligned before
+     * entering the worker function.
+     */
+    uintptr_t *sp = (uintptr_t *)
+        (((uintptr_t)worker_stack + STACK_SIZE) &amp; ~(uintptr_t)0xF);
+
+    *--sp = (uintptr_t)worker; /* Return address */
+    *--sp = 0;                 /* RBP */
+    *--sp = 0;                 /* RBX */
+    *--sp = 0;                 /* R12 */
+    *--sp = 0;                 /* R13 */
+    *--sp = 0;                 /* R14 */
+    *--sp = 0;                 /* R15 */
+
+    worker_rsp = sp;
+}
+
+int main(void)
+{
+    initialize_worker();
+
+    printf(&quot;Main: switching to worker\n&quot;);
+    context_switch(&amp;main_rsp, worker_rsp);
+
+    printf(&quot;Main: worker yielded\n&quot;);
+    context_switch(&amp;main_rsp, worker_rsp);
+
+    printf(&quot;Main: worker yielded again\n&quot;);
+    context_switch(&amp;main_rsp, worker_rsp);
+
+    printf(&quot;Main: done\n&quot;);
+
+    free(worker_stack);
+    return 0;
+}</code></pre></div>
+<p>Save the assembly implementation from the previous section as <code>context.S</code>.</p>
+<p>Compile and run:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>gcc -Wall -Wextra -O0 main.c context.S -o context_demo
+./context_demo</code></pre></div>
+<p>Expected output:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Main: switching to worker
+Worker: first execution
+Main: worker yielded
+Worker: resumed execution
+Main: worker yielded again
+Worker: finished
+Aborted</code></pre></div>
+<p><strong>Important correction:</strong> The example above calls <code>abort()</code> at the end of <code>worker()</code>, so it intentionally aborts rather than completing normally. For a clean exit, the worker must switch back to <code>main()</code> after printing <code>Worker: finished</code>, and <code>main()</code> must not switch to the worker again. The stack alignment and startup layout should also be validated for the compiler and ABI you&#x27;re using.</p>
+<hr>
+<h2>6. What you should learn from this</h2>
+<p>The central mechanism is remarkably small:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>movq %rsp, (%rdi)
+movq %rsi, %rsp</code></pre></div>
+<p>The remaining instructions preserve registers and resume execution correctly.</p>
+<p>However, there are three distinct concepts:</p>
+<pre class="diagram"><code>+-----------------------+-----------------------------------------------------+
+| Concept               | Purpose                                             |
++-----------------------+-----------------------------------------------------+
+| Stack switching       | Gives each thread its own function-call stack       |
+| Register preservation | Keeps the suspended thread&#x27;s execution state intact |
+| Control transfer      | Resumes at the saved return address                 |
++-----------------------+-----------------------------------------------------+</code></pre>
+<p>This example uses <strong>cooperative context switching</strong>: a thread switches only when it explicitly calls <code>context_switch()</code>.</p>
+<p>A production runtime would need additional handling for stack alignment, stack overflow, thread termination, signals, floating-point/SIMD state, and other ABI requirements.</p>
+<p>For your learning project, the next useful step is to add a thread-control structure containing each thread&#x27;s stack pointer and stack allocation, then implement <code>yield()</code> to switch between two such structures.</p>
+<p>No. <strong>You don&#x27;t need to learn assembly to create a user-level threading library in C.</strong> It depends on how deeply you want to understand or control context switching.</p>
+<p>You have three options:</p>
+<pre class="diagram"><code>+--------------------------------------+--------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| Approach                             | Need assembly?                                         | What you learn                                                                                                          |
++--------------------------------------+--------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+| Use `ucontext`                       | No                                                     | Thread creation, stacks, scheduling, context switching concepts                                                         |
+| Use `setjmp` / `longjmp`             | No, but limited                                        | Saving and restoring execution state; not sufficient by itself for a portable threading library with independent stacks |
+| Implement context switching yourself | Usually yes, or platform-specific low-level techniques | CPU registers, stack pointers, calling conventions, and execution control                                               |
++--------------------------------------+--------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+</code></pre>
+<h3>My recommendation</h3>
+<p>Since your goal is to learn how threading works internally, follow these steps.</p>
+<p><strong>Step 1: Start with <code>ucontext</code></strong></p>
+<p>Learn how to:</p>
+<ul><li>Allocate a separate stack for each thread.</li><li>Initialize an execution context.</li><li>Switch between contexts.</li><li>Implement <code>yield()</code>.</li><li>Build a round-robin scheduler.</li></ul>
+<p>You can implement all of this in C without writing assembly.</p>
+<p><strong>Step 2: Understand what happens during a context switch</strong></p>
+<p>Learn these concepts without necessarily writing assembly:</p>
+<ul><li>Stack pointer (<code>RSP</code>)</li><li>Instruction pointer (<code>RIP</code>)</li><li>CPU registers</li><li>Function calling conventions</li><li>Stack frames</li><li>Return addresses</li></ul>
+<p><strong>Step 3: Learn assembly when you want to implement the mechanism yourself</strong></p>
+<p>You only need a small subset of x86-64 assembly to implement a basic cooperative context switch. You don&#x27;t need to master the entire instruction set.</p>
+<h3>One important distinction</h3>
+<p>Using <code>ucontext</code> means you&#x27;re learning to <strong>build a threading runtime</strong>, but the operating system or system libraries still provide the underlying execution mechanisms.</p>
+<p>Writing your own assembly context switch lets you learn how to <strong>implement the low-level switching mechanism itself</strong>.</p>
+<p><strong>For your goal, start with <code>ucontext</code> and move to assembly later.</strong> This lets you understand scheduling and thread management before dealing with architecture-specific details.</p>
+<p><code>context_switch()</code> is implemented in the <strong><code>context.S</code> assembly file</strong>, not in <code>main.c</code>.</p>
+<p>You declare it in C using <code>extern</code> so the compiler knows the function exists elsewhere.</p>
+<h3>1. <code>main.c</code> — function declaration</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>extern void context_switch(void **old_rsp, void *new_rsp);</code></pre></div>
+<p>This tells the C compiler that another compiled file provides this function.</p>
+<h3>2. <code>context.S</code> — actual implementation</h3>
+<p>Create a file named <code>context.S</code> with this code:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>.text
+
+.globl context_switch
+
+context_switch:
+    pushq %rbp
+    pushq %rbx
+    pushq %r12
+    pushq %r13
+    pushq %r14
+    pushq %r15
+
+    movq %rsp, (%rdi)
+    movq %rsi, %rsp
+
+    popq %r15
+    popq %r14
+    popq %r13
+    popq %r12
+    popq %rbx
+    popq %rbp
+
+    ret</code></pre></div>
+<p>Here, <code>.globl context_switch</code> makes the symbol visible to the linker, allowing C code to call it.</p>
+<h3>3. Compile both files together</h3>
+<p>Your project structure:</p>
+<pre class="diagram"><code>+-----------+
+|  project/ |
++-----------+
+      |
+      v
++-----------+
+|  ├ main.c |
++-----------+
+      |
+      v
++-----------+
+| context.S |
++-----------+</code></pre>
+<p>Compile them together:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>gcc -Wall -Wextra -O0 main.c context.S -o context_demo</code></pre></div>
+<p>Run:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>./context_demo</code></pre></div>
+<p><strong>How the files work together:</strong></p>
+<ol><li>The C compiler compiles <code>main.c</code> and sees the external function declaration.</li><li>The assembler translates <code>context.S</code> into machine code.</li><li>The linker connects the call in <code>main.c</code> to the implementation in <code>context.S</code>.</li></ol>
+<p>The <code>.S</code> extension tells GCC to preprocess and assemble the file. This example is specifically for Linux x86-64 using the System V ABI.</p></div>
+    </article>
+  </main>
+</body>
+</html>

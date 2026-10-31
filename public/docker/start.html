@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Start · x-one</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+  <script src="../assets/copy.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar"><input type="checkbox" id="nav-toggle" class="nav-toggle"><div class="sidebar-brand"><a href="../index.html">x-one notes</a><label for="nav-toggle" class="menu-btn" aria-label="Toggle navigation"><span class="menu-open">Menu</span><span class="menu-close">Close</span></label></div><nav><details class="nav-group"><summary class="nav-group-label">cp<span class="nav-count">56</span></summary><ul><li><a href="../cp/0-1-bfs.html">0-1 BFS</a></li><li><a href="../cp/two-sat.html">2-SAT</a></li><li><a href="../cp/bfs-state-space.html">BFS on State Space</a></li><li><a href="../cp/binary-search.html">Binary Search (on Sorted Data)</a></li><li><a href="../cp/binary-search-on-answer.html">Binary Search on Answer</a></li><li><a href="../cp/bitmask-dp.html">Bitmask DP</a></li><li><a href="../cp/bridges-articulation-points.html">Bridges &amp; Articulation Points</a></li><li><a href="../cp/cdq-divide-conquer.html">CDQ Divide &amp; Conquer (Offline)</a></li><li><a href="../cp/centroid-decomposition.html">Centroid Decomposition</a></li><li><a href="../cp/convex-hull-trick-lichao.html">Convex Hull Trick &amp; Li Chao Tree</a></li><li><a href="../cp/coordinate-compression.html">Coordinate Compression</a></li><li><a href="../cp/difference-array.html">Difference Array</a></li><li><a href="../cp/digit-dp.html">Digit DP</a></li><li><a href="../cp/dijkstra.html">Dijkstra&#x27;s Algorithm</a></li><li><a href="../cp/dsu-on-tree.html">DSU on Tree (Small-to-Large)</a></li><li><a href="../cp/dp-1d.html">Dynamic Programming — 1D</a></li><li><a href="../cp/dp-2d-knapsack.html">Dynamic Programming — 2D &amp; Knapsack</a></li><li><a href="../cp/euler-tour-flattening.html">Euler Tour (Tree Flattening)</a></li><li><a href="../cp/fenwick-tree.html">Fenwick Tree (Binary Indexed Tree)</a></li><li><a href="../cp/flood-fill-multi-source-bfs.html">Flood Fill &amp; Multi-Source BFS</a></li><li><a href="../cp/floyd-warshall.html">Floyd-Warshall</a></li><li><a href="../cp/functional-graphs.html">Functional Graphs</a></li><li><a href="../cp/graph-bfs-dfs.html">Graph BFS &amp; DFS</a></li><li><a href="../cp/greedy.html">Greedy</a></li><li><a href="../cp/heavy-light-decomposition.html">Heavy-Light Decomposition (HLD)</a></li><li><a href="../cp/interval-dp.html">Interval DP</a></li><li><a href="../cp/kmp-pattern-matching.html">KMP Pattern Matching</a></li><li><a href="../cp/lca-binary-lifting.html">LCA (Binary Lifting)</a></li><li><a href="../cp/line-sweep.html">Line Sweep</a></li><li><a href="../cp/lis.html">Longest Increasing Subsequence (LIS)</a></li><li><a href="../cp/matrix-exponentiation.html">Matrix Exponentiation</a></li><li><a href="../cp/meet-in-the-middle.html">Meet in the Middle</a></li><li><a href="../cp/mos-algorithm.html">Mo&#x27;s Algorithm (Offline Queries)</a></li><li><a href="../cp/monotonic-queue.html">Monotonic Deque (Queue)</a></li><li><a href="../cp/monotonic-stack.html">Monotonic Stack</a></li><li><a href="../cp/mst-kruskal-prim.html">MST (Kruskal &amp; Prim)</a></li><li><a href="../cp/policy-based-data-structure.html">Policy-Based Data Structure</a></li><li><a href="../cp/prefix-sums.html">Prefix Sums</a></li><li><a href="../cp/priority-queue-tricks.html">Priority Queue Tricks</a></li><li><a href="../cp/rerooting-dp.html">Rerooting DP on Trees</a></li><li><a href="../cp/segment-tree.html">Segment Tree</a></li><li><a href="../cp/sliding-window.html">Sliding Window</a></li><li><a href="../cp/sorting-tricks.html">Sorting Tricks</a></li><li><a href="../cp/sparse-table-rmq.html">Sparse Table (RMQ)</a></li><li><a href="../cp/sprague-grundy.html">Sprague-Grundy (Game Theory)</a></li><li><a href="../cp/sqrt-decomposition.html">Square Root Decomposition</a></li><li><a href="../cp/string-hashing.html">String Hashing</a></li><li><a href="../cp/strongly-connected-components.html">Strongly Connected Components (SCC)</a></li><li><a href="../cp/topological-sort.html">Topological Sort</a></li><li><a href="../cp/tree-dfs.html">Tree DFS</a></li><li><a href="../cp/tree-difference-array.html">Tree Difference Array</a></li><li><a href="../cp/trie-and-xor-trie.html">Trie &amp; XOR Trie</a></li><li><a href="../cp/two-pointers.html">Two Pointers</a></li><li><a href="../cp/union-find-dsu.html">Union-Find (DSU)</a></li><li><a href="../cp/virtual-tree.html">Virtual Tree</a></li><li><a href="../cp/z-algorithm.html">Z-Algorithm</a></li></ul></details><details class="nav-group" open><summary class="nav-group-label">docker<span class="nav-count">3</span></summary><ul><li><a href="../docker/start.html" class="is-active" aria-current="page">Start</a></li><li><a href="../docker/compose.html">Compose</a></li><li><a href="../docker/swarm.html">Swarm</a></li></ul></details><details class="nav-group"><summary class="nav-group-label">java<span class="nav-count">5</span></summary><ul><li><a href="../java/part-1.html">Part 1</a></li><li><a href="../java/part-2.html">Part 2</a></li><li><a href="../java/part-3.html">Part 3</a></li><li><a href="../java/part-4.html">Part 4</a></li><li><a href="../java/part-5.html">Part 5</a></li></ul></details><details class="nav-group"><summary class="nav-group-label">math<span class="nav-count">34</span></summary><ul><li><a href="../math/bijection-counting.html">Bijection &amp; Counting Proofs</a></li><li><a href="../math/burnside-lemma.html">Burnside&#x27;s Lemma (Symmetry Counting)</a></li><li><a href="../math/catalan-numbers.html">Catalan Numbers</a></li><li><a href="../math/chinese-remainder-theorem.html">Chinese Remainder Theorem (CRT)</a></li><li><a href="../math/combinatorial-identities.html">Combinatorial Identities</a></li><li><a href="../math/combinatorics-ncr.html">Combinatorics — nCr &amp; Pascal</a></li><li><a href="../math/computational-geometry-basics.html">Computational Geometry Basics</a></li><li><a href="../math/derangements.html">Derangements</a></li><li><a href="../math/divisor-enumeration.html">Divisor Enumeration — O(√n)</a></li><li><a href="../math/divisor-functions.html">Divisor Functions (τ and σ)</a></li><li><a href="../math/euler-totient.html">Euler&#x27;s Totient φ(n)</a></li><li><a href="../math/expected-value-linearity.html">Expected Value — Linearity</a></li><li><a href="../math/fast-exponentiation.html">Fast Exponentiation</a></li><li><a href="../math/fermat-euler-theorem.html">Fermat&#x27;s &amp; Euler&#x27;s Theorems</a></li><li><a href="../math/floor-sum-trick.html">Floor Sum Trick — Σ⌊n/i⌋</a></li><li><a href="../math/gcd-lcm-extended-euclid.html">GCD, LCM &amp; Extended Euclidean</a></li><li><a href="../math/harmonic-bounds.html">Harmonic Bounds &amp; Estimates</a></li><li><a href="../math/inclusion-exclusion.html">Inclusion-Exclusion Principle</a></li><li><a href="../math/legendre-formula.html">Legendre&#x27;s Formula</a></li><li><a href="../math/linear-recurrences.html">Linear Recurrences</a></li><li><a href="../math/lucas-theorem.html">Lucas Theorem &amp; nCr mod prime</a></li><li><a href="../math/modular-arithmetic.html">Modular Arithmetic</a></li><li><a href="../math/modular-inverse-composite.html">Modular Inverse (Composite Modulus)</a></li><li><a href="../math/modular-inverse-fermat.html">Modular Inverse (Fermat)</a></li><li><a href="../math/multinomial-coefficients.html">Multinomial Coefficients</a></li><li><a href="../math/mobius-inversion.html">Möbius Inversion</a></li><li><a href="../math/parity-xor-patterns.html">Parity, XOR &amp; Modular Patterns</a></li><li><a href="../math/pigeonhole-counting.html">Pigeonhole &amp; Counting Arguments</a></li><li><a href="../math/probability-basics.html">Probability Basics</a></li><li><a href="../math/sieve-primes-factorization.html">Sieve, Primes &amp; Factorization</a></li><li><a href="../math/stars-and-bars.html">Stars and Bars</a></li><li><a href="../math/stirling-numbers.html">Stirling Numbers (2nd Kind)</a></li><li><a href="../math/sum-formulas-series.html">Sum Formulas &amp; Series</a></li><li><a href="../math/wilson-primality.html">Wilson&#x27;s Theorem &amp; Primality</a></li></ul></details><details class="nav-group"><summary class="nav-group-label">os<span class="nav-count">2</span></summary><ul><li><a href="../os/cpu.html">CPU</a></li><li><a href="../os/user-threads.html">User threads</a></li></ul></details></nav></aside>
+  <main class="chat">
+    <header class="page-head"><span class="crumb">docker / start</span></header>
+    <article class="message user">
+      <div class="message-label">You</div>
+      <div class="message-body">Need to learn docker very deeply from scratch like I have 5 years of experience in it applying for IC4 level job role in apple</div>
+    </article>
+    <article class="message assistant">
+      <div class="message-label">Assistant</div>
+      <div class="message-body prose"><h1>Docker mastery roadmap for an Apple IC4 engineer</h1>
+<p>For an Apple IC4-level role, the goal should not be merely to learn Docker commands. You need to understand <strong>how containers work internally, how Docker interacts with the Linux kernel, how images are built and distributed, how networking and storage work, and how to debug failures in production.</strong></p>
+<p>Given your full-stack and backend experience, including Linux and systems-level C/C++ work, I recommend approaching Docker from the perspective of a software engineer who needs to design, debug, and operate containerized systems—not as someone preparing for a basic Docker certification.</p>
+<p>The target is to be able to explain the internals, make architecture decisions, diagnose unfamiliar failures, and defend your decisions in an interview.</p>
+<h2>1. What you need to master</h2>
+<p><strong>Level 1 — Container fundamentals and Linux internals</strong></p>
+<p>Processes, namespaces, cgroups, capabilities, filesystems, system calls, and container isolation.</p>
+<p><strong>Level 2 — Images, layers, and build systems</strong></p>
+<p>Union filesystems, content-addressable storage, Dockerfiles, BuildKit, cache invalidation, multi-stage builds, and registries.</p>
+<p><strong>Level 3 — Networking and storage</strong></p>
+<p>Network namespaces, veth pairs, bridges, NAT, DNS, iptables/nftables, volumes, overlay filesystems, and I/O behavior.</p>
+<p><strong>Level 4 — Security and production operations</strong></p>
+<p>Rootless containers, seccomp, AppArmor, capabilities, secrets, image vulnerabilities, resource limits, logging, and incident debugging.</p>
+<p><strong>Level 5 — Runtime internals and orchestration</strong></p>
+<p>Docker Engine, containerd, OCI runtimes, runc, Kubernetes fundamentals, scheduling, health checks, and graceful shutdown.</p>
+<p><strong>Level 6 — IC4-level design and debugging</strong></p>
+<p>Production incident simulations, performance trade-offs, container platform design, technical deep dives, and interview exercises.</p>
+<p><strong>Suggested duration:</strong> 8 weeks at 1.5–2.5 hours per day. You can move faster through fundamentals you already know, but do not skip the kernel, networking, or runtime internals.</p>
+<h2>2. The 8-week learning plan</h2>
+<p>This is the sequence I recommend following. Each week should include theory, terminal exercises, debugging, and interview questions.</p>
+<h2>Week 1</h2>
+<p><strong>How containers actually work</strong></p>
+<p>Processes, PID namespaces, mount namespaces, network namespaces, UTS, IPC, user namespaces, cgroups v2, capabilities, <code>chroot</code>, <code>pivot_root</code>, and <code>unshare</code>.</p>
+<p>Deliverable: run an isolated Linux process without Docker and explain what isolation it has.</p>
+<h2>Week 2</h2>
+<p><strong>Docker architecture and lifecycle</strong></p>
+<p>Docker CLI, REST API, <code>dockerd</code>, containerd, runc, OCI specifications, image pulls, container creation, process startup, signals, exit codes, and restart policies.</p>
+<p>Deliverable: trace a container from <code>docker run</code> to the application process.</p>
+<h2>Week 3</h2>
+<p><strong>Image construction and optimization</strong></p>
+<p>Dockerfile instructions, layers, manifests, digests, registries, BuildKit, build contexts, cache mounts, multi-stage builds, multi-platform images, and reproducible builds.</p>
+<p>Deliverable: build a minimal production image and optimize repeated CI builds.</p>
+<h2>Week 4</h2>
+<p><strong>Container networking in depth</strong></p>
+<p>Bridge networking, veth pairs, routes, DNS, port publishing, NAT, conntrack, firewall rules, MTU, packet captures, and network namespaces.</p>
+<p>Deliverable: debug a container that can reach its peers but cannot access an external service.</p>
+<h2>Week 5</h2>
+<p><strong>Filesystem, volumes, and resource limits</strong></p>
+<p>OverlayFS, copy-on-write, bind mounts, named volumes, disk exhaustion, page cache, CPU throttling, memory limits, OOM kills, and I/O bottlenecks.</p>
+<p>Deliverable: diagnose a database container losing data or being killed under memory pressure.</p>
+<h2>Week 6</h2>
+<p><strong>Production hardening</strong></p>
+<p>Rootless Docker, Linux capabilities, seccomp, AppArmor, read-only filesystems, secrets, image scanning, supply-chain security, SBOMs, and least privilege.</p>
+<p>Deliverable: threat-model and harden a containerized API.</p>
+<h2>Week 7</h2>
+<p><strong>Production operations and orchestration</strong></p>
+<p>Compose, health checks, logging, metrics, graceful termination, rolling deployments, containerd, Kubernetes architecture, and CI/CD image delivery.</p>
+<p>Deliverable: deploy, monitor, update, and recover a multi-service application.</p>
+<h2>Week 8</h2>
+<p><strong>System design and interview simulation</strong></p>
+<p>Debugging exercises, container runtime design, performance analysis, deployment trade-offs, failure scenarios, and explaining architecture decisions.</p>
+<p>Deliverable: a container platform project and mock senior-level interviews.</p>
+<h2>3. Start with the fundamentals: Day 1</h2>
+<p>Do not begin by memorizing Docker commands. Start by understanding what problem containers solve.</p>
+<h3>3.1 Virtual machines versus containers</h3>
+<p><strong>Virtual machine</strong></p>
+<p>Each VM runs a guest operating system on virtualized hardware. A hypervisor isolates the VMs.</p>
+<p><strong>Container</strong></p>
+<p>Processes share the host kernel while namespaces, cgroups, filesystem configuration, and security controls provide isolation.</p>
+<p>The critical distinction is that a normal Linux container is <strong>not a virtual machine</strong>. It does not boot its own independent Linux kernel. The isolation is implemented largely through facilities provided by the host kernel.</p>
+<p>This explains several important properties:</p>
+<ul><li>Containers typically start faster than full VMs because they do not boot a separate guest OS.</li><li>Multiple containers can share the same host kernel.</li><li>A container&#x27;s resource usage still consumes host resources.</li><li>A Linux container on macOS generally runs inside a Linux VM because macOS does not provide the Linux kernel interfaces that Linux containers require.</li></ul>
+<h3>3.2 The five concepts you must understand first</h3>
+<p><strong>Namespaces — isolation</strong></p>
+<p>Control what a process can see: process IDs, network interfaces, mount points, hostnames, IPC objects, users, and cgroup views.</p>
+<p><strong>Cgroups — resource accounting and control</strong></p>
+<p>Track and constrain resources such as CPU and memory. Memory limits can lead to OOM kills; CPU limits can cause throttling.</p>
+<p><strong>Filesystem isolation</strong></p>
+<p>Mount namespaces and a configured root filesystem give a process its own filesystem view. Image layers and OverlayFS help construct that view.</p>
+<p><strong>Capabilities and syscall restrictions</strong></p>
+<p>Linux capabilities divide up privileged operations; seccomp can restrict system calls. Neither should be confused with complete isolation on its own.</p>
+<p><strong>Processes and signals</strong></p>
+<p>A container normally runs an ordinary Linux process. Its lifecycle depends on the configured entrypoint, process exit status, signal handling, and runtime behavior.</p>
+<p>Official references:</p>
+<ul><li>Linux namespaces overview</li><li>Linux cgroups v2 documentation The Linux Kernel documentation</li><li>Docker Engine architecture Docker Docs</li></ul>
+<h2>4. Day 1 practical lab on your Linux machine</h2>
+<p>Use your Ubuntu/Pop!_OS environment. Run these commands and observe the output rather than just reading about it.</p>
+<h3>Lab A — Inspect a container&#x27;s process namespace</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker run --rm alpine sh -c &#x27;
+    echo &quot;Container PID: $$&quot;
+    ps
+    cat /proc/self/status | grep -E &quot;Pid|NSpid&quot;
+&#x27;</code></pre></div>
+<p>Then run:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker run -d --name docker-lab alpine sleep 600
+
+docker inspect docker-lab
+docker top docker-lab
+docker exec docker-lab ps
+
+docker rm -f docker-lab</code></pre></div>
+<p>Questions to answer:</p>
+<ol><li>Why can the process have a different PID inside the container and on the host?</li><li>Does the container have its own kernel?</li><li>Why does <code>docker exec</code> create another process without creating another container?</li><li>What happens to the container when its main process exits?</li></ol>
+<h3>Lab B — Inspect resource constraints</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker run -d \
+  --name memory-lab \
+  --memory=128m \
+  --cpus=0.5 \
+  alpine sleep 600</code></pre></div>
+<p>Inspect the configuration:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker inspect memory-lab
+docker stats memory-lab</code></pre></div>
+<p>Then clean up:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker rm -f memory-lab</code></pre></div>
+<p>Be able to distinguish a CPU quota from a CPU reservation, and a memory limit from observed memory usage.</p>
+<h3>Lab C — Understand the runtime architecture</h3>
+<p>Run:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker version
+docker info
+docker image ls
+docker ps -a
+docker system df</code></pre></div>
+<p>Explain what each command tells you. In particular, distinguish the Docker client, daemon, image store, running container, and host kernel.</p>
+<h2>5. How deep is deep enough for IC4?</h2>
+<p>Use these as checkpoints, not just topics to memorize.</p>
+<pre class="diagram"><code>+-------------+------------------------------------------------------------------------------------+
+| Area        | Expected depth                                                                     |
++-------------+------------------------------------------------------------------------------------+
+| Linux       | Explain namespaces, cgroups, capabilities, and how they work together              |
+| Runtime     | Trace container creation from the Docker API through containerd and an OCI runtime |
+| Images      | Explain layers, manifests, digests, caching, and image distribution                |
+| Networking  | Diagnose DNS, port publishing, routes, NAT, and packet loss                        |
+| Storage     | Explain writable layers, volumes, copy-on-write, and disk pressure                 |
+| Security    | Identify privilege-escalation risks and apply least privilege                      |
+| Performance | Diagnose CPU throttling, OOM kills, memory pressure, and I/O bottlenecks           |
+| Operations  | Handle crashes, shutdown, logging, health checks, and deployment failures          |
+| Design      | Explain trade-offs, alternatives, failure modes, and operational costs             |
++-------------+------------------------------------------------------------------------------------+</code></pre>
+<p>The target is not to know every Docker flag. It is to understand the underlying mechanism well enough to predict behavior and debug issues you have never encountered.</p>
+<h2>6. Recommended study resources</h2>
+<p>Read these in sequence alongside the labs:</p>
+<ol><li>Docker Engine documentation — architecture and core concepts.</li><li>BuildKit documentation — build graphs, caching, and parallel execution. Docker Docs</li><li>Docker build cache — cache invalidation and layer behavior. Docker Docs</li><li>Multi-stage builds — separating build-time dependencies from runtime artifacts. Docker Docs</li><li>Linux kernel cgroups documentation — authoritative resource-control details.</li></ol>
+<h2>7. Begin the course</h2>
+<p>The first milestone is to understand containers without Docker before moving to Docker&#x27;s implementation.</p>
+<h2>Set your starting point</h2>
+<p>These answers let me calibrate the lessons and exercises to your existing knowledge.</p>
+<ol><li>How comfortable are you with Linux internals?</li><li>How much time can you dedicate each day?</li><li>What is the immediate priority?</li></ol>
+<h1>Docker Mastery — Lesson 1: What a Container Really Is</h1>
+<p>Apple IC4 preparation · Week 1 · Day 1 · 2 hours</p>
+<p><strong>Lesson objective:</strong> Understand container isolation at the Linux kernel level, inspect real processes and namespaces on your Linux machine, and explain the design to an interviewer with 5 years of engineering experience.</p>
+<p>By the end of this lesson, you should be able to answer:</p>
+<ul><li>What exactly is a container?</li><li>How can two processes see different process IDs while sharing one kernel?</li><li>How do namespaces differ from cgroups?</li><li>What happens internally when you execute <code>docker run</code>?</li><li>Why are containers not automatically secure?</li><li>How would you debug a container that behaves differently from a host process?</li></ul>
+<h2>1. Your two-hour study schedule</h2>
+<p>00–15 min</p>
+<p><strong>Container fundamentals</strong></p>
+<p>Processes versus VMs versus containers.</p>
+<p>15–40 min</p>
+<p><strong>Linux isolation</strong></p>
+<p>Namespaces, cgroups, capabilities, and root filesystems.</p>
+<p>40–70 min</p>
+<p><strong>Hands-on Linux lab</strong></p>
+<p>Inspect PIDs, namespaces, mounts, and process limits.</p>
+<p>70–95 min</p>
+<p><strong>Docker lifecycle</strong></p>
+<p>Trace docker run through the runtime to the application.</p>
+<p>95–115 min</p>
+<p><strong>Debugging scenarios</strong></p>
+<p>Diagnose isolation and process-lifecycle failures.</p>
+<p>115–120 min</p>
+<p><strong>Interview recall</strong></p>
+<p>Answer the key questions without notes.</p>
+<h2>2. The foundation: a container is an isolated process environment</h2>
+<p>A container is not inherently a small virtual machine. On Linux, it is a collection of ordinary processes configured with isolation and resource controls.</p>
+<p>The kernel provides the fundamental mechanisms. A container runtime configures them, prepares a root filesystem, applies security restrictions, and starts the process.</p>
+<h3>Virtual machine versus container</h3>
+<h3>Virtual machine architecture</h3>
+<p><strong>Physical hardware</strong></p>
+<p><strong>Hypervisor</strong></p>
+<p><strong>VM A</strong></p>
+<p>Guest OS + libraries</p>
+<p>Application A</p>
+<p><strong>VM B</strong></p>
+<p>Guest OS + libraries</p>
+<p>Application B</p>
+<h3>Linux container architecture</h3>
+<p><strong>Physical hardware</strong></p>
+<p><strong>One shared Linux kernel</strong></p>
+<p><strong>Container A</strong></p>
+<p>Namespaces + rootfs</p>
+<p>Application A</p>
+<p><strong>Container B</strong></p>
+<p>Namespaces + rootfs</p>
+<p>Application B</p>
+<p>The important distinction:</p>
+<ul><li>A VM generally has its own guest kernel.</li><li>A normal Linux container uses the host&#x27;s Linux kernel.</li><li>Containers can have different filesystem views, network stacks, process ID views, and resource limits.</li><li>Containers are not equivalent to security boundaries as strong as a correctly configured, hardware-virtualized VM in every threat model.</li></ul>
+<p><strong>Apple interview angle:</strong> If asked why containers are lightweight, do not just say they share the kernel. Explain that they avoid booting a separate guest OS and can reuse image layers, while isolation is largely configured through existing kernel mechanisms.</p>
+<h2>3. Linux namespaces: controlling what a process can see</h2>
+<p>Namespaces isolate particular views of system resources. A process can live in several namespaces simultaneously.</p>
+<pre class="diagram"><code>+-----------+--------------------------------------------------------------------+
+| Namespace | What it isolates                                                   |
++-----------+--------------------------------------------------------------------+
+| `pid`     | Process ID hierarchy and process visibility                        |
+| `net`     | Network devices, routes, sockets, and network stack                |
+| `mnt`     | Mount table and filesystem mount visibility                        |
+| `uts`     | Hostname and domain name                                           |
+| `ipc`     | System V IPC and POSIX message queues                              |
+| `user`    | User and group ID mappings and associated privilege interpretation |
+| `cgroup`  | View of the cgroup hierarchy                                       |
+| `time`    | Certain system and boot-time clock views                           |
++-----------+--------------------------------------------------------------------+</code></pre>
+<p>A key nuance: namespaces isolate views, not necessarily every underlying resource or all access to it. For example, a network namespace isolates network configuration, but firewall rules, host access, and capabilities still affect security.</p>
+<h3>Example: two different PID views</h3>
+<p>Suppose the host is running these processes:</p>
+<pre class="diagram"><code>+------------------------------+
+|      Host PID namespace      |
++------------------------------+
+                |
+                v
++------------------------------+
+|      ├ PID 1   systemd       |
++------------------------------+
+                |
+                v
++------------------------------+
+|   ├ PID 800 docker daemon    |
++------------------------------+
+                |
+                v
++------------------------------+
+| ├ PID 1400 container runtime |
++------------------------------+
+                |
+                v
++------------------------------+
+| PID 2500 application process |
++------------------------------+</code></pre>
+<p>Inside the container&#x27;s PID namespace, the same application process might appear as PID 1:</p>
+<pre class="diagram"><code>+-------------------------+
+| Container PID namespace |
++-------------------------+
+             |
+             v
++-------------------------+
+|   PID 1   application   |
++-------------------------+</code></pre>
+<p>The application is not two different processes. It has one identity in the underlying process hierarchy, but its PID can be represented differently in nested PID namespaces.</p>
+<p>This is one reason <code>ps</code> inside a container and <code>ps</code> on the host can show different results.</p>
+<h3>Hands-on lab 1: inspect namespace IDs</h3>
+<p>Run:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>lsns</code></pre></div>
+<p>Then inspect your current shell:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>readlink /proc/self/ns/pid
+readlink /proc/self/ns/net
+readlink /proc/self/ns/mnt
+readlink /proc/self/ns/user</code></pre></div>
+<p>Example output will look like:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>pid:[4026531836]
+net:[4026531840]
+mnt:[4026531841]
+user:[4026531837]</code></pre></div>
+<p>These numeric identifiers are examples, not expected values for your machine. Linux exposes namespace references through <code>/proc</code>.</p>
+<p>Now compare the namespace identifiers of two processes:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>readlink /proc/1/ns/pid
+readlink /proc/self/ns/pid</code></pre></div>
+<p>If both point to the same namespace, those processes share that PID namespace. If they differ, they belong to different PID namespaces.</p>
+<p><strong>Expected observation:</strong> Namespace identifiers are kernel-managed identifiers, not Docker container IDs.</p>
+<h2>4. Cgroups: controlling how much a process can consume</h2>
+<p>Namespaces answer: What can the process see?</p>
+<p>Control groups, or cgroups, answer: How are resources accounted for and constrained?</p>
+<p>For example, a container can have a memory limit of 128 MiB. If its workload exceeds what the kernel can sustain under that limit, the kernel&#x27;s memory-control mechanisms may trigger an OOM kill.</p>
+<p>Cgroups can also control CPU bandwidth, track memory usage, and manage I/O resources, depending on the controller and configuration.</p>
+<h3>Inspect cgroups on your machine</h3>
+<p>Run:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>cat /proc/self/cgroup</code></pre></div>
+<p>On a cgroups v2 system, you may see:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>0::/user.slice/user-1000.slice/session-2.scope</code></pre></div>
+<p>The exact path depends on your machine and session.</p>
+<p>Check the cgroup filesystem:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>mount | grep cgroup</code></pre></div>
+<p>Check whether your system uses cgroups v2:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>stat -fc %T /sys/fs/cgroup</code></pre></div>
+<p>Output of <code>cgroup2fs</code> indicates a cgroups v2 filesystem at that path.</p>
+<p>If readable, inspect available controllers:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>cat /sys/fs/cgroup/cgroup.controllers</code></pre></div>
+<p>You may see controllers such as <code>cpu</code>, <code>memory</code>, and <code>io</code>.</p>
+<h3>Understand the CPU limit</h3>
+<p>Suppose a container is configured with:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker run --rm --cpus=0.5 alpine sleep 60</code></pre></div>
+<p>The CPU limit restricts the container to approximately half a CPU&#x27;s worth of sustained execution capacity under the relevant cgroup CPU quota configuration. It does not mean the process is permanently assigned half of a physical core.</p>
+<p>For a busy process, the kernel may throttle execution after it consumes its allotted CPU time during a scheduling period.</p>
+<p>This is important in production because <strong>high latency can occur even when the host has spare CPU capacity</strong>: a particular container may be constrained by its own quota.</p>
+<h3>Namespace versus cgroup: interview comparison</h3>
+<pre class="diagram"><code>+------------------------+-----------------------------+------------------------------------------------------+
+| Property               | Namespace                   | Cgroup                                               |
++------------------------+-----------------------------+------------------------------------------------------+
+| Primary purpose        | Isolation of resource views | Resource accounting and control                      |
+| Example                | Separate network interfaces | CPU quota                                            |
+| Another example        | Separate PID view           | Memory limit                                         |
+| Typical debugging tool | `lsns`, `/proc/PID/ns`      | `cat /proc/PID/cgroup`, cgroup files, `docker stats` |
++------------------------+-----------------------------+------------------------------------------------------+</code></pre>
+<p>They are complementary, not interchangeable.</p>
+<h2>5. Filesystem isolation: why <code>/</code> looks different inside a container</h2>
+<p>A Linux process resolves paths relative to its root directory. A container runtime can construct a filesystem tree containing the application&#x27;s executable, shared libraries, configuration files, and other required files, then arrange for the process to use that tree as its root filesystem.</p>
+<p>Consider this layout:</p>
+<pre class="diagram"><code>+-----------------+
+| Host filesystem |
++-----------------+
+         |
+         v
++-----------------+
+|        /        |
++-----------------+
+         |
+         v
++-----------------+
+|      ├ etc/     |
++-----------------+
+         |
+         v
++-----------------+
+|     ├ home/     |
++-----------------+
+         |
+         v
++-----------------+
+|      ├ usr/     |
++-----------------+
+         |
+         v
++-----------------+
+|      ├ var/     |
++-----------------+
+         |
+         v
++-----------------+
+| var/lib/docker/ |
++-----------------+
+         |
+         v
++-----------------+
+|       ...       |
++-----------------+</code></pre>
+<p>A container might instead see:</p>
+<pre class="diagram"><code>+---------------------------+
+| Container root filesystem |
++---------------------------+
+              |
+              v
++---------------------------+
+|             /             |
++---------------------------+
+              |
+              v
++---------------------------+
+|           ├ bin/          |
++---------------------------+
+              |
+              v
++---------------------------+
+|           ├ etc/          |
++---------------------------+
+              |
+              v
++---------------------------+
+|           ├ lib/          |
++---------------------------+
+              |
+              v
++---------------------------+
+|           ├ tmp/          |
++---------------------------+
+              |
+              v
++---------------------------+
+|            app/           |
++---------------------------+
+              |
+              v
++---------------------------+
+|           server          |
++---------------------------+</code></pre>
+<p>The host&#x27;s filesystem still exists. The container sees a configured filesystem view.</p>
+<p>Three concepts are worth distinguishing:</p>
+<ul><li><strong>Mount namespace:</strong> isolates the mount table.</li><li><strong>Root filesystem:</strong> the filesystem tree exposed as <code>/</code> to the process.</li><li><strong>OverlayFS:</strong> can combine lower, read-only filesystem layers with a writable upper layer.</li></ul>
+<p><code>chroot</code> changes a process&#x27;s apparent root directory but does not, by itself, provide complete container isolation or a strong security boundary.</p>
+<h3>Hands-on lab 2: inspect the root filesystem</h3>
+<p>If Docker is installed and running, execute:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker run --rm alpine sh -c &#x27;
+  echo &quot;Root:&quot;
+  ls /
+  echo
+  echo &quot;Mounts:&quot;
+  cat /proc/self/mountinfo | head -n 10
+&#x27;</code></pre></div>
+<p>Compare it with the host:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>ls /
+findmnt</code></pre></div>
+<p><strong>Expected observation:</strong> The container has its own root filesystem view, but the kernel is still shared.</p>
+<p>If Docker is unavailable, do not spend your lesson time troubleshooting installation yet. Complete the Linux namespace and cgroup exercises first.</p>
+<h2>6. What actually happens during <code>docker run</code>?</h2>
+<p>Consider:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker run --rm -p 8080:80 nginx</code></pre></div>
+<p>At a high level, the flow is:</p>
+<p><strong>Docker CLI</strong></p>
+<p>Parses the command and calls the Docker API</p>
+<p><strong>Docker daemon (<code>dockerd</code>)</strong></p>
+<p>Coordinates image, container, network, and storage operations</p>
+<p><strong>containerd</strong></p>
+<p>Manages container lifecycle and runtime tasks</p>
+<p><strong>OCI runtime, commonly <code>runc</code></strong></p>
+<p>Sets up the container environment and starts the process</p>
+<p><strong>Linux kernel + application process</strong></p>
+<p>Kernel enforces configured isolation and resource controls</p>
+<p>This is a simplified architecture. Exact responsibilities and call paths vary by Docker version, runtime configuration, and platform. The CLI generally communicates through the Docker API; <code>dockerd</code> commonly delegates container lifecycle work to containerd, which invokes an OCI runtime to create and start a container process.</p>
+<p>The command involves several operations:</p>
+<ol><li>Resolve the requested image locally or pull it from a registry.</li><li>Prepare the container&#x27;s root filesystem and writable layer.</li><li>Configure namespaces, cgroups, capabilities, and security settings.</li><li>Configure networking and publish host port 8080 to container port 80.</li><li>Start the configured application process.</li><li>Track the container&#x27;s lifecycle and exit status.</li></ol>
+<p>The kernel does not know that the process is an &quot;Nginx Docker container&quot; in the same sense that Docker does. The runtime and supporting infrastructure manage that higher-level concept using kernel facilities and metadata.</p>
+<h3>Hands-on lab 3: observe the lifecycle</h3>
+<p>Run:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker run -d --name nginx-lab -p 8080:80 nginx</code></pre></div>
+<p>Then:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker ps
+docker inspect nginx-lab
+docker logs nginx-lab
+curl -I http://localhost:8080</code></pre></div>
+<p>Observe the running container&#x27;s host process:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker top nginx-lab</code></pre></div>
+<p>Finally:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker stop nginx-lab
+docker ps -a
+docker rm nginx-lab</code></pre></div>
+<p>Answer these questions:</p>
+<ul><li>Which process is the container&#x27;s main process?</li><li>Why does the container stop when its main process exits?</li><li>Why does <code>docker stop</code> behave differently from abruptly killing a process?</li><li>What is the difference between stopping and removing a container?</li><li>What changes if you remove <code>-p 8080:80</code>?</li></ul>
+<p>Do not assume that every container uses the same PID 1 process or has identical signal-handling behavior.</p>
+<h2>7. Debugging exercises: think like a production engineer</h2>
+<p>For each scenario, form a hypothesis, inspect evidence, and only then change configuration.</p>
+<h3>Scenario A — The container exits immediately</h3>
+<p>You execute:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker run -d --name test alpine</code></pre></div>
+<p>The container exits.</p>
+<p><strong>Why?</strong> The image&#x27;s default command may finish immediately. A container is not required to keep running when its work is done.</p>
+<p>Inspect it:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker ps -a
+docker inspect test --format &#x27;{{.State.Status}} {{.State.ExitCode}}&#x27;
+docker logs test
+docker rm test</code></pre></div>
+<p>Compare with:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker run -d --name test alpine sleep 600</code></pre></div>
+<p>The second command keeps a process alive for ten minutes.</p>
+<p><strong>IC4 takeaway:</strong> Containers are process-oriented. A container being stopped does not automatically mean Docker failed.</p>
+<h3>Scenario B — The application works inside the container but cannot be reached from the host</h3>
+<p>Start a web server without publishing its port:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker run -d --name web nginx</code></pre></div>
+<p>Inspect the port configuration:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker port web
+docker inspect web --format &#x27;{{json .NetworkSettings.Ports}}&#x27;</code></pre></div>
+<p>Compare it with:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker rm -f web
+docker run -d --name web -p 8080:80 nginx
+curl -I http://localhost:8080</code></pre></div>
+<p>The first container does not have a host port published by the command. The second explicitly requests host-to-container port publishing.</p>
+<p><strong>IC4 takeaway:</strong> A listening socket inside a container and a reachable service on the host are two different conditions. Networking configuration must connect them.</p>
+<h3>Scenario C — The container is slow despite low host CPU usage</h3>
+<p>Investigate:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker stats
+docker inspect &lt;container_name&gt;</code></pre></div>
+<p>Then examine cgroup CPU statistics on the host, where accessible:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>cat /proc/&lt;host_pid&gt;/cgroup</code></pre></div>
+<p>For cgroups v2, inspect the relevant cgroup&#x27;s <code>cpu.stat</code> and <code>cpu.max</code> files. The cgroup path must be resolved from the process&#x27;s membership and the host&#x27;s cgroup mount.</p>
+<p>Look for:</p>
+<ul><li>CPU quota limits.</li><li>Increasing throttling counters.</li><li>Memory pressure and reclaim activity.</li><li>Excessive disk I/O or application-level contention.</li></ul>
+<p><strong>IC4 takeaway:</strong> Low overall host CPU utilization does not prove that a container is unconstrained. Diagnose the resource limit and the workload, not just the host&#x27;s aggregate metrics.</p>
+<h3>Scenario D — The container runs as root</h3>
+<p>Inspect:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker exec &lt;container_name&gt; id</code></pre></div>
+<p>Running as root inside a container does not necessarily grant unrestricted root privileges on the host. However, the risk depends on user namespaces, capabilities, mounts, runtime configuration, and kernel vulnerabilities.</p>
+<p>For an application that does not need elevated privileges, use a non-root user and remove unnecessary capabilities. Consider a read-only root filesystem where appropriate.</p>
+<p><strong>IC4 takeaway:</strong> Container isolation is layered defense, not a substitute for least privilege.</p>
+<h2>8. Apple IC4 interview questions with model answers</h2>
+<p>Use the answers below as a baseline. Practice explaining the mechanism in your own words rather than memorizing the wording.</p>
+<p><strong>Q1. What is a container, internally?</strong></p>
+<p>A container is a process or group of processes running with an isolated environment configured by a runtime. On Linux, that environment typically uses namespaces for isolation, cgroups for resource control, a prepared root filesystem, and security controls such as capabilities and seccomp. The processes share the host kernel.</p>
+<p><strong>Q2. Are namespaces sufficient to implement a container?</strong></p>
+<p>No. Namespaces isolate views of resources, but do not independently provide a filesystem, resource limits, or complete security. A runtime typically combines namespaces with a root filesystem, cgroups, capabilities, syscall restrictions, and other configuration.</p>
+<p><strong>Q3. How does a container get its own PID 1?</strong></p>
+<p>The runtime can create a PID namespace and start the container&#x27;s initial process within it. That process can appear as PID 1 in the new namespace while having a different PID in an ancestor namespace. PID 1 has special signal-handling and orphan-reaping implications.</p>
+<p><strong>Q4. What happens when a container&#x27;s PID 1 exits?</strong></p>
+<p>The container&#x27;s main workload has exited, so the runtime normally considers the container stopped. Other processes in its PID namespace are terminated as part of PID namespace teardown. Restart policies or an orchestrator may subsequently start a replacement.</p>
+<p><strong>Q5. How are CPU and memory limits enforced?</strong></p>
+<p>On Linux, cgroups provide resource accounting and control. CPU bandwidth limits commonly use the CPU controller&#x27;s quota configuration; memory limits use the memory controller. Under pressure, the workload can be throttled or encounter allocation failures and OOM termination.</p>
+<p><strong>Q6. Why can a container be less isolated than a VM?</strong></p>
+<p>Linux containers share a kernel, so a kernel vulnerability may affect the host and other containers. A VM adds a hardware-virtualization boundary and a separate guest kernel. The actual security difference depends on configuration, threat model, hypervisor, runtime, and available defenses.</p>
+<p><strong>Q7. Explain <code>docker run</code> from CLI to process creation.</strong></p>
+<p>The CLI sends a request through the Docker API. The daemon coordinates image, filesystem, network, and container setup, commonly delegating lifecycle management to containerd. An OCI runtime such as runc sets up the configured execution environment and starts the process, with the Linux kernel enforcing the relevant isolation and resource controls.</p>
+<p><strong>Q8. Why is <code>chroot</code> not equivalent to a container?</strong></p>
+<p><code>chroot</code> changes a process&#x27;s apparent root directory but does not by itself isolate PIDs, networking, mounts, resources, or privileges. It is not a complete security boundary.</p>
+<p><strong>Q9. What is the difference between an image and a container?</strong></p>
+<p>An image is an immutable template composed of filesystem content and configuration metadata. A container is a runtime instance created from an image, with its own lifecycle, execution configuration, and potentially a writable filesystem layer.</p>
+<p><strong>Q10. A container is killed with exit code 137. What do you investigate?</strong></p>
+<p>Exit code 137 conventionally indicates termination by signal 9 (<code>SIGKILL</code>) in common shell and container reporting contexts. It does not prove an OOM kill. Check container state and OOM indicators, kernel logs where permitted, cgroup memory events, orchestration events, and whether an operator or runtime forcibly killed the process.</p>
+<h2>9. Homework and mastery checkpoint</h2>
+<p>Before moving to Lesson 2, complete these tasks on your Linux machine.</p>
+<h3>Lesson 1 progress</h3>
+<p>0 of 5</p>
+<p><strong>Inspect Linux namespaces</strong></p>
+<p>Use lsns and /proc/PID/ns to compare namespace identifiers.</p>
+<p><strong>Inspect cgroups</strong></p>
+<p>Identify your cgroup version and inspect the CPU and memory controllers.</p>
+<p><strong>Run and inspect a container</strong></p>
+<p>Start Alpine, inspect its process and filesystem, and remove it.</p>
+<p><strong>Test port publishing</strong></p>
+<p>Run Nginx with and without -p and explain the observed behavior.</p>
+<p><strong>Practice interview answers</strong></p>
+<p>Explain namespaces versus cgroups and trace docker run without notes.</p>
+<h3>Reference material</h3>
+<ul><li>Docker Engine</li><li>Linux namespaces</li><li>Linux cgroups v2</li><li>OCI Runtime Specification</li></ul>
+<p><strong>Next lesson:</strong> Docker Engine internals — the Docker API, <code>dockerd</code>, containerd, runc, OCI specifications, and the full container creation lifecycle. We will trace the architecture and examine what happens at each stage rather than treating <code>docker run</code> as a black box.</p>
+<h1>Docker Mastery: Complete Course for Apple IC4</h1>
+<p>This is the complete course in one place so you can study it whenever you have time. It is designed for an engineer with intermediate Linux knowledge, backend/full-stack experience, and an interview target at Apple&#x27;s IC4 level.</p>
+<p>The course covers Docker from Linux kernel primitives through runtime internals, image construction, networking, storage, security, production debugging, and system design. It emphasizes explaining trade-offs and diagnosing unfamiliar failures rather than memorizing commands.</p>
+<h2>Course map</h2>
+<h3>01</h3>
+<p><strong>Linux and container fundamentals</strong></p>
+<p>Processes, namespaces, cgroups, root filesystems</p>
+<h3>02</h3>
+<p><strong>Docker Engine internals</strong></p>
+<p>Docker API, dockerd, containerd, runc, OCI</p>
+<h3>03</h3>
+<p><strong>Images and registries</strong></p>
+<p>Layers, manifests, digests, image distribution</p>
+<h3>04</h3>
+<p><strong>Dockerfile and BuildKit</strong></p>
+<p>Build caching, multi-stage builds, reproducibility</p>
+<h3>05</h3>
+<p><strong>Container lifecycle</strong></p>
+<p>PID 1, signals, exit codes, health checks</p>
+<h3>06</h3>
+<p><strong>Networking internals</strong></p>
+<p>Bridge, veth, DNS, NAT, packet debugging</p>
+<h3>07</h3>
+<p><strong>Storage internals</strong></p>
+<p>OverlayFS, volumes, persistence, I/O</p>
+<h3>08</h3>
+<p><strong>CPU and memory</strong></p>
+<p>Cgroups, throttling, OOM, performance</p>
+<h3>09</h3>
+<p><strong>Container security</strong></p>
+<p>Capabilities, seccomp, rootless, supply chain</p>
+<h3>10</h3>
+<p><strong>Docker Compose and services</strong></p>
+<p>Multi-service systems, dependencies, configuration</p>
+<h3>11</h3>
+<p><strong>Production operations</strong></p>
+<p>Logging, monitoring, deployment, incident response</p>
+<h3>12</h3>
+<p><strong>Kubernetes and runtime ecosystem</strong></p>
+<p>Container orchestration and runtime integration</p>
+<h3>13</h3>
+<p><strong>Advanced debugging</strong></p>
+<p>strace, namespaces, cgroups, tcpdump, perf</p>
+<h3>14</h3>
+<p><strong>IC4 system design</strong></p>
+<p>Container platform architecture and trade-offs</p>
+<h3>15</h3>
+<p><strong>Interview preparation</strong></p>
+<p>Technical questions, scenarios, capstone project</p>
+<h2>How to use this course</h2>
+<p>For each lesson:</p>
+<ol><li>Learn the underlying mechanism.</li><li>Run the commands on your Linux machine.</li><li>Observe the output rather than assuming what will happen.</li><li>Complete the debugging exercise.</li><li>Answer the interview questions without looking at the answers.</li></ol>
+<p>Suggested pace: 2 hours per day, with approximately 6–8 weeks for the complete curriculum. You can study individual sections independently.</p>
+<h1>Lesson 1 — Linux and container fundamentals</h1>
+<h2>1.1 Processes, VMs, and containers</h2>
+<p>A process is a running program with state maintained by the operating system: memory mappings, file descriptors, credentials, scheduling information, and more.</p>
+<p>A virtual machine typically runs a separate guest operating system and kernel. A Linux container ordinarily runs processes using the host&#x27;s Linux kernel.</p>
+<h3>Virtual machines</h3>
+<p><strong>VM A</strong></p>
+<p>Guest kernel</p>
+<p>Application</p>
+<p><strong>VM B</strong></p>
+<p>Guest kernel</p>
+<p>Application</p>
+<h3>Containers</h3>
+<p><strong>Container A</strong></p>
+<p>Isolated process</p>
+<p>Filesystem view</p>
+<p><strong>Container B</strong></p>
+<p>Isolated process</p>
+<p>Filesystem view</p>
+<p>Containers are generally lighter because they do not boot a separate guest kernel. They are not automatically as strongly isolated as VMs in every security scenario.</p>
+<h2>1.2 The kernel mechanisms</h2>
+<pre class="diagram"><code>+---------------------+------------------------------------------------------------------------+
+| Mechanism           | Responsibility                                                         |
++---------------------+------------------------------------------------------------------------+
+| Namespaces          | Isolate views of system resources                                      |
+| Cgroups             | Account for and control resource usage                                 |
+| Mount configuration | Build the container&#x27;s filesystem view                                  |
+| Capabilities        | Divide privileged operations into smaller permissions                  |
+| Seccomp             | Restrict permitted system calls                                        |
+| LSMs                | Apply security policies through mechanisms such as AppArmor or SELinux |
++---------------------+------------------------------------------------------------------------+</code></pre>
+<p>Namespaces and cgroups solve different problems.</p>
+<p>Namespaces include PID, network, mount, UTS, IPC, user, cgroup, and time namespaces.</p>
+<h3>Lab</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>lsns
+readlink /proc/self/ns/pid
+readlink /proc/self/ns/net
+cat /proc/self/cgroup
+stat -fc %T /sys/fs/cgroup</code></pre></div>
+<p>If Docker is installed:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker run --rm alpine sh -c &#x27;
+  echo &quot;PID: $$&quot;
+  cat /proc/self/status | grep -E &quot;Pid|NSpid&quot;
+  ls /
+&#x27;</code></pre></div>
+<p><strong>Interview questions</strong></p>
+<ul><li>Why can a process have different PIDs in different namespaces?</li><li>Why are namespaces alone insufficient for container security?</li><li>How does cgroups v2 enforce memory and CPU constraints?</li><li>Why is <code>chroot</code> not equivalent to a container?</li></ul>
+<p>Answers: namespaces provide different resource views; cgroups account for and constrain resources; <code>chroot</code> only changes a process&#x27;s apparent root and is not complete isolation.</p>
+<p>References: Linux namespaces, cgroups v2.</p>
+<h1>Lesson 2 — Docker Engine internals</h1>
+<h2>2.1 Architecture</h2>
+<p>Docker is not one executable that directly implements every container operation. It has client, daemon, image, networking, storage, and runtime components.</p>
+<p><strong>Docker CLI</strong></p>
+<p><code>docker run</code>, <code>docker build</code>, <code>docker inspect</code></p>
+<p><strong>Docker API and daemon (<code>dockerd</code>)</strong></p>
+<p><strong>containerd</strong></p>
+<p>Container lifecycle and tasks</p>
+<p><strong>OCI runtime, commonly runc</strong></p>
+<p>Configures and starts the container process</p>
+<p><strong>Linux kernel</strong></p>
+<p>This is a simplified common architecture; exact call paths depend on versions and runtime configuration.</p>
+<ul><li><strong>Docker CLI:</strong> sends requests through the Docker API.</li><li><strong>dockerd:</strong> coordinates Docker&#x27;s higher-level operations.</li><li><strong>containerd:</strong> manages container lifecycle and execution tasks.</li><li><strong>runc:</strong> implements the OCI runtime interface for creating and starting containers.</li><li><strong>OCI:</strong> defines interoperable specifications for container images and runtime bundles.</li></ul>
+<p>The kernel ultimately enforces process isolation, scheduling, memory management, networking, and filesystem operations.</p>
+<h2>2.2 Trace <code>docker run</code></h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker run --rm -p 8080:80 nginx</code></pre></div>
+<p>Typical stages:</p>
+<ol><li>Resolve the image and pull it if needed.</li><li>Prepare the root filesystem.</li><li>Configure isolation, resource controls, and security.</li><li>Configure the network and host port publishing.</li><li>Start the application process.</li><li>Track its lifecycle and exit status.</li><li>Remove the container when it exits because <code>--rm</code> was specified.</li></ol>
+<h3>Lab</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker version
+docker info
+docker run -d --name nginx-lab -p 8080:80 nginx
+docker inspect nginx-lab
+docker top nginx-lab
+docker logs nginx-lab
+curl -I http://localhost:8080
+docker stop nginx-lab
+docker rm nginx-lab</code></pre></div>
+<h3>Interview questions</h3>
+<p><strong>What is the difference between containerd and runc?</strong></p>
+<p>containerd manages higher-level container lifecycle and execution tasks. runc is an OCI runtime commonly invoked to create and start an individual container process environment.</p>
+<p><strong>Does Docker itself implement namespaces?</strong></p>
+<p>Docker orchestrates their configuration through the runtime and Linux kernel interfaces; the kernel implements the underlying namespace mechanisms.</p>
+<p><strong>What happens if the Docker CLI exits?</strong></p>
+<p>The daemon-managed container normally continues running. The CLI is a client, not the process supervising the container&#x27;s entire lifetime.</p>
+<p>Reference: Docker Engine, OCI Runtime Specification.</p>
+<h1>Lesson 3 — Images, layers, and registries</h1>
+<h2>3.1 Image versus container</h2>
+<p>An image is a reusable template. A container is a runtime instance of that template.</p>
+<p>Images commonly consist of filesystem layers, configuration metadata, and a manifest that describes their contents.</p>
+<h3>Illustrative image layers</h3>
+<p><strong>Application layer</strong></p>
+<p>Application binary and files</p>
+<p><strong>Dependencies layer</strong></p>
+<p>Libraries and runtime</p>
+<p><strong>Base filesystem</strong></p>
+<p>Distribution files</p>
+<p>Layers are content-addressed and can be reused across images when their content matches.</p>
+<p>Important concepts:</p>
+<ul><li><strong>Layer:</strong> filesystem changes represented as part of an image.</li><li><strong>Manifest:</strong> describes an image&#x27;s configuration and layers.</li><li><strong>Digest:</strong> cryptographic content identifier, commonly SHA-256.</li><li><strong>Tag:</strong> human-readable reference that can be moved to point to different image content.</li><li><strong>Registry:</strong> stores and distributes images.</li><li><strong>Writable layer:</strong> captures runtime filesystem changes separately from the underlying image layers in common storage configurations.</li></ul>
+<p>A tag such as <code>nginx:latest</code> is not immutable. A digest identifies specific content.</p>
+<h2>3.2 Commands to master</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker pull alpine
+docker image ls
+docker image inspect alpine
+docker history alpine
+docker image inspect alpine --format &#x27;{{json .RootFS.Layers}}&#x27;
+docker image save alpine -o alpine.tar
+docker image load -i alpine.tar</code></pre></div>
+<p>For registry operations:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker login
+docker tag myapp:latest registry.example.com/team/myapp:v1
+docker push registry.example.com/team/myapp:v1</code></pre></div>
+<p>The registry URL and credentials must be replaced with real values for your environment.</p>
+<h2>3.3 Image distribution</h2>
+<p>At a high level:</p>
+<ol><li>The client resolves a tag or digest to an image manifest.</li><li>The registry returns manifest metadata.</li><li>The client downloads required configuration and layers.</li><li>Content is verified against the relevant digests.</li><li>The engine stores image content and makes it available for container creation.</li></ol>
+<p>Modern registries can use different manifest formats and multi-platform indexes.</p>
+<h3>Interview questions</h3>
+<p><strong>Why are image layers useful?</strong></p>
+<p>They permit reuse of common content, reduce repeated downloads, and enable build caching. Poor layer ordering can invalidate expensive downstream work.</p>
+<p><strong>Why deploy by digest?</strong></p>
+<p>A digest identifies exact image content, reducing ambiguity caused by mutable tags. For stronger supply-chain guarantees, also verify signatures, provenance, and policy.</p>
+<p><strong>Does deleting a container delete its image?</strong></p>
+<p>No. Container lifecycle and image lifecycle are separate. Image cleanup is a separate operation, and content can be shared with other images.</p>
+<p>Reference: Docker image documentation.</p>
+<h1>Lesson 4 — Dockerfile, BuildKit, and efficient builds</h1>
+<h2>4.1 Dockerfile instructions</h2>
+<pre class="diagram"><code>+--------------+-----------------------------------------------------------------------+
+| Instruction  | Purpose                                                               |
++--------------+-----------------------------------------------------------------------+
+| `FROM`       | Selects the base image                                                |
+| `WORKDIR`    | Sets the working directory                                            |
+| `COPY`       | Copies build-context files                                            |
+| `RUN`        | Executes a command during image construction                          |
+| `ENV`        | Sets environment defaults                                             |
+| `ARG`        | Defines build-time arguments                                          |
+| `USER`       | Sets the user for subsequent operations and default runtime execution |
+| `EXPOSE`     | Documents an intended listening port                                  |
+| `ENTRYPOINT` | Defines the executable                                                |
+| `CMD`        | Supplies default command or arguments                                 |
++--------------+-----------------------------------------------------------------------+</code></pre>
+<p><code>EXPOSE</code> does not publish a host port. <code>RUN</code> executes during the build, whereas <code>CMD</code> defines a default command or arguments for container execution.</p>
+<h2>4.2 Build a Node.js application</h2>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>FROM node:22-bookworm-slim AS build
+
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci
+
+COPY . .
+RUN npm run build
+
+FROM node:22-bookworm-slim AS runtime
+
+ENV NODE_ENV=production
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm ci --omit=dev &amp;&amp; npm cache clean --force
+
+COPY --from=build /app/dist ./dist
+
+USER node
+EXPOSE 3000
+CMD [&quot;node&quot;, &quot;dist/server.js&quot;]</code></pre></div>
+<p>This is illustrative. It assumes the project has a <code>package-lock.json</code>, a <code>build</code> script, a <code>dist/server.js</code> output, and no additional runtime assets or native dependencies requiring special handling.</p>
+<p>A production implementation should also account for signal handling, dependency reproducibility, image provenance, health checks, and a suitable base-image patching policy.</p>
+<p>Create <code>.dockerignore</code>:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>node_modules
+.git
+.env
+coverage
+dist</code></pre></div>
+<p>Adjust it if <code>dist</code> is required from the host rather than generated during the build.</p>
+<h2>4.3 Build cache</h2>
+<p>BuildKit represents builds as a dependency graph and can parallelize independent work. Build cache reuse depends on the relevant inputs and instruction semantics.</p>
+<p>A common optimization is:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>COPY package*.json ./
+RUN npm ci
+COPY . .</code></pre></div>
+<p>This allows dependency installation to remain cached when only application source files change, provided the relevant dependency inputs remain unchanged.</p>
+<p>Compare with:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>COPY . .
+RUN npm ci</code></pre></div>
+<p>Here, unrelated source changes can invalidate the dependency-installation step.</p>
+<h3>Build and inspect</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker build -t myapp:dev .
+docker image history myapp:dev
+docker build --no-cache -t myapp:clean .</code></pre></div>
+<h3>Interview questions</h3>
+<ul><li>What invalidates a build cache?</li><li>How does BuildKit differ from the traditional builder?</li><li>Why use multi-stage builds?</li><li>What is the difference between <code>ARG</code> and <code>ENV</code>?</li><li>Why should credentials not be passed through ordinary Dockerfile arguments or baked into image layers?</li></ul>
+<p><strong>Expected depth:</strong> Explain dependency graphs, cache keys, build-context size, layer reuse, secret mounts, and reproducible dependencies.</p>
+<p>References: BuildKit, Build cache, Multi-stage builds.</p>
+<h1>Lesson 5 — Container lifecycle, PID 1, and signals</h1>
+<h2>5.1 Lifecycle</h2>
+<p>A typical container progresses through states such as created, running, and stopped. Docker also reports restarting, paused, and other states depending on the situation.</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker create --name lifecycle alpine sleep 300
+docker start lifecycle
+docker inspect lifecycle --format &#x27;{{.State.Status}}&#x27;
+docker stop lifecycle
+docker inspect lifecycle --format &#x27;{{.State.Status}} {{.State.ExitCode}}&#x27;
+docker rm lifecycle</code></pre></div>
+<p>A container can stop because its main process exits, fails, is killed, or encounters an execution error.</p>
+<h2>5.2 PID 1</h2>
+<p>The initial process in a PID namespace has special responsibilities:</p>
+<ul><li>It is the namespace&#x27;s initial process.</li><li>It can adopt orphaned processes.</li><li>It has special signal semantics.</li><li>Its exit triggers termination of the remaining processes in that PID namespace.</li></ul>
+<p>Applications should handle termination signals correctly. Shell wrappers that do not use <code>exec</code> can interfere with signal delivery to the actual application.</p>
+<p>Prefer:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>CMD [&quot;node&quot;, &quot;dist/server.js&quot;]</code></pre></div>
+<p>When a shell wrapper is required:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>#!/bin/sh
+set -eu
+
+# Initialization steps
+exec &quot;$@&quot;</code></pre></div>
+<p>The <code>exec</code> replaces the shell process with the application.</p>
+<h2>5.3 Stop versus kill</h2>
+<ul><li><code>docker stop</code> normally sends the configured stop signal, waits for a grace period, then sends <code>SIGKILL</code> if the process remains.</li><li><code>docker kill</code> sends a signal immediately; the default is <code>SIGKILL</code>.</li><li><code>docker rm</code> removes a stopped container&#x27;s metadata and writable container state.</li></ul>
+<p>A restart policy can restart containers after certain exits, but it does not repair the underlying failure.</p>
+<h3>Debugging lab</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker run -d --name signal-lab alpine sleep 300
+docker inspect signal-lab
+docker stop -t 5 signal-lab
+docker inspect signal-lab --format &#x27;{{.State.ExitCode}}&#x27;
+docker rm signal-lab</code></pre></div>
+<h3>Interview questions</h3>
+<ul><li>Why does PID 1 matter?</li><li>Why might a process ignore <code>SIGTERM</code>?</li><li>Why can exit code 137 indicate <code>SIGKILL</code> without proving an OOM kill?</li><li>How do you design a containerized service for graceful shutdown?</li></ul>
+<h1>Lesson 6 — Docker networking internals</h1>
+<h2>6.1 The Linux networking model</h2>
+<p>On a typical Linux Docker host, bridge networking can involve:</p>
+<ul><li>A network namespace for the container.</li><li>A virtual Ethernet pair (veth) connecting the container namespace to the host.</li><li>A Linux bridge connecting container interfaces.</li><li>IP routing and firewall/NAT rules for external connectivity and published ports.</li><li>DNS configuration and service discovery.</li></ul>
+<p><strong>Host application / external client</strong></p>
+<p><strong>Host network namespace</strong></p>
+<p>Routes · firewall · NAT · Docker bridge</p>
+<p><strong>veth A</strong></p>
+<p>Container A interface</p>
+<p>Network namespace A</p>
+<p><strong>veth B</strong></p>
+<p>Container B interface</p>
+<p>Network namespace B</p>
+<p>This is a simplified bridge-network architecture. Docker can also use host networking, overlay networking, macvlan, and other drivers. Docker Desktop adds another layer because containers generally run inside a Linux VM.</p>
+<h2>6.2 Network modes</h2>
+<pre class="diagram"><code>+---------+---------------------------------------------------------------------------------+
+| Mode    | Behavior                                                                        |
++---------+---------------------------------------------------------------------------------+
+| Bridge  | Container uses an isolated network connected through a Linux bridge             |
+| Host    | Container shares the host&#x27;s network namespace on supported Linux configurations |
+| None    | No ordinary external container network is configured                            |
+| Overlay | Connects workloads across hosts through an overlay network implementation       |
+| Macvlan | Gives containers interfaces with distinct MAC addresses on a physical network   |
++---------+---------------------------------------------------------------------------------+</code></pre>
+<h2>6.3 Hands-on lab</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker network ls
+docker network inspect bridge
+
+docker network create app-net
+
+docker run -d --name web --network app-net nginx
+docker run --rm --network app-net alpine \
+  wget -qO- http://web
+
+docker network inspect app-net
+docker rm -f web
+docker network rm app-net</code></pre></div>
+<p>The Alpine request should return the Nginx response if the containers can resolve one another and communicate normally.</p>
+<p>Inspect Linux networking:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>ip addr
+ip route
+ip link
+ss -lntp</code></pre></div>
+<p>For packet-level debugging, learn <code>tcpdump</code>, <code>ip netns</code>, <code>conntrack</code>, and <code>nft</code> or <code>iptables</code>, as available on your host.</p>
+<h2>6.4 Production debugging method</h2>
+<p>If a service is unreachable, test each layer:</p>
+<ol><li>Is the application listening on the expected address and port?</li><li>Does the container have the expected IP and route?</li><li>Can another container resolve the service name?</li><li>Can the client reach the destination IP and port?</li><li>Is the host port published?</li><li>Are firewall rules, routing, MTU, or connection tracking causing the failure?</li></ol>
+<p>Common trap: an application listening only on <code>127.0.0.1</code> inside its container is not ordinarily reachable through the container&#x27;s external interface. A service intended for container-to-container access typically needs to listen on the appropriate interface, often <code>0.0.0.0</code>.</p>
+<h3>Interview questions</h3>
+<ul><li>Explain the packet path from a host client to a container&#x27;s published port.</li><li>What is the difference between a bridge and a veth pair?</li><li>Why does <code>localhost</code> inside a container not mean the Docker host?</li><li>How would you diagnose intermittent DNS failures?</li><li>How does Docker Desktop networking differ from native Linux Docker?</li></ul>
+<p>Reference: Docker networking.</p>
+<h1>Lesson 7 — Storage, OverlayFS, and persistence</h1>
+<h2>7.1 Image layers versus writable layers</h2>
+<p>In a common Linux installation using OverlayFS, image layers are read-only lower layers, and a container&#x27;s changes are recorded in an upper writable layer.</p>
+<p>OverlayFS presents a merged filesystem view. When a file from a lower layer is modified, copy-up behavior can place a writable copy in the upper layer.</p>
+<p>This can be convenient, but it has performance and storage implications.</p>
+<p>A container&#x27;s writable layer is not a substitute for a durable data-management strategy.</p>
+<h2>7.2 Storage types</h2>
+<pre class="diagram"><code>+--------------------------+-------------------------------------------------------------+
+| Type                     | Best suited for                                             |
++--------------------------+-------------------------------------------------------------+
+| Writable container layer | Ephemeral application changes                               |
+| Named volume             | Persistent container data managed by Docker                 |
+| Bind mount               | Sharing an explicit host path                               |
+| `tmpfs` mount            | Temporary in-memory files on supported Linux configurations |
++--------------------------+-------------------------------------------------------------+</code></pre>
+<h3>Hands-on lab</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker volume create db-data
+
+docker run -d --name db-lab \
+  -e POSTGRES_PASSWORD=example \
+  -v db-data:/var/lib/postgresql/data \
+  postgres:17
+
+docker inspect db-lab
+docker volume inspect db-data
+docker stop db-lab
+docker rm db-lab</code></pre></div>
+<p>For a disposable learning environment, use a non-production password and do not expose the database port.</p>
+<p>Recreate the container using the same volume:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker run -d --name db-lab \
+  -e POSTGRES_PASSWORD=example \
+  -v db-data:/var/lib/postgresql/data \
+  postgres:17</code></pre></div>
+<p>Data in the volume should survive removal of the original container. A volume alone, however, is not a backup.</p>
+<p>Clean up the lab:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker rm -f db-lab
+docker volume rm db-data</code></pre></div>
+<h2>7.3 Production failure scenarios</h2>
+<p><strong>Scenario A: Disk fills up</strong></p>
+<p>Investigate:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker system df -v
+docker ps -a
+docker inspect &lt;container_name&gt;
+df -h
+df -i</code></pre></div>
+<p>Check both byte capacity and inode exhaustion. Review logs, writable layers, volumes, and the container runtime&#x27;s storage directory.</p>
+<p><strong>Scenario B: Database loses data after recreation</strong></p>
+<p>Check whether the database stored data in its writable container layer instead of a persistent volume. Verify the mount destination and actual database data directory.</p>
+<p><strong>Scenario C: Unexpectedly slow filesystem writes</strong></p>
+<p>Investigate underlying disk latency, write amplification, page cache behavior, OverlayFS copy-up, bind mounts, and volume storage characteristics.</p>
+<h3>Interview questions</h3>
+<ul><li>What is the difference between a volume and a bind mount?</li><li>Explain OverlayFS lower, upper, and merged directories.</li><li>Why can large writes to a container&#x27;s writable layer be problematic?</li><li>Why does removing a container not normally remove its named volumes?</li><li>What is the difference between persistence and backup?</li></ul>
+<p>References: Docker storage, Linux OverlayFS.</p>
+<h1>Lesson 8 — CPU, memory, and performance</h1>
+<h2>8.1 CPU controls</h2>
+<p>On Linux, the cgroup CPU controller can restrict a workload&#x27;s CPU bandwidth.</p>
+<p>For cgroups v2, <code>cpu.max</code> commonly contains a quota and period:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>50000 100000</code></pre></div>
+<p>This example represents 50,000 microseconds of CPU time per 100,000-microsecond period, equivalent to 0.5 CPU of sustained bandwidth.</p>
+<p>That does not guarantee a dedicated half-core assignment. It is a bandwidth limit.</p>
+<p>Create a test container:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker run -d --name cpu-lab \
+  --cpus=0.5 alpine sleep 600
+
+docker stats cpu-lab
+docker inspect cpu-lab</code></pre></div>
+<p>Clean up:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker rm -f cpu-lab</code></pre></div>
+<h2>8.2 Memory controls</h2>
+<p>Memory usage and memory limits are different quantities. A container can be under its memory limit while using substantial page cache, or it can encounter memory pressure before the host runs out of all available memory.</p>
+<p>The cgroups v2 memory controller can expose files such as:</p>
+<ul><li><code>memory.current</code></li><li><code>memory.max</code></li><li><code>memory.events</code></li><li><code>memory.stat</code></li></ul>
+<p>Their exact location depends on the container&#x27;s cgroup membership and the host&#x27;s cgroup mount.</p>
+<h2>8.3 OOM debugging</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker inspect &lt;container_name&gt; \
+  --format &#x27;{{.State.OOMKilled}} {{.State.ExitCode}}&#x27;
+
+docker stats
+journalctl -k</code></pre></div>
+<p>Kernel log access may require elevated permissions. On production systems, also check the container platform&#x27;s events and monitoring.</p>
+<p>An exit code of 137 alone does not establish that the kernel OOM killer was responsible.</p>
+<h2>8.4 Performance methodology</h2>
+<p>When a container becomes slow:</p>
+<ol><li>Establish a baseline and reproduce the problem.</li><li>Check CPU utilization and throttling.</li><li>Check memory usage, reclaim, and OOM events.</li><li>Check filesystem and network latency.</li><li>Inspect application-level queueing and thread or connection pools.</li><li>Change one variable at a time.</li><li>Compare measurements after the change.</li></ol>
+<h3>Interview questions</h3>
+<ul><li>Why can CPU throttling increase tail latency?</li><li>How do you distinguish an application memory leak from a cgroup memory limit?</li><li>What evidence confirms an OOM kill?</li><li>What is the difference between a CPU limit and CPU weight?</li><li>How can page cache affect observed memory usage?</li></ul>
+<p>References: Cgroups v2, Docker resource constraints.</p>
+<h1>Lesson 9 — Docker security</h1>
+<p>Security should be treated as a set of independent controls, not as a property automatically provided by using containers.</p>
+<h2>9.1 The main attack surfaces</h2>
+<ul><li>Container processes running with unnecessary privileges.</li><li>The Docker daemon and access to its control socket.</li><li>Dangerous bind mounts, especially sensitive host paths.</li><li>Exposed secrets and credentials in images.</li><li>Vulnerable base images and application dependencies.</li><li>Excessive Linux capabilities.</li><li>Kernel vulnerabilities affecting shared-kernel isolation.</li><li>Insecure image provenance and registry credentials.</li></ul>
+<p>Access to a rootful Docker daemon is particularly sensitive: a user who can control that daemon can often obtain root-level control over the host.</p>
+<h2>9.2 Hardening checklist</h2>
+<pre class="diagram"><code>+--------------------------------------------+--------------------------------------------------------------------+
+| Control                                    | Purpose                                                            |
++--------------------------------------------+--------------------------------------------------------------------+
+| Non-root user                              | Reduce process privileges                                          |
+| Drop capabilities                          | Remove unnecessary privileged operations                           |
+| Seccomp                                    | Restrict system calls                                              |
+| AppArmor or SELinux                        | Apply additional access-control policies                           |
+| Read-only root filesystem                  | Prevent unintended filesystem writes                               |
+| Resource limits                            | Reduce resource-exhaustion risk                                    |
+| Secret mounts or external secret managers  | Avoid baking secrets into images                                   |
+| Image scanning and patching                | Identify and remediate known vulnerabilities                       |
+| Digest pinning and provenance verification | Improve artifact integrity and traceability                        |
+| Rootless mode                              | Reduce daemon and container privileges in supported configurations |
++--------------------------------------------+--------------------------------------------------------------------+</code></pre>
+<h2>9.3 Example of a hardened container</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker run --rm \
+  --user 10001:10001 \
+  --cap-drop=ALL \
+  --security-opt=no-new-privileges:true \
+  --read-only \
+  --tmpfs /tmp:rw,noexec,nosuid,size=16m \
+  --memory=256m \
+  --cpus=1 \
+  alpine id</code></pre></div>
+<p>This is a demonstration, not a universal production command. Some applications require specific capabilities, writable paths, or additional permissions. Validate compatibility before enforcing these controls.</p>
+<h2>9.4 Security interview questions</h2>
+<ul><li>What risks arise from mounting <code>/var/run/docker.sock</code> inside a container?</li><li>What is the difference between root inside a user namespace and root on the host?</li><li>What are Linux capabilities?</li><li>What does <code>no-new-privileges</code> prevent?</li><li>What is the difference between vulnerability scanning and image-signature verification?</li><li>When would you choose a VM instead of a container for an untrusted workload?</li></ul>
+<p>Reference: Docker security.</p>
+<h1>Lesson 10 — Docker Compose and multi-service applications</h1>
+<h2>10.1 Why Compose exists</h2>
+<p>A real application often consists of multiple services:</p>
+<ul><li>An API server.</li><li>A database.</li><li>A cache.</li><li>A worker.</li><li>A message broker.</li></ul>
+<p>Docker Compose lets you describe and operate this collection using a declarative YAML configuration.</p>
+<h3>Example: API, PostgreSQL, and Redis</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>services:
+  api:
+    build: .
+    ports:
+      - &quot;8080:8080&quot;
+    environment:
+      DATABASE_URL: postgres://app:devpassword@db:5432/app
+      REDIS_HOST: redis
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: devpassword
+      POSTGRES_DB: app
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: [&quot;CMD-SHELL&quot;, &quot;pg_isready -U app -d app&quot;]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  redis:
+    image: redis:7
+    healthcheck:
+      test: [&quot;CMD&quot;, &quot;redis-cli&quot;, &quot;ping&quot;]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  postgres-data:</code></pre></div>
+<p>This example uses development credentials. For production, do not hardcode credentials in a Compose file committed to source control.</p>
+<p>The example assumes the application listens on port 8080 and understands the configured environment variables.</p>
+<h2>10.2 Commands</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker compose config
+docker compose up -d --build
+docker compose ps
+docker compose logs -f api
+docker compose exec api sh
+docker compose down</code></pre></div>
+<p><code>docker compose down -v</code> additionally removes the Compose-managed named volumes. Avoid it when the data needs to persist.</p>
+<h2>10.3 Dependency versus readiness</h2>
+<p><code>depends_on</code> can express startup dependencies. With a health-check condition, Compose can wait for the dependency to become healthy before starting the dependent service.</p>
+<p>However, this does not remove the need for application-level resilience. A database can become unavailable after startup. Applications should implement connection retries, bounded timeouts, reconnection behavior, and graceful failure handling.</p>
+<h3>Interview questions</h3>
+<ul><li>Why should applications not use container IP addresses as permanent identities?</li><li>What is the difference between service startup and readiness?</li><li>How do you handle database failure after the API has started?</li><li>How would you prevent connection storms after a dependency recovers?</li><li>When would you use Compose instead of Kubernetes?</li></ul>
+<p>Reference: Docker Compose.</p>
+<h1>Lesson 11 — Production operations</h1>
+<p>This lesson focuses on what you would do when a containerized service fails in production.</p>
+<h2>11.1 Essential operational commands</h2>
+<pre class="diagram"><code>+------------------------+----------------------------------------------------------+
+| Command                | What to investigate                                      |
++------------------------+----------------------------------------------------------+
+| `docker ps -a`         | Running and stopped containers                           |
+| `docker inspect`       | State, configuration, mounts, network, resource settings |
+| `docker logs`          | Application output                                       |
+| `docker stats`         | Resource usage                                           |
+| `docker events`        | Runtime lifecycle events                                 |
+| `docker top`           | Processes visible in the container                       |
+| `docker exec`          | Run a diagnostic process in a running container          |
+| `docker system df -v`  | Docker-managed disk usage                                |
+| `journalctl -u docker` | Docker daemon logs on applicable systemd installations   |
++------------------------+----------------------------------------------------------+</code></pre>
+<p>Do not assume <code>docker exec</code> is available when a container has already exited. In that case, inspect logs, metadata, exit status, and reproduce the issue with a diagnostic configuration.</p>
+<h2>11.2 Health checks</h2>
+<p>A container can be running while its application is unusable. Health checks help distinguish process existence from application health.</p>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>HEALTHCHECK --interval=30s --timeout=3s \
+  --start-period=20s --retries=3 \
+  CMD curl -fsS http://localhost:8080/health || exit 1</code></pre></div>
+<p>This example assumes <code>curl</code> exists in the image and the application exposes that endpoint.</p>
+<p>Health status does not automatically mean Docker will restart an unhealthy container. Restart policies and orchestration behavior are separate concerns.</p>
+<h2>11.3 Graceful shutdown</h2>
+<p>A robust service should:</p>
+<ol><li>Receive the configured termination signal.</li><li>Stop accepting new work.</li><li>Finish or cancel in-flight requests within a deadline.</li><li>Close database and broker connections.</li><li>Flush critical telemetry.</li><li>Exit before the termination grace period expires.</li></ol>
+<h3>Incident simulation</h3>
+<p><strong>Incident:</strong> API latency spikes after a deployment, and some containers restart.</p>
+<p>Investigate in this order:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker ps -a
+docker inspect &lt;container&gt;
+docker logs --since 30m &lt;container&gt;
+docker stats
+docker events</code></pre></div>
+<p>Then correlate the deployment time with resource usage, application errors, dependency latency, health-check failures, and exit reasons.</p>
+<p>Do not immediately increase memory limits or restart every container. First establish whether the failure is caused by a resource constraint, a regression, a dependency outage, or an incorrect health check.</p>
+<h3>Interview questions</h3>
+<ul><li>How would you investigate a restart loop?</li><li>What should a health endpoint test?</li><li>How would you distinguish liveness from readiness?</li><li>How would you roll out a new image without causing an outage?</li><li>What metrics would you collect from a container platform?</li></ul>
+<h1>Lesson 12 — Kubernetes and the container runtime ecosystem</h1>
+<p>You do not need to become a Kubernetes expert to master Docker, but an IC4 engineer should understand where Docker ends and orchestration begins.</p>
+<h2>12.1 The distinction</h2>
+<ul><li><strong>Docker Engine:</strong> builds images and manages containers on a host.</li><li><strong>containerd:</strong> provides container lifecycle and execution functionality.</li><li><strong>OCI runtime:</strong> creates and starts container processes.</li><li><strong>Kubernetes:</strong> orchestrates workloads across a cluster, including scheduling, service discovery, rollout management, and recovery.</li></ul>
+<p>Modern Kubernetes deployments generally use a CRI-compatible runtime such as containerd. Docker Engine is not the default direct runtime interface in modern Kubernetes; the old built-in dockershim was removed in Kubernetes 1.24. Docker-built images can still be used by compatible OCI image runtimes.</p>
+<h2>12.2 Kubernetes architecture</h2>
+<p><strong>Control plane</strong></p>
+<p>API server · scheduler · controllers · state store</p>
+<p><strong>Worker node A</strong></p>
+<p>kubelet</p>
+<p>container runtime</p>
+<p>Pods</p>
+<p><strong>Worker node B</strong></p>
+<p>kubelet</p>
+<p>container runtime</p>
+<p>Pods</p>
+<p>Kubernetes schedules Pods rather than directly scheduling Docker containers. A Pod can contain multiple containers sharing certain resources, such as its network namespace.</p>
+<h2>12.3 Core objects to understand</h2>
+<pre class="diagram"><code>+-----------------------+-----------------------------------------------------------------------------------+
+| Object                | Responsibility                                                                    |
++-----------------------+-----------------------------------------------------------------------------------+
+| Pod                   | Smallest scheduled workload unit                                                  |
+| Deployment            | Manages replicated, stateless workloads and rollouts                              |
+| Service               | Stable network access to a group of workloads                                     |
+| ConfigMap             | Non-secret configuration                                                          |
+| Secret                | Sensitive configuration data, subject to cluster security and encryption settings |
+| PersistentVolumeClaim | Requests persistent storage                                                       |
+| DaemonSet             | Runs a workload on selected nodes                                                 |
+| Job / CronJob         | Runs finite or scheduled work                                                     |
++-----------------------+-----------------------------------------------------------------------------------+</code></pre>
+<h3>Interview questions</h3>
+<ul><li>Why use Kubernetes rather than Docker Compose for a multi-node production system?</li><li>What happens when a worker node fails?</li><li>What is the difference between a Pod and a container?</li><li>What role does the CRI play?</li><li>Why can a container image run in Kubernetes even if it was built with Docker?</li></ul>
+<p>Reference: Kubernetes container runtimes.</p>
+<h1>Lesson 13 — Advanced Linux debugging</h1>
+<p>This lesson connects Docker knowledge to operating-system debugging.</p>
+<h2>13.1 Tools to learn</h2>
+<pre class="diagram"><code>+--------------+----------------------------------------+
+| Tool         | Use                                    |
++--------------+----------------------------------------+
+| `strace`     | System-call tracing                    |
+| `lsof`       | Open files and sockets                 |
+| `ss`         | Socket inspection                      |
+| `ip`         | Network interfaces and routing         |
+| `tcpdump`    | Packet capture                         |
+| `nsenter`    | Enter selected namespaces of a process |
+| `unshare`    | Create namespaces for a process        |
+| `lsns`       | List namespaces                        |
+| `perf`       | Performance profiling                  |
+| `journalctl` | System and service logs                |
+| `findmnt`    | Mount inspection                       |
++--------------+----------------------------------------+</code></pre>
+<p>Some commands require elevated privileges. <code>perf</code>, <code>tcpdump</code>, and namespace operations may also be restricted by kernel configuration or security policy.</p>
+<h2>13.2 Trace application system calls</h2>
+<p>Install <code>strace</code> using your distribution&#x27;s package manager if necessary.</p>
+<p>For a running process:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>strace -f -p &lt;host_pid&gt;</code></pre></div>
+<p>To trace a new command:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>strace -f -o trace.log sh -c &#x27;cat /etc/hosts&#x27;</code></pre></div>
+<p>Look for failed system calls such as <code>EACCES</code>, <code>ENOENT</code>, and <code>ECONNREFUSED</code>. Interpret them in context: the same error can arise from different underlying causes.</p>
+<h2>13.3 Enter a container&#x27;s namespaces</h2>
+<p>On a native Linux Docker host, you can inspect the host PID:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>docker inspect \
+  --format &#x27;{{.State.Pid}}&#x27; &lt;container_name&gt;</code></pre></div>
+<p>Then, with suitable permissions:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>sudo nsenter -t &lt;host_pid&gt; -n ip addr
+sudo nsenter -t &lt;host_pid&gt; -n ip route
+sudo nsenter -t &lt;host_pid&gt; -m findmnt</code></pre></div>
+<p>These commands enter the target process&#x27;s network or mount namespace for inspection. They do not necessarily reproduce every aspect of the container&#x27;s original execution environment.</p>
+<p>On Docker Desktop, the container&#x27;s Linux host PID may belong to the Linux VM rather than your macOS or Windows host.</p>
+<h2>13.4 Debugging scenario</h2>
+<p><strong>A container cannot read a configuration file.</strong></p>
+<p>A systematic investigation:</p>
+<ol><li>Verify the file exists in the image or mounted path.</li><li>Inspect <code>docker inspect</code> for bind mounts and mount destinations.</li><li>Inspect file permissions and the effective container user.</li><li>Check mount flags and read-only settings.</li><li>Trace the failing operation with <code>strace</code> if necessary.</li><li>Consider SELinux or AppArmor denials where applicable.</li></ol>
+<h3>Interview questions</h3>
+<ul><li>When would you use <code>strace</code> rather than application logs?</li><li>How can a bind mount hide files already present in an image?</li><li>How do you inspect the network namespace of a running container?</li><li>How do you differentiate DNS failure from connection refusal?</li><li>What is the difference between a process being blocked on I/O and being CPU-throttled?</li></ul>
+<h1>Lesson 14 — IC4 system design: build a container platform</h1>
+<p>At IC4 level, you should be able to design a system, identify its failure modes, and justify its trade-offs. The goal is not merely to operate Docker but to understand the engineering decisions behind a container platform.</p>
+<h2>14.1 Design problem</h2>
+<p><strong>Design a platform that runs 10,000 containerized services across a fleet of Linux machines.</strong></p>
+<p>Assume the platform must support image deployment, resource isolation, service discovery, logging, recovery, and secure execution.</p>
+<h3>Architecture</h3>
+<p><strong>Developer / CI pipeline</strong></p>
+<p>Build · test · scan · sign</p>
+<p><strong>Image registry</strong></p>
+<p>Versioned artifacts · digests · provenance</p>
+<p><strong>Control plane</strong></p>
+<p>Scheduling · desired state · policy · rollout management</p>
+<p><strong>Worker pool A</strong></p>
+<p>Runtime agent</p>
+<p>Containers</p>
+<p>Telemetry</p>
+<p><strong>Worker pool B</strong></p>
+<p>Runtime agent</p>
+<p>Containers</p>
+<p>Telemetry</p>
+<p><strong>Observability and operations</strong></p>
+<p>Logs · metrics · traces · alerts · audit events</p>
+<h2>14.2 Core design decisions</h2>
+<p><strong>Scheduling:</strong> Place workloads based on CPU, memory, affinity, capacity, and failure-domain requirements. Avoid packing every workload onto one node.</p>
+<p><strong>Isolation:</strong> Apply namespace, cgroup, capability, syscall, and filesystem restrictions. Use stronger isolation, potentially including VMs, for workloads with a higher trust boundary requirement.</p>
+<p><strong>Image delivery:</strong> Build once, test the artifact, scan it, and deploy an immutable digest. Use caching and prefetching where they improve rollout performance.</p>
+<p><strong>Health and recovery:</strong> Distinguish a failed process from a failed node. Restart a failed workload when appropriate, but avoid infinite restart loops and synchronized retry storms.</p>
+<p><strong>Networking:</strong> Separate workload identity from transient IP addresses. Provide service discovery and policy enforcement.</p>
+<p><strong>Observability:</strong> Collect resource usage, restarts, scheduling failures, image-pull errors, application logs, and deployment events.</p>
+<p><strong>Capacity:</strong> Reserve resources for system processes and leave headroom for bursts, recovery, and node maintenance.</p>
+<h2>14.3 Capacity calculation</h2>
+<p>Suppose a worker node has 16 CPU cores and 64 GiB RAM. You reserve 2 cores and 8 GiB for system overhead, leaving 14 cores and 56 GiB for workload allocation.</p>
+<p>If every workload requests 0.5 CPU and 1 GiB RAM:</p>
+<ul><li>CPU capacity: 14/0.5=2814 / 0.5 = 2814/0.5=28 workloads.</li><li>Memory capacity: 56/1=5656 / 1 = 5656/1=56 workloads.</li></ul>
+<p>The CPU request is the limiting factor, so the theoretical maximum is 28 workloads per node before accounting for other constraints. Real capacity should be lower when you need operational headroom or have additional workload requirements.</p>
+<p>This illustrates why resource allocation is not simply a count of how many containers can be started.</p>
+<h2>14.4 System-design interview questions</h2>
+<ol><li>How would you isolate untrusted customer workloads?</li><li>How would you prevent a noisy neighbor from exhausting node resources?</li><li>What happens when the registry is unavailable during a rollout?</li><li>How do you deploy a new image without interrupting traffic?</li><li>How would you recover from a control-plane outage?</li><li>How do you avoid a thundering herd when many containers restart?</li><li>How would you support multiple architectures, such as ARM64 and AMD64?</li><li>When would you choose VMs, containers, or both?</li></ol>
+<p>For every answer, cover the design, alternatives, failure modes, security implications, and how you would verify that it works.</p>
+<h1>Lesson 15 — Interview preparation and capstone project</h1>
+<h2>15.1 Build a production-style containerized service</h2>
+<p>Use a backend you understand well. A small Node.js API, Spring Boot service, or C/C++ HTTP service would all work.</p>
+<p>Implement these requirements:</p>
+<h3>Capstone checklist</h3>
+<p>0/10</p>
+<p><strong>Container image</strong></p>
+<p>Use a multi-stage build, non-root user, and a minimal suitable runtime image.</p>
+<p><strong>Configuration</strong></p>
+<p>Supply environment-specific configuration at runtime; keep secrets out of image layers.</p>
+<p><strong>Health and shutdown</strong></p>
+<p>Implement health checks and graceful termination.</p>
+<p><strong>Resource controls</strong></p>
+<p>Apply CPU and memory limits and observe their effects.</p>
+<p><strong>Persistence</strong></p>
+<p>Use a named volume if the service stores data that must survive container recreation.</p>
+<p><strong>Networking</strong></p>
+<p>Run the API with a database and cache on a dedicated network.</p>
+<p><strong>Observability</strong></p>
+<p>Capture logs, inspect metrics, and record failure information.</p>
+<p><strong>Security</strong></p>
+<p>Drop unnecessary capabilities and evaluate read-only filesystem compatibility.</p>
+<p><strong>CI</strong></p>
+<p>Build, test, scan, and publish a versioned image.</p>
+<p><strong>Failure testing</strong></p>
+<p>Test dependency outages, container restarts, disk pressure, and memory exhaustion.</p>
+<p>Do not just demonstrate that the application starts. Document why you chose each configuration and how you diagnosed each failure.</p>
+<h2>15.2 Advanced interview question bank</h2>
+<p>Use these as practice prompts. The key points are included so you can evaluate your answers.</p>
+<p><strong>1. How would you debug a container that repeatedly exits?</strong></p>
+<p><strong>2. Why can a container be CPU-throttled while host CPU utilization is low?</strong></p>
+<p><strong>3. How would you investigate unexpected memory growth?</strong></p>
+<p><strong>4. Why might a Docker image work on AMD64 but fail on ARM64?</strong></p>
+<p><strong>5. What makes a Docker build reproducible?</strong></p>
+<p><strong>6. How do you protect secrets during image builds?</strong></p>
+<p><strong>7. How would you diagnose connection timeouts between containers?</strong></p>
+<p><strong>8. How would you implement a zero-downtime rollout?</strong></p>
+<p><strong>9. When would you use a VM instead of a container?</strong></p>
+<p><strong>10. How would you reduce image-pull latency across a large fleet?</strong></p>
+<p><strong>11. How would you debug a process that ignores termination?</strong></p>
+<p><strong>12. What is the risk of using the privileged flag?</strong></p>
+<h2>15.3 Final mastery test</h2>
+<p>You are ready to progress beyond this course when you can do the following without relying on memorized explanations:</p>
+<ul><li>Explain the difference between namespaces, cgroups, filesystem isolation, and runtime configuration.</li><li>Trace <code>docker run</code> from the CLI through the runtime to process creation.</li><li>Design efficient Dockerfiles and diagnose cache invalidation.</li><li>Debug container networking and persistent-storage failures.</li><li>Explain CPU throttling, memory pressure, and OOM evidence.</li><li>Harden an image and explain the remaining security risks.</li><li>Diagnose a production incident using logs, metrics, events, and Linux tools.</li><li>Defend container-platform design choices against alternative architectures.</li></ul>
+<h2>Recommended references</h2>
+<p><strong>Docker documentation</strong></p>
+<p>Core concepts, image builds, networking, storage, security, and Compose.</p>
+<p>docs.docker.com</p>
+<p><strong>Linux kernel documentation</strong></p>
+<p>Cgroups, OverlayFS, networking, and low-level behavior.</p>
+<p>docs.kernel.org</p>
+<p><strong>Open Container Initiative</strong></p>
+<p>Runtime and image specifications.</p>
+<p>opencontainers.org</p>
+<p><strong>Kubernetes documentation</strong></p>
+<p>Container runtimes, scheduling, Pods, and production orchestration.</p>
+<p>kubernetes.io/docs</p>
+<p><strong>Final recommendation:</strong> For an Apple IC4 interview, prioritize Lessons 1–9 and 13 first. They give you the Linux and Docker depth needed to reason through difficult debugging questions. Then use Lessons 10–12 and 14–15 to demonstrate production ownership, architecture judgment, and the ability to explain trade-offs. The exact emphasis will depend on the job description and interview loop.</p></div>
+    </article>
+  </main>
+</body>
+</html>

@@ -1,0 +1,2201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Part 5 · x-one</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+  <script src="../assets/copy.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar"><input type="checkbox" id="nav-toggle" class="nav-toggle"><div class="sidebar-brand"><a href="../index.html">x-one notes</a><label for="nav-toggle" class="menu-btn" aria-label="Toggle navigation"><span class="menu-open">Menu</span><span class="menu-close">Close</span></label></div><nav><details class="nav-group"><summary class="nav-group-label">cp<span class="nav-count">56</span></summary><ul><li><a href="../cp/0-1-bfs.html">0-1 BFS</a></li><li><a href="../cp/two-sat.html">2-SAT</a></li><li><a href="../cp/bfs-state-space.html">BFS on State Space</a></li><li><a href="../cp/binary-search.html">Binary Search (on Sorted Data)</a></li><li><a href="../cp/binary-search-on-answer.html">Binary Search on Answer</a></li><li><a href="../cp/bitmask-dp.html">Bitmask DP</a></li><li><a href="../cp/bridges-articulation-points.html">Bridges &amp; Articulation Points</a></li><li><a href="../cp/cdq-divide-conquer.html">CDQ Divide &amp; Conquer (Offline)</a></li><li><a href="../cp/centroid-decomposition.html">Centroid Decomposition</a></li><li><a href="../cp/convex-hull-trick-lichao.html">Convex Hull Trick &amp; Li Chao Tree</a></li><li><a href="../cp/coordinate-compression.html">Coordinate Compression</a></li><li><a href="../cp/difference-array.html">Difference Array</a></li><li><a href="../cp/digit-dp.html">Digit DP</a></li><li><a href="../cp/dijkstra.html">Dijkstra&#x27;s Algorithm</a></li><li><a href="../cp/dsu-on-tree.html">DSU on Tree (Small-to-Large)</a></li><li><a href="../cp/dp-1d.html">Dynamic Programming — 1D</a></li><li><a href="../cp/dp-2d-knapsack.html">Dynamic Programming — 2D &amp; Knapsack</a></li><li><a href="../cp/euler-tour-flattening.html">Euler Tour (Tree Flattening)</a></li><li><a href="../cp/fenwick-tree.html">Fenwick Tree (Binary Indexed Tree)</a></li><li><a href="../cp/flood-fill-multi-source-bfs.html">Flood Fill &amp; Multi-Source BFS</a></li><li><a href="../cp/floyd-warshall.html">Floyd-Warshall</a></li><li><a href="../cp/functional-graphs.html">Functional Graphs</a></li><li><a href="../cp/graph-bfs-dfs.html">Graph BFS &amp; DFS</a></li><li><a href="../cp/greedy.html">Greedy</a></li><li><a href="../cp/heavy-light-decomposition.html">Heavy-Light Decomposition (HLD)</a></li><li><a href="../cp/interval-dp.html">Interval DP</a></li><li><a href="../cp/kmp-pattern-matching.html">KMP Pattern Matching</a></li><li><a href="../cp/lca-binary-lifting.html">LCA (Binary Lifting)</a></li><li><a href="../cp/line-sweep.html">Line Sweep</a></li><li><a href="../cp/lis.html">Longest Increasing Subsequence (LIS)</a></li><li><a href="../cp/matrix-exponentiation.html">Matrix Exponentiation</a></li><li><a href="../cp/meet-in-the-middle.html">Meet in the Middle</a></li><li><a href="../cp/mos-algorithm.html">Mo&#x27;s Algorithm (Offline Queries)</a></li><li><a href="../cp/monotonic-queue.html">Monotonic Deque (Queue)</a></li><li><a href="../cp/monotonic-stack.html">Monotonic Stack</a></li><li><a href="../cp/mst-kruskal-prim.html">MST (Kruskal &amp; Prim)</a></li><li><a href="../cp/policy-based-data-structure.html">Policy-Based Data Structure</a></li><li><a href="../cp/prefix-sums.html">Prefix Sums</a></li><li><a href="../cp/priority-queue-tricks.html">Priority Queue Tricks</a></li><li><a href="../cp/rerooting-dp.html">Rerooting DP on Trees</a></li><li><a href="../cp/segment-tree.html">Segment Tree</a></li><li><a href="../cp/sliding-window.html">Sliding Window</a></li><li><a href="../cp/sorting-tricks.html">Sorting Tricks</a></li><li><a href="../cp/sparse-table-rmq.html">Sparse Table (RMQ)</a></li><li><a href="../cp/sprague-grundy.html">Sprague-Grundy (Game Theory)</a></li><li><a href="../cp/sqrt-decomposition.html">Square Root Decomposition</a></li><li><a href="../cp/string-hashing.html">String Hashing</a></li><li><a href="../cp/strongly-connected-components.html">Strongly Connected Components (SCC)</a></li><li><a href="../cp/topological-sort.html">Topological Sort</a></li><li><a href="../cp/tree-dfs.html">Tree DFS</a></li><li><a href="../cp/tree-difference-array.html">Tree Difference Array</a></li><li><a href="../cp/trie-and-xor-trie.html">Trie &amp; XOR Trie</a></li><li><a href="../cp/two-pointers.html">Two Pointers</a></li><li><a href="../cp/union-find-dsu.html">Union-Find (DSU)</a></li><li><a href="../cp/virtual-tree.html">Virtual Tree</a></li><li><a href="../cp/z-algorithm.html">Z-Algorithm</a></li></ul></details><details class="nav-group"><summary class="nav-group-label">docker<span class="nav-count">3</span></summary><ul><li><a href="../docker/start.html">Start</a></li><li><a href="../docker/compose.html">Compose</a></li><li><a href="../docker/swarm.html">Swarm</a></li></ul></details><details class="nav-group" open><summary class="nav-group-label">java<span class="nav-count">5</span></summary><ul><li><a href="../java/part-1.html">Part 1</a></li><li><a href="../java/part-2.html">Part 2</a></li><li><a href="../java/part-3.html">Part 3</a></li><li><a href="../java/part-4.html">Part 4</a></li><li><a href="../java/part-5.html" class="is-active" aria-current="page">Part 5</a></li></ul></details><details class="nav-group"><summary class="nav-group-label">math<span class="nav-count">34</span></summary><ul><li><a href="../math/bijection-counting.html">Bijection &amp; Counting Proofs</a></li><li><a href="../math/burnside-lemma.html">Burnside&#x27;s Lemma (Symmetry Counting)</a></li><li><a href="../math/catalan-numbers.html">Catalan Numbers</a></li><li><a href="../math/chinese-remainder-theorem.html">Chinese Remainder Theorem (CRT)</a></li><li><a href="../math/combinatorial-identities.html">Combinatorial Identities</a></li><li><a href="../math/combinatorics-ncr.html">Combinatorics — nCr &amp; Pascal</a></li><li><a href="../math/computational-geometry-basics.html">Computational Geometry Basics</a></li><li><a href="../math/derangements.html">Derangements</a></li><li><a href="../math/divisor-enumeration.html">Divisor Enumeration — O(√n)</a></li><li><a href="../math/divisor-functions.html">Divisor Functions (τ and σ)</a></li><li><a href="../math/euler-totient.html">Euler&#x27;s Totient φ(n)</a></li><li><a href="../math/expected-value-linearity.html">Expected Value — Linearity</a></li><li><a href="../math/fast-exponentiation.html">Fast Exponentiation</a></li><li><a href="../math/fermat-euler-theorem.html">Fermat&#x27;s &amp; Euler&#x27;s Theorems</a></li><li><a href="../math/floor-sum-trick.html">Floor Sum Trick — Σ⌊n/i⌋</a></li><li><a href="../math/gcd-lcm-extended-euclid.html">GCD, LCM &amp; Extended Euclidean</a></li><li><a href="../math/harmonic-bounds.html">Harmonic Bounds &amp; Estimates</a></li><li><a href="../math/inclusion-exclusion.html">Inclusion-Exclusion Principle</a></li><li><a href="../math/legendre-formula.html">Legendre&#x27;s Formula</a></li><li><a href="../math/linear-recurrences.html">Linear Recurrences</a></li><li><a href="../math/lucas-theorem.html">Lucas Theorem &amp; nCr mod prime</a></li><li><a href="../math/modular-arithmetic.html">Modular Arithmetic</a></li><li><a href="../math/modular-inverse-composite.html">Modular Inverse (Composite Modulus)</a></li><li><a href="../math/modular-inverse-fermat.html">Modular Inverse (Fermat)</a></li><li><a href="../math/multinomial-coefficients.html">Multinomial Coefficients</a></li><li><a href="../math/mobius-inversion.html">Möbius Inversion</a></li><li><a href="../math/parity-xor-patterns.html">Parity, XOR &amp; Modular Patterns</a></li><li><a href="../math/pigeonhole-counting.html">Pigeonhole &amp; Counting Arguments</a></li><li><a href="../math/probability-basics.html">Probability Basics</a></li><li><a href="../math/sieve-primes-factorization.html">Sieve, Primes &amp; Factorization</a></li><li><a href="../math/stars-and-bars.html">Stars and Bars</a></li><li><a href="../math/stirling-numbers.html">Stirling Numbers (2nd Kind)</a></li><li><a href="../math/sum-formulas-series.html">Sum Formulas &amp; Series</a></li><li><a href="../math/wilson-primality.html">Wilson&#x27;s Theorem &amp; Primality</a></li></ul></details><details class="nav-group"><summary class="nav-group-label">os<span class="nav-count">2</span></summary><ul><li><a href="../os/cpu.html">CPU</a></li><li><a href="../os/user-threads.html">User threads</a></li></ul></details></nav></aside>
+  <main class="chat">
+    <header class="page-head"><span class="crumb">java / part-5</span></header>
+    <article class="message user">
+      <div class="message-label">You</div>
+      <div class="message-body">week 5
+JVM internals + GC + JIT
+JVM lab
+
+give full details and concepts for this week</div>
+    </article>
+    <article class="message assistant">
+      <div class="message-label">Assistant</div>
+      <div class="message-body prose"><h1>Week 5 — JVM Internals + GC + JIT + JVM Lab</h1>
+<p>This week is about understanding <strong>what actually happens after you write Java code</strong>.</p>
+<p>For an IC4-level Java/backend interview, you should be able to go beyond:</p>
+<blockquote><p>“Java runs on the JVM and GC cleans memory.”</p></blockquote>
+<p>You should understand <strong>class loading → bytecode → runtime memory → execution → JIT compilation → garbage collection → GC tuning → production diagnosis</strong>.</p>
+<hr>
+<h1>1. Week 5 Learning Goals</h1>
+<p>By the end of this week, you should be comfortable explaining:</p>
+<h3>JVM fundamentals</h3>
+<ul><li>What the JVM actually does</li><li>JDK vs JRE vs JVM</li><li><code>.java → .class → JVM</code></li><li>Bytecode</li><li>Class loading</li><li>Linking</li><li>Initialization</li><li>Class loaders</li><li>JVM runtime data areas</li></ul>
+<h3>Memory</h3>
+<ul><li>Heap</li><li>Stack</li><li>Metaspace</li><li>Code Cache</li><li>Program Counter</li><li>Native Method Stack</li><li>Object allocation</li><li>Object headers</li><li>References</li><li>Escape analysis</li><li>Stack vs heap</li></ul>
+<h3>Garbage Collection</h3>
+<ul><li>Why GC exists</li><li>Reachability</li><li>GC roots</li><li>Mark/sweep/compact</li><li>Generational GC</li><li>Young vs Old generation</li><li>Minor/major/full GC</li><li>Stop-the-world</li><li>Safepoints</li><li>Promotion</li><li>Allocation failure</li></ul>
+<h3>Modern collectors</h3>
+<ul><li>Serial GC</li><li>Parallel GC</li><li>G1</li><li>ZGC</li><li>Shenandoah</li><li>How to choose a collector</li><li>Throughput vs latency</li></ul>
+<h3>JIT</h3>
+<ul><li>Interpreter</li><li>JIT compiler</li><li>C1/C2</li><li>Tiered compilation</li><li>Hot methods</li><li>Profiling</li><li>Inlining</li><li>Escape analysis</li><li>Devirtualization</li><li>Loop optimizations</li><li>Deoptimization</li></ul>
+<h3>Production debugging</h3>
+<ul><li><code>jcmd</code></li><li><code>jstack</code></li><li><code>jmap</code></li><li><code>jstat</code></li><li>GC logs</li><li>Heap dump</li><li>Thread dump</li><li>JFR</li><li><code>jconsole</code></li><li>VisualVM</li><li>Native Memory Tracking</li></ul>
+<hr>
+<h1>2. First: The Complete Java Execution Pipeline</h1>
+<p>You should have this mental model:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>                Java Source
+                    |
+                    v
+              javac compiler
+                    |
+                    v
+              Bytecode (.class)
+                    |
+                    v
+             Class Loader
+                    |
+                    v
+        +-----------------------+
+        |         JVM           |
+        |                       |
+        |  Interpreter          |
+        |       |               |
+        |       v               |
+        |      JIT              |
+        |       |               |
+        |       v               |
+        |   Native Machine Code |
+        +-----------------------+
+                    |
+                    v
+                CPU / OS</code></pre></div>
+<p>Meanwhile:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>                 JVM
+                  |
+       +----------+----------+
+       |          |          |
+      Heap      Threads    Metaspace
+       |          |          |
+     Objects    Stacks    Class metadata
+       |
+       v
+      GC</code></pre></div>
+<p>This overall architecture is extremely important.</p>
+<hr>
+<h1>3. JDK vs JRE vs JVM</h1>
+<h2>JVM</h2>
+<p>The <strong>Java Virtual Machine</strong> executes Java bytecode.</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>.class
+  |
+  v
+ JVM
+  |
+  v
+Machine instructions</code></pre></div>
+<p>The JVM is responsible for things such as:</p>
+<ul><li>bytecode execution</li><li>memory management</li><li>garbage collection</li><li>JIT compilation</li><li>class loading</li><li>thread management</li><li>runtime checks</li></ul>
+<hr>
+<h2>JRE</h2>
+<p>Historically:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>JRE = JVM + Java runtime libraries</code></pre></div>
+<p>Modern JDK distributions don&#x27;t generally ship a separately packaged JRE in the old sense, so don&#x27;t rely heavily on the old &quot;JDK contains JRE&quot; diagram in interviews.</p>
+<hr>
+<h2>JDK</h2>
+<p>The JDK is the development kit.</p>
+<p>It includes:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Java compiler
+JVM/runtime
+Java libraries
+development/debugging tools</code></pre></div>
+<p>Examples:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>javac
+java
+jcmd
+jstack
+jmap
+jstat
+jconsole
+jfr</code></pre></div>
+<hr>
+<h1>4. Java Bytecode</h1>
+<p>Consider:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>public class Hello {
+    public static void main(String[] args) {
+        int x = 10;
+        int y = 20;
+        System.out.println(x + y);
+    }
+}</code></pre></div>
+<p>Compile:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>javac Hello.java</code></pre></div>
+<p>You get:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Hello.class</code></pre></div>
+<p>Inspect:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>javap -c Hello</code></pre></div>
+<p>You might see instructions conceptually like:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>iconst_10
+istore_1
+bipush 20
+istore_2
+iload_1
+iload_2
+iadd
+...</code></pre></div>
+<p>These are <strong>JVM bytecode instructions</strong>, not CPU instructions.</p>
+<p>This distinction matters.</p>
+<pre class="diagram"><code>+-------------------------+
+|       Java source       |
++-------------------------+
+             |
+             v
++-------------------------+
+|      Java bytecode      |
++-------------------------+
+             |
+             v
++-------------------------+
+|    Interpreter / JIT    |
++-------------------------+
+             |
+             v
++-------------------------+
+| Native CPU instructions |
++-------------------------+</code></pre>
+<hr>
+<h1>5. Class Loading</h1>
+<p>One of the most important JVM concepts.</p>
+<p>When the JVM encounters a class that it needs, the class must be loaded.</p>
+<p>The lifecycle is broadly:</p>
+<pre class="diagram"><code>+------------------+
+|     Loading      |
++------------------+
+          |
+          v
++------------------+
+|     Linking      |
++------------------+
+          |
+          v
++------------------+
+| ├── Verification |
++------------------+
+          |
+          v
++------------------+
+| ├── Preparation  |
++------------------+
+          |
+          v
++------------------+
+|  └── Resolution  |
++------------------+
+          |
+          v
++------------------+
+|  Initialization  |
++------------------+</code></pre>
+<hr>
+<h1>6. Loading</h1>
+<p>The JVM loads the binary representation of a class.</p>
+<p>For example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>UserService</code></pre></div>
+<p>The JVM needs to find and load:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>UserService.class</code></pre></div>
+<p>Class loading is handled by a <strong>ClassLoader</strong>.</p>
+<hr>
+<h1>7. ClassLoader Hierarchy</h1>
+<p>Modern JVMs have several important loaders.</p>
+<p>Conceptually:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Bootstrap ClassLoader
+        |
+Platform ClassLoader
+        |
+Application ClassLoader</code></pre></div>
+<h3>Bootstrap</h3>
+<p>Loads core Java classes.</p>
+<p>Examples:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>java.lang.*
+java.util.*</code></pre></div>
+<h3>Platform</h3>
+<p>Loads platform classes/modules.</p>
+<h3>Application</h3>
+<p>Loads application classes from the classpath/module path.</p>
+<p>You can inspect:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>System.out.println(
+    MyClass.class.getClassLoader()
+);</code></pre></div>
+<hr>
+<h1>8. Parent Delegation Model</h1>
+<p>This is a very important interview topic.</p>
+<p>Suppose your application asks to load:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>java.lang.String</code></pre></div>
+<p>The application class loader doesn&#x27;t simply load it itself.</p>
+<p>It delegates upward.</p>
+<p>Conceptually:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Application ClassLoader
+        |
+        v
+Platform ClassLoader
+        |
+        v
+Bootstrap ClassLoader</code></pre></div>
+<p>The parent gets the opportunity to load the class first.</p>
+<p>Why?</p>
+<h3>Security</h3>
+<p>You shouldn&#x27;t be able to replace:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>java.lang.String</code></pre></div>
+<p>with your own malicious version.</p>
+<h3>Consistency</h3>
+<p>Core classes should have a common definition.</p>
+<hr>
+<h1>9. Class Initialization</h1>
+<p>Consider:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>class Test {
+
+    static int x = 10;
+
+    static {
+        System.out.println(&quot;initialized&quot;);
+    }
+}</code></pre></div>
+<p>The static initialization occurs when the class is initialized.</p>
+<p>Important distinction:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>loading ≠ initialization</code></pre></div>
+<p>A class can be loaded without immediately executing all static initialization code.</p>
+<hr>
+<h1>10. JVM Runtime Data Areas</h1>
+<p>This is one of the most important Week 5 topics.</p>
+<p>Think:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>                     JVM
+                      |
+       +--------------+--------------+
+       |              |              |
+   Per-thread      Shared         Shared
+       |              |              |
+     Stack          Heap          Metaspace
+       |
+       +-- PC Register
+       |
+       +-- Native Method Stack</code></pre></div>
+<hr>
+<h1>11. Heap</h1>
+<p>The heap stores objects.</p>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>User user = new User();</code></pre></div>
+<p>The object generally lives on the heap:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Heap
++----------------+
+| User object    |
+| name reference |
+| age            |
++----------------+</code></pre></div>
+<p>The variable:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>user</code></pre></div>
+<p>is a reference held somewhere associated with the executing thread/frame, while the actual object is allocated in JVM-managed memory.</p>
+<p>Don&#x27;t oversimplify this as:</p>
+<blockquote><p>&quot;All references are always on stack.&quot;</p></blockquote>
+<p>That isn&#x27;t universally correct.</p>
+<hr>
+<h1>12. Heap is Shared</h1>
+<p>The heap is shared among JVM threads.</p>
+<pre class="diagram"><code>+-----------------+
+|     Thread 1    |
++-----------------+
+         |
+         v
++-----------------+
+| Thread 2 &gt; Heap |
++-----------------+
+         |
+         v
++-----------------+
+|     Thread 3    |
++-----------------+</code></pre>
+<p>Therefore:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>new User()</code></pre></div>
+<p>creates an object in memory potentially accessible by multiple threads if references are shared.</p>
+<p>This connects directly with your <strong>Week 3 concurrency</strong> material.</p>
+<hr>
+<h1>13. Stack</h1>
+<p>Every Java thread has its own JVM stack.</p>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>void calculate() {
+    int x = 10;
+    int y = 20;
+}</code></pre></div>
+<p>Conceptually:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Thread
+ |
+ +-- Stack
+      |
+      +-- calculate() frame
+             |
+             +-- x
+             +-- y</code></pre></div>
+<p>Each method invocation creates a <strong>stack frame</strong>.</p>
+<hr>
+<h1>14. Stack Frame</h1>
+<p>A JVM stack frame contains information associated with a method invocation.</p>
+<p>Conceptually:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>+-----------------------+
+| Local variables       |
++-----------------------+
+| Operand stack         |
++-----------------------+
+| Frame data            |
++-----------------------+</code></pre></div>
+<p>For example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>int add(int a, int b) {
+    return a + b;
+}</code></pre></div>
+<p>The JVM uses local variables and the operand stack to execute bytecode.</p>
+<hr>
+<h1>15. StackOverflowError</h1>
+<p>Consider:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>void recurse() {
+    recurse();
+}</code></pre></div>
+<p>Eventually:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>StackOverflowError</code></pre></div>
+<p>because the thread keeps creating stack frames.</p>
+<p>Conceptually:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Stack
+ |
+ | recurse()
+ | recurse()
+ | recurse()
+ | recurse()
+ | ...
+ v
+overflow</code></pre></div>
+<hr>
+<h1>16. Heap vs Stack</h1>
+<p>You should be able to explain this table:</p>
+<pre class="diagram"><code>+-----------------------+---------------------------+
+| Stack                 | Heap                      |
++-----------------------+---------------------------+
+| Per-thread            | Shared                    |
+| Method frames         | Objects                   |
+| Local execution state | Object memory             |
+| Short-lived frames    | Objects may live long     |
+| StackOverflowError    | OutOfMemoryError possible |
+| Automatically popped  | Managed by GC             |
++-----------------------+---------------------------+</code></pre>
+<p>But avoid the simplistic statement:</p>
+<blockquote><p>&quot;Primitive variables are always on the stack.&quot;</p></blockquote>
+<p>The JVM specification doesn&#x27;t require that implementation strategy. JIT optimizations can eliminate allocations or move values around.</p>
+<hr>
+<h1>17. Metaspace</h1>
+<p>Metaspace stores JVM class metadata.</p>
+<p>It replaced the old permanent generation approach in Java 8.</p>
+<p>Conceptually:</p>
+<pre class="diagram"><code>+----------------+
+|      Heap      |
++----------------+
+         |
+         v
++----------------+
+|    Objects     |
++----------------+
+         |
+         v
++----------------+
+|   Metaspace    |
++----------------+
+         |
+         v
++----------------+
+| Class metadata |
++----------------+</code></pre>
+<p>For example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>class User {}</code></pre></div>
+<p>The runtime needs metadata describing:</p>
+<ul><li>class structure</li><li>methods</li><li>fields</li><li>runtime information</li></ul>
+<p>That information is associated with the class and managed outside the Java heap in modern HotSpot implementations.</p>
+<hr>
+<h1>18. Metaspace OOM</h1>
+<p>You can encounter:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>java.lang.OutOfMemoryError:
+Metaspace</code></pre></div>
+<p>Common causes include:</p>
+<ul><li>dynamically generating huge numbers of classes</li><li>class-loader leaks</li><li>application redeployment problems</li><li>excessive proxy generation</li><li>frameworks generating classes</li></ul>
+<p>This becomes especially relevant in:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Spring
+Hibernate
+application servers
+dynamic proxies
+bytecode generation</code></pre></div>
+<hr>
+<h1>19. Program Counter Register</h1>
+<p>Each thread has its own PC register.</p>
+<p>It tracks the current JVM instruction being executed.</p>
+<p>Conceptually:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Thread
+ |
+ +-- PC → current bytecode instruction</code></pre></div>
+<hr>
+<h1>20. Native Method Stack</h1>
+<p>Used when Java interacts with native code.</p>
+<p>For example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Java
+ |
+JNI
+ |
+C/C++
+ |
+Operating System</code></pre></div>
+<p>This is separate from the conceptual JVM stack.</p>
+<hr>
+<h1>21. Object Allocation</h1>
+<p>Consider:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>User user = new User();</code></pre></div>
+<p>Conceptually:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>new User()
+    |
+    v
+allocate memory
+    |
+    v
+initialize object
+    |
+    v
+return reference</code></pre></div>
+<p>In many HotSpot configurations, new objects are initially allocated in the <strong>young generation</strong>, often in a thread-local allocation buffer (TLAB).</p>
+<hr>
+<h1>22. TLAB</h1>
+<p><strong>Thread Local Allocation Buffer</strong></p>
+<p>Instead of having every thread compete for a global allocation area:</p>
+<pre class="diagram"><code>+-------------------+
+| Thread 1 &gt; TLAB 1 |
++-------------------+
+          |
+          v
++-------------------+
+| Thread 2 &gt; TLAB 2 |
++-------------------+
+          |
+          v
++-------------------+
+| Thread 3 &gt; TLAB 3 |
++-------------------+</code></pre>
+<p>Each thread gets a region from which it can rapidly allocate objects.</p>
+<p>This makes allocation extremely cheap in the common case.</p>
+<p>This is an important realization:</p>
+<blockquote><p>Java object allocation isn&#x27;t inherently slow just because it uses a GC-managed heap.</p></blockquote>
+<hr>
+<h1>23. Generational Hypothesis</h1>
+<p>A fundamental GC assumption:</p>
+<blockquote><p>Most objects die young.</p></blockquote>
+<p>For example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>for (...) {
+    RequestContext context = new RequestContext();
+}</code></pre></div>
+<p>Many temporary objects become unreachable quickly.</p>
+<p>Therefore JVMs commonly divide heap usage conceptually into generations.</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Young Generation
+      |
+      | survive GC
+      v
+Old Generation</code></pre></div>
+<hr>
+<h1>24. Young Generation</h1>
+<p>Traditionally:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Young
++--------------------------+
+| Eden | Survivor 0 | S1   |
++--------------------------+</code></pre></div>
+<p>Most new objects begin in:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Eden</code></pre></div>
+<hr>
+<h1>25. Minor / Young GC</h1>
+<p>Suppose:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Eden
+
+A  B  C  D  E</code></pre></div>
+<p>After a collection:</p>
+<pre class="diagram"><code>+---+------+
+| A | dead |
++---+------+
++---+------+
+| B | dead |
++---+------+
++---+-------+
+| C | alive |
++---+-------+
++---+------+
+| D | dead |
++---+------+
++---+-------+
+| E | alive |
++---+-------+</code></pre>
+<p>The collector keeps:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>C
+E</code></pre></div>
+<p>and reclaims the rest.</p>
+<p>Survivors may move through survivor regions.</p>
+<hr>
+<h1>26. Survivor Spaces</h1>
+<p>Conceptually:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Eden
+  |
+  v
+Survivor 0
+  |
+  v
+Survivor 1
+  |
+  v
+Old</code></pre></div>
+<p>Objects that survive multiple collections may eventually be promoted to old generation.</p>
+<p>The JVM uses object age information and collector-specific policies to make these decisions.</p>
+<hr>
+<h1>27. Object Promotion</h1>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Request object
+    |
+    | survives
+    v
+Young GC
+    |
+    | survives
+    v
+Young GC
+    |
+    | survives enough collections
+    v
+Old generation</code></pre></div>
+<p>Promotion thresholds are JVM/collector dependent.</p>
+<p>Don&#x27;t memorize one universal number.</p>
+<hr>
+<h1>28. Garbage Collection — The Core Idea</h1>
+<p>GC determines:</p>
+<blockquote><p>Which objects are no longer reachable?</p></blockquote>
+<p>Consider:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>User user = new User();
+
+user = null;</code></pre></div>
+<p>If there are no other references:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>User object
+    ↑
+    |
+ no reachable reference</code></pre></div>
+<p>It becomes eligible for collection.</p>
+<p>Important:</p>
+<blockquote><p>Eligible for GC ≠ immediately collected.</p></blockquote>
+<hr>
+<h1>29. Reachability</h1>
+<p>GC is fundamentally about <strong>reachability</strong>, not simply whether a variable is <code>null</code>.</p>
+<p>Imagine:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>GC Root
+  |
+  v
+Object A
+  |
+  v
+Object B</code></pre></div>
+<p>Both are reachable.</p>
+<p>If:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>GC Root
+  |
+  v
+Object A
+
+Object B</code></pre></div>
+<p>and B has no path from any GC root, B can be collected.</p>
+<hr>
+<h1>30. GC Roots</h1>
+<p>Important GC roots include things such as:</p>
+<ul><li>active thread references</li><li>local variables/references in active stack frames</li><li>static references</li><li>JNI references</li><li>certain JVM-internal references</li></ul>
+<p>Conceptually:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>GC Roots
+   |
+   +----&gt; Object A
+   |        |
+   |        +----&gt; Object B
+   |
+   +----&gt; Object C</code></pre></div>
+<p>Anything unreachable from roots can potentially be reclaimed.</p>
+<hr>
+<h1>31. Mark and Sweep</h1>
+<p>Basic GC algorithm:</p>
+<h3>Mark</h3>
+<p>Find reachable objects.</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>A ✓
+B ✓
+C ✗
+D ✗</code></pre></div>
+<h3>Sweep</h3>
+<p>Reclaim unreachable objects.</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>A
+B
+free
+free</code></pre></div>
+<p>Problem:</p>
+<h3>Fragmentation</h3>
+<p>You can end up with:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Object | free | Object | free | Object</code></pre></div>
+<p>Large contiguous allocations may become difficult.</p>
+<hr>
+<h1>32. Mark + Compact</h1>
+<p>Another approach:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Before:
+
+A | free | B | free | C | free</code></pre></div>
+<p>After compacting:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>A | B | C | free | free | free</code></pre></div>
+<p>Benefits:</p>
+<ul><li>reduces fragmentation</li></ul>
+<p>Cost:</p>
+<ul><li>objects may need to be moved</li><li>references must be updated</li></ul>
+<hr>
+<h1>33. Copying Collection</h1>
+<p>Another approach:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>From Space
+     |
+     v
+To Space</code></pre></div>
+<p>Live objects are copied.</p>
+<p>This works especially well for young generations where most objects are dead.</p>
+<hr>
+<h1>34. Stop-the-World</h1>
+<p>A <strong>Stop-The-World (STW)</strong> pause means application threads are stopped for part of GC processing.</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Application
+██████████████
+
+GC
+              █████
+
+Application
+                    ███████████</code></pre></div>
+<p>During the pause:</p>
+<pre class="diagram"><code>+--------------------------+
+| Java application threads |
++--------------------------+
+              |
+              v
++--------------------------+
+|           STOP           |
++--------------------------+</code></pre>
+<p>This matters enormously for latency-sensitive applications.</p>
+<hr>
+<h1>35. Important Distinction</h1>
+<p>Don&#x27;t say:</p>
+<blockquote><p>&quot;GC always stops the world.&quot;</p></blockquote>
+<p>Modern collectors perform substantial work concurrently with application threads.</p>
+<p>Instead:</p>
+<blockquote><p>Modern collectors can perform much of their work concurrently, but they still have some stop-the-world phases.</p></blockquote>
+<p>This distinction is frequently tested.</p>
+<hr>
+<h1>36. Safepoints</h1>
+<p>A safepoint is a state where JVM can safely perform certain runtime operations, including operations that require threads to reach a globally consistent state.</p>
+<p>Examples can include:</p>
+<ul><li>some GC operations</li><li>deoptimization</li><li>certain JVM maintenance operations</li></ul>
+<p>A production pause isn&#x27;t necessarily:</p>
+<blockquote><p>&quot;GC is slow.&quot;</p></blockquote>
+<p>You should distinguish:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>GC pause
+vs
+safepoint coordination delay
+vs
+application pause</code></pre></div>
+<hr>
+<h1>37. Major GC vs Full GC</h1>
+<p>Be careful here.</p>
+<p>Terminology such as:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>minor GC
+major GC
+full GC</code></pre></div>
+<p>is not universally consistent across all collectors/JVM versions.</p>
+<p>For interviews, say:</p>
+<blockquote><p>The exact meaning of &quot;major GC&quot; and &quot;full GC&quot; is collector-dependent. Full GC generally refers to a more comprehensive collection involving a larger portion of the heap and often more expensive work.</p></blockquote>
+<p>This is much safer than memorizing simplistic definitions.</p>
+<hr>
+<h1>38. GC Algorithms</h1>
+<p>You should know these concepts:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Serial
+Parallel
+G1
+ZGC
+Shenandoah</code></pre></div>
+<hr>
+<h1>39. Serial GC</h1>
+<p>Single-threaded collector.</p>
+<p>Good for:</p>
+<ul><li>small heaps</li><li>simple workloads</li><li>low overhead environments</li></ul>
+<p>Not generally chosen for large, latency-sensitive server workloads.</p>
+<hr>
+<h1>40. Parallel GC</h1>
+<p>Optimized primarily for throughput.</p>
+<p>Conceptually:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Application
+     |
+     v
+Parallel GC workers</code></pre></div>
+<p>Multiple GC threads perform collection work.</p>
+<p>Goal:</p>
+<blockquote><p>maximize application throughput.</p></blockquote>
+<hr>
+<h1>41. G1 GC</h1>
+<p>G1 = <strong>Garbage-First Garbage Collector</strong></p>
+<p>Instead of thinking primarily in contiguous generations, G1 divides the heap into regions.</p>
+<p>Conceptually:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>+----+----+----+----+----+
+| R1 | R2 | R3 | R4 | R5 |
++----+----+----+----+----+
+| R6 | R7 | R8 | R9 | R10|
++----+----+----+----+----+</code></pre></div>
+<p>Regions can play different roles.</p>
+<p>G1 tracks region liveness and tries to collect regions that provide good reclamation value.</p>
+<p>Hence:</p>
+<blockquote><p>Garbage First.</p></blockquote>
+<hr>
+<h1>42. G1 Goal</h1>
+<p>G1 aims to balance:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>throughput
++
+predictable latency
++
+large heaps</code></pre></div>
+<p>It allows you to specify a pause-time goal such as:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>-XX:MaxGCPauseMillis=200</code></pre></div>
+<p>Important:</p>
+<p>This is a <strong>goal</strong>, not a guarantee.</p>
+<hr>
+<h1>43. G1 Concurrent Marking</h1>
+<p>G1 can perform marking concurrently with application execution.</p>
+<p>High-level:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Application
+████████████████████████
+
+Concurrent GC
+    ███████████████</code></pre></div>
+<p>This reduces the amount of work requiring long global pauses.</p>
+<hr>
+<h1>44. ZGC</h1>
+<p>ZGC is designed for very low pause times, including large heaps.</p>
+<p>Key idea:</p>
+<blockquote><p>Keep pauses extremely short while doing much of the GC work concurrently.</p></blockquote>
+<p>Conceptually:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Application
+██████████████████████████
+
+GC
+  █████████████████████
+  mostly concurrent</code></pre></div>
+<p>Useful for:</p>
+<ul><li>large heaps</li><li>latency-sensitive services</li><li>workloads where long GC pauses are unacceptable</li></ul>
+<p>But there are trade-offs involving CPU overhead and workload characteristics.</p>
+<hr>
+<h1>45. Shenandoah</h1>
+<p>Shenandoah is another low-pause collector.</p>
+<p>Its major goal:</p>
+<blockquote><p>Perform most object relocation concurrently with application execution.</p></blockquote>
+<p>Both ZGC and Shenandoah are important to know conceptually for modern Java.</p>
+<hr>
+<h1>46. GC Comparison</h1>
+<p>A useful interview-level model:</p>
+<pre class="diagram"><code>+------------+------------------------------+
+| Collector  | Main focus                   |
++------------+------------------------------+
+| Serial     | Simplicity / small workloads |
+| Parallel   | Throughput                   |
+| G1         | Balanced server workloads    |
+| ZGC        | Very low latency             |
+| Shenandoah | Very low pause times         |
++------------+------------------------------+</code></pre>
+<p>Don&#x27;t memorize this as an absolute rule.</p>
+<p>Actual collector choice depends on:</p>
+<ul><li>Java version</li><li>heap size</li><li>workload</li><li>allocation rate</li><li>latency requirements</li><li>CPU budget</li><li>pause requirements</li></ul>
+<hr>
+<h1>47. JIT Compilation</h1>
+<p>Now we move to one of the most important JVM concepts.</p>
+<p>Initially, the JVM can interpret bytecode.</p>
+<p>But interpreting every instruction forever would leave performance on the table.</p>
+<p>So the JVM identifies frequently executed code and compiles it into native machine code.</p>
+<p>That&#x27;s:</p>
+<blockquote><p><strong>Just-In-Time compilation.</strong></p></blockquote>
+<hr>
+<h1>48. Interpreter</h1>
+<p>Conceptually:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Bytecode
+   |
+   v
+Interpreter
+   |
+   v
+CPU execution</code></pre></div>
+<p>Simple and flexible.</p>
+<p>But repeated interpretation has overhead.</p>
+<hr>
+<h1>49. JIT</h1>
+<p>Instead:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Bytecode
+   |
+   v
+Hot method detected
+   |
+   v
+JIT compiler
+   |
+   v
+Native machine code</code></pre></div>
+<p>Then:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>method call
+   |
+   v
+native code</code></pre></div>
+<p>can execute much faster.</p>
+<hr>
+<h1>50. Hot Code</h1>
+<p>Suppose:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>for (int i = 0; i &lt; 1_000_000_000; i++) {
+    calculate(i);
+}</code></pre></div>
+<p>The JVM notices:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>calculate()</code></pre></div>
+<p>is executed extremely frequently.</p>
+<p>It becomes a candidate for JIT compilation.</p>
+<p>This is why JIT is called:</p>
+<blockquote><p>Just-In-Time.</p></blockquote>
+<p>Compilation occurs while the application is running.</p>
+<hr>
+<h1>51. Tiered Compilation</h1>
+<p>HotSpot commonly uses multiple compilation levels.</p>
+<p>Conceptually:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Bytecode
+   |
+Interpreter
+   |
+   +------&gt; C1
+   |
+   +------&gt; C2</code></pre></div>
+<h3>C1</h3>
+<p>Faster compilation.</p>
+<p>Useful for code that becomes warm quickly.</p>
+<h3>C2</h3>
+<p>More aggressive optimization.</p>
+<p>Useful for very hot code.</p>
+<hr>
+<h1>52. Why Not Compile Everything Immediately?</h1>
+<p>Because compilation itself costs CPU and memory.</p>
+<p>Suppose:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>10,000 methods</code></pre></div>
+<p>but only:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>50 methods</code></pre></div>
+<p>are heavily used.</p>
+<p>Compiling all 10,000 would waste resources.</p>
+<p>JIT focuses optimization effort on hot code.</p>
+<hr>
+<h1>53. JIT Profiling</h1>
+<p>The JVM collects runtime information such as:</p>
+<ul><li>method invocation frequency</li><li>branch behavior</li><li>type information</li><li>loop behavior</li></ul>
+<p>This runtime knowledge allows optimizations that static compilation may not know are safe.</p>
+<p>This is one of the major reasons Java can be extremely fast.</p>
+<hr>
+<h1>54. Method Inlining</h1>
+<p>One of the most important JIT optimizations.</p>
+<p>Suppose:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>int add(int a, int b) {
+    return a + b;
+}</code></pre></div>
+<p>And:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>int result = add(x, y);</code></pre></div>
+<p>The JIT may effectively turn this into:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>int result = x + y;</code></pre></div>
+<p>Conceptually:</p>
+<pre class="diagram"><code>+-----------------------+
+|      method call      |
++-----------------------+
+            |
+            v
++-----------------------+
+|   inline method body  |
++-----------------------+
+            |
+            v
++-----------------------+
+| optimize larger block |
++-----------------------+</code></pre>
+<p>Inlining can eliminate method-call overhead and expose more optimization opportunities.</p>
+<hr>
+<h1>55. Why Inlining Is Powerful</h1>
+<p>Suppose:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>foo()
+  |
+  +--&gt; bar()
+          |
+          +--&gt; calculate()</code></pre></div>
+<p>Without inlining:</p>
+<pre class="diagram"><code>+-----+     +-----+     +-----------+
+| foo | --&gt; | bar | --&gt; | calculate |
++-----+     +-----+     +-----------+</code></pre>
+<p>With inlining:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>foo
+ |
+ +--&gt; bar body
+       |
+       +--&gt; calculate body</code></pre></div>
+<p>Now the optimizer can see the entire path.</p>
+<p>This enables further optimizations.</p>
+<hr>
+<h1>56. Escape Analysis</h1>
+<p>This is an advanced but important concept.</p>
+<p>Suppose:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Point create() {
+    Point p = new Point(10, 20);
+    return p;
+}</code></pre></div>
+<p>The JVM analyzes:</p>
+<blockquote><p>Does <code>p</code> escape this method/thread?</p></blockquote>
+<p>If an object doesn&#x27;t escape, the JVM may optimize its allocation.</p>
+<p>Potential optimizations include:</p>
+<ul><li>scalar replacement</li><li>eliminating synchronization</li><li>reducing allocation</li></ul>
+<p>Important:</p>
+<blockquote><p>Escape analysis does not simply mean &quot;objects are allocated on the stack.&quot;</p></blockquote>
+<p>That common explanation is misleading.</p>
+<hr>
+<h1>57. Scalar Replacement</h1>
+<p>Suppose:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Point p = new Point(10, 20);
+
+int x = p.x;
+int y = p.y;</code></pre></div>
+<p>If the object doesn&#x27;t actually need to exist as an object, the JIT may conceptually replace:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Point object</code></pre></div>
+<p>with:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>x = 10
+y = 20</code></pre></div>
+<p>This can eliminate heap allocation.</p>
+<hr>
+<h1>58. Devirtualization</h1>
+<p>Consider:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>interface Payment {
+    void pay();
+}</code></pre></div>
+<p>Then:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>payment.pay();</code></pre></div>
+<p>Normally the JVM may not know exactly which implementation will execute.</p>
+<p>But runtime profiling may show:</p>
+<pre class="diagram"><code>+-----+-------------------+
+| 99% | CreditCardPayment |
++-----+-------------------+
++----+--------------+
+| 1% | OtherPayment |
++----+--------------+</code></pre>
+<p>The JIT can optimize the common case.</p>
+<p>This is related to:</p>
+<blockquote><p>speculative optimization.</p></blockquote>
+<hr>
+<h1>59. Speculative Optimization</h1>
+<p>The JIT can optimize based on observed runtime behavior.</p>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Observed:
+method almost always receives type A</code></pre></div>
+<p>JIT:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>optimize for A</code></pre></div>
+<p>But what if type B arrives?</p>
+<p>The JVM can:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>deoptimize
+→ fall back to a safer execution path</code></pre></div>
+<p>This is called:</p>
+<blockquote><p><strong>deoptimization</strong></p></blockquote>
+<hr>
+<h1>60. Deoptimization</h1>
+<p>Very important interview concept.</p>
+<p>JIT optimization may depend on assumptions.</p>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Assumption:
+Only implementation A is observed.</code></pre></div>
+<p>Later:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Implementation B appears.</code></pre></div>
+<p>The optimized machine code may no longer be valid.</p>
+<p>JVM can:</p>
+<pre class="diagram"><code>+---------------------------+
+| invalidate optimized code |
++---------------------------+
+              |
+              v
++---------------------------+
+|         deoptimize        |
++---------------------------+
+              |
+              v
++---------------------------+
+|      continue safely      |
++---------------------------+</code></pre>
+<p>So JIT optimization is dynamic and adaptive.</p>
+<hr>
+<h1>61. Code Cache</h1>
+<p>Compiled native code needs memory.</p>
+<p>The JVM maintains a <strong>code cache</strong> for generated machine code.</p>
+<p>Conceptually:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Heap
+Metaspace
+Code Cache
+Stacks</code></pre></div>
+<p>If the code cache becomes constrained, JIT compilation behavior can be affected.</p>
+<p>This can matter during production performance investigations.</p>
+<hr>
+<h1>62. JVM Warmup</h1>
+<p>A Java application may not perform identically immediately after startup.</p>
+<p>Initially:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Interpreter</code></pre></div>
+<p>Then:</p>
+<pre class="diagram"><code>+-----------------+
+|    profiling    |
++-----------------+
+         |
+         v
++-----------------+
+|  C1 compilation |
++-----------------+
+         |
+         v
++-----------------+
+| C2 optimization |
++-----------------+</code></pre>
+<p>So performance can improve after warmup.</p>
+<p>This matters for:</p>
+<ul><li>benchmarks</li><li>server startup</li><li>latency testing</li><li>performance comparisons</li></ul>
+<hr>
+<h1>63. Why Microbenchmarks Are Dangerous</h1>
+<p>This is why you shouldn&#x27;t benchmark Java like:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>long start = System.nanoTime();
+
+for (...) {
+    method();
+}
+
+long end = System.nanoTime();</code></pre></div>
+<p>and assume the result is authoritative.</p>
+<p>Issues include:</p>
+<ul><li>JIT warmup</li><li>dead-code elimination</li><li>constant folding</li><li>inlining</li><li>GC</li><li>CPU frequency changes</li><li>OS scheduling</li><li>caches</li></ul>
+<p>For serious JVM benchmarking:</p>
+<blockquote><p>Use <strong>JMH</strong>.</p></blockquote>
+<hr>
+<h1>64. Dead Code Elimination</h1>
+<p>Suppose:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>for (int i = 0; i &lt; 1_000_000; i++) {
+    int x = i * 2;
+}</code></pre></div>
+<p>If <code>x</code> is never used, the JIT may determine the computation has no observable effect and remove it.</p>
+<p>Therefore your benchmark may accidentally benchmark:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>nothing</code></pre></div>
+<p>rather than:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>i * 2</code></pre></div>
+<hr>
+<h1>65. JVM Lab — Part 1: Inspect Bytecode</h1>
+<p>Create:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>public class BytecodeDemo {
+
+    public static int add(int a, int b) {
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(add(10, 20));
+    }
+}</code></pre></div>
+<p>Compile:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>javac BytecodeDemo.java</code></pre></div>
+<p>Inspect:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>javap -c BytecodeDemo</code></pre></div>
+<p>Then:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>javap -verbose BytecodeDemo</code></pre></div>
+<p>Learn to recognize:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>constant pool
+method
+descriptor
+bytecode
+stack
+locals</code></pre></div>
+<hr>
+<h1>66. JVM Lab — Part 2: Inspect Class Loading</h1>
+<p>Run:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>java -Xlog:class+load=info BytecodeDemo</code></pre></div>
+<p>You should see classes being loaded.</p>
+<p>This helps connect:</p>
+<pre class="diagram"><code>+-----------------------+
+|      ClassLoader      |
++-----------------------+
+            |
+            v
++-----------------------+
+|     class loading     |
++-----------------------+
+            |
+            v
++-----------------------+
+| application execution |
++-----------------------+</code></pre>
+<p>with real JVM behavior.</p>
+<hr>
+<h1>67. JVM Lab — Part 3: Inspect JVM Flags</h1>
+<p>Run:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>java -XX:+PrintFlagsFinal -version</code></pre></div>
+<p>This prints JVM options.</p>
+<p>Search for:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>java -XX:+PrintFlagsFinal -version | grep GC</code></pre></div>
+<p>or inspect relevant options.</p>
+<p>Learn to identify:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>heap-related flags
+GC flags
+JIT flags
+metaspace flags
+thread flags</code></pre></div>
+<hr>
+<h1>68. JVM Lab — Part 4: Heap Information</h1>
+<p>Write:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>public class MemoryDemo {
+
+    public static void main(String[] args) throws Exception {
+
+        Runtime runtime = Runtime.getRuntime();
+
+        System.out.println(
+            &quot;Max: &quot; + runtime.maxMemory()
+        );
+
+        System.out.println(
+            &quot;Total: &quot; + runtime.totalMemory()
+        );
+
+        System.out.println(
+            &quot;Free: &quot; + runtime.freeMemory()
+        );
+
+        Thread.sleep(60_000);
+    }
+}</code></pre></div>
+<p>Run it.</p>
+<p>Then inspect the JVM using:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>jcmd &lt;pid&gt; GC.heap_info</code></pre></div>
+<hr>
+<h1>69. JVM Lab — Part 5: jcmd</h1>
+<p>You should become comfortable with:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>jcmd</code></pre></div>
+<p>Find Java processes:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>jcmd</code></pre></div>
+<p>Then:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>jcmd &lt;pid&gt; VM.version</code></pre></div>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>jcmd &lt;pid&gt; VM.flags</code></pre></div>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>jcmd &lt;pid&gt; GC.heap_info</code></pre></div>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>jcmd &lt;pid&gt; Thread.print</code></pre></div>
+<p>This is one of the most useful JVM production tools.</p>
+<hr>
+<h1>70. JVM Lab — Part 6: Thread Dump</h1>
+<p>Create:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>public class ThreadDemo {
+
+    public static void main(String[] args)
+            throws Exception {
+
+        Thread.sleep(60_000);
+    }
+}</code></pre></div>
+<p>Run:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>jcmd</code></pre></div>
+<p>Find PID.</p>
+<p>Then:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>jcmd &lt;pid&gt; Thread.print</code></pre></div>
+<p>Learn to identify:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>RUNNABLE
+WAITING
+TIMED_WAITING
+BLOCKED</code></pre></div>
+<p>This connects Week 3 concurrency concepts to actual JVM diagnostics.</p>
+<hr>
+<h1>71. JVM Lab — Part 7: GC Logging</h1>
+<p>Run your application with GC logging.</p>
+<p>Modern Java:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>java \
+  -Xlog:gc* \
+  MemoryDemo</code></pre></div>
+<p>You will see information about:</p>
+<ul><li>GC events</li><li>heap regions</li><li>pause times</li><li>allocation</li><li>collector activity</li></ul>
+<p>This is much more useful than simply saying:</p>
+<blockquote><p>&quot;GC is happening.&quot;</p></blockquote>
+<hr>
+<h1>72. GC Log Questions</h1>
+<p>When reading logs, ask:</p>
+<h3>1. How frequently is GC happening?</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>GC every few milliseconds?
+GC every few seconds?</code></pre></div>
+<h3>2. How long are pauses?</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>1 ms?
+50 ms?
+2 seconds?</code></pre></div>
+<h3>3. Is the heap recovering?</h3>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Before: 8 GB
+After: 2 GB</code></pre></div>
+<p>Good sign.</p>
+<p>But:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Before: 8 GB
+After: 7.8 GB</code></pre></div>
+<p>repeatedly could indicate significant live data or a memory-retention problem.</p>
+<hr>
+<h1>73. Allocation Rate</h1>
+<p>One of the most important production concepts.</p>
+<p>Suppose your application allocates:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>5 GB/sec</code></pre></div>
+<p>Even if objects die quickly, the GC has enormous work to do.</p>
+<p>So GC behavior isn&#x27;t only about:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>heap size</code></pre></div>
+<p>It is also about:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>allocation rate
+object lifetime
+live-set size</code></pre></div>
+<hr>
+<h1>74. Live Set</h1>
+<p>Suppose:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Heap = 16 GB</code></pre></div>
+<p>but application actually keeps:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>12 GB</code></pre></div>
+<p>alive.</p>
+<p>That&#x27;s very different from:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Heap = 16 GB
+Live objects = 1 GB</code></pre></div>
+<p>A high live set can make collections expensive because the collector has much more live data to process.</p>
+<hr>
+<h1>75. Memory Leak in Java</h1>
+<p>Java can still have memory leaks.</p>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>static List&lt;Object&gt; cache =
+    new ArrayList&lt;&gt;();</code></pre></div>
+<p>Suppose you continually add objects:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>cache.add(new Object());</code></pre></div>
+<p>The GC can&#x27;t collect them because:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>GC Root
+  |
+  v
+static cache
+  |
+  +--&gt; object
+  +--&gt; object
+  +--&gt; object</code></pre></div>
+<p>They are still reachable.</p>
+<p>Therefore:</p>
+<blockquote><p>GC prevents unreachable-object memory leaks, but it cannot fix accidentally retained reachable objects.</p></blockquote>
+<hr>
+<h1>76. Common Java Memory Leak Patterns</h1>
+<p>Know these:</p>
+<h3>Static collections</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>static Map&lt;Key, Object&gt; cache;</code></pre></div>
+<h3>Unbounded caches</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>cache grows forever</code></pre></div>
+<h3>Listeners not removed</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>event source → listener</code></pre></div>
+<h3>ThreadLocal misuse</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>ThreadLocal&lt;LargeObject&gt;</code></pre></div>
+<p>especially with long-lived thread pools.</p>
+<h3>ClassLoader leaks</h3>
+<p>Common in containers/redeployment environments.</p>
+<hr>
+<h1>77. ThreadLocal and Memory</h1>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>private static final ThreadLocal&lt;byte[]&gt; DATA =
+    new ThreadLocal&lt;&gt;();</code></pre></div>
+<p>If a thread pool thread remains alive and the value isn&#x27;t removed appropriately, the referenced object can stay alive.</p>
+<p>Best practice when appropriate:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>try {
+    DATA.set(largeObject);
+    ...
+} finally {
+    DATA.remove();
+}</code></pre></div>
+<p>This is particularly important when threads are reused.</p>
+<hr>
+<h1>78. Heap Dump</h1>
+<p>A heap dump captures information about heap objects and references at a point in time.</p>
+<p>You can use:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>jcmd &lt;pid&gt; GC.heap_dump dump.hprof</code></pre></div>
+<p>Then inspect it using tools such as:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Eclipse MAT
+VisualVM</code></pre></div>
+<hr>
+<h1>79. What to Look for in Heap Dumps</h1>
+<p>Look for:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>largest objects
+largest retained sizes
+reference chains
+dominators</code></pre></div>
+<p>The critical concept is:</p>
+<blockquote><p><strong>retained size</strong></p></blockquote>
+<p>Not just:</p>
+<blockquote><p>shallow size.</p></blockquote>
+<hr>
+<h1>80. Shallow vs Retained Size</h1>
+<p>Suppose:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Cache
+ |
+ +--&gt; Object A
+ |      |
+ |      +--&gt; 100 MB
+ |
+ +--&gt; Object B</code></pre></div>
+<p>The cache&#x27;s shallow size may be small.</p>
+<p>But its retained size can be huge because removing the cache makes many objects collectible.</p>
+<p>This is how you find:</p>
+<blockquote><p>&quot;What is keeping all this memory alive?&quot;</p></blockquote>
+<hr>
+<h1>81. JFR — Java Flight Recorder</h1>
+<p>JFR is one of the most valuable JVM diagnostic tools.</p>
+<p>It can capture information about:</p>
+<ul><li>CPU usage</li><li>allocations</li><li>GC</li><li>threads</li><li>locks</li><li>I/O</li><li>exceptions</li><li>JVM activity</li></ul>
+<p>Start a recording:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>jcmd &lt;pid&gt; JFR.start duration=60s filename=recording.jfr</code></pre></div>
+<p>Then analyze it using Java Mission Control or compatible tooling.</p>
+<hr>
+<h1>82. Java Mission Control</h1>
+<p>JMC can visualize JFR recordings.</p>
+<p>You can investigate:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>CPU hotspots
+GC pauses
+allocation pressure
+thread contention
+locks
+I/O
+exceptions</code></pre></div>
+<p>For an IC4 interview, knowing <strong>JFR + jcmd + heap dump + thread dump</strong> is very valuable.</p>
+<hr>
+<h1>83. JVM Production Troubleshooting</h1>
+<p>You should be able to reason through scenarios.</p>
+<hr>
+<h2>Scenario 1: API latency suddenly increases</h2>
+<p>You observe:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>p99 latency ↑
+CPU normal
+GC pause ↑</code></pre></div>
+<p>Potential hypothesis:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>GC pauses contributing to latency</code></pre></div>
+<p>Investigate:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>jcmd &lt;pid&gt; GC.heap_info</code></pre></div>
+<p>GC logs:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>-Xlog:gc*</code></pre></div>
+<p>JFR:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>GC pauses
+allocation</code></pre></div>
+<p>Don&#x27;t immediately increase heap size.</p>
+<p>First understand why GC behavior changed.</p>
+<hr>
+<h1>84. Scenario 2: Heap Usage Continuously Increases</h1>
+<p>Graph:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Heap
+ ^
+ |       /
+ |      /
+ |     /
+ |    /
+ |___/________ time</code></pre></div>
+<p>If after GC:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>used memory
+continues increasing</code></pre></div>
+<p>investigate:</p>
+<ul><li>cache growth</li><li>static collections</li><li>ThreadLocals</li><li>listeners</li><li>class-loader retention</li><li>application references</li></ul>
+<p>Use:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>heap dump</code></pre></div>
+<hr>
+<h1>85. Scenario 3: CPU Is 100%</h1>
+<p>Possible causes:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>application computation
+GC
+JIT compilation
+lock contention
+busy loop</code></pre></div>
+<p>Don&#x27;t assume:</p>
+<blockquote><p>CPU 100% = application code.</p></blockquote>
+<p>Use:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>jcmd &lt;pid&gt; Thread.print</code></pre></div>
+<p>and JFR.</p>
+<p>Also inspect:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>GC CPU
+compiler activity
+hot methods</code></pre></div>
+<hr>
+<h1>86. Scenario 4: OutOfMemoryError</h1>
+<p>First identify the type.</p>
+<p>Examples:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Java heap space
+Metaspace
+Direct buffer memory
+unable to create native thread</code></pre></div>
+<p>These are very different problems.</p>
+<hr>
+<h1>87. Java Heap Space OOM</h1>
+<p>Potential causes:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>heap genuinely too small
+memory leak
+large objects
+unbounded cache
+high live set</code></pre></div>
+<p>Investigation:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>heap dump
+GC logs
+JFR
+allocation profiling</code></pre></div>
+<hr>
+<h1>88. Metaspace OOM</h1>
+<p>Potential causes:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>class-loader leak
+excessive dynamic class generation
+proxy generation
+redeployment issues</code></pre></div>
+<p>Investigate class loading and class-loader retention.</p>
+<hr>
+<h1>89. Direct Memory</h1>
+<p>Not all application memory is Java heap.</p>
+<p>For example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>ByteBuffer.allocateDirect(...)</code></pre></div>
+<p>allocates off-heap/native memory.</p>
+<p>So you can have:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Heap = 4 GB
+Native memory = several GB</code></pre></div>
+<p>and still run out of process memory.</p>
+<p>This is a crucial production concept.</p>
+<hr>
+<h1>90. Native Memory Tracking</h1>
+<p>HotSpot can provide native memory information.</p>
+<p>For example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>-XX:NativeMemoryTracking=summary</code></pre></div>
+<p>Then:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>jcmd &lt;pid&gt; VM.native_memory summary</code></pre></div>
+<p>Useful for investigating:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>native memory
+threads
+class metadata
+code cache
+GC-related structures</code></pre></div>
+<hr>
+<h1>91. JVM Tuning Philosophy</h1>
+<p>This is extremely important.</p>
+<p>Don&#x27;t start with:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>-Xmx16g
+-XX:MaxGCPauseMillis=100</code></pre></div>
+<p>just because production is slow.</p>
+<p>First identify:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>What is actually wrong?</code></pre></div>
+<p>Then tune.</p>
+<hr>
+<h1>92. The JVM Performance Triangle</h1>
+<p>Think about:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>             Throughput
+                /\
+               /  \
+              /    \
+             /      \
+            /        \
+      Latency ------ Memory</code></pre></div>
+<p>Improving one dimension may affect others.</p>
+<p>For example:</p>
+<pre class="diagram"><code>+-------------------------------+
+|          larger heap          |
++-------------------------------+
+                |
+                v
++-------------------------------+
+|        less frequent GC       |
++-------------------------------+
+                |
+                v
++-------------------------------+
+| potentially better throughput |
++-------------------------------+</code></pre>
+<p>but potentially:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>larger GC work / footprint</code></pre></div>
+<p>depending on collector and workload.</p>
+<hr>
+<h1>93. Heap Sizing</h1>
+<p>Important parameters:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>-Xms
+-Xmx</code></pre></div>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>-Xms2g
+-Xmx4g</code></pre></div>
+<p>Meaning:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>initial heap
+maximum heap</code></pre></div>
+<p>But modern JVM ergonomics can often choose sensible defaults.</p>
+<p>Don&#x27;t assume manually setting every flag is best practice.</p>
+<hr>
+<h1>94. <code>-Xms</code> vs <code>-Xmx</code></h1>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>-Xms = initial heap size
+-Xmx = maximum heap size</code></pre></div>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>java -Xms1g -Xmx4g App</code></pre></div>
+<p>means approximately:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>initial heap: 1 GB
+maximum heap: 4 GB</code></pre></div>
+<hr>
+<h1>95. GC Pause Goals</h1>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>-XX:MaxGCPauseMillis=200</code></pre></div>
+<p>This communicates:</p>
+<blockquote><p>Try to keep GC pauses around this target.</p></blockquote>
+<p>It does <strong>not</strong> mean:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>GC will never exceed 200 ms.</code></pre></div>
+<p>This distinction matters.</p>
+<hr>
+<h1>96. JVM Flags You Should Know</h1>
+<p>At minimum:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>-Xms
+-Xmx
+
+-Xss
+
+-Xlog:gc*
+
+-XX:+UseG1GC
+-XX:+UseZGC
+
+-XX:MaxGCPauseMillis
+
+-XX:MetaspaceSize
+-XX:MaxMetaspaceSize
+
+-XX:+HeapDumpOnOutOfMemoryError
+-XX:HeapDumpPath</code></pre></div>
+<p>Know what they do conceptually.</p>
+<p>Don&#x27;t waste time memorizing every JVM flag.</p>
+<hr>
+<h1>97. Automatic Heap Dump on OOM</h1>
+<p>Very useful production configuration:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>-XX:+HeapDumpOnOutOfMemoryError</code></pre></div>
+<p>and:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>-XX:HeapDumpPath=/path/to/dumps</code></pre></div>
+<p>Then if the JVM encounters an appropriate OOM:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>heap dump</code></pre></div>
+<p>can be generated for analysis.</p>
+<hr>
+<h1>98. JVM Lab — Build a Memory Leak</h1>
+<p>Create:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>import java.util.*;
+
+public class LeakDemo {
+
+    private static final List&lt;byte[]&gt; CACHE =
+        new ArrayList&lt;&gt;();
+
+    public static void main(String[] args)
+            throws Exception {
+
+        while (true) {
+
+            CACHE.add(new byte[1024 * 1024]);
+
+            Thread.sleep(100);
+        }
+    }
+}</code></pre></div>
+<p>Run with:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>java \
+-Xms128m \
+-Xmx128m \
+-XX:+HeapDumpOnOutOfMemoryError \
+LeakDemo</code></pre></div>
+<p>Eventually:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>OutOfMemoryError</code></pre></div>
+<p>You have created a deliberate retention problem.</p>
+<hr>
+<h1>99. Analyze the Heap Dump</h1>
+<p>Take the <code>.hprof</code> file and open it with:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Eclipse MAT</code></pre></div>
+<p>Look for:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Leak Suspects
+Dominator Tree
+Retained Heap</code></pre></div>
+<p>You should discover:</p>
+<pre class="diagram"><code>+-----------------------+
+|         CACHE         |
++-----------------------+
+            |
+            v
++-----------------------+
+|         byte[]        |
++-----------------------+
+            |
+            v
++-----------------------+
+| large retained memory |
++-----------------------+</code></pre>
+<p>This lab is extremely valuable.</p>
+<hr>
+<h1>100. JVM Lab — Generate Allocation Pressure</h1>
+<p>Try:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>public class AllocationDemo {
+
+    public static void main(String[] args) {
+
+        while (true) {
+
+            for (int i = 0; i &lt; 100_000; i++) {
+                byte[] data = new byte[1024];
+            }
+        }
+    }
+}</code></pre></div>
+<p>Then monitor:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>jstat -gc &lt;pid&gt; 1000</code></pre></div>
+<p>or:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>jcmd &lt;pid&gt; GC.heap_info</code></pre></div>
+<p>Observe:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>young GC frequency
+heap occupancy
+allocation behavior</code></pre></div>
+<hr>
+<h1>101. JVM Lab — Compare Collectors</h1>
+<p>Run the same allocation workload with different collectors where supported by your JDK:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>-XX:+UseG1GC</code></pre></div>
+<p>and:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>-XX:+UseZGC</code></pre></div>
+<p>Capture:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>GC logs
+pause times
+CPU usage
+throughput</code></pre></div>
+<p>Don&#x27;t just compare:</p>
+<blockquote><p>&quot;Which is faster?&quot;</p></blockquote>
+<p>Compare:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>p50 latency
+p95 latency
+p99 latency
+GC pause
+CPU consumption
+allocation rate</code></pre></div>
+<p>This develops real performance engineering skills.</p>
+<hr>
+<h1>102. JVM Lab — JIT Observation</h1>
+<p>Create a hot method:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>public class JitDemo {
+
+    static long calculate(long x) {
+        return x * 31 + 7;
+    }
+
+    public static void main(String[] args) {
+
+        long result = 0;
+
+        for (long i = 0; i &lt; 1_000_000_000L; i++) {
+            result += calculate(i);
+        }
+
+        System.out.println(result);
+    }
+}</code></pre></div>
+<p>Run with JIT logging appropriate for your JDK.</p>
+<p>The goal isn&#x27;t memorizing flags.</p>
+<p>The goal is understanding:</p>
+<pre class="diagram"><code>+-------------+
+| interpreted |
++-------------+
+       |
+       v
++-------------+
+|   profiled  |
++-------------+
+       |
+       v
++-------------+
+|   compiled  |
++-------------+
+       |
+       v
++-------------+
+|  optimized  |
++-------------+</code></pre>
+<hr>
+<h1>103. JIT Lab — Compare Warmup</h1>
+<p>Create a benchmark that repeatedly executes a method.</p>
+<p>Observe:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>first execution
+second execution
+after warmup</code></pre></div>
+<p>You should see why JVM benchmarks require warmup.</p>
+<p>Then learn:</p>
+<blockquote><p>JMH handles many of these benchmarking concerns for you.</p></blockquote>
+<hr>
+<h1>104. JMH</h1>
+<p>JMH = Java Microbenchmark Harness.</p>
+<p>Use it for serious microbenchmarks.</p>
+<p>It helps account for:</p>
+<ul><li>warmup</li><li>measurement iterations</li><li>forks</li><li>dead-code elimination</li><li>JVM optimization effects</li></ul>
+<p>Typical structure:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>@Benchmark
+public int testMethod() {
+    return calculate();
+}</code></pre></div>
+<p>You don&#x27;t need to become a JMH expert this week.</p>
+<p>Understand <strong>why it exists</strong>.</p>
+<hr>
+<h1>105. Important JVM Interview Questions</h1>
+<p>You should be able to answer these without notes.</p>
+<h3>Fundamentals</h3>
+<ol><li>What is the JVM?</li><li>What is bytecode?</li><li>What happens when you run <code>java MyClass</code>?</li><li>What is a ClassLoader?</li><li>Explain parent delegation.</li><li>What happens during class loading?</li><li>What is class initialization?</li></ol>
+<hr>
+<h3>Memory</h3>
+<ol><li>Explain JVM runtime memory areas.</li><li>Heap vs stack?</li><li>What is Metaspace?</li><li>What is the PC register?</li><li>What is a stack frame?</li><li>What causes StackOverflowError?</li><li>What causes heap OOM?</li><li>What causes Metaspace OOM?</li></ol>
+<hr>
+<h3>GC</h3>
+<ol><li>Why does Java need GC?</li><li>What is reachability?</li><li>What are GC roots?</li><li>Explain young/old generation.</li><li>What is Eden?</li><li>What are survivor spaces?</li><li>What is object promotion?</li><li>What is a stop-the-world pause?</li><li>What is a safepoint?</li><li>Explain mark-sweep.</li><li>Why compact?</li><li>Why are most objects allocated in the young generation?</li></ol>
+<hr>
+<h3>Collectors</h3>
+<ol><li>What is Serial GC?</li><li>What is Parallel GC?</li><li>What is G1?</li><li>Why is G1 called Garbage-First?</li><li>What is ZGC?</li><li>What is Shenandoah?</li><li>Throughput vs latency?</li><li>How would you choose a collector?</li></ol>
+<hr>
+<h3>JIT</h3>
+<ol><li>What is JIT?</li><li>Why doesn&#x27;t JVM compile everything immediately?</li><li>What is hot code?</li><li>What is tiered compilation?</li><li>What are C1 and C2?</li><li>What is method inlining?</li><li>What is escape analysis?</li><li>What is scalar replacement?</li><li>What is devirtualization?</li><li>What is speculative optimization?</li><li>What is deoptimization?</li><li>Why does Java have warmup?</li></ol>
+<hr>
+<h1>106. Senior/IC4-Level Questions</h1>
+<p>These are more important for your target preparation.</p>
+<h3>Question:</h3>
+<blockquote><p>&quot;Our Spring Boot service has 16 GB heap and still experiences frequent GC. Why?&quot;</p></blockquote>
+<p>Possible reasoning:</p>
+<pre class="diagram"><code>+--------------------------+
+|   High allocation rate   |
++--------------------------+
+              |
+              v
++--------------------------+
+| many short-lived objects |
++--------------------------+
+              |
+              v
++--------------------------+
+|    frequent young GC     |
++--------------------------+</code></pre>
+<p>Or:</p>
+<pre class="diagram"><code>+----------------------------+
+|       large live set       |
++----------------------------+
+               |
+               v
++----------------------------+
+|  old generation pressure   |
++----------------------------+
+               |
+               v
++----------------------------+
+| more expensive collections |
++----------------------------+</code></pre>
+<p>Or:</p>
+<pre class="diagram"><code>+----------------------+
+|     memory leak      |
++----------------------+
+            |
+            v
++----------------------+
+|   objects retained   |
++----------------------+
+            |
+            v
++----------------------+
+| heap doesn&#x27;t recover |
++----------------------+</code></pre>
+<p>You need to investigate rather than immediately increase <code>Xmx</code>.</p>
+<hr>
+<h1>107. Another IC4 Scenario</h1>
+<blockquote><p>&quot;p99 latency increases every few minutes.&quot;</p></blockquote>
+<p>Possible causes:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>GC pauses
+thread contention
+lock contention
+CPU saturation
+I/O stalls
+JIT activity
+safepoint pauses</code></pre></div>
+<p>Tools:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>JFR
+GC logs
+thread dumps
+application metrics</code></pre></div>
+<p>This is the type of reasoning interviewers want.</p>
+<hr>
+<h1>108. Another IC4 Scenario</h1>
+<blockquote><p>&quot;CPU usage increased after deploying a new version.&quot;</p></blockquote>
+<p>Investigate:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>allocation rate
+GC CPU
+new hot methods
+JIT compilation
+algorithm changes
+lock contention
+busy loops
+serialization
+logging</code></pre></div>
+<p>Use:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>JFR
+jcmd
+GC logs
+profiling</code></pre></div>
+<p>Don&#x27;t jump straight to:</p>
+<blockquote><p>&quot;The JVM needs more CPU.&quot;</p></blockquote>
+<hr>
+<h1>109. The Most Important Mental Model</h1>
+<p>You should be able to visualize the JVM like this:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>                    JVM
+                     |
+       +-------------+-------------+
+       |             |             |
+    ClassLoader     Threads      Runtime
+       |             |             |
+   Classes        +--+--+         |
+       |           |     |        |
+   Metaspace     Stack  Stack      |
+                                  |
+                     +------------+-------------+
+                     |                          |
+                    Heap                    Code Cache
+                     |
+             +-------+-------+
+             |               |
+           Young            Old
+             |
+       +-----+------+
+       |            |
+     Eden      Survivor</code></pre></div>
+<p>And execution:</p>
+<pre class="diagram"><code>+---------------------+
+|     Java source     |
++---------------------+
+           |
+           v
++---------------------+
+|        javac        |
++---------------------+
+           |
+           v
++---------------------+
+|       Bytecode      |
++---------------------+
+           |
+           v
++---------------------+
+|     ClassLoader     |
++---------------------+
+           |
+           v
++---------------------+
+|     Interpreter     |
++---------------------+
+           |
+           v
++---------------------+
+|      Profiling      |
++---------------------+
+           |
+           v
++---------------------+
+|         JIT         |
++---------------------+
+           |
+           v
++---------------------+
+| Native machine code |
++---------------------+
+           |
+           v
++---------------------+
+|         CPU         |
++---------------------+</code></pre>
+<p>And memory management:</p>
+<pre class="diagram"><code>+-----------------------+
+|   Object allocation   |
++-----------------------+
+            |
+            v
++-----------------------+
+|          Eden         |
++-----------------------+
+            |
+            v
++-----------------------+
+|        Young GC       |
++-----------------------+
+            |
+            v
++-----------------------+
+|       Survivors       |
++-----------------------+
+            |
+            v
++-----------------------+
+|       Promotion       |
++-----------------------+
+            |
+            v
++-----------------------+
+|     Old generation    |
++-----------------------+
+            |
+            v
++-----------------------+
+| Old-region collection |
++-----------------------+
+            |
+            v
++-----------------------+
+|      Reclamation      |
++-----------------------+</code></pre>
+<hr>
+<h1>110. What You Should Actually Master This Week</h1>
+<p>Don&#x27;t treat every JVM topic equally.</p>
+<p>For your <strong>Java/Spring Boot/distributed-systems IC4 preparation</strong>, prioritize:</p>
+<h3>Tier 1 — Must know deeply</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>JVM execution model
+Heap vs Stack
+Metaspace
+Class loading
+GC roots
+Reachability
+Young/Old generations
+Object allocation
+STW
+G1
+ZGC basics
+JIT
+Interpreter vs compiled code
+Inlining
+Escape analysis
+Deoptimization
+GC logs
+Thread dumps
+Heap dumps
+JFR
+jcmd</code></pre></div>
+<h3>Tier 2 — Know well</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>TLAB
+Survivor spaces
+Promotion
+Safepoints
+Code cache
+C1/C2
+Devirtualization
+Scalar replacement
+Native memory
+ClassLoader leaks
+ThreadLocal leaks
+JMH</code></pre></div>
+<h3>Tier 3 — Familiarity</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Serial GC
+Parallel GC
+Shenandoah
+Native Memory Tracking
+advanced JVM flags
+GC algorithm internals</code></pre></div>
+<hr>
+<h1>111. Your Week 5 Lab Checklist</h1>
+<p>By the end of the week, you should personally run all of these:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>☐ javac
+☐ javap -c
+☐ javap -verbose
+
+☐ java -XX:+PrintFlagsFinal
+
+☐ jcmd
+☐ jcmd VM.version
+☐ jcmd VM.flags
+☐ jcmd GC.heap_info
+☐ jcmd Thread.print
+
+☐ jstat -gc
+
+☐ GC logging
+
+☐ Heap dump
+
+☐ Deliberate memory leak
+
+☐ Heap dump analysis with MAT
+
+☐ JFR recording
+
+☐ JMC analysis
+
+☐ Allocation-pressure experiment
+
+☐ G1 experiment
+
+☐ ZGC experiment
+
+☐ JIT warmup experiment
+
+☐ Basic JMH benchmark</code></pre></div>
+<hr>
+<h1>112. End-of-Week Test</h1>
+<p>You should be able to explain this entire scenario on a whiteboard:</p>
+<pre class="diagram"><code>+-------------------+
+|    HTTP request   |
++-------------------+
+          |
+          v
++-------------------+
+| Spring Controller |
++-------------------+
+          |
+          v
++-------------------+
+|      Service      |
++-------------------+
+          |
+          v
++-------------------+
+|     Repository    |
++-------------------+
+          |
+          v
++-------------------+
+| Objects allocated |
++-------------------+
+          |
+          v
++-------------------+
+|        Eden       |
++-------------------+
+          |
+          v
++-------------------+
+|      Young GC     |
++-------------------+
+          |
+          v
++-------------------+
+|     Survivors     |
++-------------------+
+          |
+          v
++-------------------+
+|   Old generation  |
++-------------------+
+          |
+          v
++-------------------+
+|       G1/ZGC      |
++-------------------+</code></pre>
+<p>while simultaneously explaining:</p>
+<pre class="diagram"><code>+----------------+
+| Request thread |
++----------------+
+         |
+         v
++----------------+
+|   JVM stack    |
++----------------+
+         |
+         v
++----------------+
+| method frames  |
++----------------+</code></pre>
+<p>and:</p>
+<pre class="diagram"><code>+----------------------------+
+| Frequently executed method |
++----------------------------+
+               |
+               v
++----------------------------+
+|        interpreter         |
++----------------------------+
+               |
+               v
++----------------------------+
+|         profiling          |
++----------------------------+
+               |
+               v
++----------------------------+
+|            JIT             |
++----------------------------+
+               |
+               v
++----------------------------+
+|        native code         |
++----------------------------+</code></pre>
+<p>and finally:</p>
+<pre class="diagram"><code>+-------------------------+
+|    Production problem   |
++-------------------------+
+             |
+             v
++-------------------------+
+|         metrics         |
++-------------------------+
+             |
+             v
++-------------------------+
+|         GC logs         |
++-------------------------+
+             |
+             v
++-------------------------+
+|           JFR           |
++-------------------------+
+             |
+             v
++-------------------------+
+| heap dump / thread dump |
++-------------------------+
+             |
+             v
++-------------------------+
+|        root cause       |
++-------------------------+
+             |
+             v
++-------------------------+
+|       targeted fix      |
++-------------------------+</code></pre>
+<p>If you can explain all four flows together, you have moved from <strong>&quot;Java developer who knows syntax&quot;</strong> toward <strong>&quot;engineer who understands the Java runtime.&quot;</strong></p>
+<h3>One final rule for Week 5</h3>
+<p><strong>Do not memorize JVM flags as the primary goal.</strong></p>
+<p>Instead, build the causal chain:</p>
+<pre class="diagram"><code>+--------------------------------+
+|      Application behavior      |
++--------------------------------+
+                 |
+                 v
++--------------------------------+
+| Allocation / threads / classes |
++--------------------------------+
+                 |
+                 v
++--------------------------------+
+|      JVM runtime behavior      |
++--------------------------------+
+                 |
+                 v
++--------------------------------+
+|       GC / JIT / memory        |
++--------------------------------+
+                 |
+                 v
++--------------------------------+
+|   CPU / latency / throughput   |
++--------------------------------+
+                 |
+                 v
++--------------------------------+
+|  Observed production symptoms  |
++--------------------------------+
+                 |
+                 v
++--------------------------------+
+|      Diagnostic evidence       |
++--------------------------------+
+                 |
+                 v
++--------------------------------+
+|           Root cause           |
++--------------------------------+
+                 |
+                 v
++--------------------------------+
+|        Targeted change         |
++--------------------------------+</code></pre>
+<p>That reasoning ability is much more valuable in an IC4 interview than knowing 50 obscure <code>-XX</code> flags.</p></div>
+    </article>
+  </main>
+</body>
+</html>

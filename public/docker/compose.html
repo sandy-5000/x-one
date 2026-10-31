@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Compose · x-one</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+  <script src="../assets/copy.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar"><input type="checkbox" id="nav-toggle" class="nav-toggle"><div class="sidebar-brand"><a href="../index.html">x-one notes</a><label for="nav-toggle" class="menu-btn" aria-label="Toggle navigation"><span class="menu-open">Menu</span><span class="menu-close">Close</span></label></div><nav><details class="nav-group"><summary class="nav-group-label">cp<span class="nav-count">56</span></summary><ul><li><a href="../cp/0-1-bfs.html">0-1 BFS</a></li><li><a href="../cp/two-sat.html">2-SAT</a></li><li><a href="../cp/bfs-state-space.html">BFS on State Space</a></li><li><a href="../cp/binary-search.html">Binary Search (on Sorted Data)</a></li><li><a href="../cp/binary-search-on-answer.html">Binary Search on Answer</a></li><li><a href="../cp/bitmask-dp.html">Bitmask DP</a></li><li><a href="../cp/bridges-articulation-points.html">Bridges &amp; Articulation Points</a></li><li><a href="../cp/cdq-divide-conquer.html">CDQ Divide &amp; Conquer (Offline)</a></li><li><a href="../cp/centroid-decomposition.html">Centroid Decomposition</a></li><li><a href="../cp/convex-hull-trick-lichao.html">Convex Hull Trick &amp; Li Chao Tree</a></li><li><a href="../cp/coordinate-compression.html">Coordinate Compression</a></li><li><a href="../cp/difference-array.html">Difference Array</a></li><li><a href="../cp/digit-dp.html">Digit DP</a></li><li><a href="../cp/dijkstra.html">Dijkstra&#x27;s Algorithm</a></li><li><a href="../cp/dsu-on-tree.html">DSU on Tree (Small-to-Large)</a></li><li><a href="../cp/dp-1d.html">Dynamic Programming — 1D</a></li><li><a href="../cp/dp-2d-knapsack.html">Dynamic Programming — 2D &amp; Knapsack</a></li><li><a href="../cp/euler-tour-flattening.html">Euler Tour (Tree Flattening)</a></li><li><a href="../cp/fenwick-tree.html">Fenwick Tree (Binary Indexed Tree)</a></li><li><a href="../cp/flood-fill-multi-source-bfs.html">Flood Fill &amp; Multi-Source BFS</a></li><li><a href="../cp/floyd-warshall.html">Floyd-Warshall</a></li><li><a href="../cp/functional-graphs.html">Functional Graphs</a></li><li><a href="../cp/graph-bfs-dfs.html">Graph BFS &amp; DFS</a></li><li><a href="../cp/greedy.html">Greedy</a></li><li><a href="../cp/heavy-light-decomposition.html">Heavy-Light Decomposition (HLD)</a></li><li><a href="../cp/interval-dp.html">Interval DP</a></li><li><a href="../cp/kmp-pattern-matching.html">KMP Pattern Matching</a></li><li><a href="../cp/lca-binary-lifting.html">LCA (Binary Lifting)</a></li><li><a href="../cp/line-sweep.html">Line Sweep</a></li><li><a href="../cp/lis.html">Longest Increasing Subsequence (LIS)</a></li><li><a href="../cp/matrix-exponentiation.html">Matrix Exponentiation</a></li><li><a href="../cp/meet-in-the-middle.html">Meet in the Middle</a></li><li><a href="../cp/mos-algorithm.html">Mo&#x27;s Algorithm (Offline Queries)</a></li><li><a href="../cp/monotonic-queue.html">Monotonic Deque (Queue)</a></li><li><a href="../cp/monotonic-stack.html">Monotonic Stack</a></li><li><a href="../cp/mst-kruskal-prim.html">MST (Kruskal &amp; Prim)</a></li><li><a href="../cp/policy-based-data-structure.html">Policy-Based Data Structure</a></li><li><a href="../cp/prefix-sums.html">Prefix Sums</a></li><li><a href="../cp/priority-queue-tricks.html">Priority Queue Tricks</a></li><li><a href="../cp/rerooting-dp.html">Rerooting DP on Trees</a></li><li><a href="../cp/segment-tree.html">Segment Tree</a></li><li><a href="../cp/sliding-window.html">Sliding Window</a></li><li><a href="../cp/sorting-tricks.html">Sorting Tricks</a></li><li><a href="../cp/sparse-table-rmq.html">Sparse Table (RMQ)</a></li><li><a href="../cp/sprague-grundy.html">Sprague-Grundy (Game Theory)</a></li><li><a href="../cp/sqrt-decomposition.html">Square Root Decomposition</a></li><li><a href="../cp/string-hashing.html">String Hashing</a></li><li><a href="../cp/strongly-connected-components.html">Strongly Connected Components (SCC)</a></li><li><a href="../cp/topological-sort.html">Topological Sort</a></li><li><a href="../cp/tree-dfs.html">Tree DFS</a></li><li><a href="../cp/tree-difference-array.html">Tree Difference Array</a></li><li><a href="../cp/trie-and-xor-trie.html">Trie &amp; XOR Trie</a></li><li><a href="../cp/two-pointers.html">Two Pointers</a></li><li><a href="../cp/union-find-dsu.html">Union-Find (DSU)</a></li><li><a href="../cp/virtual-tree.html">Virtual Tree</a></li><li><a href="../cp/z-algorithm.html">Z-Algorithm</a></li></ul></details><details class="nav-group" open><summary class="nav-group-label">docker<span class="nav-count">3</span></summary><ul><li><a href="../docker/start.html">Start</a></li><li><a href="../docker/compose.html" class="is-active" aria-current="page">Compose</a></li><li><a href="../docker/swarm.html">Swarm</a></li></ul></details><details class="nav-group"><summary class="nav-group-label">java<span class="nav-count">5</span></summary><ul><li><a href="../java/part-1.html">Part 1</a></li><li><a href="../java/part-2.html">Part 2</a></li><li><a href="../java/part-3.html">Part 3</a></li><li><a href="../java/part-4.html">Part 4</a></li><li><a href="../java/part-5.html">Part 5</a></li></ul></details><details class="nav-group"><summary class="nav-group-label">math<span class="nav-count">34</span></summary><ul><li><a href="../math/bijection-counting.html">Bijection &amp; Counting Proofs</a></li><li><a href="../math/burnside-lemma.html">Burnside&#x27;s Lemma (Symmetry Counting)</a></li><li><a href="../math/catalan-numbers.html">Catalan Numbers</a></li><li><a href="../math/chinese-remainder-theorem.html">Chinese Remainder Theorem (CRT)</a></li><li><a href="../math/combinatorial-identities.html">Combinatorial Identities</a></li><li><a href="../math/combinatorics-ncr.html">Combinatorics — nCr &amp; Pascal</a></li><li><a href="../math/computational-geometry-basics.html">Computational Geometry Basics</a></li><li><a href="../math/derangements.html">Derangements</a></li><li><a href="../math/divisor-enumeration.html">Divisor Enumeration — O(√n)</a></li><li><a href="../math/divisor-functions.html">Divisor Functions (τ and σ)</a></li><li><a href="../math/euler-totient.html">Euler&#x27;s Totient φ(n)</a></li><li><a href="../math/expected-value-linearity.html">Expected Value — Linearity</a></li><li><a href="../math/fast-exponentiation.html">Fast Exponentiation</a></li><li><a href="../math/fermat-euler-theorem.html">Fermat&#x27;s &amp; Euler&#x27;s Theorems</a></li><li><a href="../math/floor-sum-trick.html">Floor Sum Trick — Σ⌊n/i⌋</a></li><li><a href="../math/gcd-lcm-extended-euclid.html">GCD, LCM &amp; Extended Euclidean</a></li><li><a href="../math/harmonic-bounds.html">Harmonic Bounds &amp; Estimates</a></li><li><a href="../math/inclusion-exclusion.html">Inclusion-Exclusion Principle</a></li><li><a href="../math/legendre-formula.html">Legendre&#x27;s Formula</a></li><li><a href="../math/linear-recurrences.html">Linear Recurrences</a></li><li><a href="../math/lucas-theorem.html">Lucas Theorem &amp; nCr mod prime</a></li><li><a href="../math/modular-arithmetic.html">Modular Arithmetic</a></li><li><a href="../math/modular-inverse-composite.html">Modular Inverse (Composite Modulus)</a></li><li><a href="../math/modular-inverse-fermat.html">Modular Inverse (Fermat)</a></li><li><a href="../math/multinomial-coefficients.html">Multinomial Coefficients</a></li><li><a href="../math/mobius-inversion.html">Möbius Inversion</a></li><li><a href="../math/parity-xor-patterns.html">Parity, XOR &amp; Modular Patterns</a></li><li><a href="../math/pigeonhole-counting.html">Pigeonhole &amp; Counting Arguments</a></li><li><a href="../math/probability-basics.html">Probability Basics</a></li><li><a href="../math/sieve-primes-factorization.html">Sieve, Primes &amp; Factorization</a></li><li><a href="../math/stars-and-bars.html">Stars and Bars</a></li><li><a href="../math/stirling-numbers.html">Stirling Numbers (2nd Kind)</a></li><li><a href="../math/sum-formulas-series.html">Sum Formulas &amp; Series</a></li><li><a href="../math/wilson-primality.html">Wilson&#x27;s Theorem &amp; Primality</a></li></ul></details><details class="nav-group"><summary class="nav-group-label">os<span class="nav-count">2</span></summary><ul><li><a href="../os/cpu.html">CPU</a></li><li><a href="../os/user-threads.html">User threads</a></li></ul></details></nav></aside>
+  <main class="chat">
+    <header class="page-head"><span class="crumb">docker / compose</span></header>
+    <article class="message user">
+      <div class="message-label">You</div>
+      <div class="message-body">Teach me Docker Compose in depth — beyond the basics — at the level expected of an Apple IC4 backend engineer. Cover how Compose works internally, networking, startup ordering, configuration, storage, multi-environment setups, the development workflow, production limits, debugging, labs, and interview questions.</div>
+    </article>
+    <article class="message assistant">
+      <div class="message-label">Assistant</div>
+      <div class="message-body prose"><h1>Docker Compose deep dive — Apple IC4 preparation</h1>
+<p>Lesson 10 of the main course introduced Compose as a convenient way to run several containers. This lesson goes further: <strong>what Compose actually does against the Docker Engine, where its guarantees end, and how to reason about failures</strong> in a multi-service setup.</p>
+<p>The goal is to be able to answer, without guessing:</p>
+<ul><li>What exactly happens when I run <code>docker compose up</code>?</li><li>Why did my container get recreated (or not) after I edited the file?</li><li>Why can <code>api</code> not reach <code>db</code> even though both are &quot;up&quot;?</li><li>When is Compose the right tool, and when is it the wrong one?</li></ul>
+<hr>
+<h2>1. What Compose actually is</h2>
+<p>Compose is a <strong>client-side tool</strong>. It reads a YAML file, computes the desired set of networks, volumes, and containers, and then makes ordinary Docker Engine API calls to create them.</p>
+<pre class="diagram"><code>+--------------------+      +---------------------+      +-------------------+
+|   compose.yaml     | ---&gt; |   docker compose    | ---&gt; |   Docker Engine   |
+|  (desired state)   |      |  (client, plugin)   |      |  (dockerd + API)  |
++--------------------+      +---------------------+      +-------------------+
+                                                                   |
+                                                                   v
+                                                         +-------------------+
+                                                         | containerd / runc |
+                                                         +-------------------+</code></pre>
+<p>Key consequences:</p>
+<ul><li>There is <strong>no Compose daemon</strong> and no controller running after <code>up</code> returns. Nothing continuously reconciles state.</li><li>If a container dies, the <strong>Engine&#x27;s restart policy</strong> restarts it — not Compose.</li><li>If the host dies, nothing reschedules your services elsewhere. Compose is a <strong>single-host</strong> tool.</li></ul>
+<h3>Compose V1 versus V2</h3>
+<ul><li><strong>V1</strong> — <code>docker-compose</code> (hyphen), written in Python. End of life since mid-2023.</li><li><strong>V2</strong> — <code>docker compose</code> (space), written in Go, shipped as a Docker CLI plugin. Use this.</li></ul>
+<p>The file format is the <strong>Compose Specification</strong>. The old top-level <code>version:</code> key is obsolete; V2 ignores it and prints a warning.</p>
+<h3>How Compose tracks what it created</h3>
+<p>Compose finds &quot;its&quot; resources through <strong>labels</strong>, not through a database:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-bash">docker inspect shop-api-1 --format &#x27;{{json .Config.Labels}}&#x27;</code></pre></div>
+<p>You will see labels such as:</p>
+<ul><li><code>com.docker.compose.project</code> — the project name</li><li><code>com.docker.compose.service</code> — the service name</li><li><code>com.docker.compose.container-number</code> — replica index</li><li><code>com.docker.compose.config-hash</code> — a hash of the service&#x27;s resolved configuration</li></ul>
+<p>The <strong>config hash</strong> is how Compose decides whether a container must be recreated. If the hash of the new configuration differs from the label on the running container, <code>up</code> recreates it. If it matches, the container is left alone.</p>
+<hr>
+<h2>2. Mental model: project, services, containers</h2>
+<pre class="diagram"><code>+-------------------------------------------------------------------+
+| Project: shop  (from directory name, -p, or top-level name:)      |
+|                                                                   |
+|   Service: web     Service: api              Service: db          |
+|   +----------+     +----------+----------+   +----------+         |
+|   |  web-1   |     |  api-1   |  api-2   |   |   db-1   |         |
+|   +----------+     +----------+----------+   +----------+         |
+|                                                                   |
+|   Network: shop_default        Volume: shop_db-data               |
++-------------------------------------------------------------------+</code></pre>
+<ul><li><strong>Project</strong> — the namespace. Its name prefixes every resource. Set it with the top-level <code>name:</code> key, <code>-p</code>, or <code>COMPOSE_PROJECT_NAME</code>; otherwise it defaults to the directory name.</li><li><strong>Service</strong> — a template for one or more identical containers.</li><li><strong>Container</strong> — named <code>&lt;project&gt;-&lt;service&gt;-&lt;index&gt;</code>, for example <code>shop-api-2</code>.</li></ul>
+<p>Two copies of the same directory with the same project name will <strong>fight over the same containers</strong>. Always set an explicit <code>name:</code> in shared repositories.</p>
+<hr>
+<h2>3. Anatomy of a realistic compose.yaml</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-yaml">name: shop
+
+services:
+  web:
+    build:
+      context: ./web
+      target: runtime
+    ports:
+      - &quot;8080:80&quot;
+    depends_on:
+      api:
+        condition: service_healthy
+    networks: [frontend]
+
+  api:
+    build: ./api
+    environment:
+      DATABASE_URL: postgres://app@db:5432/shop
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+    secrets: [db_password]
+    depends_on:
+      db:
+        condition: service_healthy
+        restart: true
+    healthcheck:
+      test: [&quot;CMD&quot;, &quot;wget&quot;, &quot;-qO-&quot;, &quot;http://localhost:3000/health&quot;]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+      start_period: 20s
+    deploy:
+      resources:
+        limits:
+          cpus: &quot;1.0&quot;
+          memory: 512M
+    stop_grace_period: 20s
+    init: true
+    networks: [frontend, backend]
+
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: app
+      POSTGRES_DB: shop
+      POSTGRES_PASSWORD_FILE: /run/secrets/db_password
+    secrets: [db_password]
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: [&quot;CMD-SHELL&quot;, &quot;pg_isready -U app -d shop&quot;]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    networks: [backend]
+
+  adminer:
+    image: adminer
+    profiles: [debug]
+    ports:
+      - &quot;8081:8080&quot;
+    networks: [backend]
+
+networks:
+  frontend:
+  backend:
+    internal: true
+
+volumes:
+  db-data:
+
+secrets:
+  db_password:
+    file: ./secrets/db_password.txt</code></pre></div>
+<p>Things worth noticing:</p>
+<ul><li><code>db</code> is on an <strong>internal</strong> network, so it has no route to the outside world and is unreachable from <code>web</code>.</li><li><code>api</code> sits on both networks and is the only bridge between them.</li><li>The password never appears in <code>environment</code>; it is mounted as a file at <code>/run/secrets/db_password</code>.</li><li><code>adminer</code> only starts when you ask for the <code>debug</code> profile.</li><li><code>init: true</code> runs a tiny init process as PID 1 so signals are forwarded and zombies reaped.</li></ul>
+<hr>
+<h2>4. Networking</h2>
+<h3>The default network</h3>
+<p>Without a <code>networks:</code> section, Compose creates one bridge network called <code>&lt;project&gt;_default</code> and attaches every service to it.</p>
+<h3>Service discovery</h3>
+<p>Every container uses Docker&#x27;s <strong>embedded DNS server</strong> at <code>127.0.0.11</code>. On a user-defined network:</p>
+<ul><li>The <strong>service name</strong> (<code>db</code>) resolves to the IPs of all containers of that service.</li><li>The <strong>container name</strong> (<code>shop-db-1</code>) resolves to that one container.</li><li>Extra names can be added with <code>aliases:</code> under a service&#x27;s network entry.</li></ul>
+<p>Inspect it from inside a container:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-bash">docker compose exec api cat /etc/resolv.conf
+docker compose exec api getent hosts db</code></pre></div>
+<h3>ports versus expose</h3>
+<ul><li><code>ports: [&quot;8080:80&quot;]</code> publishes to the <strong>host</strong>. Anything that can reach the host can reach it.</li><li>Containers on the same network <strong>do not need</strong> <code>ports</code> to talk to each other. They use the container port directly: <code>db:5432</code>.</li><li><code>expose:</code> is documentation only; it does not publish anything.</li></ul>
+<p>A very common mistake is publishing the database port &quot;so the API can reach it&quot;. The API never needed it, and now the database is exposed on the host.</p>
+<h3>Isolating tiers with multiple networks</h3>
+<pre class="diagram"><code>+---------+   frontend   +---------+   backend    +---------+
+|   web   | -----------&gt; |   api   | -----------&gt; |   db    |
++---------+              +---------+  (internal)  +---------+</code></pre>
+<p><code>web</code> and <code>api</code> share <code>frontend</code>; <code>api</code> and <code>db</code> share <code>backend</code>. <code>web</code> cannot resolve or reach <code>db</code> at all, because they share no network.</p>
+<h3>Bind address for published ports</h3>
+<p><code>&quot;8080:80&quot;</code> binds to <strong>all host interfaces</strong>. For local-only tools, bind explicitly:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-yaml">ports:
+  - &quot;127.0.0.1:8081:8080&quot;</code></pre></div>
+<p>Also remember that Docker inserts its own iptables rules, so a host firewall such as <code>ufw</code> may <strong>not</strong> block published ports the way you expect.</p>
+<hr>
+<h2>5. Startup order and health</h2>
+<h3>The short form only orders creation</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-yaml">depends_on: [db]</code></pre></div>
+<p>This only guarantees that the <code>db</code> container is <strong>started</strong> before <code>api</code>. It does not wait for Postgres to accept connections.</p>
+<h3>The long form waits on a condition</h3>
+<ul><li><code>service_started</code> — same as the short form.</li><li><code>service_healthy</code> — waits until the dependency&#x27;s health check reports healthy.</li><li><code>service_completed_successfully</code> — waits until a one-shot container (for example, a migration job) exits with code 0.</li><li><code>restart: true</code> — if Compose restarts the dependency, it also restarts this service.</li></ul>
+<p>A typical pattern with a migration step:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-yaml">services:
+  migrate:
+    build: ./api
+    command: [&quot;npm&quot;, &quot;run&quot;, &quot;migrate&quot;]
+    depends_on:
+      db:
+        condition: service_healthy
+
+  api:
+    build: ./api
+    depends_on:
+      migrate:
+        condition: service_completed_successfully</code></pre></div>
+<h3>Why your application must still retry</h3>
+<p><code>depends_on</code> only applies <strong>at startup through Compose</strong>. It does nothing when:</p>
+<ul><li>the database restarts later,</li><li>the network blips,</li><li>a container is restarted by the Engine&#x27;s restart policy.</li></ul>
+<blockquote><p>Ordering is a convenience for local startup. Resilience — retries with backoff, timeouts, readiness checks — belongs in the application.</p></blockquote>
+<hr>
+<h2>6. Configuration and environment</h2>
+<p>There are two completely different mechanisms that both involve &quot;env files&quot;. Confusing them is one of the most common Compose bugs.</p>
+<h3>Interpolation: the .env file</h3>
+<p>A <code>.env</code> file next to <code>compose.yaml</code> provides values for <code>${VAR}</code> substitution <strong>inside the YAML</strong>. It does not automatically inject anything into containers.</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-yaml">image: myapp:${TAG:-latest}</code></pre></div>
+<p>Useful syntax:</p>
+<ul><li><code>${VAR:-default}</code> — use <code>default</code> if unset or empty.</li><li><code>${VAR-default}</code> — use <code>default</code> only if unset.</li><li><code>${VAR:?message}</code> — fail with an error if unset or empty.</li><li><code>$$</code> — a literal <code>$</code>, for example inside a shell command.</li></ul>
+<h3>Container environment: env_file and environment</h3>
+<ul><li><code>env_file: [api.env]</code> — reads the file and sets those variables <strong>inside the container</strong>.</li><li><code>environment:</code> — sets variables inside the container directly.</li></ul>
+<h3>Precedence</h3>
+<p>From highest to lowest for a container&#x27;s environment:</p>
+<ol><li><code>docker compose run -e VAR=...</code></li><li><code>environment:</code> in the file (after interpolation)</li><li><code>env_file:</code></li><li><code>ENV</code> in the image&#x27;s Dockerfile</li></ol>
+<h3>Always render the final configuration</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-bash">docker compose config</code></pre></div>
+<p>This prints the fully merged, interpolated model that Compose will actually apply. When something behaves unexpectedly, check this before anything else.</p>
+<hr>
+<h2>7. Storage</h2>
+<h3>Three kinds of mounts</h3>
+<ul><li><strong>Named volume</strong> (<code>db-data:/var/lib/postgresql/data</code>) — managed by Docker, created as <code>&lt;project&gt;_db-data</code>, survives <code>down</code>.</li><li><strong>Bind mount</strong> (<code>./src:/app/src</code>) — a host path. Ideal for development, risky for production.</li><li><strong>tmpfs</strong> — in-memory, disappears when the container stops. Good for scratch data and secrets.</li></ul>
+<h3>Data loss traps</h3>
+<ul><li><code>docker compose down</code> keeps named volumes.</li><li><code>docker compose down -v</code> <strong>deletes</strong> named volumes declared in the file. On a database, that is your data.</li><li>Renaming the project changes the volume name. The old data is still there, but the new project starts with an empty volume.</li></ul>
+<h3>Permission problems with bind mounts</h3>
+<p>Files created inside the container belong to the container&#x27;s UID. If the container runs as UID 1000 but the host directory belongs to UID 1001, you get <code>EACCES</code>. Fix it by aligning UIDs (<code>user: &quot;1000:1000&quot;</code>) or adjusting ownership — not by running everything as root.</p>
+<h3>External volumes</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-yaml">volumes:
+  db-data:
+    external: true
+    name: prod_db_data</code></pre></div>
+<p>Compose will not create or delete an external volume; it must already exist.</p>
+<hr>
+<h2>8. Multiple files and environments</h2>
+<h3>Override files</h3>
+<p>If both exist, Compose automatically merges:</p>
+<ul><li><code>compose.yaml</code></li><li><code>compose.override.yaml</code></li></ul>
+<p>The usual pattern is production-like settings in the base file and development settings (bind mounts, debug ports) in the override.</p>
+<h3>Explicit file lists</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-bash">docker compose -f compose.yaml -f compose.prod.yaml up -d</code></pre></div>
+<p>Later files override earlier ones. Merge rules worth knowing:</p>
+<ul><li>Single values (<code>image</code>, <code>command</code>) are <strong>replaced</strong>.</li><li><code>ports</code>, <code>expose</code>, <code>dns</code> are <strong>appended</strong>.</li><li><code>environment</code> and <code>labels</code> are <strong>merged by key</strong>.</li></ul>
+<h3>include</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-yaml">include:
+  - ../shared/observability.yaml</code></pre></div>
+<p><code>include</code> pulls in a complete Compose application, with its paths resolved relative to its own location. It is the cleanest way to share infrastructure between projects.</p>
+<h3>Profiles</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-bash">docker compose --profile debug up -d
+COMPOSE_PROFILES=debug,tools docker compose up -d</code></pre></div>
+<p>Services without a <code>profiles:</code> key always start. Services with one only start when that profile is enabled.</p>
+<hr>
+<h2>9. Development workflow</h2>
+<h3>Build integration</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-bash">docker compose build api
+docker compose up -d --build
+docker compose build --no-cache api</code></pre></div>
+<p>Compose uses BuildKit. <code>target:</code>, <code>args:</code>, <code>cache_from:</code>, and <code>secrets:</code> under <code>build:</code> work as they do with <code>docker build</code>.</p>
+<h3>File watching</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-yaml">services:
+  api:
+    build: ./api
+    develop:
+      watch:
+        - action: sync
+          path: ./api/src
+          target: /app/src
+        - action: rebuild
+          path: ./api/package.json</code></pre></div>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-bash">docker compose watch</code></pre></div>
+<ul><li><code>sync</code> copies changed files into the running container.</li><li><code>rebuild</code> rebuilds the image and recreates the container.</li><li><code>sync+restart</code> syncs, then restarts the container.</li></ul>
+<h3>Everyday commands</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-bash">docker compose ps
+docker compose logs -f --tail=100 api
+docker compose exec api sh
+docker compose run --rm api npm test
+docker compose top
+docker compose events</code></pre></div>
+<p><code>exec</code> enters a <strong>running</strong> container. <code>run</code> creates a <strong>new one-off</strong> container for the service, which is ideal for tests and admin tasks.</p>
+<hr>
+<h2>10. Lifecycle commands — what they really do</h2>
+<h3>docker compose up</h3>
+<ol><li>Loads and merges the files, then interpolates variables.</li><li>Creates networks and volumes that do not exist yet.</li><li>Builds or pulls images as needed.</li><li>For each service, in dependency order, compares the <strong>config hash</strong>: no container means create, a changed hash means recreate, an unchanged hash means leave it running.</li><li>Starts containers and waits on <code>depends_on</code> conditions.</li></ol>
+<p>Use <code>--force-recreate</code> to recreate regardless of the hash, and <code>--no-recreate</code> to never recreate.</p>
+<h3>The others</h3>
+<ul><li><code>stop</code> — stops containers, keeps everything.</li><li><code>start</code> — starts existing containers, <strong>does not apply config changes</strong>.</li><li><code>restart</code> — restarts containers, <strong>does not apply config changes</strong>.</li><li><code>down</code> — stops and removes containers and networks. Volumes stay unless <code>-v</code>.</li><li><code>down --rmi local</code> — also removes images that Compose built.</li></ul>
+<blockquote><p>Edited the file and nothing changed? You ran <code>restart</code>. Run <code>up -d</code> instead.</p></blockquote>
+<h3>Graceful shutdown</h3>
+<p>On <code>stop</code> or <code>down</code>, Docker sends <code>SIGTERM</code> (or <code>stop_signal</code>) to PID 1, waits <code>stop_grace_period</code> (default 10s), then sends <code>SIGKILL</code>.</p>
+<p>The application only receives <code>SIGTERM</code> if it <strong>is</strong> PID 1 or something forwards the signal. A shell-form command such as <code>CMD npm start</code> runs under <code>/bin/sh -c</code>, which may not forward signals. Use exec-form commands and <code>init: true</code>.</p>
+<hr>
+<h2>11. Scaling, and where Compose stops</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-bash">docker compose up -d --scale api=3</code></pre></div>
+<p>This works only if the service has <strong>no fixed host port</strong>. Three containers cannot all bind host port 3000. Either publish a range (<code>&quot;3000-3002:3000&quot;</code>), or put a reverse proxy in front and let it resolve <code>api</code> through DNS.</p>
+<p>Compose honours <code>deploy.replicas</code> and <code>deploy.resources.limits</code>, but it is still <strong>one host</strong>:</p>
+<ul><li>no rescheduling when the host fails,</li><li>no rolling updates with automatic rollback,</li><li>no cross-host networking.</li></ul>
+<h3>Where Compose fits</h3>
+<ul><li><strong>Good fit</strong> — local development, CI integration tests, demos, small single-host internal tools.</li><li><strong>Poor fit</strong> — anything that needs high availability, multi-host scheduling, or zero-downtime deploys. That is Swarm or Kubernetes territory.</li></ul>
+<hr>
+<h2>12. Debugging playbook</h2>
+<h3>Scenario A — &quot;api cannot connect to db&quot;</h3>
+<ol><li><code>docker compose ps</code> — is <code>db</code> running and healthy?</li><li><code>docker compose config</code> — are both services on a shared network?</li><li><code>docker compose exec api getent hosts db</code> — does DNS resolve?</li><li>Is the connection string using <code>localhost</code>? Inside <code>api</code>, <code>localhost</code> is <code>api</code> itself, not the database.</li><li>Is the API connecting before Postgres is ready? Check health conditions and retry logic.</li></ol>
+<h3>Scenario B — &quot;my change was not applied&quot;</h3>
+<ul><li>Was it a <code>restart</code> instead of <code>up -d</code>?</li><li>Was it a code change that needs <code>--build</code>?</li><li>Is a stale override file merging in? Check <code>docker compose config</code>.</li></ul>
+<h3>Scenario C — &quot;the database is empty after a deploy&quot;</h3>
+<ul><li>Did someone run <code>down -v</code>?</li><li>Did the project name change, creating a new volume? Compare <code>docker volume ls</code>.</li></ul>
+<h3>Scenario D — &quot;containers take 10 seconds to stop&quot;</h3>
+<p>The process is not handling <code>SIGTERM</code>, so Docker waits for the grace period and kills it. Check for shell-form commands and missing <code>init: true</code>.</p>
+<hr>
+<h2>13. Hands-on labs</h2>
+<h3>Lab A — Observe the config hash</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-bash">docker compose up -d
+docker inspect shop-api-1 --format &#x27;{{index .Config.Labels &quot;com.docker.compose.config-hash&quot;}}&#x27;
+# change LOG_LEVEL in compose.yaml
+docker compose up -d
+docker inspect shop-api-1 --format &#x27;{{index .Config.Labels &quot;com.docker.compose.config-hash&quot;}}&#x27;</code></pre></div>
+<p>Confirm that only <code>api</code> was recreated, and explain why.</p>
+<h3>Lab B — Prove network isolation</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-bash">docker compose exec web getent hosts db || echo &quot;web cannot see db&quot;
+docker compose exec api getent hosts db</code></pre></div>
+<h3>Lab C — Break startup ordering</h3>
+<p>Remove the <code>condition: service_healthy</code> from <code>api</code>, restart the stack from scratch, and watch the API logs. Then add retry logic to the application instead of relying on ordering.</p>
+<h3>Lab D — Graceful shutdown</h3>
+<p>Run a container whose process ignores <code>SIGTERM</code>, time <code>docker compose stop</code>, then add <code>init: true</code> or fix the signal handling and time it again.</p>
+<hr>
+<h2>14. Interview questions with model answers</h2>
+<blockquote><p><strong>Does Compose keep my services running?</strong></p></blockquote>
+<p>No. Compose applies the desired state once and exits. The Docker Engine&#x27;s restart policy restarts crashed containers. Nothing moves them to another host.</p>
+<blockquote><p><strong>How does Compose know whether to recreate a container?</strong></p></blockquote>
+<p>It stores a hash of each service&#x27;s resolved configuration as a label on the container. On <code>up</code>, it recomputes the hash and recreates the container only when the hashes differ.</p>
+<blockquote><p><strong>What is the difference between .env and env_file?</strong></p></blockquote>
+<p><code>.env</code> feeds variable interpolation into the YAML itself. <code>env_file</code> injects variables into the container&#x27;s environment. A value in <code>.env</code> never reaches the container unless the YAML references it.</p>
+<blockquote><p><strong>Is depends_on enough to make a service resilient to a database restart?</strong></p></blockquote>
+<p>No. It only orders startup. The application needs retries, timeouts, and health-aware connection handling.</p>
+<blockquote><p><strong>When would you not use Compose?</strong></p></blockquote>
+<p>When you need multiple hosts, automatic rescheduling, rolling updates with rollback, or high availability. Then you would use Swarm or Kubernetes.</p></div>
+    </article>
+  </main>
+</body>
+</html>

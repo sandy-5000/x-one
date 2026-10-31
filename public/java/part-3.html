@@ -1,0 +1,1963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Part 3 · x-one</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+  <script src="../assets/copy.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar"><input type="checkbox" id="nav-toggle" class="nav-toggle"><div class="sidebar-brand"><a href="../index.html">x-one notes</a><label for="nav-toggle" class="menu-btn" aria-label="Toggle navigation"><span class="menu-open">Menu</span><span class="menu-close">Close</span></label></div><nav><details class="nav-group"><summary class="nav-group-label">cp<span class="nav-count">56</span></summary><ul><li><a href="../cp/0-1-bfs.html">0-1 BFS</a></li><li><a href="../cp/two-sat.html">2-SAT</a></li><li><a href="../cp/bfs-state-space.html">BFS on State Space</a></li><li><a href="../cp/binary-search.html">Binary Search (on Sorted Data)</a></li><li><a href="../cp/binary-search-on-answer.html">Binary Search on Answer</a></li><li><a href="../cp/bitmask-dp.html">Bitmask DP</a></li><li><a href="../cp/bridges-articulation-points.html">Bridges &amp; Articulation Points</a></li><li><a href="../cp/cdq-divide-conquer.html">CDQ Divide &amp; Conquer (Offline)</a></li><li><a href="../cp/centroid-decomposition.html">Centroid Decomposition</a></li><li><a href="../cp/convex-hull-trick-lichao.html">Convex Hull Trick &amp; Li Chao Tree</a></li><li><a href="../cp/coordinate-compression.html">Coordinate Compression</a></li><li><a href="../cp/difference-array.html">Difference Array</a></li><li><a href="../cp/digit-dp.html">Digit DP</a></li><li><a href="../cp/dijkstra.html">Dijkstra&#x27;s Algorithm</a></li><li><a href="../cp/dsu-on-tree.html">DSU on Tree (Small-to-Large)</a></li><li><a href="../cp/dp-1d.html">Dynamic Programming — 1D</a></li><li><a href="../cp/dp-2d-knapsack.html">Dynamic Programming — 2D &amp; Knapsack</a></li><li><a href="../cp/euler-tour-flattening.html">Euler Tour (Tree Flattening)</a></li><li><a href="../cp/fenwick-tree.html">Fenwick Tree (Binary Indexed Tree)</a></li><li><a href="../cp/flood-fill-multi-source-bfs.html">Flood Fill &amp; Multi-Source BFS</a></li><li><a href="../cp/floyd-warshall.html">Floyd-Warshall</a></li><li><a href="../cp/functional-graphs.html">Functional Graphs</a></li><li><a href="../cp/graph-bfs-dfs.html">Graph BFS &amp; DFS</a></li><li><a href="../cp/greedy.html">Greedy</a></li><li><a href="../cp/heavy-light-decomposition.html">Heavy-Light Decomposition (HLD)</a></li><li><a href="../cp/interval-dp.html">Interval DP</a></li><li><a href="../cp/kmp-pattern-matching.html">KMP Pattern Matching</a></li><li><a href="../cp/lca-binary-lifting.html">LCA (Binary Lifting)</a></li><li><a href="../cp/line-sweep.html">Line Sweep</a></li><li><a href="../cp/lis.html">Longest Increasing Subsequence (LIS)</a></li><li><a href="../cp/matrix-exponentiation.html">Matrix Exponentiation</a></li><li><a href="../cp/meet-in-the-middle.html">Meet in the Middle</a></li><li><a href="../cp/mos-algorithm.html">Mo&#x27;s Algorithm (Offline Queries)</a></li><li><a href="../cp/monotonic-queue.html">Monotonic Deque (Queue)</a></li><li><a href="../cp/monotonic-stack.html">Monotonic Stack</a></li><li><a href="../cp/mst-kruskal-prim.html">MST (Kruskal &amp; Prim)</a></li><li><a href="../cp/policy-based-data-structure.html">Policy-Based Data Structure</a></li><li><a href="../cp/prefix-sums.html">Prefix Sums</a></li><li><a href="../cp/priority-queue-tricks.html">Priority Queue Tricks</a></li><li><a href="../cp/rerooting-dp.html">Rerooting DP on Trees</a></li><li><a href="../cp/segment-tree.html">Segment Tree</a></li><li><a href="../cp/sliding-window.html">Sliding Window</a></li><li><a href="../cp/sorting-tricks.html">Sorting Tricks</a></li><li><a href="../cp/sparse-table-rmq.html">Sparse Table (RMQ)</a></li><li><a href="../cp/sprague-grundy.html">Sprague-Grundy (Game Theory)</a></li><li><a href="../cp/sqrt-decomposition.html">Square Root Decomposition</a></li><li><a href="../cp/string-hashing.html">String Hashing</a></li><li><a href="../cp/strongly-connected-components.html">Strongly Connected Components (SCC)</a></li><li><a href="../cp/topological-sort.html">Topological Sort</a></li><li><a href="../cp/tree-dfs.html">Tree DFS</a></li><li><a href="../cp/tree-difference-array.html">Tree Difference Array</a></li><li><a href="../cp/trie-and-xor-trie.html">Trie &amp; XOR Trie</a></li><li><a href="../cp/two-pointers.html">Two Pointers</a></li><li><a href="../cp/union-find-dsu.html">Union-Find (DSU)</a></li><li><a href="../cp/virtual-tree.html">Virtual Tree</a></li><li><a href="../cp/z-algorithm.html">Z-Algorithm</a></li></ul></details><details class="nav-group"><summary class="nav-group-label">docker<span class="nav-count">3</span></summary><ul><li><a href="../docker/start.html">Start</a></li><li><a href="../docker/compose.html">Compose</a></li><li><a href="../docker/swarm.html">Swarm</a></li></ul></details><details class="nav-group" open><summary class="nav-group-label">java<span class="nav-count">5</span></summary><ul><li><a href="../java/part-1.html">Part 1</a></li><li><a href="../java/part-2.html">Part 2</a></li><li><a href="../java/part-3.html" class="is-active" aria-current="page">Part 3</a></li><li><a href="../java/part-4.html">Part 4</a></li><li><a href="../java/part-5.html">Part 5</a></li></ul></details><details class="nav-group"><summary class="nav-group-label">math<span class="nav-count">34</span></summary><ul><li><a href="../math/bijection-counting.html">Bijection &amp; Counting Proofs</a></li><li><a href="../math/burnside-lemma.html">Burnside&#x27;s Lemma (Symmetry Counting)</a></li><li><a href="../math/catalan-numbers.html">Catalan Numbers</a></li><li><a href="../math/chinese-remainder-theorem.html">Chinese Remainder Theorem (CRT)</a></li><li><a href="../math/combinatorial-identities.html">Combinatorial Identities</a></li><li><a href="../math/combinatorics-ncr.html">Combinatorics — nCr &amp; Pascal</a></li><li><a href="../math/computational-geometry-basics.html">Computational Geometry Basics</a></li><li><a href="../math/derangements.html">Derangements</a></li><li><a href="../math/divisor-enumeration.html">Divisor Enumeration — O(√n)</a></li><li><a href="../math/divisor-functions.html">Divisor Functions (τ and σ)</a></li><li><a href="../math/euler-totient.html">Euler&#x27;s Totient φ(n)</a></li><li><a href="../math/expected-value-linearity.html">Expected Value — Linearity</a></li><li><a href="../math/fast-exponentiation.html">Fast Exponentiation</a></li><li><a href="../math/fermat-euler-theorem.html">Fermat&#x27;s &amp; Euler&#x27;s Theorems</a></li><li><a href="../math/floor-sum-trick.html">Floor Sum Trick — Σ⌊n/i⌋</a></li><li><a href="../math/gcd-lcm-extended-euclid.html">GCD, LCM &amp; Extended Euclidean</a></li><li><a href="../math/harmonic-bounds.html">Harmonic Bounds &amp; Estimates</a></li><li><a href="../math/inclusion-exclusion.html">Inclusion-Exclusion Principle</a></li><li><a href="../math/legendre-formula.html">Legendre&#x27;s Formula</a></li><li><a href="../math/linear-recurrences.html">Linear Recurrences</a></li><li><a href="../math/lucas-theorem.html">Lucas Theorem &amp; nCr mod prime</a></li><li><a href="../math/modular-arithmetic.html">Modular Arithmetic</a></li><li><a href="../math/modular-inverse-composite.html">Modular Inverse (Composite Modulus)</a></li><li><a href="../math/modular-inverse-fermat.html">Modular Inverse (Fermat)</a></li><li><a href="../math/multinomial-coefficients.html">Multinomial Coefficients</a></li><li><a href="../math/mobius-inversion.html">Möbius Inversion</a></li><li><a href="../math/parity-xor-patterns.html">Parity, XOR &amp; Modular Patterns</a></li><li><a href="../math/pigeonhole-counting.html">Pigeonhole &amp; Counting Arguments</a></li><li><a href="../math/probability-basics.html">Probability Basics</a></li><li><a href="../math/sieve-primes-factorization.html">Sieve, Primes &amp; Factorization</a></li><li><a href="../math/stars-and-bars.html">Stars and Bars</a></li><li><a href="../math/stirling-numbers.html">Stirling Numbers (2nd Kind)</a></li><li><a href="../math/sum-formulas-series.html">Sum Formulas &amp; Series</a></li><li><a href="../math/wilson-primality.html">Wilson&#x27;s Theorem &amp; Primality</a></li></ul></details><details class="nav-group"><summary class="nav-group-label">os<span class="nav-count">2</span></summary><ul><li><a href="../os/cpu.html">CPU</a></li><li><a href="../os/user-threads.html">User threads</a></li></ul></details></nav></aside>
+  <main class="chat">
+    <header class="page-head"><span class="crumb">java / part-3</span></header>
+    <article class="message user">
+      <div class="message-label">You</div>
+      <div class="message-body">week 3
+Threads + synchronization
+Concurrency lab
+
+give full details and concepts for this week</div>
+    </article>
+    <article class="message assistant">
+      <div class="message-label">Assistant</div>
+      <div class="message-body prose"><h1>Week 3 — Threads + Synchronization + Concurrency Lab</h1>
+<p>For your <strong>Apple IC4 Java/backend preparation</strong>, Week 3 should be more than just learning <code>Thread</code>. You want to understand <strong>how Java concurrency works, why race conditions happen, how to make shared state safe, and how to design concurrent backend code without creating deadlocks or performance bottlenecks</strong>.</p>
+<p>The progression I recommend is:</p>
+<blockquote><p><strong>Thread basics → Thread lifecycle → shared state → race conditions → synchronization → locks → coordination → executors → concurrent collections → atomic operations → futures → deadlocks → concurrent design patterns → lab</strong></p></blockquote>
+<hr>
+<h1>1. What you should be able to do by the end of Week 3</h1>
+<p>You should be comfortable answering and coding around questions like:</p>
+<ul><li>What is a thread?</li><li>Process vs thread?</li><li>What happens when <code>start()</code> is called?</li><li><code>start()</code> vs <code>run()</code>?</li><li>What are the states of a Java thread?</li><li>How do multiple threads share memory?</li><li>What is a race condition?</li><li>Why does <code>count++</code> cause problems?</li><li>What does <code>synchronized</code> actually guarantee?</li><li>What is a monitor/intrinsic lock?</li><li>Instance lock vs class lock?</li><li>What is <code>volatile</code>?</li><li>Why doesn&#x27;t <code>volatile</code> make <code>count++</code> safe?</li><li>What are atomic classes?</li><li><code>synchronized</code> vs <code>Lock</code>?</li><li><code>ReentrantLock</code>?</li><li><code>ReadWriteLock</code>?</li><li>What is a deadlock?</li><li>How do you prevent deadlocks?</li><li>What are starvation and livelock?</li><li>Why should you generally prefer <code>ExecutorService</code> over manually creating threads?</li><li><code>Runnable</code> vs <code>Callable</code>?</li><li><code>Future</code> vs <code>CompletableFuture</code>?</li><li>What are concurrent collections?</li><li><code>ConcurrentHashMap</code> vs <code>HashMap</code>?</li><li>When would you use <code>BlockingQueue</code>?</li><li>What is thread safety?</li><li>What is immutability?</li><li>What is the Java Memory Model?</li><li>What is a happens-before relationship?</li><li>How would you design a thread-safe service?</li></ul>
+<hr>
+<h1>2. Process vs Thread</h1>
+<p>First establish the mental model.</p>
+<h3>Process</h3>
+<p>A process is an independently running program.</p>
+<p>For example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Java Application
+     |
+     +---- Process
+             |
+             +---- Heap
+             +---- Code
+             +---- Resources
+             +---- Threads</code></pre></div>
+<h3>Thread</h3>
+<p>A thread is an execution path inside a process.</p>
+<p>One Java application can have:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Java Process
+   |
+   +-- Thread 1
+   +-- Thread 2
+   +-- Thread 3
+   +-- Thread 4</code></pre></div>
+<p>Threads within the same process generally share:</p>
+<ul><li>heap</li><li>objects</li><li>static variables</li></ul>
+<p>But each thread has its own:</p>
+<ul><li>stack</li><li>program counter</li><li>execution state</li></ul>
+<p>This shared-memory model is what makes concurrency powerful <strong>and dangerous</strong>.</p>
+<hr>
+<h1>3. Creating a Thread</h1>
+<p>There are several approaches you&#x27;ll encounter.</p>
+<h2>Extending <code>Thread</code></h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>class MyThread extends Thread {
+
+    @Override
+    public void run() {
+        System.out.println(&quot;Running...&quot;);
+    }
+}</code></pre></div>
+<p>Then:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>MyThread thread = new MyThread();
+thread.start();</code></pre></div>
+<h3>Important</h3>
+<p>This:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>thread.start();</code></pre></div>
+<p>creates/schedules a new thread of execution.</p>
+<p>This:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>thread.run();</code></pre></div>
+<p>does <strong>not</strong> create a new thread.</p>
+<p>It simply calls the method normally.</p>
+<hr>
+<h1>4. Runnable</h1>
+<p>More commonly:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Runnable task = () -&gt; {
+    System.out.println(&quot;Running task&quot;);
+};
+
+Thread thread = new Thread(task);
+thread.start();</code></pre></div>
+<p>Why is <code>Runnable</code> generally preferable?</p>
+<p>Because your task and your thread are separate concepts.</p>
+<pre class="diagram"><code>+-------------------+
+|      Runnable     |
++-------------------+
+          |
+          v
+          |
+          |
+          v
+  | represents work
+          |
+          v
++-------------------+
+|  Executor/Thread  |
++-------------------+
+          |
+          v
+          |
+          |
+          v
+   | executes work
+          |
+          v
++-------------------+
+|        CPU        |
++-------------------+</code></pre>
+<p>This separation becomes extremely important when you learn thread pools.</p>
+<hr>
+<h1>5. Thread Lifecycle</h1>
+<p>Know the Java thread states:</p>
+<pre class="diagram"><code>+----------------------+
+|         NEW          |
++----------------------+
+            |
+            v
+           |
+            |
+            v
+       | start()
+            |
+            v
++----------------------+
+|       RUNNABLE       |
++----------------------+
+            |
+            v
+           |
+            |
+            v
++----------------------+
+|     +----------+     |
++----------------------+
+            |
+            v
+      |          |
+            |
+            v
++----------------------+
+|  BLOCKED   WAITING   |
++----------------------+
+            |
+            v
+      |          |
+            |
+            v
+           |
+            |
+            v
+  |      TIMED_WAITING
+            |
+            v
+           |
+            |
+            v
++----------------------+
+|      TERMINATED      |
++----------------------+</code></pre>
+<p>Java&#x27;s official states are:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Thread.State</code></pre></div>
+<p>including:</p>
+<ul><li><code>NEW</code></li><li><code>RUNNABLE</code></li><li><code>BLOCKED</code></li><li><code>WAITING</code></li><li><code>TIMED_WAITING</code></li><li><code>TERMINATED</code></li></ul>
+<hr>
+<h1>6. <code>start()</code> vs <code>run()</code></h1>
+<p>This is a classic interview question.</p>
+<h3><code>start()</code></h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>thread.start();</code></pre></div>
+<p>Requests JVM to execute the thread concurrently.</p>
+<h3><code>run()</code></h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>thread.run();</code></pre></div>
+<p>ordinary method invocation.</p>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Thread t = new Thread(() -&gt; {
+    System.out.println(Thread.currentThread().getName());
+});
+
+t.start();</code></pre></div>
+<p>versus:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>t.run();</code></pre></div>
+<p>The second one executes on the <strong>current thread</strong>.</p>
+<hr>
+<h1>7. <code>sleep()</code></h1>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Thread.sleep(1000);</code></pre></div>
+<p>Pauses the currently executing thread for approximately one second.</p>
+<p>Important:</p>
+<p><code>sleep()</code> does <strong>not</strong> release a monitor lock that the thread already owns.</p>
+<p>This matters when you&#x27;re dealing with synchronization.</p>
+<hr>
+<h1>8. <code>join()</code></h1>
+<p><code>join()</code> allows one thread to wait for another thread to finish.</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Thread t = new Thread(() -&gt; {
+    System.out.println(&quot;Working...&quot;);
+});
+
+t.start();
+
+t.join();
+
+System.out.println(&quot;Finished&quot;);</code></pre></div>
+<p>Conceptually:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Main Thread
+    |
+    +---- start Worker
+    |
+    +---- wait at join()
+    |
+    |       Worker
+    |          |
+    |          +---- work
+    |          +---- terminate
+    |
+    +---- continue</code></pre></div>
+<p>Know this well.</p>
+<hr>
+<h1>9. Interrupts</h1>
+<p>Learn:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>thread.interrupt();</code></pre></div>
+<p>and:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Thread.currentThread().isInterrupted();</code></pre></div>
+<p>An interrupt is a <strong>request</strong> for a thread to stop/wake from interruptible operations; it isn&#x27;t a forceful kill.</p>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>while (!Thread.currentThread().isInterrupted()) {
+    // work
+}</code></pre></div>
+<p>Also understand:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>InterruptedException</code></pre></div>
+<p>and why you generally should not silently swallow it.</p>
+<p>Typical pattern:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>try {
+    Thread.sleep(1000);
+} catch (InterruptedException e) {
+    Thread.currentThread().interrupt();
+}</code></pre></div>
+<hr>
+<h1>10. The Most Important Problem: Shared State</h1>
+<p>Consider:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>class Counter {
+
+    private int count = 0;
+
+    void increment() {
+        count++;
+    }
+
+    int getCount() {
+        return count;
+    }
+}</code></pre></div>
+<p>Now:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Counter counter = new Counter();
+
+Thread t1 = new Thread(() -&gt; {
+    for (int i = 0; i &lt; 10000; i++) {
+        counter.increment();
+    }
+});
+
+Thread t2 = new Thread(() -&gt; {
+    for (int i = 0; i &lt; 10000; i++) {
+        counter.increment();
+    }
+});</code></pre></div>
+<p>You might expect:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>20000</code></pre></div>
+<p>But you may get something lower.</p>
+<p>Why?</p>
+<p>Because:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>count++;</code></pre></div>
+<p>isn&#x27;t one indivisible operation.</p>
+<p>Conceptually:</p>
+<pre class="diagram"><code>+-------------+
+|  read count |
++-------------+
+       |
+       v
++-------------+
+|    add 1    |
++-------------+
+       |
+       v
++-------------+
+| write count |
++-------------+</code></pre>
+<p>Two threads can interleave these operations.</p>
+<hr>
+<h1>11. Race Condition</h1>
+<p>A <strong>race condition</strong> occurs when program behavior depends on the timing/interleaving of concurrent operations.</p>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>count = 10
+
+Thread A: read 10
+Thread B: read 10
+
+Thread A: 10 + 1 = 11
+Thread B: 10 + 1 = 11
+
+Thread A: write 11
+Thread B: write 11</code></pre></div>
+<p>Expected:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>12</code></pre></div>
+<p>Actual:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>11</code></pre></div>
+<p>This is one of the most important concepts in this week&#x27;s lab.</p>
+<hr>
+<h1>12. Critical Section</h1>
+<p>A <strong>critical section</strong> is code that accesses shared state and must be protected from unsafe concurrent access.</p>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>void increment() {
+    count++;
+}</code></pre></div>
+<p>If multiple threads modify <code>count</code>, this becomes a critical section.</p>
+<p>The goal is to ensure appropriate synchronization around it.</p>
+<hr>
+<h1>13. <code>synchronized</code></h1>
+<p>The simplest Java synchronization mechanism.</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>public synchronized void increment() {
+    count++;
+}</code></pre></div>
+<p>Now only one thread at a time can execute that synchronized instance method for the same object.</p>
+<hr>
+<h1>14. Synchronized Block</h1>
+<p>Instead of synchronizing the entire method:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>public void increment() {
+
+    synchronized (this) {
+        count++;
+    }
+}</code></pre></div>
+<p>This allows you to control exactly what is protected.</p>
+<p>This is often preferable when only a small portion needs synchronization.</p>
+<hr>
+<h1>15. What Does <code>synchronized</code> Actually Do?</h1>
+<p>You should understand this beyond &quot;it makes code thread-safe.&quot;</p>
+<p><code> synchronized</code> provides two important guarantees:</p>
+<h3>Mutual exclusion</h3>
+<p>Only one thread can hold the same monitor at a time.</p>
+<h3>Visibility</h3>
+<p>Changes made by one thread while holding/releasing the monitor become visible to another thread that subsequently acquires the same monitor.</p>
+<p>Think:</p>
+<pre class="diagram"><code>+----------------------------------+
+|             Thread A             |
++----------------------------------+
+                  |
+                  v
+                 |
+                  |
+                  v
+           | synchronized
+                  |
+                  v
++----------------------------------+
+|               LOCK               |
++----------------------------------+
+                  |
+                  v
+                 |
+                  |
+                  v
++----------------------------------+
+|       modify shared state        |
++----------------------------------+
+                  |
+                  v
+                 |
+                  |
+                  v
++----------------------------------+
+|              UNLOCK              |
++----------------------------------+
+                  |
+                  v
+                 |
+                  |
+                  v
++----------------------------------+
+|             Thread B             |
++----------------------------------+
+                  |
+                  v
+                 |
+                  |
+                  v
+           | synchronized
+                  |
+                  v
++----------------------------------+
+| sees appropriate published state |
++----------------------------------+</code></pre>
+<hr>
+<h1>16. Intrinsic Locks / Monitors</h1>
+<p>Every Java object can be associated with an intrinsic monitor lock.</p>
+<p>For:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>synchronized (obj) {
+    // critical section
+}</code></pre></div>
+<p>the thread attempts to acquire <code>obj</code>&#x27;s monitor.</p>
+<p>Only one thread can hold that monitor at a time.</p>
+<hr>
+<h1>17. Instance Method Synchronization</h1>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>class Counter {
+
+    private int count;
+
+    public synchronized void increment() {
+        count++;
+    }
+}</code></pre></div>
+<p>This is effectively associated with:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>synchronized (this)</code></pre></div>
+<p>So the lock is the particular <code>Counter</code> object.</p>
+<hr>
+<h1>18. Static Synchronized Method</h1>
+<p>Consider:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>public static synchronized void foo() {
+}</code></pre></div>
+<p>This synchronizes on the <code>Class</code> object.</p>
+<p>Conceptually:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>synchronized (Counter.class) {
+    // ...
+}</code></pre></div>
+<p>This distinction is important.</p>
+<h3>Instance synchronized</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>lock = this</code></pre></div>
+<h3>Static synchronized</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>lock = Counter.class</code></pre></div>
+<hr>
+<h1>19. Different Locks</h1>
+<p>Suppose:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Counter c1 = new Counter();
+Counter c2 = new Counter();</code></pre></div>
+<p>If:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>c1.increment();
+c2.increment();</code></pre></div>
+<p>and <code>increment()</code> is an instance synchronized method, the threads can potentially execute concurrently because:</p>
+<pre class="diagram"><code>+----+--------+
+| c1 | lock A |
++----+--------+
++----+--------+
+| c2 | lock B |
++----+--------+</code></pre>
+<p>They aren&#x27;t fighting over the same monitor.</p>
+<hr>
+<h1>20. <code>volatile</code></h1>
+<p>Another very important keyword:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>private volatile boolean running = true;</code></pre></div>
+<p><code>volatile</code> primarily addresses <strong>visibility</strong> and ordering guarantees for a variable.</p>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>class Worker implements Runnable {
+
+    private volatile boolean running = true;
+
+    public void stop() {
+        running = false;
+    }
+
+    public void run() {
+        while (running) {
+            // work
+        }
+    }
+}</code></pre></div>
+<p>Without appropriate visibility guarantees, another thread&#x27;s update may not be observed as expected.</p>
+<hr>
+<h1>21. <code>volatile</code> Does NOT Make Everything Atomic</h1>
+<p>This is extremely important.</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>volatile int count;
+
+count++;</code></pre></div>
+<p>is still unsafe as a compound operation.</p>
+<p>Why?</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>read
++
+write</code></pre></div>
+<p>can still interleave.</p>
+<p>So:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>volatile</code></pre></div>
+<p>is not equivalent to:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>synchronized</code></pre></div>
+<hr>
+<h1>22. Atomic Classes</h1>
+<p>Java provides:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>AtomicInteger
+AtomicLong
+AtomicBoolean
+AtomicReference</code></pre></div>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>AtomicInteger counter = new AtomicInteger();
+
+counter.incrementAndGet();</code></pre></div>
+<p>Instead of:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>counter++;</code></pre></div>
+<p>You can use atomic operations.</p>
+<p>Useful methods include:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>incrementAndGet()
+getAndIncrement()
+decrementAndGet()
+getAndDecrement()
+compareAndSet()
+get()
+set()</code></pre></div>
+<hr>
+<h1>23. Compare-and-Set / CAS</h1>
+<p>You should understand the idea behind CAS.</p>
+<p>Conceptually:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>current value = 10
+
+&quot;Change 10 → 11 only if it is still 10&quot;</code></pre></div>
+<p>If another thread changed it:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>CAS fails</code></pre></div>
+<p>The operation can then retry.</p>
+<p>This is a fundamental concept behind many lock-free/concurrent algorithms.</p>
+<hr>
+<h1>24. <code>synchronized</code> vs Atomic Classes</h1>
+<h3><code>synchronized</code></h3>
+<p>Useful when you have:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>multiple operations
++
+multiple shared variables
++
+invariants</code></pre></div>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>synchronized void transfer(Account from, Account to, int amount) {
+    ...
+}</code></pre></div>
+<h3>AtomicInteger</h3>
+<p>Excellent for simple atomic state transitions:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>counter.incrementAndGet();</code></pre></div>
+<p>Don&#x27;t blindly replace every synchronization block with atomics.</p>
+<hr>
+<h1>25. <code>Lock</code></h1>
+<p>Java also provides explicit locking:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Lock lock = new ReentrantLock();</code></pre></div>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>lock.lock();
+
+try {
+    // critical section
+} finally {
+    lock.unlock();
+}</code></pre></div>
+<p>The <code>finally</code> is critical.</p>
+<p>You don&#x27;t want:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>lock.lock();
+
+// exception
+
+lock.unlock();</code></pre></div>
+<p>because the lock may remain held.</p>
+<hr>
+<h1>26. <code>ReentrantLock</code></h1>
+<p>Know these methods:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>lock()
+unlock()
+tryLock()
+lockInterruptibly()</code></pre></div>
+<p><code>tryLock()</code> can be especially useful:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>if (lock.tryLock()) {
+    try {
+        // work
+    } finally {
+        lock.unlock();
+    }
+}</code></pre></div>
+<p>Unlike blindly waiting forever, you can decide what to do if the lock isn&#x27;t available.</p>
+<hr>
+<h1>27. Reentrant</h1>
+<p>&quot;Reentrant&quot; means the same thread can acquire the same lock multiple times.</p>
+<p>Conceptually:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Thread A
+   |
+   acquire lock
+   |
+   acquire same lock again
+   |
+   release
+   |
+   release</code></pre></div>
+<p>The lock maintains ownership/reentrancy information.</p>
+<hr>
+<h1>28. <code>ReadWriteLock</code></h1>
+<p>Useful when you have:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>many readers
+few writers</code></pre></div>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>ReadWriteLock lock = new ReentrantReadWriteLock();</code></pre></div>
+<p>You get:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>lock.readLock()
+lock.writeLock()</code></pre></div>
+<p>Multiple readers can potentially read concurrently.</p>
+<p>Writers require exclusive access.</p>
+<hr>
+<h1>29. <code>StampedLock</code></h1>
+<p>Know that it exists, but don&#x27;t spend too much Week 3 time on it.</p>
+<p>It supports:</p>
+<ul><li>read locks</li><li>write locks</li><li>optimistic reads</li></ul>
+<p>It is more advanced and has important caveats.</p>
+<p>For your current preparation:</p>
+<blockquote><p>Understand the concept; don&#x27;t prioritize mastering it yet.</p></blockquote>
+<hr>
+<h1>30. Thread Coordination</h1>
+<p>Concurrency isn&#x27;t only about locking.</p>
+<p>Threads often need to communicate.</p>
+<p>Learn:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>wait()
+notify()
+notifyAll()</code></pre></div>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>synchronized (queue) {
+
+    while (queue.isEmpty()) {
+        queue.wait();
+    }
+
+    // consume
+}</code></pre></div>
+<p>Producer:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>synchronized (queue) {
+
+    queue.add(item);
+
+    queue.notifyAll();
+}</code></pre></div>
+<hr>
+<h1>31. Why <code>while</code>, Not <code>if</code>?</h1>
+<p>This is important:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>while (queue.isEmpty()) {
+    queue.wait();
+}</code></pre></div>
+<p>rather than:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>if (queue.isEmpty()) {
+    queue.wait();
+}</code></pre></div>
+<p>After waking up, the condition must be checked again.</p>
+<p>This is a classic concurrency concept.</p>
+<hr>
+<h1>32. <code>wait()</code> vs <code>sleep()</code></h1>
+<p>Know this table:</p>
+<pre class="diagram"><code>+---------------------------------------+-----------------------------------+
+| `wait()`                              | `sleep()`                         |
++---------------------------------------+-----------------------------------+
+| Used for coordination                 | Used for timing                   |
+| Must be called with monitor ownership | Doesn&#x27;t require monitor ownership |
+| Releases the monitor while waiting    | Does not release monitor          |
+| Usually used with `notify/notifyAll`  | No notification mechanism         |
+| Defined on `Object`                   | Defined on `Thread`               |
++---------------------------------------+-----------------------------------+</code></pre>
+<p>This is a common interview question.</p>
+<hr>
+<h1>33. Why Modern Code Usually Avoids Manual <code>wait/notify</code></h1>
+<p>Although you should understand them, modern Java code often uses higher-level concurrency utilities:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>BlockingQueue
+ExecutorService
+CompletableFuture
+CountDownLatch
+Semaphore
+CyclicBarrier
+Phaser</code></pre></div>
+<p>These reduce the amount of error-prone coordination code.</p>
+<hr>
+<h1>34. ExecutorService</h1>
+<p>This is one of the <strong>highest-priority topics for your Week 3 lab</strong>.</p>
+<p>Instead of:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>new Thread(...).start();
+new Thread(...).start();
+new Thread(...).start();</code></pre></div>
+<p>use a thread pool.</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>ExecutorService executor =
+        Executors.newFixedThreadPool(4);</code></pre></div>
+<p>Then:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>executor.submit(() -&gt; {
+    System.out.println(&quot;Task&quot;);
+});</code></pre></div>
+<p>And eventually:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>executor.shutdown();</code></pre></div>
+<hr>
+<h1>35. Why Thread Pools?</h1>
+<p>Creating a thread has overhead.</p>
+<p>Suppose you receive:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>100,000 requests</code></pre></div>
+<p>You don&#x27;t want:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>100,000 threads</code></pre></div>
+<p>Instead:</p>
+<pre class="diagram"><code>+---------------------------+
+|          Requests         |
++---------------------------+
+              |
+              v
++---------------------------+
+|         Task queue        |
++---------------------------+
+              |
+              v
++---------------------------+
+|        Thread pool        |
++---------------------------+
+              |
+              v
++---------------------------+
+| 4 / 8 / 16 worker threads |
++---------------------------+</code></pre>
+<p>Threads are reused.</p>
+<hr>
+<h1>36. Executor Architecture</h1>
+<p>Understand:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>                +----------------+
+Tasks --------&gt; |   Work Queue   |
+                +-------+--------+
+                        |
+          +-------------+-------------+
+          |             |             |
+       Worker 1      Worker 2      Worker 3
+          |             |             |
+        Task          Task          Task</code></pre></div>
+<p>This is fundamental backend concurrency architecture.</p>
+<hr>
+<h1>37. Executor Types</h1>
+<p>Know:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Executors.newFixedThreadPool(n)
+Executors.newSingleThreadExecutor()
+Executors.newCachedThreadPool()</code></pre></div>
+<p>Also understand why blindly using <code>Executors</code> factory methods can be problematic in production systems due to their queue/thread behavior.</p>
+<p>At IC4 level, you should be able to reason about:</p>
+<ul><li>number of workers</li><li>queue size</li><li>task duration</li><li>CPU vs I/O workload</li><li>rejection behavior</li><li>shutdown</li></ul>
+<hr>
+<h1>38. <code>Runnable</code> vs <code>Callable</code></h1>
+<h3>Runnable</h3>
+<p>Doesn&#x27;t return a result.</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Runnable task = () -&gt; {
+    System.out.println(&quot;Hello&quot;);
+};</code></pre></div>
+<h3>Callable</h3>
+<p>Returns a value and can throw checked exceptions.</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Callable&lt;Integer&gt; task = () -&gt; {
+    return 42;
+};</code></pre></div>
+<hr>
+<h1>39. Future</h1>
+<p>Submit a <code>Callable</code>:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Future&lt;Integer&gt; future =
+        executor.submit(() -&gt; 42);</code></pre></div>
+<p>Then:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Integer result = future.get();</code></pre></div>
+<p>But:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>future.get();</code></pre></div>
+<p>can block.</p>
+<p>This is important.</p>
+<hr>
+<h1>40. Future Cancellation</h1>
+<p>Know:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>future.cancel(true);
+future.isDone();
+future.isCancelled();</code></pre></div>
+<p>But cancellation is cooperative in important practical respects; interrupting a task doesn&#x27;t magically terminate arbitrary code.</p>
+<hr>
+<h1>41. CompletableFuture</h1>
+<p>This is extremely useful for backend development.</p>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>CompletableFuture
+    .supplyAsync(() -&gt; getUser())
+    .thenApply(user -&gt; user.getName())
+    .thenAccept(System.out::println);</code></pre></div>
+<p>You can compose asynchronous operations.</p>
+<hr>
+<h1>42. CompletableFuture Pipeline</h1>
+<p>Think:</p>
+<pre class="diagram"><code>+-------------------------+
+|        getUser()        |
++-------------------------+
+             |
+             v
++-------------------------+
+|       thenApply()       |
++-------------------------+
+             |
+             v
++-------------------------+
+|        transform        |
++-------------------------+
+             |
+             v
++-------------------------+
+|      thenCompose()      |
++-------------------------+
+             |
+             v
++-------------------------+
+| another async operation |
++-------------------------+
+             |
+             v
++-------------------------+
+|       thenAccept()      |
++-------------------------+</code></pre>
+<p>Important methods:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>supplyAsync()
+runAsync()
+
+thenApply()
+thenCompose()
+thenAccept()
+
+thenCombine()
+allOf()
+anyOf()
+
+exceptionally()
+handle()
+whenComplete()</code></pre></div>
+<p>You don&#x27;t need to memorize every method yet.</p>
+<p>Understand the execution/composition model.</p>
+<hr>
+<h1>43. <code>thenApply</code> vs <code>thenCompose</code></h1>
+<p>Very important.</p>
+<h3><code>thenApply</code></h3>
+<p>Transformation:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>A → B</code></pre></div>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>future.thenApply(user -&gt; user.getName());</code></pre></div>
+<h3><code>thenCompose</code></h3>
+<p>Flattening asynchronous operations:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>A → Future&lt;B&gt;</code></pre></div>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>future.thenCompose(
+    user -&gt; fetchOrders(user)
+);</code></pre></div>
+<p>Conceptually:</p>
+<pre class="diagram"><code>+---------------------+
+|     Future&lt;User&gt;    |
++---------------------+
+           |
+           v
++---------------------+
+| Future&lt;List&lt;Order&gt;&gt; |
++---------------------+</code></pre>
+<p>rather than:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Future&lt;Future&lt;List&lt;Order&gt;&gt;&gt;</code></pre></div>
+<hr>
+<h1>44. <code>thenCombine</code></h1>
+<p>Useful when two independent asynchronous tasks need to be combined.</p>
+<pre class="diagram"><code>+-------------------+
+|  +---- getUser()  |
++-------------------+
+          |
+          v
+          |
+          |
+          v
++-------------------+
+|  start --------+  |
++-------------------+
+          |
+          v
+          |
+          |
+          v
++-------------------+
+| +---- getOrders() |
++-------------------+
+          |
+          v
+          |
+          |
+          v
++-------------------+
+|      combine      |
++-------------------+</code></pre>
+<hr>
+<h1>45. Concurrent Collections</h1>
+<p>Learn these thoroughly:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>ConcurrentHashMap
+CopyOnWriteArrayList
+BlockingQueue
+ConcurrentLinkedQueue</code></pre></div>
+<hr>
+<h1>46. ConcurrentHashMap</h1>
+<p>Don&#x27;t do this blindly:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Map&lt;String, Integer&gt; map =
+        new HashMap&lt;&gt;();</code></pre></div>
+<p>and access it concurrently.</p>
+<p>Instead:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>ConcurrentHashMap&lt;String, Integer&gt; map =
+        new ConcurrentHashMap&lt;&gt;();</code></pre></div>
+<p>It provides thread-safe concurrent access with much better concurrency characteristics than synchronizing an entire <code>HashMap</code> for every operation.</p>
+<hr>
+<h1>47. Atomic Map Operations</h1>
+<p>This is especially useful:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>map.computeIfAbsent(key, k -&gt; createValue());</code></pre></div>
+<p>Also:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>map.compute()
+map.merge()
+map.putIfAbsent()</code></pre></div>
+<p>These operations help avoid unsafe check-then-act sequences.</p>
+<p>Bad:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>if (!map.containsKey(key)) {
+    map.put(key, value);
+}</code></pre></div>
+<p>Prefer an atomic map operation where appropriate.</p>
+<hr>
+<h1>48. BlockingQueue</h1>
+<p>Extremely important for producer-consumer architecture.</p>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>BlockingQueue&lt;Task&gt; queue =
+        new LinkedBlockingQueue&lt;&gt;();</code></pre></div>
+<p>Producer:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>queue.put(task);</code></pre></div>
+<p>Consumer:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Task task = queue.take();</code></pre></div>
+<p><code>take()</code> waits if the queue is empty.</p>
+<hr>
+<h1>49. Producer-Consumer Pattern</h1>
+<p>Understand this deeply.</p>
+<pre class="diagram"><code>  Producer 1 ----\
++------------------+     +-------+     +------+
+| Producer 2 ----- | --&gt; | Queue | --&gt; | Cons |
++------------------+     +-------+     +------+
+  Producer 3 ----/           Con</code></pre>
+<p>This pattern appears everywhere in backend systems.</p>
+<p>It provides:</p>
+<ul><li>decoupling</li><li>buffering</li><li>controlled concurrency</li><li>backpressure opportunities</li></ul>
+<hr>
+<h1>50. CountDownLatch</h1>
+<p>Useful when one or more threads must wait until several operations complete.</p>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>CountDownLatch latch =
+        new CountDownLatch(3);</code></pre></div>
+<p>Workers:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>latch.countDown();</code></pre></div>
+<p>Waiting thread:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>latch.await();</code></pre></div>
+<p>Concept:</p>
+<pre class="diagram"><code>  Worker A ──┐
++----------------+---------------+
+| Worker B ──┼── | latch reaches |
++----------------+---------------+
+  Worker C ──┘</code></pre>
+<hr>
+<h1>51. Semaphore</h1>
+<p>Controls the number of concurrent permits.</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Semaphore semaphore =
+        new Semaphore(5);</code></pre></div>
+<p>Concept:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Only 5 threads can enter
+the protected resource simultaneously.</code></pre></div>
+<p>Useful for limiting:</p>
+<ul><li>database connections</li><li>external API calls</li><li>expensive resources</li></ul>
+<hr>
+<h1>52. CyclicBarrier</h1>
+<p>Allows several threads to wait until all reach a barrier.</p>
+<p>Concept:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Thread A ----\
+Thread B -----+---- barrier ---- continue
+Thread C ----/</code></pre></div>
+<p>Unlike <code>CountDownLatch</code>, a barrier can be reused.</p>
+<hr>
+<h1>53. Deadlock</h1>
+<p>One of the most important concurrency bugs.</p>
+<p>Imagine:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Thread A:
+  lock A
+  wait for lock B
+
+Thread B:
+  lock B
+  wait for lock A</code></pre></div>
+<p>Neither can continue.</p>
+<pre class="diagram"><code>+---+     +--------------+     +-------------+
+| A | --&gt; | holds Lock 1 | --&gt; | waits for L |
++---+     +--------------+     +-------------+
++---+     +--------------+     +-------------+
+| B | --&gt; | holds Lock 2 | --&gt; | waits for L |
++---+     +--------------+     +-------------+</code></pre>
+<p>Deadlock.</p>
+<hr>
+<h1>54. Four Conditions for Deadlock</h1>
+<p>Know these:</p>
+<ol><li><strong>Mutual exclusion</strong></li><li><strong>Hold and wait</strong></li><li><strong>No preemption</strong></li><li><strong>Circular wait</strong></li></ol>
+<p>If all four exist, deadlock can occur.</p>
+<hr>
+<h1>55. Preventing Deadlock</h1>
+<p>One powerful strategy:</p>
+<h3>Consistent lock ordering</h3>
+<p>Always acquire:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Lock A
+then
+Lock B</code></pre></div>
+<p>Never:</p>
+<pre class="diagram"><code>  Thread 1:
++---+---+
+| A | B |
++---+---+
+  Thread 2:
++---+---+
+| B | A |
++---+---+</code></pre>
+<p>Instead:</p>
+<pre class="diagram"><code>  Thread 1:
++---+---+
+| A | B |
++---+---+
+  Thread 2:
++---+---+
+| A | B |
++---+---+</code></pre>
+<p>This breaks circular waiting.</p>
+<hr>
+<h1>56. Starvation</h1>
+<p>A thread may continually fail to obtain the resources/CPU time it needs.</p>
+<p>Example:</p>
+<pre class="diagram"><code>+-----------------------------------+
+|              Thread A             |
++-----------------------------------+
+                  |
+                  v
++-----------------------------------+
+|              Thread B             |
++-----------------------------------+
+                  |
+                  v
++-----------------------------------+
+|              Thread C             |
++-----------------------------------+
+                  |
+                  v
++-----------------------------------+
+| Thread A repeatedly gets the lock |
++-----------------------------------+
+                  |
+                  v
++-----------------------------------+
+|        B/C rarely progress        |
++-----------------------------------+</code></pre>
+<p>That&#x27;s starvation.</p>
+<hr>
+<h1>57. Livelock</h1>
+<p>Threads aren&#x27;t blocked, but they keep responding to each other without making meaningful progress.</p>
+<p>Think:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Thread A: &quot;I&#x27;ll step aside.&quot;
+Thread B: &quot;I&#x27;ll step aside.&quot;
+Thread A: &quot;I&#x27;ll step aside.&quot;
+Thread B: &quot;I&#x27;ll step aside.&quot;</code></pre></div>
+<p>Everyone is active.</p>
+<p>Nothing gets done.</p>
+<hr>
+<h1>58. Thread Safety</h1>
+<p>A class is thread-safe when it behaves correctly when accessed concurrently according to its contract.</p>
+<p>This is more useful than saying:</p>
+<blockquote><p>&quot;It uses synchronized.&quot;</p></blockquote>
+<p>Thread safety can be achieved through:</p>
+<ul><li>synchronization</li><li>locks</li><li>atomic variables</li><li>immutability</li><li>confinement</li><li>concurrent collections</li><li>message passing</li></ul>
+<hr>
+<h1>59. Immutability</h1>
+<p>One of the best concurrency strategies is:</p>
+<blockquote><p>Don&#x27;t share mutable state.</p></blockquote>
+<p>Instead of:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>class User {
+    private String name;
+
+    void setName(String name) {
+        this.name = name;
+    }
+}</code></pre></div>
+<p>prefer immutable designs when appropriate:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>final class User {
+
+    private final String name;
+
+    User(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+}</code></pre></div>
+<p>If state cannot change, synchronization becomes much simpler.</p>
+<hr>
+<h1>60. Thread Confinement</h1>
+<p>Another useful strategy:</p>
+<pre class="diagram"><code>+----------+---------------+
+| Thread A | owns object A |
++----------+---------------+
++----------+---------------+
+| Thread B | owns object B |
++----------+---------------+</code></pre>
+<p>Rather than:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Thread A \
+Thread B  → shared mutable object
+Thread C /</code></pre></div>
+<p>Avoid sharing when possible.</p>
+<hr>
+<h1>61. Java Memory Model — Important IC4 Topic</h1>
+<p>Don&#x27;t skip this.</p>
+<p>You need a conceptual understanding of:</p>
+<ul><li>visibility</li><li>atomicity</li><li>ordering</li><li>happens-before</li></ul>
+<p>Think about three separate questions:</p>
+<h3>Atomicity</h3>
+<p>Can the operation be observed halfway through?</p>
+<h3>Visibility</h3>
+<p>Will another thread see my update?</p>
+<h3>Ordering</h3>
+<p>Can operations appear reordered across threads?</p>
+<p>These are different problems.</p>
+<hr>
+<h1>62. Happens-Before</h1>
+<p>You don&#x27;t need to memorize every rule immediately.</p>
+<p>Understand the concept:</p>
+<blockquote><p>If A happens-before B, the effects of A are guaranteed to be visible to B according to Java&#x27;s memory model.</p></blockquote>
+<p>Important happens-before relationships include those established by:</p>
+<ul><li>unlocking a monitor → subsequent locking of same monitor</li><li>writing a <code>volatile</code> variable → subsequent reading of that variable</li><li><code>Thread.start()</code> → actions in started thread</li><li>actions in a thread → successful <code>join()</code> return</li><li>appropriate completion/coordination mechanisms</li></ul>
+<p>This is a major conceptual foundation.</p>
+<hr>
+<h1>63. Common Concurrency Mistakes</h1>
+<p>You should deliberately learn to spot these.</p>
+<h3>Mistake 1</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>count++;</code></pre></div>
+<p>on shared state.</p>
+<h3>Mistake 2</h3>
+<p>Using:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>volatile</code></pre></div>
+<p>and assuming everything is thread-safe.</p>
+<h3>Mistake 3</h3>
+<p>Locking different objects accidentally:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>synchronized (new Object()) {
+}</code></pre></div>
+<h3>Mistake 4</h3>
+<p>Forgetting:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>unlock()</code></pre></div>
+<p>in a <code>finally</code>.</p>
+<h3>Mistake 5</h3>
+<p>Calling:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>future.get();</code></pre></div>
+<p>everywhere and accidentally turning asynchronous code into blocking code.</p>
+<h3>Mistake 6</h3>
+<p>Creating unlimited threads.</p>
+<h3>Mistake 7</h3>
+<p>Using a non-thread-safe collection concurrently.</p>
+<h3>Mistake 8</h3>
+<p>Holding locks while doing slow I/O.</p>
+<h3>Mistake 9</h3>
+<p>Acquiring locks in inconsistent order.</p>
+<h3>Mistake 10</h3>
+<p>Synchronizing far more code than necessary.</p>
+<hr>
+<h1>64. The Lab — What You Should Actually Build</h1>
+<p>I recommend making Week 3 a <strong>multi-part concurrency lab</strong>.</p>
+<hr>
+<h2>Lab 1 — Basic Thread Creation</h2>
+<p>Create:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Thread A
+Thread B
+Thread C</code></pre></div>
+<p>Each prints:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Thread name
+iteration number</code></pre></div>
+<p>Run each 10 times.</p>
+<p>Observe the output order.</p>
+<p>The important lesson:</p>
+<blockquote><p>You don&#x27;t control the exact scheduling order.</p></blockquote>
+<hr>
+<h1>65. Lab 2 — Race Condition</h1>
+<p>Create:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>class Counter {
+    int count = 0;
+
+    void increment() {
+        count++;
+    }
+}</code></pre></div>
+<p>Run:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>10 threads
+×
+10,000 increments</code></pre></div>
+<p>Expected:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>100,000</code></pre></div>
+<p>Observe actual results.</p>
+<p>Then fix it using:</p>
+<h3>Version A</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>synchronized</code></pre></div>
+<h3>Version B</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>AtomicInteger</code></pre></div>
+<p>Compare the implementations.</p>
+<hr>
+<h1>66. Lab 3 — Volatile Flag</h1>
+<p>Build:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Main Thread
+     |
+     +---- Worker Thread</code></pre></div>
+<p>Worker continuously runs:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>while (running) {
+    // work
+}</code></pre></div>
+<p>Main eventually calls:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>stop()</code></pre></div>
+<p>Use:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>volatile</code></pre></div>
+<p>for the flag.</p>
+<p>Then understand why <code>volatile</code> is appropriate here but not for:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>count++;</code></pre></div>
+<hr>
+<h1>67. Lab 4 — Producer Consumer</h1>
+<p>Implement:</p>
+<pre class="diagram"><code>+---------------+
+|    Producer   |
++---------------+
+        |
+        v
++---------------+
+| BlockingQueue |
++---------------+
+        |
+        v
++---------------+
+|    Consumer   |
++---------------+</code></pre>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>BlockingQueue&lt;Integer&gt; queue =
+        new ArrayBlockingQueue&lt;&gt;(10);</code></pre></div>
+<p>Producer:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>for (int i = 0; i &lt; 100; i++) {
+    queue.put(i);
+}</code></pre></div>
+<p>Consumer:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>for (int i = 0; i &lt; 100; i++) {
+    int value = queue.take();
+}</code></pre></div>
+<p>Then experiment with:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>queue capacity = 1
+queue capacity = 10
+queue capacity = 100</code></pre></div>
+<p>Understand how capacity affects producer/consumer behavior.</p>
+<hr>
+<h1>68. Lab 5 — ExecutorService</h1>
+<p>Create:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>100 tasks</code></pre></div>
+<p>Each task sleeps for a short duration.</p>
+<p>Run them using:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>newFixedThreadPool(5)</code></pre></div>
+<p>Then:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>newFixedThreadPool(10)</code></pre></div>
+<p>Compare execution time.</p>
+<p>Then ask:</p>
+<blockquote><p>Does doubling threads always halve execution time?</p></blockquote>
+<p>No.</p>
+<p>This leads into:</p>
+<ul><li>CPU-bound work</li><li>I/O-bound work</li><li>contention</li><li>context switching</li></ul>
+<hr>
+<h1>69. Lab 6 — Callable + Future</h1>
+<p>Create 10 tasks:</p>
+<pre class="diagram"><code>+--------+-----------+
+| Task 1 | returns 1 |
++--------+-----------+
++--------+-----------+
+| Task 2 | returns 4 |
++--------+-----------+
++--------+-----------+
+| Task 3 | returns 9 |
++--------+-----------+
+  ...</code></pre>
+<p>Submit them.</p>
+<p>Collect results with:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Future&lt;Integer&gt;</code></pre></div>
+<p>Then intentionally introduce a slow task and observe:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>future.get()</code></pre></div>
+<p>blocking.</p>
+<hr>
+<h1>70. Lab 7 — CompletableFuture</h1>
+<p>Build:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>getUser()
+getOrders()
+getRecommendations()</code></pre></div>
+<p>Run them asynchronously.</p>
+<p>Then combine the results.</p>
+<p>Conceptually:</p>
+<pre class="diagram"><code>+---+------+
+| ┌ | User |
++---+------+
+              |
+              v
++-------------------+--------+
+| Request ────────┼ | Orders |
++-------------------+--------+
+              |
+              v
++---+-----------------+
+| └ | Recommendations |
++---+-----------------+
+              |
+              v
++---------------------------+
+|          Combine          |
++---------------------------+
+              |
+              v
++---------------------------+
+|          Response         |
++---------------------------+</code></pre>
+<p>This is very relevant to backend service design.</p>
+<hr>
+<h1>71. Lab 8 — ConcurrentHashMap</h1>
+<p>Build a word-frequency counter.</p>
+<p>Input:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>apple banana apple orange banana apple</code></pre></div>
+<p>Multiple threads process different chunks.</p>
+<p>Use:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>ConcurrentHashMap&lt;String, Integer&gt;</code></pre></div>
+<p>and appropriate atomic map operations.</p>
+<p>Compare against an ordinary <code>HashMap</code>.</p>
+<hr>
+<h1>72. Lab 9 — Deadlock</h1>
+<p>Intentionally create:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Thread 1:
+lock A
+lock B
+
+Thread 2:
+lock B
+lock A</code></pre></div>
+<p>Observe the application hanging.</p>
+<p>Then fix it using consistent lock ordering.</p>
+<p>This lab is worth doing because deadlocks become much easier to understand once you&#x27;ve actually created one.</p>
+<hr>
+<h1>73. Lab 10 — Rate-Limited Resource</h1>
+<p>Build a fake external service:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>void callExternalService()</code></pre></div>
+<p>Only allow:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>5 concurrent calls</code></pre></div>
+<p>Use:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Semaphore</code></pre></div>
+<p>Architecture:</p>
+<pre class="diagram"><code>+------------------+
+| 20 worker tasks  |
++------------------+
+          |
+          v
++------------------+
+|    Semaphore     |
++------------------+
+          |
+          v
++------------------+
+|    / / / / \     |
++------------------+
+          |
+          v
++------------------+
+|    5 permits     |
++------------------+
+          |
+          v
++------------------+
+| External Service |
++------------------+</code></pre>
+<p>This is a very realistic backend concurrency problem.</p>
+<hr>
+<h1>74. Lab 11 — Thread-Safe Cache</h1>
+<p>Build:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>class Cache&lt;K, V&gt;</code></pre></div>
+<p>Requirements:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>get()
+put()
+remove()</code></pre></div>
+<p>Multiple threads should be able to access it safely.</p>
+<p>Start with:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>HashMap</code></pre></div>
+<p>Then explore:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>ConcurrentHashMap</code></pre></div>
+<p>Then discuss:</p>
+<blockquote><p>What if <code>get()</code> and <code>put()</code> together form a larger atomic operation?</p></blockquote>
+<p>This will force you to think beyond simply choosing a concurrent collection.</p>
+<hr>
+<h1>75. Lab 12 — Bank Transfer</h1>
+<p>Build:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Account</code></pre></div>
+<p>with:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>deposit()
+withdraw()
+transfer()</code></pre></div>
+<p>Run thousands of concurrent transfers.</p>
+<p>Invariant:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Total money across all accounts
+must remain constant.</code></pre></div>
+<p>This is one of the best exercises for understanding:</p>
+<ul><li>race conditions</li><li>locking</li><li>atomicity</li><li>lock ordering</li><li>invariants</li><li>deadlocks</li></ul>
+<hr>
+<h1>76. Important Backend Connection</h1>
+<p>For every concurrency concept, ask:</p>
+<blockquote><p>&quot;Where would this appear in a backend service?&quot;</p></blockquote>
+<p>Examples:</p>
+<pre class="diagram"><code>+-------------------+----------------------------+
+| Concept           | Backend example            |
++-------------------+----------------------------+
+| Thread            | Request/task execution     |
+| Thread pool       | Server worker pool         |
+| ExecutorService   | Background processing      |
+| BlockingQueue     | Producer-consumer pipeline |
+| Semaphore         | Limit external API calls   |
+| AtomicInteger     | Counters                   |
+| ConcurrentHashMap | Shared cache               |
+| CompletableFuture | Parallel service calls     |
+| Lock              | Shared mutable state       |
+| Deadlock          | Database/resource locking  |
+| Immutable object  | Request/response models    |
+| volatile          | Shutdown/state flags       |
++-------------------+----------------------------+</code></pre>
+<p>This is the mindset you want for IC4 interviews.</p>
+<hr>
+<h1>77. Concurrency vs Parallelism</h1>
+<p>Know the distinction.</p>
+<h3>Concurrency</h3>
+<p>Multiple tasks are in progress during overlapping periods.</p>
+<h3>Parallelism</h3>
+<p>Multiple tasks are literally executing simultaneously, typically on different CPU cores.</p>
+<p>Conceptually:</p>
+<pre class="diagram"><code>+----------------+
+|  Concurrency:  |
++----------------+
+         |
+         v
++----------------+
+|     Task A     |
++----------------+
+         |
+         v
++----------------+
+|     Task B     |
++----------------+
+         |
+         v
++----------------+
+|  Parallelism:  |
++----------------+
+         |
+         v
++----------------+
+| Core 1: Task A |
++----------------+
+         |
+         v
++----------------+
+| Core 2: Task B |
++----------------+</code></pre>
+<p>Concurrency doesn&#x27;t necessarily require multiple cores.</p>
+<hr>
+<h1>78. CPU-Bound vs I/O-Bound</h1>
+<p>This becomes important when deciding thread-pool sizes.</p>
+<h3>CPU-bound</h3>
+<p>Examples:</p>
+<ul><li>calculations</li><li>compression</li><li>image processing</li></ul>
+<p>Too many threads can cause excessive context switching.</p>
+<h3>I/O-bound</h3>
+<p>Examples:</p>
+<ul><li>database calls</li><li>HTTP calls</li><li>filesystem operations</li></ul>
+<p>Threads may spend significant time waiting.</p>
+<p>Therefore, thread-pool sizing depends on workload.</p>
+<p>Don&#x27;t memorize:</p>
+<blockquote><p>&quot;CPU cores × 2&quot;</p></blockquote>
+<p>as a universal rule.</p>
+<p>Learn to reason from:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>CPU
++
+I/O wait
++
+latency
++
+throughput
++
+queueing
++
+resource limits</code></pre></div>
+<hr>
+<h1>79. Concurrency Design Principles</h1>
+<p>These are more valuable than memorizing APIs.</p>
+<h3>Principle 1</h3>
+<p><strong>Minimize shared mutable state.</strong></p>
+<h3>Principle 2</h3>
+<p><strong>Prefer immutability.</strong></p>
+<h3>Principle 3</h3>
+<p><strong>Keep critical sections small.</strong></p>
+<h3>Principle 4</h3>
+<p><strong>Avoid holding locks during slow operations.</strong></p>
+<h3>Principle 5</h3>
+<p><strong>Use higher-level concurrency utilities.</strong></p>
+<h3>Principle 6</h3>
+<p><strong>Define ownership of mutable state.</strong></p>
+<h3>Principle 7</h3>
+<p><strong>Use consistent lock ordering.</strong></p>
+<h3>Principle 8</h3>
+<p><strong>Bound concurrency where external resources are limited.</strong></p>
+<h3>Principle 9</h3>
+<p><strong>Understand cancellation and shutdown.</strong></p>
+<h3>Principle 10</h3>
+<p><strong>Measure before optimizing concurrency.</strong></p>
+<hr>
+<h1>80. Topics to Know vs Topics to Master</h1>
+<h2>🔴 Master these</h2>
+<p>These should be strong enough that you can code without looking things up:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Thread
+Runnable
+start() vs run()
+sleep()
+join()
+interrupt()
+
+race conditions
+critical sections
+
+synchronized
+synchronized blocks
+intrinsic locks
+
+volatile
+atomicity vs visibility
+
+AtomicInteger
+CAS concept
+
+ExecutorService
+thread pools
+shutdown
+
+Runnable vs Callable
+Future
+
+ConcurrentHashMap
+BlockingQueue
+
+CountDownLatch
+Semaphore
+
+deadlock
+starvation
+livelock
+
+thread safety
+immutability
+
+basic Java Memory Model
+happens-before</code></pre></div>
+<hr>
+<h2>🟡 Understand well</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>ReentrantLock
+tryLock()
+ReadWriteLock
+
+CompletableFuture
+thenApply
+thenCompose
+thenCombine
+allOf
+
+CyclicBarrier
+
+producer-consumer
+thread confinement
+backpressure
+
+CPU-bound vs I/O-bound</code></pre></div>
+<hr>
+<h2>🟢 Awareness level</h2>
+<p>Don&#x27;t spend too much time this week:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>StampedLock
+Phaser
+ForkJoinPool internals
+Work stealing internals
+Lock-free data structure implementation
+VarHandle
+Project Loom internals</code></pre></div>
+<p>You can revisit these later.</p>
+<hr>
+<h1>81. Interview Questions You Should Be Able to Answer</h1>
+<p>By the end of Week 3, practice these without notes.</p>
+<h3>Fundamentals</h3>
+<ol><li>What is a thread?</li><li>Process vs thread?</li><li>What happens when <code>start()</code> is called?</li><li><code>start()</code> vs <code>run()</code>?</li><li>What are Java thread states?</li><li>What does <code>join()</code> do?</li><li>What does <code>interrupt()</code> do?</li><li>Does <code>sleep()</code> release a lock?</li></ol>
+<h3>Synchronization</h3>
+<ol><li>What is a race condition?</li><li>Why is <code>count++</code> not atomic?</li><li>What does <code>synchronized</code> provide?</li><li>What is an intrinsic lock?</li><li>Instance synchronized vs static synchronized?</li><li>What is a critical section?</li><li>Why should synchronized sections be small?</li></ol>
+<h3>Memory model</h3>
+<ol><li>What is visibility?</li><li>What is atomicity?</li><li>What does <code>volatile</code> guarantee?</li><li>Why doesn&#x27;t <code>volatile int count</code> make <code>count++</code> safe?</li><li>What is happens-before?</li></ol>
+<h3>Locks</h3>
+<ol><li><code>synchronized</code> vs <code>ReentrantLock</code>?</li><li>Why use <code>try/finally</code> with <code>unlock()</code>?</li><li>What does &quot;reentrant&quot; mean?</li><li>When would you use <code>ReadWriteLock</code>?</li></ol>
+<h3>Thread pools</h3>
+<ol><li>Why use a thread pool?</li><li>What is <code>ExecutorService</code>?</li><li><code>Runnable</code> vs <code>Callable</code>?</li><li>What is a <code>Future</code>?</li><li>What happens when <code>Future.get()</code> is called?</li><li>How do you shut down an executor?</li></ol>
+<h3>Concurrent collections</h3>
+<ol><li>Why isn&#x27;t <code>HashMap</code> safe for concurrent mutation?</li><li>What does <code>ConcurrentHashMap</code> provide?</li><li>When would you use <code>BlockingQueue</code>?</li><li>Explain producer-consumer.</li></ol>
+<h3>Failure modes</h3>
+<ol><li>What is deadlock?</li><li>Four conditions for deadlock?</li><li>How do you prevent deadlock?</li><li>What is starvation?</li><li>What is livelock?</li></ol>
+<h3>System design</h3>
+<ol><li>How would you limit concurrent calls to an external API?</li><li>How would you process 1 million background tasks?</li><li>How would you make a shared cache thread-safe?</li><li>How would you execute three independent service calls concurrently?</li><li>How would you safely stop worker threads?</li><li>How would you diagnose a production deadlock?</li></ol>
+<hr>
+<h1>82. Your Week 3 Study Sequence</h1>
+<p>I&#x27;d structure the week like this:</p>
+<h3>Day 1 — Thread Fundamentals</h3>
+<p>Learn:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Process vs Thread
+Thread
+Runnable
+start vs run
+Thread states
+sleep
+join
+interrupt</code></pre></div>
+<p>Lab:</p>
+<blockquote><p>Create multiple threads and observe scheduling.</p></blockquote>
+<hr>
+<h3>Day 2 — Race Conditions + Synchronization</h3>
+<p>Learn:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Shared state
+Race conditions
+Critical sections
+synchronized
+Intrinsic locks
+Instance/static locks</code></pre></div>
+<p>Lab:</p>
+<blockquote><p>Multi-threaded counter + bank account.</p></blockquote>
+<hr>
+<h3>Day 3 — Java Memory Model</h3>
+<p>Learn:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Visibility
+Atomicity
+Ordering
+volatile
+happens-before
+AtomicInteger
+CAS</code></pre></div>
+<p>Lab:</p>
+<blockquote><p>Counter using <code>synchronized</code>, <code>volatile</code>, and <code>AtomicInteger</code>.</p></blockquote>
+<hr>
+<h3>Day 4 — Locks + Coordination</h3>
+<p>Learn:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>ReentrantLock
+tryLock
+ReadWriteLock
+wait
+notify
+notifyAll
+CountDownLatch
+Semaphore
+CyclicBarrier</code></pre></div>
+<p>Lab:</p>
+<blockquote><p>Producer-consumer + rate-limited service.</p></blockquote>
+<hr>
+<h3>Day 5 — Executors</h3>
+<p>Learn:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>ExecutorService
+Thread pools
+Runnable
+Callable
+Future
+shutdown
+shutdownNow</code></pre></div>
+<p>Lab:</p>
+<blockquote><p>100 tasks executed through different pool sizes.</p></blockquote>
+<hr>
+<h3>Day 6 — Concurrent Collections + CompletableFuture</h3>
+<p>Learn:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>ConcurrentHashMap
+BlockingQueue
+ConcurrentLinkedQueue
+CopyOnWriteArrayList
+
+CompletableFuture
+thenApply
+thenCompose
+thenCombine
+allOf
+exception handling</code></pre></div>
+<p>Lab:</p>
+<blockquote><p>Parallel backend service aggregation.</p></blockquote>
+<hr>
+<h3>Day 7 — Concurrency Challenge</h3>
+<p>Build one complete mini-project:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Concurrent Order Processing System</code></pre></div>
+<p>Something like:</p>
+<pre class="diagram"><code>+------------------------------+
+|            Orders            |
++------------------------------+
+                |
+                v
+               |
+                |
+                v
++------------------------------+
+|        BlockingQueue         |
++------------------------------+
+                |
+                v
+               |
+                |
+                v
++------------------------------+
+|    +---------+---------+     |
++------------------------------+
+                |
+                v
+     |         |         |
+                |
+                v
++------------------------------+
+| Worker 1  Worker 2  Worker 3 |
++------------------------------+
+                |
+                v
+     |         |         |
+                |
+                v
++------------------------------+
+|    +---------+---------+     |
++------------------------------+
+                |
+                v
+               |
+                |
+                v
++------------------------------+
+|       Concurrent Cache       |
++------------------------------+
+                |
+                v
+               |
+                |
+                v
++------------------------------+
+|       External Service       |
++------------------------------+
+                |
+                v
+               |
+                |
+                v
++------------------------------+
+|          Semaphore           |
++------------------------------+
+                |
+                v
+               |
+                |
+                v
++------------------------------+
+|            Result            |
++------------------------------+</code></pre>
+<p>Requirements:</p>
+<ul><li><code>ExecutorService</code></li><li><code>BlockingQueue</code></li><li><code>ConcurrentHashMap</code></li><li><code>AtomicInteger</code></li><li><code>Semaphore</code></li><li>graceful shutdown</li><li>error handling</li><li>interruption handling</li><li>metrics/counters</li></ul>
+<p>Then deliberately introduce:</p>
+<ul><li>a race condition</li><li>a deadlock</li><li>an unbounded queue</li><li>excessive thread creation</li></ul>
+<p>and fix each one.</p>
+<hr>
+<h1>83. The Most Important Mental Model</h1>
+<p>Don&#x27;t memorize concurrency APIs as isolated Java classes.</p>
+<p>Think in this order:</p>
+<pre class="diagram"><code>+------------------------------------------+
+|            CONCURRENT PROBLEM            |
++------------------------------------------+
+                      |
+                      v
+                     |
+                      |
+                      v
++------------------------------------------+
+|         +----------+----------+          |
++------------------------------------------+
+                      |
+                      v
+          |                     |
+                      |
+                      v
++------------------------------------------+
+| Shared state?          Independent work? |
++------------------------------------------+
+                      |
+                      v
+          |                     |
+                      |
+                      v
++------------------------------------------+
+|     Need coordination?      Executor     |
++------------------------------------------+
+                      |
+                      v
+                     |
+                      |
+                      v
++------------------------------------------+
+|              +-----+------+              |
++------------------------------------------+
+                      |
+                      v
+               |            |
+                      |
+                      v
++------------------------------------------+
+|             Yes           No             |
++------------------------------------------+
+                      |
+                      v
+                     |
+                      |
+                      v
++------------------------------------------+
+|                   How?                   |
++------------------------------------------+
+                      |
+                      v
+                     |
+                      |
+                      v
++------------------------------------------+
+|             +-- synchronized             |
++------------------------------------------+
+                      |
+                      v
+                     |
+                      |
+                      v
++------------------------------------------+
+|                 +-- Lock                 |
++------------------------------------------+
+                      |
+                      v
+                     |
+                      |
+                      v
++------------------------------------------+
+|                +-- Atomic                |
++------------------------------------------+
+                      |
+                      v
+                     |
+                      |
+                      v
++------------------------------------------+
+|        +-- Concurrent Collection         |
++------------------------------------------+
+                      |
+                      v
+                     |
+                      |
+                      v
++------------------------------------------+
+|                +-- Queue                 |
++------------------------------------------+
+                      |
+                      v
+                     |
+                      |
+                      v
++------------------------------------------+
+|           +-- Latch/Semaphore            |
++------------------------------------------+
+                      |
+                      v
+                     |
+                      |
+                      v
++------------------------------------------+
+|          +-- CompletableFuture           |
++------------------------------------------+</code></pre>
+<p>And always ask:</p>
+<blockquote><p><strong>What state is shared? Who owns it? What operations must be atomic? What happens if two threads execute this simultaneously?</strong></p></blockquote>
+<p>That is the core of Week 3.</p>
+<hr>
+<h1>84. What &quot;Good&quot; Looks Like at the End of Week 3</h1>
+<p>You don&#x27;t need to become a concurrency expert in one week.</p>
+<p>But you should reach the point where, when you see:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>class Counter {
+    private int count;
+
+    void increment() {
+        count++;
+    }
+}</code></pre></div>
+<p>your immediate thoughts are:</p>
+<pre class="diagram"><code>+---------------------------------------------+
+|              Is Counter shared?             |
++---------------------------------------------+
+                       |
+                       v
++---------------------------------------------+
+|     Can multiple threads call increment?    |
++---------------------------------------------+
+                       |
+                       v
++---------------------------------------------+
+|             count++ isn&#x27;t atomic            |
++---------------------------------------------+
+                       |
+                       v
++---------------------------------------------+
+|                Race condition               |
++---------------------------------------------+
+                       |
+                       v
++---------------------------------------------+
+|          What guarantee do I need?          |
++---------------------------------------------+
+                       |
+                       v
++---------------------------------------------+
+| synchronized / AtomicInteger / other design |
++---------------------------------------------+</code></pre>
+<p>And when you see:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>ExecutorService executor =
+    Executors.newFixedThreadPool(10);</code></pre></div>
+<p>you should immediately think about:</p>
+<pre class="diagram"><code>+---------------------------------+
+|             Why 10?             |
++---------------------------------+
+                 |
+                 v
++---------------------------------+
+|     CPU-bound or I/O-bound?     |
++---------------------------------+
+                 |
+                 v
++---------------------------------+
+|        What is the queue?       |
++---------------------------------+
+                 |
+                 v
++---------------------------------+
+|  What happens when queue fills? |
++---------------------------------+
+                 |
+                 v
++---------------------------------+
+|    What happens on shutdown?    |
++---------------------------------+
+                 |
+                 v
++---------------------------------+
+| What happens when a task fails? |
++---------------------------------+
+                 |
+                 v
++---------------------------------+
+|         Can tasks block?        |
++---------------------------------+
+                 |
+                 v
++---------------------------------+
+|       Can tasks deadlock?       |
++---------------------------------+
+                 |
+                 v
++---------------------------------+
+|     Can tasks be cancelled?     |
++---------------------------------+</code></pre>
+<p><strong>That reasoning ability is much more valuable for an IC4 backend interview than memorizing every concurrency API.</strong></p></div>
+    </article>
+  </main>
+</body>
+</html>

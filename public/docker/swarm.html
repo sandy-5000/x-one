@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Swarm · x-one</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+  <script src="../assets/copy.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar"><input type="checkbox" id="nav-toggle" class="nav-toggle"><div class="sidebar-brand"><a href="../index.html">x-one notes</a><label for="nav-toggle" class="menu-btn" aria-label="Toggle navigation"><span class="menu-open">Menu</span><span class="menu-close">Close</span></label></div><nav><details class="nav-group"><summary class="nav-group-label">cp<span class="nav-count">56</span></summary><ul><li><a href="../cp/0-1-bfs.html">0-1 BFS</a></li><li><a href="../cp/two-sat.html">2-SAT</a></li><li><a href="../cp/bfs-state-space.html">BFS on State Space</a></li><li><a href="../cp/binary-search.html">Binary Search (on Sorted Data)</a></li><li><a href="../cp/binary-search-on-answer.html">Binary Search on Answer</a></li><li><a href="../cp/bitmask-dp.html">Bitmask DP</a></li><li><a href="../cp/bridges-articulation-points.html">Bridges &amp; Articulation Points</a></li><li><a href="../cp/cdq-divide-conquer.html">CDQ Divide &amp; Conquer (Offline)</a></li><li><a href="../cp/centroid-decomposition.html">Centroid Decomposition</a></li><li><a href="../cp/convex-hull-trick-lichao.html">Convex Hull Trick &amp; Li Chao Tree</a></li><li><a href="../cp/coordinate-compression.html">Coordinate Compression</a></li><li><a href="../cp/difference-array.html">Difference Array</a></li><li><a href="../cp/digit-dp.html">Digit DP</a></li><li><a href="../cp/dijkstra.html">Dijkstra&#x27;s Algorithm</a></li><li><a href="../cp/dsu-on-tree.html">DSU on Tree (Small-to-Large)</a></li><li><a href="../cp/dp-1d.html">Dynamic Programming — 1D</a></li><li><a href="../cp/dp-2d-knapsack.html">Dynamic Programming — 2D &amp; Knapsack</a></li><li><a href="../cp/euler-tour-flattening.html">Euler Tour (Tree Flattening)</a></li><li><a href="../cp/fenwick-tree.html">Fenwick Tree (Binary Indexed Tree)</a></li><li><a href="../cp/flood-fill-multi-source-bfs.html">Flood Fill &amp; Multi-Source BFS</a></li><li><a href="../cp/floyd-warshall.html">Floyd-Warshall</a></li><li><a href="../cp/functional-graphs.html">Functional Graphs</a></li><li><a href="../cp/graph-bfs-dfs.html">Graph BFS &amp; DFS</a></li><li><a href="../cp/greedy.html">Greedy</a></li><li><a href="../cp/heavy-light-decomposition.html">Heavy-Light Decomposition (HLD)</a></li><li><a href="../cp/interval-dp.html">Interval DP</a></li><li><a href="../cp/kmp-pattern-matching.html">KMP Pattern Matching</a></li><li><a href="../cp/lca-binary-lifting.html">LCA (Binary Lifting)</a></li><li><a href="../cp/line-sweep.html">Line Sweep</a></li><li><a href="../cp/lis.html">Longest Increasing Subsequence (LIS)</a></li><li><a href="../cp/matrix-exponentiation.html">Matrix Exponentiation</a></li><li><a href="../cp/meet-in-the-middle.html">Meet in the Middle</a></li><li><a href="../cp/mos-algorithm.html">Mo&#x27;s Algorithm (Offline Queries)</a></li><li><a href="../cp/monotonic-queue.html">Monotonic Deque (Queue)</a></li><li><a href="../cp/monotonic-stack.html">Monotonic Stack</a></li><li><a href="../cp/mst-kruskal-prim.html">MST (Kruskal &amp; Prim)</a></li><li><a href="../cp/policy-based-data-structure.html">Policy-Based Data Structure</a></li><li><a href="../cp/prefix-sums.html">Prefix Sums</a></li><li><a href="../cp/priority-queue-tricks.html">Priority Queue Tricks</a></li><li><a href="../cp/rerooting-dp.html">Rerooting DP on Trees</a></li><li><a href="../cp/segment-tree.html">Segment Tree</a></li><li><a href="../cp/sliding-window.html">Sliding Window</a></li><li><a href="../cp/sorting-tricks.html">Sorting Tricks</a></li><li><a href="../cp/sparse-table-rmq.html">Sparse Table (RMQ)</a></li><li><a href="../cp/sprague-grundy.html">Sprague-Grundy (Game Theory)</a></li><li><a href="../cp/sqrt-decomposition.html">Square Root Decomposition</a></li><li><a href="../cp/string-hashing.html">String Hashing</a></li><li><a href="../cp/strongly-connected-components.html">Strongly Connected Components (SCC)</a></li><li><a href="../cp/topological-sort.html">Topological Sort</a></li><li><a href="../cp/tree-dfs.html">Tree DFS</a></li><li><a href="../cp/tree-difference-array.html">Tree Difference Array</a></li><li><a href="../cp/trie-and-xor-trie.html">Trie &amp; XOR Trie</a></li><li><a href="../cp/two-pointers.html">Two Pointers</a></li><li><a href="../cp/union-find-dsu.html">Union-Find (DSU)</a></li><li><a href="../cp/virtual-tree.html">Virtual Tree</a></li><li><a href="../cp/z-algorithm.html">Z-Algorithm</a></li></ul></details><details class="nav-group" open><summary class="nav-group-label">docker<span class="nav-count">3</span></summary><ul><li><a href="../docker/start.html">Start</a></li><li><a href="../docker/compose.html">Compose</a></li><li><a href="../docker/swarm.html" class="is-active" aria-current="page">Swarm</a></li></ul></details><details class="nav-group"><summary class="nav-group-label">java<span class="nav-count">5</span></summary><ul><li><a href="../java/part-1.html">Part 1</a></li><li><a href="../java/part-2.html">Part 2</a></li><li><a href="../java/part-3.html">Part 3</a></li><li><a href="../java/part-4.html">Part 4</a></li><li><a href="../java/part-5.html">Part 5</a></li></ul></details><details class="nav-group"><summary class="nav-group-label">math<span class="nav-count">34</span></summary><ul><li><a href="../math/bijection-counting.html">Bijection &amp; Counting Proofs</a></li><li><a href="../math/burnside-lemma.html">Burnside&#x27;s Lemma (Symmetry Counting)</a></li><li><a href="../math/catalan-numbers.html">Catalan Numbers</a></li><li><a href="../math/chinese-remainder-theorem.html">Chinese Remainder Theorem (CRT)</a></li><li><a href="../math/combinatorial-identities.html">Combinatorial Identities</a></li><li><a href="../math/combinatorics-ncr.html">Combinatorics — nCr &amp; Pascal</a></li><li><a href="../math/computational-geometry-basics.html">Computational Geometry Basics</a></li><li><a href="../math/derangements.html">Derangements</a></li><li><a href="../math/divisor-enumeration.html">Divisor Enumeration — O(√n)</a></li><li><a href="../math/divisor-functions.html">Divisor Functions (τ and σ)</a></li><li><a href="../math/euler-totient.html">Euler&#x27;s Totient φ(n)</a></li><li><a href="../math/expected-value-linearity.html">Expected Value — Linearity</a></li><li><a href="../math/fast-exponentiation.html">Fast Exponentiation</a></li><li><a href="../math/fermat-euler-theorem.html">Fermat&#x27;s &amp; Euler&#x27;s Theorems</a></li><li><a href="../math/floor-sum-trick.html">Floor Sum Trick — Σ⌊n/i⌋</a></li><li><a href="../math/gcd-lcm-extended-euclid.html">GCD, LCM &amp; Extended Euclidean</a></li><li><a href="../math/harmonic-bounds.html">Harmonic Bounds &amp; Estimates</a></li><li><a href="../math/inclusion-exclusion.html">Inclusion-Exclusion Principle</a></li><li><a href="../math/legendre-formula.html">Legendre&#x27;s Formula</a></li><li><a href="../math/linear-recurrences.html">Linear Recurrences</a></li><li><a href="../math/lucas-theorem.html">Lucas Theorem &amp; nCr mod prime</a></li><li><a href="../math/modular-arithmetic.html">Modular Arithmetic</a></li><li><a href="../math/modular-inverse-composite.html">Modular Inverse (Composite Modulus)</a></li><li><a href="../math/modular-inverse-fermat.html">Modular Inverse (Fermat)</a></li><li><a href="../math/multinomial-coefficients.html">Multinomial Coefficients</a></li><li><a href="../math/mobius-inversion.html">Möbius Inversion</a></li><li><a href="../math/parity-xor-patterns.html">Parity, XOR &amp; Modular Patterns</a></li><li><a href="../math/pigeonhole-counting.html">Pigeonhole &amp; Counting Arguments</a></li><li><a href="../math/probability-basics.html">Probability Basics</a></li><li><a href="../math/sieve-primes-factorization.html">Sieve, Primes &amp; Factorization</a></li><li><a href="../math/stars-and-bars.html">Stars and Bars</a></li><li><a href="../math/stirling-numbers.html">Stirling Numbers (2nd Kind)</a></li><li><a href="../math/sum-formulas-series.html">Sum Formulas &amp; Series</a></li><li><a href="../math/wilson-primality.html">Wilson&#x27;s Theorem &amp; Primality</a></li></ul></details><details class="nav-group"><summary class="nav-group-label">os<span class="nav-count">2</span></summary><ul><li><a href="../os/cpu.html">CPU</a></li><li><a href="../os/user-threads.html">User threads</a></li></ul></details></nav></aside>
+  <main class="chat">
+    <header class="page-head"><span class="crumb">docker / swarm</span></header>
+    <article class="message user">
+      <div class="message-label">You</div>
+      <div class="message-body">Teach me Docker Swarm mode in depth at the level expected of an Apple IC4 backend engineer. Cover the architecture, Raft and quorum, services and tasks, overlay networking and the routing mesh, rolling updates and rollbacks, scheduling, secrets, stacks, operations, debugging, labs, and how Swarm compares with Kubernetes.</div>
+    </article>
+    <article class="message assistant">
+      <div class="message-label">Assistant</div>
+      <div class="message-body prose"><h1>Docker Swarm deep dive — Apple IC4 preparation</h1>
+<p>Compose describes a multi-service application on <strong>one host</strong>. Swarm mode takes almost the same description and runs it across <strong>many hosts</strong>, with a control loop that keeps the cluster in the desired state.</p>
+<p>Even if your team runs Kubernetes, Swarm is worth learning properly. It is a small, readable orchestrator, and almost every concept maps directly onto Kubernetes: desired state, reconciliation, scheduling, service discovery, rolling updates, and consensus.</p>
+<p>By the end of this lesson you should be able to:</p>
+<ul><li>Explain how managers reach consensus and what happens when they lose quorum.</li><li>Trace a request through the routing mesh to a task on another node.</li><li>Run a zero-downtime rolling update and an automatic rollback.</li><li>Debug a task stuck in <code>Pending</code> or restarting in a loop.</li><li>Argue when Swarm is a reasonable choice and when it is not.</li></ul>
+<hr>
+<h2>1. Swarm mode versus &quot;classic Swarm&quot;</h2>
+<ul><li><strong>Classic Swarm</strong> — a separate, now-retired product that pooled Docker hosts behind one API.</li><li><strong>Swarm mode</strong> — built into Docker Engine since 1.12, based on the SwarmKit library. This is what <code>docker swarm init</code> enables, and what this lesson covers.</li></ul>
+<p>No extra software is needed: every Docker Engine can become a Swarm node.</p>
+<hr>
+<h2>2. Architecture</h2>
+<pre class="diagram"><code>+------------------------------------------------------------------+
+|                         Control plane                            |
+|                                                                  |
+|   +--------------+     +--------------+     +--------------+     |
+|   |  manager-1   | &lt;-&gt; |  manager-2   | &lt;-&gt; |  manager-3   |     |
+|   |   (leader)   |     |  (follower)  |     |  (follower)  |     |
+|   +--------------+     +--------------+     +--------------+     |
+|        Raft log: services, tasks, networks, secrets, nodes       |
++------------------------------------------------------------------+
+                                 |
+                       task assignments (gRPC)
+                                 |
+                                 v
++------------------------------------------------------------------+
+|                           Data plane                             |
+|                                                                  |
+|   +--------------+     +--------------+     +--------------+     |
+|   |   worker-1   |     |   worker-2   |     |   worker-3   |     |
+|   | web.1  api.2 |     | api.1        |     | web.2  db.1  |     |
+|   +--------------+     +--------------+     +--------------+     |
++------------------------------------------------------------------+</code></pre>
+<h3>Managers</h3>
+<ul><li>Store the cluster state in a <strong>Raft</strong> log, replicated to every manager.</li><li>Exactly one manager is the <strong>leader</strong>. Only the leader commits changes; followers forward writes to it.</li><li>Run the <strong>orchestrator</strong> (how many tasks should exist), the <strong>scheduler</strong> (which node runs each task), and the <strong>dispatcher</strong> (hands tasks to nodes).</li><li>Also run tasks by default. In production you often drain managers so they only do control-plane work.</li></ul>
+<h3>Workers</h3>
+<ul><li>Receive task assignments from managers and run them as containers.</li><li>Report task status back.</li><li>Do not participate in Raft and cannot change cluster state.</li></ul>
+<h3>Services, tasks, and containers</h3>
+<pre class="diagram"><code>Service &quot;api&quot;  (desired state: image=api:1.4, replicas=3)
+   |
+   +-- Task api.1  --&gt;  container on worker-2
+   +-- Task api.2  --&gt;  container on worker-1
+   +-- Task api.3  --&gt;  container on worker-3</code></pre>
+<ul><li>A <strong>service</strong> is the desired state you declare.</li><li>A <strong>task</strong> is one scheduled unit of that service — a slot assigned to a node. Tasks are immutable: to change one, Swarm shuts it down and creates a new one.</li><li>A <strong>container</strong> is what actually runs for the task.</li></ul>
+<p>When a node dies, its tasks are marked failed and the orchestrator creates <strong>new</strong> tasks on healthy nodes. That reconciliation loop is the core difference from Compose.</p>
+<hr>
+<h2>3. Raft and quorum</h2>
+<p>Every change — creating a service, scaling, adding a secret — must be committed by a <strong>majority</strong> of managers. That majority is the quorum.</p>
+<pre class="diagram"><code>+----------+--------+--------------------+
+| Managers | Quorum | Failures tolerated |
++----------+--------+--------------------+
+| 1        | 1      | 0                  |
+| 2        | 2      | 0                  |
+| 3        | 2      | 1                  |
+| 4        | 3      | 1                  |
+| 5        | 3      | 2                  |
+| 7        | 4      | 3                  |
++----------+--------+--------------------+</code></pre>
+<p>Lessons from the table:</p>
+<ul><li><strong>Use an odd number of managers.</strong> Going from 3 to 4 adds overhead without adding fault tolerance.</li><li><strong>3 or 5 managers</strong> is the normal range. More managers mean slower commits, because every write needs more acknowledgements.</li><li><strong>2 managers is worse than 1.</strong> Either failure loses quorum.</li><li>Spread managers across failure domains (racks, availability zones), or one outage takes out the majority.</li></ul>
+<h3>What losing quorum means</h3>
+<ul><li>Running tasks <strong>keep running</strong>. The data plane does not stop.</li><li>You <strong>cannot change anything</strong>: no deploys, no scaling, no rescheduling of failed tasks.</li><li>Recovery when the lost managers cannot come back: on a surviving manager, run <code>docker swarm init --force-new-cluster</code>. This creates a new single-manager cluster from the local state; then re-add managers.</li></ul>
+<hr>
+<h2>4. Creating a cluster</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-bash"># on the first manager
+docker swarm init --advertise-addr 10.0.0.11
+
+# print join commands
+docker swarm join-token worker
+docker swarm join-token manager
+
+# on each other node
+docker swarm join --token &lt;token&gt; 10.0.0.11:2377
+
+# inspect
+docker node ls
+docker info --format &#x27;{{json .Swarm}}&#x27;</code></pre></div>
+<p><code>--advertise-addr</code> matters on hosts with several interfaces: it is the address other nodes use to reach this one.</p>
+<h3>Required ports between nodes</h3>
+<pre class="diagram"><code>+-----------+----------+-------------------------------------+
+| Port      | Protocol | Purpose                             |
++-----------+----------+-------------------------------------+
+| 2377      | TCP      | Cluster management (to managers)    |
+| 7946      | TCP/UDP  | Node-to-node gossip and discovery   |
+| 4789      | UDP      | Overlay network data (VXLAN)        |
+| ESP (50)  | IP proto | Encrypted overlay traffic, if used  |
++-----------+----------+-------------------------------------+</code></pre>
+<p>A cluster that forms but whose cross-node service traffic silently fails is very often a blocked <strong>4789/udp</strong>.</p>
+<h3>Token hygiene</h3>
+<ul><li>Manager tokens grant full control of the cluster. Treat them like root credentials.</li><li>Rotate them with <code>docker swarm join-token --rotate manager</code>.</li></ul>
+<hr>
+<h2>5. Services</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-bash">docker service create \
+  --name api \
+  --replicas 3 \
+  --publish published=8080,target=3000 \
+  --network backend \
+  --health-cmd &quot;wget -qO- http://localhost:3000/health || exit 1&quot; \
+  --health-interval 10s \
+  --limit-memory 512M \
+  --reserve-memory 256M \
+  myorg/api:1.4
+
+docker service ls
+docker service ps api
+docker service inspect --pretty api
+docker service logs -f api
+docker service scale api=5</code></pre></div>
+<h3>Replicated versus global</h3>
+<ul><li><strong>Replicated</strong> (default) — run exactly N tasks, wherever the scheduler places them.</li><li><strong>Global</strong> — run one task on <strong>every</strong> eligible node. Use it for node-level agents: log shippers, metrics exporters, security scanners.</li></ul>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-bash">docker service create --mode global --name node-exporter prom/node-exporter</code></pre></div>
+<h3>Reservations versus limits</h3>
+<ul><li><code>--reserve-memory</code> / <code>--reserve-cpu</code> — used by the <strong>scheduler</strong>. A node is only eligible if it has that much unreserved capacity.</li><li><code>--limit-memory</code> / <code>--limit-cpu</code> — enforced by <strong>cgroups</strong> at runtime. Exceeding the memory limit gets the container OOM-killed.</li></ul>
+<p>Setting limits without reservations lets the scheduler overpack nodes. Setting reservations without limits lets one task starve its neighbours.</p>
+<hr>
+<h2>6. Networking</h2>
+<h3>Overlay networks</h3>
+<p>An overlay network spans every node that runs a task attached to it. Traffic between nodes is encapsulated in <strong>VXLAN</strong> over UDP 4789.</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-bash">docker network create --driver overlay --attachable backend
+docker network create --driver overlay --opt encrypted secure-backend</code></pre></div>
+<ul><li><code>--attachable</code> lets standalone containers (<code>docker run --network backend</code>) join, which is handy for debugging.</li><li><code>--opt encrypted</code> adds IPsec encryption between nodes, at some CPU cost.</li></ul>
+<h3>Service discovery: VIP versus DNS round-robin</h3>
+<p>By default each service gets a <strong>virtual IP</strong> (VIP). The service name resolves to that single VIP, and the kernel&#x27;s IPVS load-balances connections across healthy tasks.</p>
+<pre class="diagram"><code>api  --&gt; DNS --&gt;  10.0.1.5 (VIP)  --&gt; IPVS --&gt; api.1 / api.2 / api.3</code></pre>
+<p>With <code>--endpoint-mode dnsrr</code>, the name resolves directly to all task IPs and the client chooses. Use it when a client needs to see individual instances, or with protocols that do not work through the VIP.</p>
+<p><code>tasks.api</code> always resolves to the individual task IPs, whichever mode is set.</p>
+<h3>The routing mesh</h3>
+<p>Publishing a port in the default <strong>ingress</strong> mode opens it on <strong>every node</strong>, even nodes that run no task of that service.</p>
+<pre class="diagram"><code>                client  --&gt;  any node : 8080
+                                  |
+            +---------------------+---------------------+
+            |                     |                     |
+      +-----------+         +-----------+         +-----------+
+      |  node-1   |         |  node-2   |         |  node-3   |
+      |  api.1    |         |  (none)   |         |  api.2    |
+      +-----------+         +-----------+         +-----------+
+            ^                     |
+            +----- ingress network forwards to a healthy task</code></pre>
+<ul><li>An external load balancer can target all nodes without knowing where tasks run.</li><li>The cost is an extra network hop, and the client&#x27;s source IP is replaced by an internal address.</li></ul>
+<p>When you need the real client IP or lower latency, publish in <strong>host</strong> mode:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-bash">docker service create --mode global \
+  --publish published=443,target=443,mode=host \
+  --name edge-proxy traefik:v3</code></pre></div>
+<p>Host mode binds only on nodes that run a task, so it is usually combined with <code>--mode global</code>.</p>
+<hr>
+<h2>7. Rolling updates and rollbacks</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-bash">docker service update \
+  --image myorg/api:1.5 \
+  --update-parallelism 1 \
+  --update-delay 10s \
+  --update-order start-first \
+  --update-failure-action rollback \
+  --update-monitor 30s \
+  --update-max-failure-ratio 0.1 \
+  api</code></pre></div>
+<p>What each setting does:</p>
+<ul><li><code>--update-parallelism</code> — how many tasks are replaced at a time.</li><li><code>--update-delay</code> — wait between batches.</li><li><code>--update-order</code> — <code>stop-first</code> (default) stops the old task before starting the new one; <code>start-first</code> starts the new one first, giving zero-downtime replacement at the cost of briefly running extra tasks.</li><li><code>--update-monitor</code> — how long to watch each new task for failure after it starts.</li><li><code>--update-failure-action</code> — <code>pause</code> (default), <code>continue</code>, or <code>rollback</code>.</li><li><code>--update-max-failure-ratio</code> — the fraction of failed tasks tolerated before the failure action fires.</li></ul>
+<h3>Health checks make updates safe</h3>
+<p>Without a health check, a task counts as &quot;running&quot; as soon as its process starts — even if the application immediately fails its first request. With a health check, Swarm waits for <strong>healthy</strong> before counting the task as updated and moving to the next batch.</p>
+<h3>Manual rollback</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-bash">docker service rollback api
+docker service inspect --format &#x27;{{json .PreviousSpec}}&#x27; api</code></pre></div>
+<p>Swarm keeps exactly <strong>one</strong> previous spec, so a rollback goes back one step only.</p>
+<hr>
+<h2>8. Scheduling and placement</h2>
+<h3>Constraints — hard rules</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-bash">docker node update --label-add zone=az1 worker-1
+docker node update --label-add disk=ssd worker-2
+
+docker service create \
+  --constraint &#x27;node.role==worker&#x27; \
+  --constraint &#x27;node.labels.disk==ssd&#x27; \
+  --name db postgres:16</code></pre></div>
+<p>A task with constraints that no node satisfies stays <strong>Pending</strong> forever. It does not fail.</p>
+<h3>Preferences — soft spreading</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-bash">docker service create --replicas 6 \
+  --placement-pref &#x27;spread=node.labels.zone&#x27; \
+  --name api myorg/api:1.4</code></pre></div>
+<p>This spreads tasks evenly across zones, so losing one zone removes only a share of the capacity.</p>
+<h3>Node availability</h3>
+<ul><li><code>active</code> — accepts new tasks.</li><li><code>pause</code> — keeps existing tasks, accepts no new ones.</li><li><code>drain</code> — moves all tasks off the node. Use it before maintenance.</li></ul>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-bash">docker node update --availability drain worker-2
+# patch and reboot worker-2
+docker node update --availability active worker-2</code></pre></div>
+<p>Swarm does <strong>not</strong> automatically rebalance existing tasks back onto a node that returns. New tasks go there; to rebalance now, run <code>docker service update --force api</code>.</p>
+<hr>
+<h2>9. Secrets and configs</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-bash">printf &#x27;s3cr3t&#x27; | docker secret create db_password_v1 -
+docker service create --secret source=db_password_v1,target=db_password --name api myorg/api:1.4</code></pre></div>
+<ul><li>Secrets are stored encrypted in the Raft log.</li><li>They are only sent to nodes that run a task needing them.</li><li>Inside the container they appear as files in an in-memory filesystem at <code>/run/secrets/&lt;target&gt;</code>. They never touch the node&#x27;s disk.</li></ul>
+<p>Secrets are <strong>immutable</strong>. To rotate one:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-bash">printf &#x27;n3w-s3cr3t&#x27; | docker secret create db_password_v2 -
+docker service update \
+  --secret-rm db_password_v1 \
+  --secret-add source=db_password_v2,target=db_password \
+  api
+docker secret rm db_password_v1</code></pre></div>
+<p>Because the <code>target</code> stays the same, the application does not change; the update rolls out like any other.</p>
+<p><strong>Configs</strong> (<code>docker config create</code>) work the same way for non-sensitive files such as an <code>nginx.conf</code>.</p>
+<h3>Autolock</h3>
+<p>By default, the keys that decrypt the Raft log are stored on each manager&#x27;s disk. With autolock, a restarted manager stays locked until an operator supplies an unlock key:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-bash">docker swarm update --autolock=true
+docker swarm unlock
+docker swarm unlock-key</code></pre></div>
+<p>Store the unlock key outside the cluster. Losing it while managers are locked means rebuilding the cluster.</p>
+<hr>
+<h2>10. Stacks: Compose files on a cluster</h2>
+<p>A <strong>stack</strong> deploys a Compose file to the Swarm:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-yaml">services:
+  api:
+    image: registry.example.com/api:1.5
+    networks: [backend]
+    secrets: [db_password]
+    deploy:
+      replicas: 3
+      update_config:
+        parallelism: 1
+        delay: 10s
+        order: start-first
+        failure_action: rollback
+      restart_policy:
+        condition: on-failure
+        max_attempts: 3
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 256M
+      placement:
+        constraints: [node.role == worker]
+
+networks:
+  backend:
+    driver: overlay
+
+secrets:
+  db_password:
+    external: true</code></pre></div>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-bash">docker stack deploy -c stack.yaml --with-registry-auth shop
+docker stack services shop
+docker stack ps shop
+docker stack rm shop</code></pre></div>
+<h3>Differences from plain Compose</h3>
+<ul><li><code>build:</code> is <strong>ignored</strong>. Every node must be able to pull the image from a registry, so build and push in CI first.</li><li><code>depends_on</code> is <strong>ignored</strong>. Services start in any order, so retries in the application are mandatory.</li><li><code>container_name</code> is not allowed: tasks are named by Swarm.</li><li><code>--with-registry-auth</code> forwards your registry credentials to the nodes so they can pull private images.</li><li>Re-running <code>stack deploy</code> is the update mechanism. It is declarative: services removed from the file are only cleaned up with <code>--prune</code>.</li></ul>
+<h3>Pin images by digest</h3>
+<p>If a stack references <code>api:latest</code>, different nodes may resolve the tag at different times and run different code. Pin a version tag, or better, a digest: <code>api@sha256:...</code>.</p>
+<hr>
+<h2>11. Operations</h2>
+<h3>Back up the Raft state</h3>
+<p>The cluster state lives in <code>/var/lib/docker/swarm</code> on each manager.</p>
+<ol><li>Stop Docker on one manager (in a 3- or 5-manager cluster, quorum survives).</li><li>Archive <code>/var/lib/docker/swarm</code>.</li><li>Start Docker again.</li></ol>
+<p>If autolock is on, you also need the unlock key to restore the backup.</p>
+<h3>Upgrading the cluster</h3>
+<ul><li>Upgrade managers one at a time, checking that quorum and leadership are healthy between each.</li><li>Drain each worker, upgrade it, and reactivate it.</li></ul>
+<h3>Observability</h3>
+<ul><li><code>docker service logs</code> aggregates logs across nodes but is not a log platform. Ship logs to a central system with a global logging agent.</li><li>Run node and container exporters as global services, and alert on task restarts, pending tasks, and manager reachability.</li></ul>
+<hr>
+<h2>12. Debugging playbook</h2>
+<h3>Scenario A — a task stays in Pending</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-bash">docker service ps --no-trunc api</code></pre></div>
+<p>Look at the <code>ERROR</code> column. Common causes:</p>
+<ul><li><code>no suitable node</code> — constraints or labels that no node satisfies.</li><li><code>insufficient resources</code> — reservations larger than any node&#x27;s free capacity.</li><li>The image cannot be pulled on that node. Check registry auth and <code>--with-registry-auth</code>.</li></ul>
+<h3>Scenario B — tasks restart in a loop</h3>
+<ul><li><code>docker service ps api</code> shows a history of failed tasks with exit codes.</li><li>Exit code <strong>137</strong> usually means OOM-killed or SIGKILL — compare memory usage to the limit.</li><li>A failing health check kills the task even if the process is alive. Run the check command manually inside a container to see why.</li></ul>
+<h3>Scenario C — service works on one node but not across nodes</h3>
+<ul><li>Check that 4789/udp and 7946 are open between nodes.</li><li>Check for MTU problems: VXLAN adds about 50 bytes of overhead, so large packets can be dropped silently on networks with a small MTU.</li><li>Use an attachable overlay and a debug container to test <code>tasks.api</code> resolution and connectivity.</li></ul>
+<h3>Scenario D — a rolling update pauses halfway</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-bash">docker service inspect --format &#x27;{{json .UpdateStatus}}&#x27; api</code></pre></div>
+<p>The default failure action is <code>pause</code>. Fix the cause, then either <code>docker service update api</code> to resume or <code>docker service rollback api</code>.</p>
+<hr>
+<h2>13. Hands-on labs</h2>
+<p>You can practise most of this on one machine with a single-node swarm, and multi-node behaviour with three small VMs (for example, using Multipass).</p>
+<h3>Lab A — Reconciliation</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-bash">docker swarm init
+docker service create --name web --replicas 3 -p 8080:80 nginx:alpine
+docker ps --filter name=web
+docker rm -f $(docker ps -q --filter name=web | head -1)
+docker service ps web</code></pre></div>
+<p>Watch Swarm replace the container you killed.</p>
+<h3>Lab B — Rolling update with automatic rollback</h3>
+<p>Deploy a service with a health check, then update it to an image whose health check fails. Use <code>--update-failure-action rollback</code> and observe the automatic rollback in <code>docker service ps</code>.</p>
+<h3>Lab C — VIP versus DNS round-robin</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code class="lang-bash">docker network create -d overlay --attachable lab
+docker service create --name whoami --replicas 3 --network lab traefik/whoami
+docker run --rm --network lab alpine sh -c &quot;nslookup whoami; nslookup tasks.whoami&quot;</code></pre></div>
+<h3>Lab D — Losing quorum</h3>
+<p>On a three-manager cluster, stop Docker on two managers. Confirm that existing tasks keep running but <code>docker service scale</code> fails. Restore one manager and confirm writes work again.</p>
+<hr>
+<h2>14. Swarm versus Kubernetes</h2>
+<pre class="diagram"><code>+---------------------+---------------------------+-----------------------------+
+| Concern             | Swarm                     | Kubernetes                  |
++---------------------+---------------------------+-----------------------------+
+| Setup               | Built into Docker Engine  | Separate control plane      |
+| Config format       | Compose file              | Many resource types (YAML)  |
+| State store         | Raft inside managers      | etcd                        |
+| Unit of scheduling  | Task (one container)      | Pod (one or more)           |
+| Service discovery   | VIP + DNS, routing mesh   | Service + kube-proxy, DNS   |
+| Autoscaling         | Not built in              | HPA, VPA, cluster autoscale |
+| Ecosystem           | Small                     | Very large                  |
++---------------------+---------------------------+-----------------------------+</code></pre>
+<h3>When Swarm is reasonable</h3>
+<ul><li>Small teams that already know Compose and need a few nodes with failover.</li><li>Edge or on-premise sites where a full Kubernetes distribution is too heavy.</li></ul>
+<h3>When to choose Kubernetes</h3>
+<ul><li>You need autoscaling, rich deployment strategies, custom controllers, or a large ecosystem of operators.</li><li>The organisation already runs Kubernetes, which at most large companies it does.</li></ul>
+<p>Knowing Swarm well makes Kubernetes easier, because you already understand the problems it solves.</p>
+<hr>
+<h2>15. Interview questions with model answers</h2>
+<blockquote><p><strong>What happens to running containers if a Swarm loses quorum?</strong></p></blockquote>
+<p>They keep running. Only the control plane is affected: no deploys, no scaling, and failed tasks are not rescheduled until quorum is restored or the cluster is force-rebuilt from a surviving manager.</p>
+<blockquote><p><strong>Why run 3 managers rather than 4?</strong></p></blockquote>
+<p>Both tolerate exactly one manager failure, because quorum for 4 is 3. The fourth manager adds replication overhead without adding fault tolerance.</p>
+<blockquote><p><strong>How does a request reach a task on another node?</strong></p></blockquote>
+<p>With ingress publishing, every node listens on the published port. IPVS on the receiving node load-balances the connection to a healthy task&#x27;s IP on the ingress overlay network, and VXLAN carries it to the node running that task.</p>
+<blockquote><p><strong>How do you rotate a secret without downtime?</strong></p></blockquote>
+<p>Create a new secret with a new name, update the service to remove the old one and add the new one with the same target path, let the rolling update replace tasks, then delete the old secret.</p>
+<blockquote><p><strong>Why does <code>depends_on</code> not help in a stack?</strong></p></blockquote>
+<p><code>docker stack deploy</code> ignores it. Services start in any order and can restart independently at any time, so each service must retry its dependencies.</p>
+<blockquote><p><strong>A task is stuck in Pending. What do you check?</strong></p></blockquote>
+<p><code>docker service ps --no-trunc</code> for the scheduler&#x27;s error, then constraints and node labels, resource reservations versus free capacity, node availability, and whether the image can be pulled on candidate nodes.</p></div>
+    </article>
+  </main>
+</body>
+</html>

@@ -1,0 +1,2635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Part 4 · x-one</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+  <script src="../assets/copy.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar"><input type="checkbox" id="nav-toggle" class="nav-toggle"><div class="sidebar-brand"><a href="../index.html">x-one notes</a><label for="nav-toggle" class="menu-btn" aria-label="Toggle navigation"><span class="menu-open">Menu</span><span class="menu-close">Close</span></label></div><nav><details class="nav-group"><summary class="nav-group-label">cp<span class="nav-count">56</span></summary><ul><li><a href="../cp/0-1-bfs.html">0-1 BFS</a></li><li><a href="../cp/two-sat.html">2-SAT</a></li><li><a href="../cp/bfs-state-space.html">BFS on State Space</a></li><li><a href="../cp/binary-search.html">Binary Search (on Sorted Data)</a></li><li><a href="../cp/binary-search-on-answer.html">Binary Search on Answer</a></li><li><a href="../cp/bitmask-dp.html">Bitmask DP</a></li><li><a href="../cp/bridges-articulation-points.html">Bridges &amp; Articulation Points</a></li><li><a href="../cp/cdq-divide-conquer.html">CDQ Divide &amp; Conquer (Offline)</a></li><li><a href="../cp/centroid-decomposition.html">Centroid Decomposition</a></li><li><a href="../cp/convex-hull-trick-lichao.html">Convex Hull Trick &amp; Li Chao Tree</a></li><li><a href="../cp/coordinate-compression.html">Coordinate Compression</a></li><li><a href="../cp/difference-array.html">Difference Array</a></li><li><a href="../cp/digit-dp.html">Digit DP</a></li><li><a href="../cp/dijkstra.html">Dijkstra&#x27;s Algorithm</a></li><li><a href="../cp/dsu-on-tree.html">DSU on Tree (Small-to-Large)</a></li><li><a href="../cp/dp-1d.html">Dynamic Programming — 1D</a></li><li><a href="../cp/dp-2d-knapsack.html">Dynamic Programming — 2D &amp; Knapsack</a></li><li><a href="../cp/euler-tour-flattening.html">Euler Tour (Tree Flattening)</a></li><li><a href="../cp/fenwick-tree.html">Fenwick Tree (Binary Indexed Tree)</a></li><li><a href="../cp/flood-fill-multi-source-bfs.html">Flood Fill &amp; Multi-Source BFS</a></li><li><a href="../cp/floyd-warshall.html">Floyd-Warshall</a></li><li><a href="../cp/functional-graphs.html">Functional Graphs</a></li><li><a href="../cp/graph-bfs-dfs.html">Graph BFS &amp; DFS</a></li><li><a href="../cp/greedy.html">Greedy</a></li><li><a href="../cp/heavy-light-decomposition.html">Heavy-Light Decomposition (HLD)</a></li><li><a href="../cp/interval-dp.html">Interval DP</a></li><li><a href="../cp/kmp-pattern-matching.html">KMP Pattern Matching</a></li><li><a href="../cp/lca-binary-lifting.html">LCA (Binary Lifting)</a></li><li><a href="../cp/line-sweep.html">Line Sweep</a></li><li><a href="../cp/lis.html">Longest Increasing Subsequence (LIS)</a></li><li><a href="../cp/matrix-exponentiation.html">Matrix Exponentiation</a></li><li><a href="../cp/meet-in-the-middle.html">Meet in the Middle</a></li><li><a href="../cp/mos-algorithm.html">Mo&#x27;s Algorithm (Offline Queries)</a></li><li><a href="../cp/monotonic-queue.html">Monotonic Deque (Queue)</a></li><li><a href="../cp/monotonic-stack.html">Monotonic Stack</a></li><li><a href="../cp/mst-kruskal-prim.html">MST (Kruskal &amp; Prim)</a></li><li><a href="../cp/policy-based-data-structure.html">Policy-Based Data Structure</a></li><li><a href="../cp/prefix-sums.html">Prefix Sums</a></li><li><a href="../cp/priority-queue-tricks.html">Priority Queue Tricks</a></li><li><a href="../cp/rerooting-dp.html">Rerooting DP on Trees</a></li><li><a href="../cp/segment-tree.html">Segment Tree</a></li><li><a href="../cp/sliding-window.html">Sliding Window</a></li><li><a href="../cp/sorting-tricks.html">Sorting Tricks</a></li><li><a href="../cp/sparse-table-rmq.html">Sparse Table (RMQ)</a></li><li><a href="../cp/sprague-grundy.html">Sprague-Grundy (Game Theory)</a></li><li><a href="../cp/sqrt-decomposition.html">Square Root Decomposition</a></li><li><a href="../cp/string-hashing.html">String Hashing</a></li><li><a href="../cp/strongly-connected-components.html">Strongly Connected Components (SCC)</a></li><li><a href="../cp/topological-sort.html">Topological Sort</a></li><li><a href="../cp/tree-dfs.html">Tree DFS</a></li><li><a href="../cp/tree-difference-array.html">Tree Difference Array</a></li><li><a href="../cp/trie-and-xor-trie.html">Trie &amp; XOR Trie</a></li><li><a href="../cp/two-pointers.html">Two Pointers</a></li><li><a href="../cp/union-find-dsu.html">Union-Find (DSU)</a></li><li><a href="../cp/virtual-tree.html">Virtual Tree</a></li><li><a href="../cp/z-algorithm.html">Z-Algorithm</a></li></ul></details><details class="nav-group"><summary class="nav-group-label">docker<span class="nav-count">3</span></summary><ul><li><a href="../docker/start.html">Start</a></li><li><a href="../docker/compose.html">Compose</a></li><li><a href="../docker/swarm.html">Swarm</a></li></ul></details><details class="nav-group" open><summary class="nav-group-label">java<span class="nav-count">5</span></summary><ul><li><a href="../java/part-1.html">Part 1</a></li><li><a href="../java/part-2.html">Part 2</a></li><li><a href="../java/part-3.html">Part 3</a></li><li><a href="../java/part-4.html" class="is-active" aria-current="page">Part 4</a></li><li><a href="../java/part-5.html">Part 5</a></li></ul></details><details class="nav-group"><summary class="nav-group-label">math<span class="nav-count">34</span></summary><ul><li><a href="../math/bijection-counting.html">Bijection &amp; Counting Proofs</a></li><li><a href="../math/burnside-lemma.html">Burnside&#x27;s Lemma (Symmetry Counting)</a></li><li><a href="../math/catalan-numbers.html">Catalan Numbers</a></li><li><a href="../math/chinese-remainder-theorem.html">Chinese Remainder Theorem (CRT)</a></li><li><a href="../math/combinatorial-identities.html">Combinatorial Identities</a></li><li><a href="../math/combinatorics-ncr.html">Combinatorics — nCr &amp; Pascal</a></li><li><a href="../math/computational-geometry-basics.html">Computational Geometry Basics</a></li><li><a href="../math/derangements.html">Derangements</a></li><li><a href="../math/divisor-enumeration.html">Divisor Enumeration — O(√n)</a></li><li><a href="../math/divisor-functions.html">Divisor Functions (τ and σ)</a></li><li><a href="../math/euler-totient.html">Euler&#x27;s Totient φ(n)</a></li><li><a href="../math/expected-value-linearity.html">Expected Value — Linearity</a></li><li><a href="../math/fast-exponentiation.html">Fast Exponentiation</a></li><li><a href="../math/fermat-euler-theorem.html">Fermat&#x27;s &amp; Euler&#x27;s Theorems</a></li><li><a href="../math/floor-sum-trick.html">Floor Sum Trick — Σ⌊n/i⌋</a></li><li><a href="../math/gcd-lcm-extended-euclid.html">GCD, LCM &amp; Extended Euclidean</a></li><li><a href="../math/harmonic-bounds.html">Harmonic Bounds &amp; Estimates</a></li><li><a href="../math/inclusion-exclusion.html">Inclusion-Exclusion Principle</a></li><li><a href="../math/legendre-formula.html">Legendre&#x27;s Formula</a></li><li><a href="../math/linear-recurrences.html">Linear Recurrences</a></li><li><a href="../math/lucas-theorem.html">Lucas Theorem &amp; nCr mod prime</a></li><li><a href="../math/modular-arithmetic.html">Modular Arithmetic</a></li><li><a href="../math/modular-inverse-composite.html">Modular Inverse (Composite Modulus)</a></li><li><a href="../math/modular-inverse-fermat.html">Modular Inverse (Fermat)</a></li><li><a href="../math/multinomial-coefficients.html">Multinomial Coefficients</a></li><li><a href="../math/mobius-inversion.html">Möbius Inversion</a></li><li><a href="../math/parity-xor-patterns.html">Parity, XOR &amp; Modular Patterns</a></li><li><a href="../math/pigeonhole-counting.html">Pigeonhole &amp; Counting Arguments</a></li><li><a href="../math/probability-basics.html">Probability Basics</a></li><li><a href="../math/sieve-primes-factorization.html">Sieve, Primes &amp; Factorization</a></li><li><a href="../math/stars-and-bars.html">Stars and Bars</a></li><li><a href="../math/stirling-numbers.html">Stirling Numbers (2nd Kind)</a></li><li><a href="../math/sum-formulas-series.html">Sum Formulas &amp; Series</a></li><li><a href="../math/wilson-primality.html">Wilson&#x27;s Theorem &amp; Primality</a></li></ul></details><details class="nav-group"><summary class="nav-group-label">os<span class="nav-count">2</span></summary><ul><li><a href="../os/cpu.html">CPU</a></li><li><a href="../os/user-threads.html">User threads</a></li></ul></details></nav></aside>
+  <main class="chat">
+    <header class="page-head"><span class="crumb">java / part-4</span></header>
+    <article class="message user">
+      <div class="message-label">You</div>
+      <div class="message-body">week 4
+Advanced concurrency
+Rate limiter
+
+give complete details and concepts for this week</div>
+    </article>
+    <article class="message assistant">
+      <div class="message-label">Assistant</div>
+      <div class="message-body prose"><h1>Week 4 — Advanced Concurrency + Rate Limiter</h1>
+<p>This week should build directly on <strong>Week 3 (threads + synchronization)</strong> and move you toward the kind of concurrency design expected in Java backend/distributed-systems interviews.</p>
+<p>The core goal is:</p>
+<blockquote><p><strong>Understand how to safely coordinate many concurrent operations, then use those concepts to design and implement a production-quality rate limiter.</strong></p></blockquote>
+<hr>
+<h1>1. What you should be able to do by the end</h1>
+<p>You should be comfortable with:</p>
+<h3>Java concurrency</h3>
+<ul><li><code>ExecutorService</code></li><li>Thread pools</li><li><code>Callable</code> / <code>Future</code></li><li><code>CompletableFuture</code></li><li><code>ScheduledExecutorService</code></li><li><code>AtomicInteger</code>, <code>AtomicLong</code></li><li><code>LongAdder</code></li><li><code>ConcurrentHashMap</code></li><li><code>BlockingQueue</code></li><li><code>Semaphore</code></li><li><code>CountDownLatch</code></li><li><code>CyclicBarrier</code></li><li><code>Phaser</code></li><li><code>ReentrantLock</code></li><li><code>ReadWriteLock</code></li><li><code>StampedLock</code></li><li><code>Condition</code></li><li><code>volatile</code></li><li>CAS</li><li>happens-before</li><li>lock contention</li><li>deadlocks</li><li>starvation</li><li>livelocks</li><li>thread-safe data structures</li></ul>
+<h3>Advanced concepts</h3>
+<ul><li>Thread confinement</li><li>Immutability</li><li>Lock-free vs wait-free</li><li>Optimistic concurrency</li><li>False sharing</li><li>Backpressure</li><li>Producer-consumer patterns</li><li>Task cancellation</li><li>Timeouts</li><li>Graceful shutdown</li><li>Concurrent data-structure design</li></ul>
+<h3>Rate limiter</h3>
+<p>You should understand and implement:</p>
+<ol><li>Fixed Window</li><li>Sliding Window</li><li>Sliding Window Counter</li><li>Token Bucket</li><li>Leaky Bucket</li></ol>
+<p>And understand:</p>
+<ul><li>Per-user limiting</li><li>Per-IP limiting</li><li>Per-API limiting</li><li>Global limiting</li><li>Burst traffic</li><li>Distributed rate limiting</li><li>Redis-based rate limiting</li><li>Atomicity</li><li>Race conditions</li><li>TTL</li><li>Clock issues</li><li>Fail-open vs fail-closed</li></ul>
+<hr>
+<h1>2. Advanced Java concurrency mental model</h1>
+<p>Think about concurrency in layers:</p>
+<pre class="diagram"><code>+-------------------------------------------------------+
+|                 Concurrent Application                |
++-------------------------------------------------------+
+                            |
+                            v
++-------------------------------------------------------+
+|       Tasks                         Shared State      |
++-------------------------------------------------------+
+                            |
+                            v
++-------------------------------------------------------+
+|     ExecutorService                Atomic / Locks     |
++-------------------------------------------------------+
+                            |
+                            v
++-------------------------------------------------------+
+| CompletableFuture              Concurrent Collections |
++-------------------------------------------------------+
+                            |
+                            v
++-------------------------------------------------------+
+|     ScheduledExecutor              Synchronization    |
++-------------------------------------------------------+
+                            |
+                            v
++-------------------------------------------------------+
+|                      Coordination                     |
++-------------------------------------------------------+
+                            |
+                            v
++-------------------------------------------------------+
+|                  Queue / Semaphore /                  |
++-------------------------------------------------------+
+                            |
+                            v
++-------------------------------------------------------+
+|              Latch / Barrier / Condition              |
++-------------------------------------------------------+</code></pre>
+<p>Then rate limiting combines these ideas:</p>
+<pre class="diagram"><code>+---------------------+
+|       Requests      |
++---------------------+
+           |
+           v
++---------------------+
+|          ▼          |
++---------------------+
+           |
+           v
++---------------------+
+|     Rate Limiter    |
++---------------------+
+           |
+           v
++---------------------+
+| ├ allowed ► Service |
++---------------------+
+           |
+           v
++---------------------+
+|       rejected      |
++---------------------+</code></pre>
+<hr>
+<h1>3. ExecutorService</h1>
+<p>One of the most important things to learn.</p>
+<p>Instead of manually creating threads:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Thread t = new Thread(() -&gt; {
+    // work
+});
+
+t.start();</code></pre></div>
+<p>use an executor:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>ExecutorService executor =
+        Executors.newFixedThreadPool(10);
+
+executor.submit(() -&gt; {
+    System.out.println(&quot;Running task&quot;);
+});
+
+executor.shutdown();</code></pre></div>
+<p>The executor manages worker threads for you.</p>
+<hr>
+<h1>4. Why thread pools exist</h1>
+<p>Creating a thread for every request is expensive.</p>
+<p>Suppose:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>10,000 requests</code></pre></div>
+<p>and you create:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>10,000 threads</code></pre></div>
+<p>You have huge overhead.</p>
+<p>Instead:</p>
+<pre class="diagram"><code>+-------------------+
+|    10,000 tasks   |
++-------------------+
+          |
+          v
++-------------------+
+|         ▼         |
++-------------------+
+          |
+          v
++-------------------+
+|    Thread Pool    |
++-------------------+
+          |
+          v
++-------------------+
+| T1   T2   T3   T4 |
++-------------------+</code></pre>
+<p>Tasks wait in a queue.</p>
+<hr>
+<h1>5. Types of thread pools</h1>
+<p>Know these:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Executors.newFixedThreadPool(10);</code></pre></div>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Executors.newCachedThreadPool();</code></pre></div>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Executors.newSingleThreadExecutor();</code></pre></div>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Executors.newScheduledThreadPool(5);</code></pre></div>
+<p>But for production Java, understand <code>ThreadPoolExecutor</code> directly.</p>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>ThreadPoolExecutor executor =
+        new ThreadPoolExecutor(
+                5,
+                10,
+                60,
+                TimeUnit.SECONDS,
+                new ArrayBlockingQueue&lt;&gt;(100)
+        );</code></pre></div>
+<p>Understand these parameters:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>corePoolSize
+maximumPoolSize
+keepAliveTime
+workQueue
+threadFactory
+rejectionHandler</code></pre></div>
+<hr>
+<h1>6. ThreadPoolExecutor execution model</h1>
+<p>This is interview-important.</p>
+<p>Suppose:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>corePoolSize = 5
+maximumPoolSize = 10
+queue = 100</code></pre></div>
+<p>Tasks generally progress like:</p>
+<pre class="diagram"><code>+--------------------------------+
+|          Tasks arrive          |
++--------------------------------+
+                 |
+                 v
++--------------------------------+
+|               ▼                |
++--------------------------------+
+                 |
+                 v
++--------------------------------+
+| Create workers until core size |
++--------------------------------+
+                 |
+                 v
++--------------------------------+
+|               ▼                |
++--------------------------------+
+                 |
+                 v
++--------------------------------+
+|     Queue additional tasks     |
++--------------------------------+
+                 |
+                 v
++--------------------------------+
+|               ▼                |
++--------------------------------+
+                 |
+                 v
++--------------------------------+
+|       When queue is full       |
++--------------------------------+
+                 |
+                 v
++--------------------------------+
+|               ▼                |
++--------------------------------+
+                 |
+                 v
++--------------------------------+
+|   Create additional workers    |
++--------------------------------+
+                 |
+                 v
++--------------------------------+
+|               ▼                |
++--------------------------------+
+                 |
+                 v
++--------------------------------+
+|      Until max pool size       |
++--------------------------------+
+                 |
+                 v
++--------------------------------+
+|               ▼                |
++--------------------------------+
+                 |
+                 v
++--------------------------------+
+|     Reject remaining tasks     |
++--------------------------------+</code></pre>
+<p>This connects directly to <strong>backpressure</strong>.</p>
+<hr>
+<h1>7. Rejection policies</h1>
+<p>Know:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>AbortPolicy
+CallerRunsPolicy
+DiscardPolicy
+DiscardOldestPolicy</code></pre></div>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>new ThreadPoolExecutor.CallerRunsPolicy()</code></pre></div>
+<p><code>CallerRunsPolicy</code> can provide a primitive form of backpressure:</p>
+<pre class="diagram"><code>+--------------------------+
+|     Pool overloaded      |
++--------------------------+
+              |
+              v
++--------------------------+
+|            ▼             |
++--------------------------+
+              |
+              v
++--------------------------+
+|   Caller executes task   |
++--------------------------+
+              |
+              v
++--------------------------+
+|            ▼             |
++--------------------------+
+              |
+              v
++--------------------------+
+|  Caller becomes slower   |
++--------------------------+
+              |
+              v
++--------------------------+
+|            ▼             |
++--------------------------+
+              |
+              v
++--------------------------+
+| Request production slows |
++--------------------------+</code></pre>
+<p>This idea is extremely important in distributed systems.</p>
+<hr>
+<h1>8. Callable and Future</h1>
+<p><code>Runnable</code> doesn&#x27;t return a result.</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Runnable</code></pre></div>
+<p>returns nothing.</p>
+<p><code>Callable</code> returns a value:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Callable&lt;Integer&gt; task = () -&gt; {
+    return 42;
+};
+
+Future&lt;Integer&gt; future =
+        executor.submit(task);
+
+Integer result = future.get();</code></pre></div>
+<hr>
+<h1>9. Future problems</h1>
+<p>This:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>future.get();</code></pre></div>
+<p>can block indefinitely.</p>
+<p>Prefer:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>future.get(2, TimeUnit.SECONDS);</code></pre></div>
+<p>Understand:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>future.cancel(true);
+future.isDone();
+future.isCancelled();</code></pre></div>
+<hr>
+<h1>10. CompletableFuture</h1>
+<p>Extremely important for modern Java backend work.</p>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>CompletableFuture
+    .supplyAsync(() -&gt; fetchUser())
+    .thenApply(user -&gt; user.getName())
+    .thenAccept(System.out::println);</code></pre></div>
+<p>Pipeline:</p>
+<pre class="diagram"><code>+-------------+
+| fetchUser() |
++-------------+
+       |
+       v
++-------------+
+|      ▼      |
++-------------+
+       |
+       v
++-------------+
+|     User    |
++-------------+
+       |
+       v
++-------------+
+|      ▼      |
++-------------+
+       |
+       v
++-------------+
+|  getName()  |
++-------------+
+       |
+       v
++-------------+
+|      ▼      |
++-------------+
+       |
+       v
++-------------+
+|    print    |
++-------------+</code></pre>
+<hr>
+<h1>11. Combining asynchronous operations</h1>
+<p>Suppose you need:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>User
+Orders
+Payments</code></pre></div>
+<p>independently.</p>
+<p>You can run:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>CompletableFuture&lt;User&gt; user =
+        CompletableFuture.supplyAsync(this::getUser);
+
+CompletableFuture&lt;List&lt;Order&gt;&gt; orders =
+        CompletableFuture.supplyAsync(this::getOrders);
+
+CompletableFuture&lt;Payment&gt; payment =
+        CompletableFuture.supplyAsync(this::getPayment);</code></pre></div>
+<p>Then combine them:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>CompletableFuture.allOf(
+        user,
+        orders,
+        payment
+);</code></pre></div>
+<p>Understand:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>thenApply()
+thenCompose()
+thenCombine()
+allOf()
+anyOf()
+exceptionally()
+handle()
+whenComplete()</code></pre></div>
+<p>Especially understand:</p>
+<h3><code>thenApply</code></h3>
+<p>Transforms a result:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>A → B</code></pre></div>
+<h3><code>thenCompose</code></h3>
+<p>Chains async operations:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>A → Future&lt;B&gt;</code></pre></div>
+<h3><code>thenCombine</code></h3>
+<p>Combines independent futures:</p>
+<pre class="diagram"><code>+-----------------------+
+| Future&lt;A&gt; + Future&lt;B&gt; |
++-----------------------+
+            |
+            v
++-----------------------+
+|       Future&lt;C&gt;       |
++-----------------------+</code></pre>
+<hr>
+<h1>12. CompletableFuture exception handling</h1>
+<p>Learn:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>.exceptionally(ex -&gt; ...)</code></pre></div>
+<p>and:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>.handle((result, exception) -&gt; ...)</code></pre></div>
+<p>and:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>.whenComplete((result, exception) -&gt; ...)</code></pre></div>
+<p>Understand the difference.</p>
+<hr>
+<h1>13. ScheduledExecutorService</h1>
+<p>Very important for rate limiting.</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>ScheduledExecutorService scheduler =
+        Executors.newScheduledThreadPool(2);</code></pre></div>
+<p>Execute periodically:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>scheduler.scheduleAtFixedRate(
+    () -&gt; cleanup(),
+    0,
+    1,
+    TimeUnit.SECONDS
+);</code></pre></div>
+<p>Useful for:</p>
+<ul><li>cleanup</li><li>cache expiration</li><li>metrics</li><li>token replenishment</li><li>background maintenance</li></ul>
+<hr>
+<h1>14. Atomic variables</h1>
+<p>Instead of:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>int count;
+
+count++;</code></pre></div>
+<p>use:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>AtomicInteger count = new AtomicInteger();
+
+count.incrementAndGet();</code></pre></div>
+<p>Why?</p>
+<p>Because:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>count++;</code></pre></div>
+<p>is not atomic.</p>
+<p>It is effectively:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>read
++
+1
+write</code></pre></div>
+<p>Two threads can interfere.</p>
+<hr>
+<h1>15. AtomicInteger</h1>
+<p>Important methods:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>incrementAndGet()
+decrementAndGet()
+getAndIncrement()
+compareAndSet()
+get()
+set()
+updateAndGet()</code></pre></div>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>AtomicInteger counter = new AtomicInteger();
+
+counter.incrementAndGet();</code></pre></div>
+<hr>
+<h1>16. CAS — Compare And Swap</h1>
+<p>A fundamental concurrency concept.</p>
+<p>Conceptually:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>if currentValue == expectedValue
+       update
+else
+       fail</code></pre></div>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>AtomicInteger value = new AtomicInteger(10);
+
+boolean success =
+    value.compareAndSet(10, 20);</code></pre></div>
+<p>If value is still <code>10</code>:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>10 → 20</code></pre></div>
+<p>Otherwise:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>no update</code></pre></div>
+<p>This is the basis of many lock-free algorithms.</p>
+<hr>
+<h1>17. AtomicLong</h1>
+<p>Useful for:</p>
+<ul><li>request counters</li><li>IDs</li><li>timestamps</li><li>sequence numbers</li><li>rate limiter counters</li></ul>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>AtomicLong requests = new AtomicLong();
+
+requests.incrementAndGet();</code></pre></div>
+<hr>
+<h1>18. LongAdder</h1>
+<p>Understand why <code>LongAdder</code> exists.</p>
+<p>With huge concurrency:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>AtomicLong</code></pre></div>
+<p>can experience contention because many threads update the same atomic variable.</p>
+<p><code>LongAdder</code> spreads updates across cells and combines them when reading.</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>LongAdder counter = new LongAdder();
+
+counter.increment();
+
+long value = counter.sum();</code></pre></div>
+<p>Good for high-contention statistics/counters.</p>
+<hr>
+<h1>19. AtomicReference</h1>
+<p>Useful when the shared object itself must change atomically.</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>AtomicReference&lt;State&gt; state =
+        new AtomicReference&lt;&gt;(initialState);</code></pre></div>
+<p>Then:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>state.compareAndSet(oldState, newState);</code></pre></div>
+<p>This becomes useful when implementing a rate limiter state machine.</p>
+<hr>
+<h1>20. volatile</h1>
+<p>A very commonly misunderstood keyword.</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>private volatile boolean running = true;</code></pre></div>
+<p><code>volatile</code> provides visibility guarantees.</p>
+<p>It does <strong>not</strong> make compound operations atomic.</p>
+<p>This is unsafe:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>volatile int count;
+
+count++;</code></pre></div>
+<p>because:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>read
+increment
+write</code></pre></div>
+<p>is still multiple operations.</p>
+<hr>
+<h1>21. Happens-before</h1>
+<p>You need a solid conceptual understanding.</p>
+<p>The Java Memory Model defines relationships that guarantee visibility.</p>
+<p>Examples include:</p>
+<pre class="diagram"><code>+--------+-----------------+
+| unlock | subsequent lock |
++--------+-----------------+
++----------------+---------------+
+| volatile write | subsequent vo |
++----------------+---------------+
++----------------+---------------+
+| Thread.start() | actions in st |
++----------------+---------------+
++-----------------------+--------+
+| all actions in thread | Thread |
++-----------------------+--------+</code></pre>
+<p>You don&#x27;t need to memorize every JMM rule immediately, but you should understand:</p>
+<blockquote><p><strong>When can one thread reliably see another thread&#x27;s changes?</strong></p></blockquote>
+<hr>
+<h1>22. ConcurrentHashMap</h1>
+<p>One of the most important Java collections for concurrent backend systems.</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>ConcurrentHashMap&lt;String, Integer&gt; map =
+        new ConcurrentHashMap&lt;&gt;();</code></pre></div>
+<p>Operations like:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>put()
+get()
+remove()</code></pre></div>
+<p>are thread-safe.</p>
+<p>But be careful with multi-step operations.</p>
+<p>Instead of:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>if (!map.containsKey(key)) {
+    map.put(key, value);
+}</code></pre></div>
+<p>use:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>map.putIfAbsent(key, value);</code></pre></div>
+<hr>
+<h1>23. computeIfAbsent</h1>
+<p>Extremely useful for rate limiters.</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>ConcurrentHashMap&lt;String, Counter&gt; counters =
+        new ConcurrentHashMap&lt;&gt;();</code></pre></div>
+<p>Then:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Counter counter =
+    counters.computeIfAbsent(
+        userId,
+        id -&gt; new Counter()
+    );</code></pre></div>
+<p>This allows lazy creation of per-user state.</p>
+<hr>
+<h1>24. Atomic operations on ConcurrentHashMap</h1>
+<p>Learn:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>putIfAbsent()
+compute()
+computeIfAbsent()
+computeIfPresent()
+merge()
+replace()
+replaceAll()</code></pre></div>
+<p>These are much safer than manually coordinating multiple map operations.</p>
+<hr>
+<h1>25. Semaphore</h1>
+<p>A semaphore controls the number of concurrent permits.</p>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Semaphore semaphore = new Semaphore(10);</code></pre></div>
+<p>Then:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>semaphore.acquire();
+
+try {
+    performOperation();
+} finally {
+    semaphore.release();
+}</code></pre></div>
+<p>Meaning:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Maximum 10 concurrent operations</code></pre></div>
+<p>This is different from a rate limiter.</p>
+<h3>Concurrency limiter</h3>
+<p>Controls:</p>
+<blockquote><p>How many operations can happen simultaneously?</p></blockquote>
+<h3>Rate limiter</h3>
+<p>Controls:</p>
+<blockquote><p>How many operations can happen during a time period?</p></blockquote>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Concurrency limit:
+10 requests simultaneously
+
+Rate limit:
+100 requests / second</code></pre></div>
+<p>Know this distinction very well.</p>
+<hr>
+<h1>26. CountDownLatch</h1>
+<p>Used when one or more threads wait for several operations to finish.</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>CountDownLatch latch =
+        new CountDownLatch(3);</code></pre></div>
+<p>Workers:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>latch.countDown();</code></pre></div>
+<p>Waiting thread:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>latch.await();</code></pre></div>
+<p>Example:</p>
+<pre class="diagram"><code>+----------------------+
+|       Worker 1       |
++----------------------+
+            |
+            v
++----------------------+
+| Worker 2 ► latch = 0 |
++----------------------+
+            |
+            v
++----------------------+
+|       Worker 3       |
++----------------------+
+            |
+            v
++----------------------+
+|          ▼           |
++----------------------+
+            |
+            v
++----------------------+
+|       Continue       |
++----------------------+</code></pre>
+<hr>
+<h1>27. CyclicBarrier</h1>
+<p>A barrier makes threads wait for each other.</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>CyclicBarrier barrier =
+        new CyclicBarrier(3);</code></pre></div>
+<p>Each thread:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>barrier.await();</code></pre></div>
+<p>When all three arrive:</p>
+<pre class="diagram"><code>+-------------------------------+
+|            Thread 1           |
++-------------------------------+
+                |
+                v
++-------------------------------+
+| Thread 2 ► barrier ► continue |
++-------------------------------+
+                |
+                v
++-------------------------------+
+|            Thread 3           |
++-------------------------------+</code></pre>
+<p>Difference:</p>
+<h3>CountDownLatch</h3>
+<p>Generally one-shot.</p>
+<h3>CyclicBarrier</h3>
+<p>Reusable.</p>
+<hr>
+<h1>28. Phaser</h1>
+<p>More advanced coordination primitive.</p>
+<p>Useful when:</p>
+<ul><li>number of participating threads changes</li><li>multiple phases exist</li></ul>
+<p>Think:</p>
+<pre class="diagram"><code>+---------+
+| Phase 1 |
++---------+
+     |
+     v
++---------+
+| Phase 2 |
++---------+
+     |
+     v
++---------+
+| Phase 3 |
++---------+</code></pre>
+<p>You should know what it is, but don&#x27;t spend as much time on it as <code>Semaphore</code>, <code>CountDownLatch</code>, or <code>CompletableFuture</code>.</p>
+<hr>
+<h1>29. ReentrantLock</h1>
+<p>Alternative to <code>synchronized</code>.</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Lock lock = new ReentrantLock();
+
+lock.lock();
+
+try {
+    criticalSection();
+} finally {
+    lock.unlock();
+}</code></pre></div>
+<p>Advantages include:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>tryLock()
+lockInterruptibly()</code></pre></div>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>if (lock.tryLock()) {
+    try {
+        // work
+    } finally {
+        lock.unlock();
+    }
+}</code></pre></div>
+<hr>
+<h1>30. ReadWriteLock</h1>
+<p>Useful when:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>many readers
+few writers</code></pre></div>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>ReadWriteLock lock =
+        new ReentrantReadWriteLock();</code></pre></div>
+<p>Readers:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>lock.readLock().lock();</code></pre></div>
+<p>Writers:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>lock.writeLock().lock();</code></pre></div>
+<hr>
+<h1>31. StampedLock</h1>
+<p>More advanced.</p>
+<p>Provides:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>read lock
+write lock
+optimistic read</code></pre></div>
+<p>Optimistic reads are interesting:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>long stamp = lock.tryOptimisticRead();
+
+int value = data;
+
+if (!lock.validate(stamp)) {
+    // retry using read lock
+}</code></pre></div>
+<p>Understand conceptually rather than spending excessive time memorizing APIs.</p>
+<hr>
+<h1>32. Condition</h1>
+<p>A <code>Condition</code> allows threads to wait for a state change.</p>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Condition notEmpty = lock.newCondition();</code></pre></div>
+<p>Producer:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>notEmpty.signal();</code></pre></div>
+<p>Consumer:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>notEmpty.await();</code></pre></div>
+<p>This is useful for implementing producer-consumer structures.</p>
+<hr>
+<h1>33. Producer-consumer pattern</h1>
+<p>One of the most important concurrency patterns.</p>
+<pre class="diagram"><code>+---------------+
+|   Producers   |
++---------------+
+        |
+        v
++---------------+
+|       ▼       |
++---------------+
+        |
+        v
++---------------+
+| BlockingQueue |
++---------------+
+        |
+        v
++---------------+
+|       ▼       |
++---------------+
+        |
+        v
++---------------+
+|   Consumers   |
++---------------+</code></pre>
+<p>Java provides:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>BlockingQueue&lt;T&gt;</code></pre></div>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>BlockingQueue&lt;Task&gt; queue =
+        new ArrayBlockingQueue&lt;&gt;(100);</code></pre></div>
+<p>Producer:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>queue.put(task);</code></pre></div>
+<p>Consumer:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Task task = queue.take();</code></pre></div>
+<hr>
+<h1>34. Backpressure</h1>
+<p>Suppose requests arrive faster than your system can process them.</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Incoming:
+████████████████████████
+
+Processing:
+██████</code></pre></div>
+<p>Without protection:</p>
+<pre class="diagram"><code>+-------+     +------------------+     +-----+
+| queue | --&gt; | memory explosion | --&gt; | sys |
++-------+     +------------------+     +-----+</code></pre>
+<p>With bounded queues:</p>
+<pre class="diagram"><code>+--------------------------------+
+|           queue full           |
++--------------------------------+
+                 |
+                 v
++--------------------------------+
+| block / reject / slow producer |
++--------------------------------+</code></pre>
+<p>This is <strong>backpressure</strong>.</p>
+<p>Rate limiting is one mechanism for protecting a system from overload.</p>
+<hr>
+<h1>35. Deadlock</h1>
+<p>Four conditions commonly associated with deadlock:</p>
+<ol><li>Mutual exclusion</li><li>Hold and wait</li><li>No preemption</li><li>Circular wait</li></ol>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Thread A:
+lock(A)
+lock(B)
+
+Thread B:
+lock(B)
+lock(A)</code></pre></div>
+<p>Result:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>A waits for B
+B waits for A</code></pre></div>
+<p>Deadlock.</p>
+<hr>
+<h1>36. Preventing deadlocks</h1>
+<p>Use consistent lock ordering.</p>
+<p>Always:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>lock A
+then lock B</code></pre></div>
+<p>never:</p>
+<pre class="diagram"><code>+-------------+---+
+| sometimes A | B |
++-------------+---+
++-------------+---+
+| sometimes B | A |
++-------------+---+</code></pre>
+<p>Other techniques:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>tryLock()</code></pre></div>
+<p>timeouts and minimizing lock scope.</p>
+<hr>
+<h1>37. Starvation</h1>
+<p>A thread never gets enough access to resources because other threads continuously take them.</p>
+<p>Example:</p>
+<pre class="diagram"><code>+--------------------------------+
+|       Thread A  waiting        |
++--------------------------------+
+                 |
+                 v
++--------------------------------+
+| Thread B  repeatedly gets lock |
++--------------------------------+
+                 |
+                 v
++--------------------------------+
+| Thread C  repeatedly gets lock |
++--------------------------------+</code></pre>
+<p>Thread A starves.</p>
+<hr>
+<h1>38. Livelock</h1>
+<p>Threads are active but make no progress.</p>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Person A avoids Person B
+Person B avoids Person A</code></pre></div>
+<p>Both keep changing behavior but nobody progresses.</p>
+<hr>
+<h1>39. Lock contention</h1>
+<p>If 100 threads compete for one lock:</p>
+<pre class="diagram"><code>+--------------------+
+|        lock        |
++--------------------+
+           |
+           v
++--------------------+
+|  ▼      ▼      ▼   |
++--------------------+
+           |
+           v
++--------------------+
+| T1     T2 ... T100 |
++--------------------+</code></pre>
+<p>Only one can enter the critical section.</p>
+<p>This can severely reduce throughput.</p>
+<p>The goal isn&#x27;t:</p>
+<blockquote><p>&quot;Use fewer locks.&quot;</p></blockquote>
+<p>The goal is:</p>
+<blockquote><p><strong>Protect correctness while minimizing unnecessary contention.</strong></p></blockquote>
+<hr>
+<h1>40. Immutability</h1>
+<p>One of the best concurrency techniques:</p>
+<blockquote><p>Don&#x27;t share mutable state.</p></blockquote>
+<p>Instead:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>final class User {
+    private final String id;
+    private final String name;
+}</code></pre></div>
+<p>Immutable objects are naturally thread-safe when safely published.</p>
+<hr>
+<h1>41. Thread confinement</h1>
+<p>Another powerful technique.</p>
+<p>If only one thread accesses state:</p>
+<pre class="diagram"><code>+----------+
+| Thread A |
++----------+
+      |
+      v
++----------+
+|    ▼     |
++----------+
+      |
+      v
++----------+
+|  State   |
++----------+</code></pre>
+<p>you may not need synchronization.</p>
+<p>Examples:</p>
+<ul><li>local variables</li><li>thread-local state</li><li>actor-like ownership</li></ul>
+<hr>
+<h1>42. ThreadLocal</h1>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>ThreadLocal&lt;Integer&gt; value =
+        ThreadLocal.withInitial(() -&gt; 0);</code></pre></div>
+<p>Each thread gets its own value.</p>
+<p>Useful for some request-scoped state, but be careful with thread pools because worker threads are reused.</p>
+<p>Always understand cleanup:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>threadLocal.remove();</code></pre></div>
+<hr>
+<h1>43. Lock-free vs wait-free</h1>
+<p>You should understand the terminology.</p>
+<h3>Lock-based</h3>
+<pre class="diagram"><code>+------------------+
+|       lock       |
++------------------+
+          |
+          v
++------------------+
+| critical section |
++------------------+
+          |
+          v
++------------------+
+|      unlock      |
++------------------+</code></pre>
+<h3>Lock-free</h3>
+<p>System as a whole keeps making progress without traditional locks.</p>
+<p>Often implemented using CAS.</p>
+<h3>Wait-free</h3>
+<p>Every individual operation is guaranteed to finish within a bounded number of steps.</p>
+<p>Wait-free is stronger than lock-free.</p>
+<hr>
+<h1>44. Now: Rate Limiter</h1>
+<p>This is the major practical problem for Week 4.</p>
+<p>Suppose your API says:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>100 requests / minute / user</code></pre></div>
+<p>If a user sends request #101:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>HTTP 429 Too Many Requests</code></pre></div>
+<p>A rate limiter answers:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>ALLOW</code></pre></div>
+<p>or:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>REJECT</code></pre></div>
+<hr>
+<h1>45. Why rate limiting exists</h1>
+<p>Rate limiting protects against:</p>
+<h3>Abuse</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>one client → millions of requests</code></pre></div>
+<h3>Accidental overload</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>buggy client → request storm</code></pre></div>
+<h3>Resource exhaustion</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>DB
+CPU
+memory
+external APIs</code></pre></div>
+<h3>Fairness</h3>
+<p>Prevent one client from consuming all capacity.</p>
+<hr>
+<h1>46. Rate limiter dimensions</h1>
+<p>You can limit by:</p>
+<h3>User</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>user123 → 100/min</code></pre></div>
+<h3>IP</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>192.168.x.x → 100/min</code></pre></div>
+<h3>API key</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>key123 → 10,000/hour</code></pre></div>
+<h3>Endpoint</h3>
+<pre class="diagram"><code>+----------------+--------+
+| POST /payments | 10/sec |
++----------------+--------+
++---------------+-----------+
+| GET /products | 1,000/sec |
++---------------+-----------+</code></pre>
+<h3>Global</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>entire service → 50,000/sec</code></pre></div>
+<p>You can combine them.</p>
+<hr>
+<h1>47. Fixed Window algorithm</h1>
+<p>Simplest implementation.</p>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>100 requests / minute</code></pre></div>
+<p>Maintain:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>windowStart
+count</code></pre></div>
+<p>For each request:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>if currentTime &lt; windowEnd
+    count++
+else
+    reset window</code></pre></div>
+<p>Example:</p>
+<pre class="diagram"><code>+--------------------+
+| 12:00:00  12:00:59 |
++--------------------+
+           |
+           v
++--------------------+
+|    100 requests    |
++--------------------+</code></pre>
+<p>Then reset:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>12:01:00</code></pre></div>
+<hr>
+<h1>48. Fixed Window problem</h1>
+<p>Boundary burst.</p>
+<p>Suppose:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>limit = 100/min</code></pre></div>
+<p>User sends:</p>
+<pre class="diagram"><code>+----------+--------------+
+| 12:00:59 | 100 requests |
++----------+--------------+
++----------+--------------+
+| 12:01:00 | 100 requests |
++----------+--------------+</code></pre>
+<p>That&#x27;s:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>200 requests</code></pre></div>
+<p>within roughly one second.</p>
+<p>Yet each individual window was valid.</p>
+<p>This is the <strong>boundary burst problem</strong>.</p>
+<hr>
+<h1>49. Fixed Window implementation</h1>
+<p>Conceptually:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>class FixedWindowRateLimiter {
+
+    private final int limit;
+    private final long windowSizeMillis;
+
+    private final AtomicInteger count =
+            new AtomicInteger();
+
+    private final AtomicLong windowStart =
+            new AtomicLong();
+
+    boolean allow() {
+        // determine current window
+        // reset if necessary
+        // increment atomically
+        // return whether request is allowed
+    }
+}</code></pre></div>
+<p>But don&#x27;t stop here.</p>
+<p>The hard part is making the <strong>window reset + increment</strong> atomic under concurrency.</p>
+<hr>
+<h1>50. Race condition in naive limiter</h1>
+<p>Bad:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>if (count.get() &lt; limit) {
+    count.incrementAndGet();
+    return true;
+}
+return false;</code></pre></div>
+<p>Two threads can both see:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>count = 99
+limit = 100</code></pre></div>
+<p>Both pass the check.</p>
+<p>Then:</p>
+<pre class="diagram"><code>+----+-----+
+| 99 | 100 |
++----+-----+
++-----+-----+
+| 100 | 101 |
++-----+-----+</code></pre>
+<p>You allowed 101.</p>
+<p>This is why concurrency knowledge matters.</p>
+<hr>
+<h1>51. Atomic check-and-update</h1>
+<p>You need a single logical operation:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>check current state
+        +
+update state</code></pre></div>
+<p>must happen atomically.</p>
+<p>Possible approaches:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>CAS
+synchronized
+ReentrantLock
+atomic state object</code></pre></div>
+<p>The right choice depends on throughput and complexity.</p>
+<hr>
+<h1>52. Sliding Window</h1>
+<p>Instead of fixed windows:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>12:00:00 → 12:00:59</code></pre></div>
+<p>track requests across the actual rolling interval.</p>
+<p>For example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>current time = 12:00:40
+
+look back:
+11:59:40 → 12:00:40</code></pre></div>
+<p>Count requests in that interval.</p>
+<hr>
+<h1>53. Sliding Window Log</h1>
+<p>Store request timestamps:</p>
+<pre class="diagram"><code>+-------------+
+|    [user]   |
++-------------+
+       |
+       v
++-------------+
+| timestamps: |
++-------------+
+       |
+       v
++-------------+
+|     10.1    |
++-------------+
+       |
+       v
++-------------+
+|     10.2    |
++-------------+
+       |
+       v
++-------------+
+|     10.5    |
++-------------+
+       |
+       v
++-------------+
+|     10.8    |
++-------------+
+       |
+       v
++-------------+
+|     ...     |
++-------------+</code></pre>
+<p>On each request:</p>
+<ol><li>Remove timestamps older than the window.</li><li>Count remaining timestamps.</li><li>If count &lt; limit, add current timestamp.</li><li>Otherwise reject.</li></ol>
+<hr>
+<h1>54. Sliding Window Log problem</h1>
+<p>Memory.</p>
+<p>If:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>1 million requests</code></pre></div>
+<p>you may store:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>1 million timestamps</code></pre></div>
+<p>per large client/window.</p>
+<p>So it can be expensive.</p>
+<hr>
+<h1>55. Sliding Window Counter</h1>
+<p>More memory efficient.</p>
+<p>Use smaller fixed buckets:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>10:00:00-10:00:09
+10:00:10-10:00:19
+10:00:20-10:00:29
+...</code></pre></div>
+<p>Then estimate the rolling count using neighboring buckets.</p>
+<p>This is a useful middle ground.</p>
+<hr>
+<h1>56. Token Bucket</h1>
+<p>This is one of the most important algorithms.</p>
+<p>Imagine a bucket:</p>
+<pre class="diagram"><code>+-------------+
+|    tokens   |
++-------------+
+       |
+       v
++-------------+
+| ┌─────────┐ |
++-------------+
+       |
+       v
++-------------+
+| │ ● ● ● ● │ |
++-------------+
+       |
+       v
++-------------+
+| │ ● ● ●   │ |
++-------------+
+       |
+       v
++-------------+
+| └─────────┘ |
++-------------+</code></pre>
+<p>Parameters:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>capacity = 100
+refillRate = 10 tokens/sec</code></pre></div>
+<p>Each request consumes:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>1 token</code></pre></div>
+<p>If no token exists:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>reject</code></pre></div>
+<hr>
+<h1>57. Token bucket allows bursts</h1>
+<p>Suppose:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>capacity = 100
+refill = 10/sec</code></pre></div>
+<p>Bucket can accumulate 100 tokens.</p>
+<p>A client can therefore send:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>100 requests immediately</code></pre></div>
+<p>if tokens have accumulated.</p>
+<p>Then it is limited to approximately:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>10 requests/sec</code></pre></div>
+<p>as tokens refill.</p>
+<p>This makes token bucket useful for APIs where controlled bursts are acceptable.</p>
+<hr>
+<h1>58. Token bucket formula</h1>
+<p>Suppose:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>currentTokens
+lastRefillTime
+refillRate
+capacity</code></pre></div>
+<p>Elapsed time:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>elapsed = now - lastRefillTime</code></pre></div>
+<p>Tokens added:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>elapsed × refillRate</code></pre></div>
+<p>Then:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>newTokens =
+    min(capacity,
+        currentTokens + elapsed * refillRate)</code></pre></div>
+<p>Then request:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>if newTokens &gt;= 1:
+    newTokens -= 1
+    ALLOW
+else:
+    REJECT</code></pre></div>
+<hr>
+<h1>59. Token bucket concurrency problem</h1>
+<p>Again:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Thread A reads 1 token
+Thread B reads 1 token</code></pre></div>
+<p>Both might consume it.</p>
+<p>Therefore:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>read
+calculate
+update</code></pre></div>
+<p>must be atomic.</p>
+<p>Possible solution:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>ReentrantLock</code></pre></div>
+<p>or an atomic CAS-based state.</p>
+<hr>
+<h1>60. Token Bucket Java design</h1>
+<p>A good interview-level design:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>class TokenBucket {
+
+    private final long capacity;
+    private final double refillRate;
+
+    private double tokens;
+    private long lastRefillNanos;
+
+    private final Lock lock =
+            new ReentrantLock();
+
+    public boolean allow() {
+        lock.lock();
+
+        try {
+            refill();
+
+            if (tokens &gt;= 1) {
+                tokens--;
+                return true;
+            }
+
+            return false;
+        } finally {
+            lock.unlock();
+        }
+    }
+
+    private void refill() {
+        // calculate elapsed time
+        // add tokens
+        // cap at capacity
+    }
+}</code></pre></div>
+<p>Important design principle:</p>
+<blockquote><p>Keep the critical section tiny.</p></blockquote>
+<hr>
+<h1>61. Why use <code>System.nanoTime()</code>?</h1>
+<p>For elapsed-duration calculations, prefer:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>System.nanoTime()</code></pre></div>
+<p>rather than:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>System.currentTimeMillis()</code></pre></div>
+<p>because <code>nanoTime()</code> is intended for measuring elapsed time and isn&#x27;t affected in the same way by wall-clock adjustments.</p>
+<p>Use wall-clock time when you need an actual timestamp.</p>
+<hr>
+<h1>62. Leaky Bucket</h1>
+<p>Think:</p>
+<pre class="diagram"><code>+-----------------------+
+|   Incoming requests   |
++-----------------------+
+            |
+            v
++-----------------------+
+|       ┌───────┐       |
++-----------------------+
+            |
+            v
++-----------------------+
+|       │ queue  │      |
++-----------------------+
+            |
+            v
++-----------------------+
+|       └───┬───┘       |
++-----------------------+
+            |
+            v
++-----------------------+
+|           │           |
++-----------------------+
+            |
+            v
++-----------------------+
+|           ▼           |
++-----------------------+
+            |
+            v
++-----------------------+
+| fixed processing rate |
++-----------------------+</code></pre>
+<p>Requests leave at a controlled rate.</p>
+<p>If the queue fills:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>reject</code></pre></div>
+<p>Unlike token bucket, the output rate is typically smoother.</p>
+<hr>
+<h1>63. Token Bucket vs Leaky Bucket</h1>
+<h3>Token Bucket</h3>
+<p>Allows controlled bursts.</p>
+<pre class="diagram"><code>+------------+
+| ██████████ |
++------------+
+       |
+       v
++------------+
+|   burst    |
++------------+</code></pre>
+<h3>Leaky Bucket</h3>
+<p>Smooths traffic.</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>█ █ █ █ █ █ █</code></pre></div>
+<p>Think:</p>
+<pre class="diagram"><code>+--------------+-----------------+
+| Token bucket | controls admiss |
++--------------+-----------------+
++--------------+----------------+
+| Leaky bucket | smooths output |
++--------------+----------------+</code></pre>
+<hr>
+<h1>64. Rate limiter API design</h1>
+<p>A clean interface:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>public interface RateLimiter {
+
+    boolean allow(String key);
+
+}</code></pre></div>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>if (!rateLimiter.allow(userId)) {
+    throw new RateLimitExceededException();
+}</code></pre></div>
+<hr>
+<h1>65. Better API</h1>
+<p>For production systems, you may want:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>RateLimitResult result =
+        rateLimiter.check(userId);</code></pre></div>
+<p>with:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>class RateLimitResult {
+
+    boolean allowed;
+    long remaining;
+    long retryAfterMillis;
+}</code></pre></div>
+<p>Then the API layer can return:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>HTTP/1.1 429 Too Many Requests
+Retry-After: 2</code></pre></div>
+<hr>
+<h1>66. Per-user rate limiter</h1>
+<p>A typical design:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>ConcurrentHashMap&lt;String, TokenBucket&gt; buckets;</code></pre></div>
+<p>Then:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>TokenBucket bucket =
+    buckets.computeIfAbsent(
+        userId,
+        id -&gt; new TokenBucket(...)
+    );
+
+return bucket.allow();</code></pre></div>
+<p>Architecture:</p>
+<pre class="diagram"><code>+-------------------+
+|      Request      |
++-------------------+
+          |
+          v
++-------------------+
+|         ▼         |
++-------------------+
+          |
+          v
++-------------------+
+|       userId      |
++-------------------+
+          |
+          v
++-------------------+
+|         ▼         |
++-------------------+
+          |
+          v
++-------------------+
+| ConcurrentHashMap |
++-------------------+
+          |
+          v
++-------------------+
+|         ▼         |
++-------------------+
+          |
+          v
++-------------------+
+|    TokenBucket    |
++-------------------+
+          |
+          v
++-------------------+
+|      ├ allow      |
++-------------------+
+          |
+          v
++-------------------+
+|       reject      |
++-------------------+</code></pre>
+<hr>
+<h1>67. Important memory problem</h1>
+<p>What if you have:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>10 million users</code></pre></div>
+<p>and every user gets a bucket?</p>
+<p>Then:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>10 million TokenBucket objects</code></pre></div>
+<p>could consume significant memory.</p>
+<p>You need cleanup.</p>
+<p>Possible approaches:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>TTL
+scheduled cleanup
+LRU
+Caffeine cache
+Redis expiration</code></pre></div>
+<p>This is an important production consideration.</p>
+<hr>
+<h1>68. Scheduled cleanup</h1>
+<p>You can periodically remove inactive buckets.</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>scheduler.scheduleAtFixedRate(
+    this::cleanup,
+    1,
+    1,
+    TimeUnit.MINUTES
+);</code></pre></div>
+<p>But cleanup itself must be concurrency-safe.</p>
+<hr>
+<h1>69. Distributed rate limiter</h1>
+<p>A local limiter works only inside one JVM.</p>
+<p>Suppose:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>              Load Balancer
+             /      |      \
+            ▼       ▼       ▼
+         Server A Server B Server C</code></pre></div>
+<p>User sends:</p>
+<pre class="diagram"><code>+-------------+---+
+| 50 requests | A |
++-------------+---+
++-------------+---+
+| 50 requests | B |
++-------------+---+
++-------------+---+
+| 50 requests | C |
++-------------+---+</code></pre>
+<p>A local limit of:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>100 requests</code></pre></div>
+<p>would incorrectly allow:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>150 total</code></pre></div>
+<p>because each server has its own counter.</p>
+<hr>
+<h1>70. Distributed rate limiting</h1>
+<p>You need shared state:</p>
+<pre class="diagram"><code>+------------------+
+|     Server A     |
++------------------+
+          |
+          v
++------------------+
+| Server B ► Redis |
++------------------+
+          |
+          v
++------------------+
+|     Server C     |
++------------------+</code></pre>
+<p>Now all servers see the same counter/state.</p>
+<p>Common implementation:</p>
+<pre class="diagram"><code>+-------------+
+| API Gateway |
++-------------+
+       |
+       v
++-------------+
+|      ▼      |
++-------------+
+       |
+       v
++-------------+
+|    Redis    |
++-------------+
+       |
+       v
++-------------+
+|      ▼      |
++-------------+
+       |
+       v
++-------------+
+| Application |
++-------------+</code></pre>
+<hr>
+<h1>71. Redis atomicity</h1>
+<p>A naive implementation:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>GET counter
+IF counter &lt; limit
+    INCR counter</code></pre></div>
+<p>has a race condition.</p>
+<p>Two servers can both see:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>99</code></pre></div>
+<p>and both increment.</p>
+<p>Need an atomic operation, often using:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Lua script</code></pre></div>
+<p>or appropriate Redis atomic primitives.</p>
+<hr>
+<h1>72. Distributed token bucket</h1>
+<p>Conceptually:</p>
+<pre class="diagram"><code>  Request
+    │
+    ▼
+  Redis token state
+    │
+    ├── enough tokens → ALLOW
+    │
+    └── insufficient → REJECT</code></pre>
+<p>The entire:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>refill
++
+check
++
+consume</code></pre></div>
+<p>operation needs to be atomic.</p>
+<p>This is where a Redis Lua script is often useful.</p>
+<hr>
+<h1>73. Rate limiter with TTL</h1>
+<p>For fixed windows, a common distributed model is:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>key:
+rate:user123:window</code></pre></div>
+<p>Store:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>counter</code></pre></div>
+<p>with expiration:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>TTL = window size</code></pre></div>
+<p>Conceptually:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>INCR key
+EXPIRE key 60</code></pre></div>
+<p>But you must think carefully about the atomicity of initialization and expiration.</p>
+<hr>
+<h1>74. HTTP semantics</h1>
+<p>Know:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>429 Too Many Requests</code></pre></div>
+<p>A useful response can include:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Retry-After: 10</code></pre></div>
+<p>Potential headers include rate-limit metadata such as:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Limit
+Remaining
+Reset</code></pre></div>
+<p>The exact header convention depends on your API.</p>
+<hr>
+<h1>75. Rate limiter placement</h1>
+<p>Where should you rate-limit?</p>
+<p>Possible layers:</p>
+<pre class="diagram"><code>+---------------+
+|    Internet   |
++---------------+
+        |
+        v
++---------------+
+|      CDN      |
++---------------+
+        |
+        v
++---------------+
+|  API Gateway  |
++---------------+
+        |
+        v
++---------------+
+| Load Balancer |
++---------------+
+        |
+        v
++---------------+
+|  Application  |
++---------------+
+        |
+        v
++---------------+
+|    Database   |
++---------------+</code></pre>
+<p>You can apply limits at multiple layers.</p>
+<p>For example:</p>
+<pre class="diagram"><code>+---------+----------------------+
+| Gateway | global/user/IP prote |
++---------+----------------------+
++-------------+------------------+
+| Application | business-specifi |
++-------------+------------------+
++----------+---------------------+
+| Database | connection/resource |
++----------+---------------------+</code></pre>
+<hr>
+<h1>76. Rate limiter vs throttling</h1>
+<p>They are related but not identical.</p>
+<h3>Rate limiting</h3>
+<p>Controls how many requests are accepted.</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>100/sec</code></pre></div>
+<h3>Throttling</h3>
+<p>Can involve deliberately slowing or controlling processing.</p>
+<p>For example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>queue request
+process later</code></pre></div>
+<p>Leaky-bucket-style designs are closely related to throttling.</p>
+<hr>
+<h1>77. Rate limiter vs circuit breaker</h1>
+<p>Very important distinction.</p>
+<h3>Rate limiter</h3>
+<p>Protects against:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>too many requests</code></pre></div>
+<h3>Circuit breaker</h3>
+<p>Protects against:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>dependency failures</code></pre></div>
+<p>Circuit breaker states:</p>
+<pre class="diagram"><code>+-----------+
+|   CLOSED  |
++-----------+
+      |
+      v
++-----------+
+|    OPEN   |
++-----------+
+      |
+      v
++-----------+
+| HALF_OPEN |
++-----------+</code></pre>
+<p>You should know this even if circuit breakers are primarily a later topic.</p>
+<hr>
+<h1>78. Rate limiter vs semaphore</h1>
+<p>Again:</p>
+<h3>Semaphore</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>maximum concurrent operations</code></pre></div>
+<h3>Rate limiter</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>maximum operations over time</code></pre></div>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Semaphore = 20 concurrent DB calls
+
+Rate limiter = 1,000 API requests/minute</code></pre></div>
+<p>You can use both:</p>
+<pre class="diagram"><code>+--------------+
+|   Request    |
++--------------+
+        |
+        v
++--------------+
+|      ▼       |
++--------------+
+        |
+        v
++--------------+
+| Rate limiter |
++--------------+
+        |
+        v
++--------------+
+|      ▼       |
++--------------+
+        |
+        v
++--------------+
+|  Semaphore   |
++--------------+
+        |
+        v
++--------------+
+|      ▼       |
++--------------+
+        |
+        v
++--------------+
+| External API |
++--------------+</code></pre>
+<hr>
+<h1>79. Fail-open vs fail-closed</h1>
+<p>Imagine Redis is unavailable.</p>
+<p>Should requests be:</p>
+<h3>Fail-open</h3>
+<pre class="diagram"><code>+-------------------+
+| Redis unavailable |
++-------------------+
+          |
+          v
++-------------------+
+|   allow request   |
++-------------------+</code></pre>
+<p>Availability is prioritized, but protection is weakened.</p>
+<h3>Fail-closed</h3>
+<pre class="diagram"><code>+-------------------+
+| Redis unavailable |
++-------------------+
+          |
+          v
++-------------------+
+|   reject request  |
++-------------------+</code></pre>
+<p>Protection is prioritized, but availability suffers.</p>
+<p>There isn&#x27;t one universally correct answer. It depends on what you&#x27;re protecting.</p>
+<p>For example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>expensive payment API</code></pre></div>
+<p>may have different requirements from:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>public read-only endpoint</code></pre></div>
+<hr>
+<h1>80. Clock considerations</h1>
+<p>Rate limiting is time-dependent.</p>
+<p>Potential problems include:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>clock drift
+wall-clock changes
+different server times</code></pre></div>
+<p>For local elapsed-time calculations:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>System.nanoTime()</code></pre></div>
+<p>is often preferable.</p>
+<p>For distributed systems, you need to think about where authoritative time/state comes from.</p>
+<hr>
+<h1>81. Concurrency requirements for a good rate limiter</h1>
+<p>Your implementation should answer:</p>
+<h3>Question 1</h3>
+<p>Can two threads incorrectly consume the same token?</p>
+<h3>Question 2</h3>
+<p>Can the counter exceed the configured limit?</p>
+<h3>Question 3</h3>
+<p>Can state be lost during concurrent reset?</p>
+<h3>Question 4</h3>
+<p>What happens when thousands of users arrive simultaneously?</p>
+<h3>Question 5</h3>
+<p>Can inactive user state be cleaned up safely?</p>
+<h3>Question 6</h3>
+<p>What happens when Redis fails?</p>
+<p>These are the questions that turn a toy implementation into an engineering problem.</p>
+<hr>
+<h1>82. Testing your rate limiter</h1>
+<p>You should write concurrent tests.</p>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>ExecutorService executor =
+        Executors.newFixedThreadPool(50);</code></pre></div>
+<p>Submit:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>1,000 concurrent requests</code></pre></div>
+<p>Then verify:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>allowed &lt;= limit</code></pre></div>
+<p>You should also test:</p>
+<h3>Single-thread</h3>
+<pre class="diagram"><code>  limit = 5
++---+---------+
+| 5 | allowed |
++---+---------+
++-----+----------+
+| 6th | rejected |
++-----+----------+</code></pre>
+<h3>Concurrent</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>100 threads
+limit = 10</code></pre></div>
+<h3>Boundary</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>window transition</code></pre></div>
+<h3>Burst</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>token bucket capacity</code></pre></div>
+<h3>Refill</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>wait
+tokens return</code></pre></div>
+<h3>Cleanup</h3>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>inactive users removed</code></pre></div>
+<hr>
+<h1>83. Deterministic time in tests</h1>
+<p>Don&#x27;t make tests depend heavily on:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Thread.sleep(...)</code></pre></div>
+<p>Instead, design your rate limiter so the clock can be injected.</p>
+<p>For example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>interface Clock {
+    long nanoTime();
+}</code></pre></div>
+<p>Production:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>System::nanoTime</code></pre></div>
+<p>Test:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>fake clock</code></pre></div>
+<p>Then you can simulate:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>t = 0
+t = 100ms
+t = 1sec</code></pre></div>
+<p>without actually waiting.</p>
+<p>This is a <strong>very good design practice</strong>.</p>
+<hr>
+<h1>84. Project structure for the Week 4 lab</h1>
+<p>I recommend building this as a proper mini-project:</p>
+<pre class="diagram"><code>+-----------------------+
+| advanced-concurrency/ |
++-----------------------+
+            |
+            v
++-----------------------+
+|         ├ src/        |
++-----------------------+
+            |
+            v
++-----------------------+
+|        ├ main/        |
++-----------------------+
+            |
+            v
++-----------------------+
+|         java/         |
++-----------------------+
+            |
+            v
++-----------------------+
+|      concurrency/     |
++-----------------------+
+            |
+            v
++-----------------------+
+|      ├ executor/      |
++-----------------------+
+            |
+            v
++-----------------------+
+|       ├ atomic/       |
++-----------------------+
+            |
+            v
++-----------------------+
+|        ├ locks/       |
++-----------------------+
+            |
+            v
++-----------------------+
+|    ├ coordination/    |
++-----------------------+
+            |
+            v
++-----------------------+
+|      ratelimiter/     |
++-----------------------+
+            |
+            v
++-----------------------+
+|         test/         |
++-----------------------+
+            |
+            v
++-----------------------+
+|         java/         |
++-----------------------+
+            |
+            v
++-----------------------+
+|      concurrency/     |
++-----------------------+
+            |
+            v
++-----------------------+
+|      ├ executor/      |
++-----------------------+
+            |
+            v
++-----------------------+
+|       ├ atomic/       |
++-----------------------+
+            |
+            v
++-----------------------+
+|        ├ locks/       |
++-----------------------+
+            |
+            v
++-----------------------+
+|      ratelimiter/     |
++-----------------------+</code></pre>
+<hr>
+<h1>85. Lab 1 — Thread pool experiments</h1>
+<p>Implement:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>ThreadPoolDemo</code></pre></div>
+<p>Test:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>FixedThreadPool
+CachedThreadPool
+ScheduledThreadPool
+ThreadPoolExecutor</code></pre></div>
+<p>Print:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>task ID
+thread name
+start time
+end time</code></pre></div>
+<p>Observe thread reuse.</p>
+<hr>
+<h1>86. Lab 2 — Producer consumer</h1>
+<p>Implement:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Producer
+Consumer
+BlockingQueue</code></pre></div>
+<p>Example:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>5 producers
+3 consumers
+queue capacity = 100</code></pre></div>
+<p>Experiment with:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>queue size
+producer speed
+consumer speed</code></pre></div>
+<p>Observe backpressure.</p>
+<hr>
+<h1>87. Lab 3 — CompletableFuture</h1>
+<p>Create a fake backend workflow:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>getUser()
+getOrders()
+getRecommendations()</code></pre></div>
+<p>Run them concurrently.</p>
+<p>Then combine:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>User + Orders + Recommendations</code></pre></div>
+<p>into:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Dashboard</code></pre></div>
+<p>Add:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>timeouts
+exceptions
+fallbacks</code></pre></div>
+<hr>
+<h1>88. Lab 4 — Concurrent counter</h1>
+<p>Implement the same counter using:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>int + synchronized
+AtomicInteger
+AtomicLong
+LongAdder
+ReentrantLock</code></pre></div>
+<p>Run:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>100 threads
+1 million increments</code></pre></div>
+<p>Compare correctness and performance.</p>
+<p>Don&#x27;t obsess over microbenchmarks; use this primarily to understand contention and atomicity.</p>
+<hr>
+<h1>89. Lab 5 — Fixed Window Rate Limiter</h1>
+<p>Implement:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>FixedWindowRateLimiter</code></pre></div>
+<p>API:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>boolean allow(String key);</code></pre></div>
+<p>Requirements:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>limit = 10
+window = 1 second</code></pre></div>
+<p>Test:</p>
+<pre class="diagram"><code>+-------------+---------+
+| 10 requests | allowed |
++-------------+---------+
++------+----------+
+| 11th | rejected |
++------+----------+
++-------------+---------+
+| after reset | allowed |
++-------------+---------+</code></pre>
+<p>Then test with:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>100 concurrent threads</code></pre></div>
+<hr>
+<h1>90. Lab 6 — Token Bucket</h1>
+<p>Implement:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>TokenBucketRateLimiter</code></pre></div>
+<p>Parameters:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>capacity = 10
+refillRate = 5 tokens/sec</code></pre></div>
+<p>Test:</p>
+<pre class="diagram"><code>+-----------------------+--------+
+| 10 immediate requests | allowe |
++-----------------------+--------+
++------+----------+
+| 11th | rejected |
++------+----------+
+  wait 1 sec
+  approximately 5 more tokens av</code></pre>
+<hr>
+<h1>91. Lab 7 — Per-user limiter</h1>
+<p>Implement:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>ConcurrentHashMap&lt;String, TokenBucket&gt;</code></pre></div>
+<p>Example:</p>
+<pre class="diagram"><code>+-------+--------+
+| Alice | 10/sec |
++-------+--------+
++-----+--------+
+| Bob | 10/sec |
++-----+--------+
++-------+--------+
+| Carol | 10/sec |
++-------+--------+</code></pre>
+<p>Verify that:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Alice&#x27;s traffic</code></pre></div>
+<p>doesn&#x27;t consume:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Bob&#x27;s tokens</code></pre></div>
+<hr>
+<h1>92. Lab 8 — Cleanup</h1>
+<p>Add:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>lastAccessTime</code></pre></div>
+<p>to bucket state.</p>
+<p>Periodically remove buckets that haven&#x27;t been used for:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>5 minutes</code></pre></div>
+<p>Use:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>ScheduledExecutorService</code></pre></div>
+<p>Now you&#x27;ve combined several Week 4 concepts:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>ConcurrentHashMap
++
+Synchronization
++
+ScheduledExecutorService
++
+Time
++
+Rate limiting</code></pre></div>
+<hr>
+<h1>93. Lab 9 — Distributed design</h1>
+<p>You don&#x27;t necessarily need to deploy this immediately.</p>
+<p>Design:</p>
+<pre class="diagram"><code>+-----------------------+
+|         Client        |
++-----------------------+
+            |
+            v
++-----------------------+
+|           ▼           |
++-----------------------+
+            |
+            v
++-----------------------+
+|     Load Balancer     |
++-----------------------+
+            |
+            v
++-----------------------+
+|   ▼▼               ▼  |
++-----------------------+
+            |
+            v
++-----------------------+
+| App1             App2 |
++-----------------------+
+            |
+            v
++-----------------------+
+|       ► Redis ◄       |
++-----------------------+</code></pre>
+<p>Answer:</p>
+<ol><li>What is stored in Redis?</li><li>What is the key format?</li><li>How is expiration handled?</li><li>How do you guarantee atomicity?</li><li>What happens when Redis is down?</li><li>How do you prevent hot keys?</li><li>How do you measure rejected requests?</li></ol>
+<hr>
+<h1>94. Metrics you should expose</h1>
+<p>A production rate limiter should have metrics such as:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>requests_allowed
+requests_rejected
+rate_limit_hits
+tokens_remaining
+active_limiters</code></pre></div>
+<p>Potential dimensions:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>endpoint
+user
+API key
+region</code></pre></div>
+<p>Be careful with high-cardinality labels such as raw user IDs.</p>
+<hr>
+<h1>95. Logging</h1>
+<p>Don&#x27;t log every successful request unnecessarily.</p>
+<p>For rejected requests, useful information might include:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>endpoint
+reason
+limit
+retry-after</code></pre></div>
+<p>Avoid putting sensitive information into logs.</p>
+<hr>
+<h1>96. Common mistakes</h1>
+<h3>Mistake 1</h3>
+<p>Using:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>HashMap</code></pre></div>
+<p>from multiple threads.</p>
+<p>Use:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>ConcurrentHashMap</code></pre></div>
+<p>or proper synchronization.</p>
+<hr>
+<h3>Mistake 2</h3>
+<p>Thinking <code>volatile</code> makes:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>count++</code></pre></div>
+<p>safe.</p>
+<p>It doesn&#x27;t.</p>
+<hr>
+<h3>Mistake 3</h3>
+<p>Doing:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>if (count &lt; limit)
+    count++;</code></pre></div>
+<p>without atomicity.</p>
+<hr>
+<h3>Mistake 4</h3>
+<p>Using one global lock for everything.</p>
+<p>This can create severe contention.</p>
+<hr>
+<h3>Mistake 5</h3>
+<p>Creating unlimited threads.</p>
+<hr>
+<h3>Mistake 6</h3>
+<p>Using unbounded queues without understanding the memory implications.</p>
+<hr>
+<h3>Mistake 7</h3>
+<p>Calling:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>Future.get()</code></pre></div>
+<p>without a timeout.</p>
+<hr>
+<h3>Mistake 8</h3>
+<p>Creating one local rate limiter per application server and assuming it is globally enforced.</p>
+<hr>
+<h3>Mistake 9</h3>
+<p>Ignoring cleanup of per-user state.</p>
+<hr>
+<h3>Mistake 10</h3>
+<p>Using <code>currentTimeMillis()</code> blindly for elapsed-time calculations.</p>
+<hr>
+<h1>97. Interview questions you should master</h1>
+<p>By the end of this week, you should be able to answer these without notes.</p>
+<h3>Concurrency</h3>
+<ol><li>What is a thread pool?</li><li>Why use <code>ExecutorService</code>?</li><li>How does <code>ThreadPoolExecutor</code> work?</li><li>What happens when the queue is full?</li><li>What is backpressure?</li><li><code>Runnable</code> vs <code>Callable</code>?</li><li><code>Future</code> vs <code>CompletableFuture</code>?</li><li><code>thenApply</code> vs <code>thenCompose</code>?</li><li>What is CAS?</li><li>What is <code>volatile</code>?</li><li>Why doesn&#x27;t <code>volatile int++</code> work?</li><li><code>AtomicInteger</code> vs <code>LongAdder</code>?</li><li><code>ConcurrentHashMap</code> vs <code>HashMap</code>?</li><li>When would you use <code>Semaphore</code>?</li><li><code>CountDownLatch</code> vs <code>CyclicBarrier</code>?</li><li><code>synchronized</code> vs <code>ReentrantLock</code>?</li><li>What is deadlock?</li><li>What is starvation?</li><li>What is livelock?</li><li>What is lock contention?</li><li>What is happens-before?</li><li>What is lock-free?</li><li>What is wait-free?</li><li>What is thread confinement?</li><li>Why is immutability useful for concurrency?</li></ol>
+<hr>
+<h1>98. Rate limiter interview questions</h1>
+<p>You should especially master these:</p>
+<h3>Basic</h3>
+<blockquote><p>Design a rate limiter that allows 100 requests/minute.</p></blockquote>
+<h3>Concurrency</h3>
+<blockquote><p>How do you make the rate limiter thread-safe?</p></blockquote>
+<h3>Algorithm</h3>
+<blockquote><p>Fixed window vs sliding window vs token bucket?</p></blockquote>
+<h3>Burst</h3>
+<blockquote><p>Which algorithm allows bursts?</p></blockquote>
+<h3>Distributed</h3>
+<blockquote><p>How do you implement a rate limiter across 20 application servers?</p></blockquote>
+<h3>Redis</h3>
+<blockquote><p>How do you ensure increment/check operations are atomic?</p></blockquote>
+<h3>Failure</h3>
+<blockquote><p>What happens if Redis goes down?</p></blockquote>
+<h3>Memory</h3>
+<blockquote><p>What happens if you have 100 million users?</p></blockquote>
+<h3>Cleanup</h3>
+<blockquote><p>How do you remove inactive user buckets?</p></blockquote>
+<h3>Scaling</h3>
+<blockquote><p>What happens if one API key generates millions of requests?</p></blockquote>
+<h3>API</h3>
+<blockquote><p>What response should the server return when the limit is exceeded?</p></blockquote>
+<hr>
+<h1>99. System-design question you should practice</h1>
+<p>You should be able to design this from scratch:</p>
+<blockquote><p><strong>Design a distributed API rate limiter for a high-traffic Java service.</strong></p></blockquote>
+<p>Start with:</p>
+<pre class="diagram"><code>+--------------+
+|    Client    |
++--------------+
+        |
+        v
++--------------+
+|      ▼       |
++--------------+
+        |
+        v
++--------------+
+| API Gateway  |
++--------------+
+        |
+        v
++--------------+
+|      ▼       |
++--------------+
+        |
+        v
++--------------+
+| Rate Limiter |
++--------------+
+        |
+        v
++--------------+
+|      ▼       |
++--------------+
+        |
+        v
++--------------+
+| Application  |
++--------------+</code></pre>
+<p>Then expand:</p>
+<pre class="diagram"><code>+------------------------+
+|      API Gateway       |
++------------------------+
+             |
+             v
++------------------------+
+|           ▼            |
++------------------------+
+             |
+             v
++------------------------+
+|      Rate Limiter      |
++------------------------+
+             |
+             v
++------------------------+
+|    ▼              ▼    |
++------------------------+
+             |
+             v
++------------------------+
+| Redis          Metrics |
++------------------------+
+             |
+             v
++------------------------+
+|           ▼            |
++------------------------+
+             |
+             v
++------------------------+
+|   Shared rate state    |
++------------------------+</code></pre>
+<p>Then discuss:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>algorithm
+atomicity
+concurrency
+distributed state
+TTL
+cleanup
+failure handling
+hot keys
+metrics
+429 responses</code></pre></div>
+<p>That is a very strong Week 4 exercise.</p>
+<hr>
+<h1>100. What to prioritize</h1>
+<p>Don&#x27;t give every API equal study time.</p>
+<h2>🔴 Must master</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>ExecutorService
+ThreadPoolExecutor
+CompletableFuture
+AtomicInteger / AtomicLong
+ConcurrentHashMap
+volatile
+CAS
+Semaphore
+BlockingQueue
+ReentrantLock
+deadlock
+happens-before
+backpressure
+
+Fixed Window
+Sliding Window
+Token Bucket
+distributed rate limiting
+Redis atomicity
+429</code></pre></div>
+<h2>🟡 Should understand well</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>CountDownLatch
+CyclicBarrier
+ReadWriteLock
+LongAdder
+ScheduledExecutorService
+ThreadLocal
+StampedLock
+Phaser
+Leaky Bucket</code></pre></div>
+<h2>🟢 Awareness level</h2>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>lock-free algorithms
+wait-free algorithms
+false sharing
+advanced JMM internals</code></pre></div>
+<hr>
+<h1>101. Recommended learning sequence</h1>
+<p>Follow this order rather than jumping randomly:</p>
+<pre class="diagram"><code>+----------------------------+
+|           Day 1            |
++----------------------------+
+               |
+               v
++----------------------------+
+|     ├ ExecutorService      |
++----------------------------+
+               |
+               v
++----------------------------+
+|    ├ ThreadPoolExecutor    |
++----------------------------+
+               |
+               v
++----------------------------+
+|    ├ Callable / Future     |
++----------------------------+
+               |
+               v
++----------------------------+
+|  ScheduledExecutorService  |
++----------------------------+
+               |
+               v
++----------------------------+
+|           Day 2            |
++----------------------------+
+               |
+               v
++----------------------------+
+|    ├ CompletableFuture     |
++----------------------------+
+               |
+               v
++----------------------------+
+|     ├ Atomic variables     |
++----------------------------+
+               |
+               v
++----------------------------+
+|           ├ CAS            |
++----------------------------+
+               |
+               v
++----------------------------+
+| volatile / happens-before  |
++----------------------------+
+               |
+               v
++----------------------------+
+|           Day 3            |
++----------------------------+
+               |
+               v
++----------------------------+
+|    ├ ConcurrentHashMap     |
++----------------------------+
+               |
+               v
++----------------------------+
+|      ├ BlockingQueue       |
++----------------------------+
+               |
+               v
++----------------------------+
+|        ├ Semaphore         |
++----------------------------+
+               |
+               v
++----------------------------+
+|      ├ CountDownLatch      |
++----------------------------+
+               |
+               v
++----------------------------+
+|       CyclicBarrier        |
++----------------------------+
+               |
+               v
++----------------------------+
+|           Day 4            |
++----------------------------+
+               |
+               v
++----------------------------+
+|      ├ ReentrantLock       |
++----------------------------+
+               |
+               v
++----------------------------+
+|      ├ ReadWriteLock       |
++----------------------------+
+               |
+               v
++----------------------------+
+|         ├ deadlock         |
++----------------------------+
+               |
+               v
++----------------------------+
+|        ├ starvation        |
++----------------------------+
+               |
+               v
++----------------------------+
+|         ├ livelock         |
++----------------------------+
+               |
+               v
++----------------------------+
+|        backpressure        |
++----------------------------+
+               |
+               v
++----------------------------+
+|           Day 5            |
++----------------------------+
+               |
+               v
++----------------------------+
+|       ├ Fixed Window       |
++----------------------------+
+               |
+               v
++----------------------------+
+|      ├ Sliding Window      |
++----------------------------+
+               |
+               v
++----------------------------+
+|  ├ Sliding Window Counter  |
++----------------------------+
+               |
+               v
++----------------------------+
+|        Token Bucket        |
++----------------------------+
+               |
+               v
++----------------------------+
+|           Day 6            |
++----------------------------+
+               |
+               v
++----------------------------+
+|  ├ Implement Token Bucket  |
++----------------------------+
+               |
+               v
++----------------------------+
+|    ├ Per-user limiting     |
++----------------------------+
+               |
+               v
++----------------------------+
+|    ├ Concurrent testing    |
++----------------------------+
+               |
+               v
++----------------------------+
+|          Cleanup           |
++----------------------------+
+               |
+               v
++----------------------------+
+|           Day 7            |
++----------------------------+
+               |
+               v
++----------------------------+
+| ├ Distributed rate limiter |
++----------------------------+
+               |
+               v
++----------------------------+
+|          ├ Redis           |
++----------------------------+
+               |
+               v
++----------------------------+
+|    ├ atomic operations     |
++----------------------------+
+               |
+               v
++----------------------------+
+|      ├ failure modes       |
++----------------------------+
+               |
+               v
++----------------------------+
+|  system-design interview   |
++----------------------------+</code></pre>
+<hr>
+<h1>102. The final Week 4 project</h1>
+<p>Build:</p>
+<h2><strong>Thread-Safe Distributed-Ready Rate Limiter</strong></h2>
+<p>Your Java project should eventually look conceptually like:</p>
+<pre class="diagram"><code>+--------------------------------------------+
+|              Incoming Request              |
++--------------------------------------------+
+                       |
+                       v
++--------------------------------------------+
+|                     ▼                      |
++--------------------------------------------+
+                       |
+                       v
++--------------------------------------------+
+|              RateLimiter API               |
++--------------------------------------------+
+                       |
+                       v
++--------------------------------------------+
+|         ▼                       ▼          |
++--------------------------------------------+
+                       |
+                       v
++--------------------------------------------+
+| Local implementation    Distributed design |
++--------------------------------------------+
+                       |
+                       v
++--------------------------------------------+
+|         ▼                       ▼          |
++--------------------------------------------+
+                       |
+                       v
++--------------------------------------------+
+|     ConcurrentHashMap            Redis     |
++--------------------------------------------+
+                       |
+                       v
++--------------------------------------------+
+|         ▼                       ▼          |
++--------------------------------------------+
+                       |
+                       v
++--------------------------------------------+
+|  TokenBucket          Atomic state update  |
++--------------------------------------------+
+                       |
+                       v
++--------------------------------------------+
+|              ▼             ▼               |
++--------------------------------------------+
+                       |
+                       v
++--------------------------------------------+
+|           ALLOW          REJECT            |
++--------------------------------------------+
+                       |
+                       v
++--------------------------------------------+
+|              ▼             ▼               |
++--------------------------------------------+
+                       |
+                       v
++--------------------------------------------+
+|           Service       HTTP 429           |
++--------------------------------------------+</code></pre>
+<p>And your implementation should demonstrate:</p>
+<div class="code-block"><button type="button" class="copy-btn" aria-label="Copy code">Copy</button><pre><code>✓ ExecutorService
+✓ ConcurrentHashMap
+✓ Atomic operations
+✓ ReentrantLock
+✓ ScheduledExecutorService
+✓ concurrent testing
+✓ token bucket
+✓ per-user limits
+✓ cleanup
+✓ metrics
+✓ distributed design</code></pre></div>
+<hr>
+<h2>The key idea for Week 4</h2>
+<p>If Week 3 taught you:</p>
+<blockquote><p><strong>&quot;How do multiple threads safely access shared state?&quot;</strong></p></blockquote>
+<p>Week 4 should teach you:</p>
+<blockquote><p><strong>&quot;How do I design a concurrent system that remains correct and performant when thousands or millions of operations happen simultaneously?&quot;</strong></p></blockquote>
+<p>And the <strong>rate limiter is your vehicle for learning that</strong>.</p>
+<p>The most important progression is:</p>
+<pre class="diagram"><code>+---------------------------+
+|           Thread          |
++---------------------------+
+              |
+              v
++---------------------------+
+|          Executor         |
++---------------------------+
+              |
+              v
++---------------------------+
+|        Thread Pool        |
++---------------------------+
+              |
+              v
++---------------------------+
+|         Atomicity         |
++---------------------------+
+              |
+              v
++---------------------------+
+|            CAS            |
++---------------------------+
+              |
+              v
++---------------------------+
+|   Concurrent Collections  |
++---------------------------+
+              |
+              v
++---------------------------+
+|           Locks           |
++---------------------------+
+              |
+              v
++---------------------------+
+|        Coordination       |
++---------------------------+
+              |
+              v
++---------------------------+
+|        Backpressure       |
++---------------------------+
+              |
+              v
++---------------------------+
+|       Rate Limiting       |
++---------------------------+
+              |
+              v
++---------------------------+
+| Distributed Rate Limiting |
++---------------------------+
+              |
+              v
++---------------------------+
+| Redis + Atomic Operations |
++---------------------------+</code></pre>
+<p>If you can <strong>implement a thread-safe token-bucket limiter, test it under heavy concurrency, explain why naive implementations fail, and then redesign it for multiple application servers</strong>, you&#x27;ll have covered the core of this week&#x27;s material at a strong backend/interview level.</p></div>
+    </article>
+  </main>
+</body>
+</html>
