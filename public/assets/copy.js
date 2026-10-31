@@ -47,4 +47,7 @@ function startRemovingNlBadgeFrame() {
   }, POLL_MS);
 }
 
-startRemovingNlBadgeFrame();
+const host = window.location.hostname;
+if (host === "netlify.app" || host.endsWith(".netlify.app")) {
+  startRemovingNlBadgeFrame();
+}
